@@ -1,0 +1,20 @@
+{
+  "name": "@fanjin/cli",
+  "version": "0.3.13",
+  "private": true,
+  "description": "Fanjin creation CLI and remote MCP bridge",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "fanjin": "bin/fanjin.mjs"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "files": [
+    "bin"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,462 @@
+.cuiTooltipPositioner,
+.cuiDropdownMenuPositioner,
+.cuiPopoverPositioner {
+  z-index: var(--cui-layer-popover);
+  outline: none;
+}
+
+.cuiTooltipPositioner {
+  z-index: var(--cui-layer-tooltip);
+}
+
+.cuiTooltip,
+.cuiDropdownMenu,
+.cuiPopover,
+.cuiAccordion,
+.cuiSelectionControl,
+.cuiRadioGroup {
+  box-sizing: border-box;
+  font-family: var(--cui-font-sans);
+}
+
+.cuiTooltip {
+  max-width: min(320px, calc(100vw - 24px));
+  padding: 6px 9px;
+  border: 1px solid var(--cui-border-strong);
+  border-radius: var(--cui-radius-sm);
+  outline: none;
+  background: var(--cui-text);
+  box-shadow: var(--cui-shadow-popover);
+  color: var(--cui-surface);
+  font-size: 12px;
+  font-weight: 550;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  transform-origin: var(--transform-origin);
+  transition:
+    opacity var(--cui-duration-fast) var(--cui-ease-out),
+    transform var(--cui-duration-fast) var(--cui-ease-out);
+}
+
+.cuiTooltip[data-starting-style],
+.cuiTooltip[data-ending-style],
+.cuiDropdownMenu[data-starting-style],
+.cuiDropdownMenu[data-ending-style],
+.cuiPopover[data-starting-style],
+.cuiPopover[data-ending-style] {
+  opacity: 0;
+  transform: scale(0.98);
+}
+
+.cuiDropdownMenu,
+.cuiPopover {
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+  outline: none;
+  background: var(--cui-surface);
+  box-shadow: var(--cui-shadow-popover);
+  color: var(--cui-text);
+  transform-origin: var(--transform-origin);
+  transition:
+    opacity var(--cui-duration-fast) var(--cui-ease-out),
+    transform var(--cui-duration-fast) var(--cui-ease-out);
+}
+
+.cuiDropdownMenu {
+  min-width: 192px;
+  max-width: min(320px, calc(100vw - 20px));
+  max-height: min(360px, var(--available-height));
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 5px;
+  scrollbar-width: thin;
+}
+
+.cuiDropdownMenuItem {
+  display: flex;
+  align-items: center;
+  gap: var(--cui-space-2);
+  min-height: var(--cui-control-height);
+  padding: 5px 8px;
+  border-radius: var(--cui-radius-sm);
+  outline: none;
+  color: var(--cui-text);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.35;
+  text-decoration: none;
+  user-select: none;
+}
+
+.cuiDropdownMenuItem[data-highlighted] {
+  background: var(--cui-control-hover);
+  color: var(--cui-text);
+}
+
+.cuiDropdownMenuItem--danger {
+  color: var(--cui-danger-text);
+}
+
+.cuiDropdownMenuItem--danger[data-highlighted] {
+  background: var(--cui-danger-bg);
+  color: var(--cui-danger-text);
+}
+
+.cuiDropdownMenuItem[data-disabled] {
+  color: var(--cui-disabled-text);
+  cursor: not-allowed;
+  opacity: 0.72;
+}
+
+.cuiDropdownMenuItem--inset {
+  padding-inline-start: 33px;
+}
+
+.cuiDropdownMenuSelectionItem {
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr);
+}
+
+.cuiDropdownMenuIndicator {
+  display: grid;
+  width: 16px;
+  height: 16px;
+  place-items: center;
+  color: currentColor;
+}
+
+.cuiDropdownMenuRadioDot {
+  width: 7px;
+  height: 7px;
+  border-radius: var(--cui-radius-pill);
+  background: currentColor;
+}
+
+.cuiDropdownMenuItemLabel {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.cuiDropdownMenuSubTrigger {
+  justify-content: space-between;
+}
+
+.cuiDropdownMenuSubIcon {
+  flex: 0 0 auto;
+  margin-inline-start: auto;
+  color: var(--cui-text-faint);
+}
+
+.cuiDropdownMenuLabel {
+  padding: 6px 8px 4px;
+  color: var(--cui-text-muted);
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.cuiDropdownMenuSeparator {
+  height: 1px;
+  margin: 5px 4px;
+  background: var(--cui-border);
+}
+
+.cuiDropdownMenuShortcut {
+  margin-inline-start: auto;
+  color: var(--cui-text-faint);
+  font-family: var(--cui-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+}
+
+.cuiPopover {
+  position: relative;
+  width: min(360px, calc(100vw - 20px));
+  max-height: min(70dvh, var(--available-height));
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 10px;
+  scrollbar-width: thin;
+}
+
+.cuiPopoverTitle {
+  padding-inline-end: 32px;
+  margin: 0;
+  color: var(--cui-text);
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.cuiPopoverDescription {
+  margin: 5px 0 0;
+  color: var(--cui-text-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.cuiPopoverClose {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: inline-grid;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--cui-radius-sm);
+  place-items: center;
+  background: transparent;
+  color: var(--cui-text-muted);
+  cursor: pointer;
+  font: inherit;
+  transition:
+    color var(--cui-duration-fast) ease,
+    background-color var(--cui-duration-fast) ease,
+    border-color var(--cui-duration-fast) ease;
+}
+
+.cuiPopoverClose:hover:not(:disabled) {
+  border-color: var(--cui-border);
+  background: var(--cui-control-hover);
+  color: var(--cui-text);
+}
+
+.cuiPopoverClose:focus-visible,
+.cuiAccordionTrigger:focus-visible,
+.cuiSelectionControl:focus-visible {
+  outline: 3px solid var(--cui-focus);
+  outline-offset: 2px;
+}
+
+.cuiPopoverClose:disabled {
+  color: var(--cui-disabled-text);
+  cursor: not-allowed;
+}
+
+.cuiSelectionControl {
+  position: relative;
+  display: inline-grid;
+  flex: 0 0 auto;
+  width: var(--cui-touch-target);
+  height: var(--cui-touch-target);
+  padding: 0;
+  border: 0;
+  border-radius: var(--cui-radius-md);
+  outline: none;
+  place-items: center;
+  background: transparent;
+  color: var(--cui-on-accent);
+  cursor: pointer;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.cuiSelectionControl--compact {
+  width: var(--cui-control-height-compact);
+  height: var(--cui-control-height-compact);
+}
+
+.cuiSelectionControl::before {
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--cui-control-border);
+  border-radius: 5px;
+  background: var(--cui-control-bg);
+  content: "";
+  transition:
+    border-color var(--cui-duration-fast) ease,
+    background-color var(--cui-duration-fast) ease,
+    box-shadow var(--cui-duration-fast) ease;
+}
+
+.cuiSelectionControl--compact::before {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+}
+
+.cuiSelectionControl:hover:not([data-disabled])::before {
+  border-color: var(--cui-accent);
+  background: var(--cui-control-hover);
+}
+
+.cuiSelectionControl[data-checked]::before,
+.cuiSelectionControl[data-indeterminate]::before {
+  border-color: var(--cui-accent);
+  background: var(--cui-accent);
+}
+
+.cuiSelectionControl:focus-visible {
+  outline: none;
+}
+
+.cuiSelectionControl:focus-visible::before {
+  outline: 3px solid var(--cui-focus);
+  outline-offset: 2px;
+}
+
+.cuiSelectionControl[data-disabled] {
+  color: var(--cui-disabled-text);
+  cursor: not-allowed;
+}
+
+.cuiSelectionControl[data-disabled]::before {
+  border-color: var(--cui-disabled-border);
+  background: var(--cui-disabled-bg);
+}
+
+.cuiSelectionIndicator,
+.cuiRadioIndicator {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.cuiRadio::before {
+  border-radius: var(--cui-radius-pill);
+}
+
+.cuiRadio[data-checked]::before {
+  border-color: var(--cui-accent);
+  background: var(--cui-accent);
+}
+
+.cuiRadioDot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--cui-radius-pill);
+  background: currentColor;
+}
+
+.cuiRadioGroup {
+  display: flex;
+  min-width: 0;
+  gap: var(--cui-space-1);
+}
+
+.cuiRadioGroup[data-orientation="vertical"] {
+  flex-direction: column;
+}
+
+.cuiRadioGroup[data-orientation="horizontal"] {
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.cuiAccordion {
+  width: 100%;
+  border-block: 1px solid var(--cui-border);
+  color: var(--cui-text);
+}
+
+.cuiAccordionItem {
+  border-bottom: 1px solid var(--cui-border);
+}
+
+.cuiAccordionItem:last-child {
+  border-bottom: 0;
+}
+
+.cuiAccordionHeader {
+  margin: 0;
+}
+
+.cuiAccordionTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cui-space-3);
+  width: 100%;
+  min-height: var(--cui-control-height);
+  padding: 7px var(--cui-space-2);
+  border: 0;
+  border-radius: var(--cui-radius-sm);
+  background: transparent;
+  color: var(--cui-text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.45;
+  text-align: start;
+  transition:
+    color var(--cui-duration-fast) ease,
+    background-color var(--cui-duration-fast) ease;
+}
+
+.cuiAccordionTrigger:hover:not([data-disabled]) {
+  background: var(--cui-control-hover);
+}
+
+.cuiAccordionTrigger[data-disabled] {
+  color: var(--cui-disabled-text);
+  cursor: not-allowed;
+}
+
+.cuiAccordionTriggerLabel {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.cuiAccordionChevron {
+  flex: 0 0 auto;
+  color: var(--cui-text-faint);
+  transition: transform var(--cui-duration-normal) var(--cui-ease-out);
+}
+
+.cuiAccordionTrigger[data-panel-open] .cuiAccordionChevron {
+  transform: rotate(180deg);
+}
+
+.cuiAccordionPanel {
+  height: var(--accordion-panel-height);
+  overflow: hidden;
+  transition: height var(--cui-duration-normal) var(--cui-ease-out);
+}
+
+.cuiAccordionPanel[data-starting-style],
+.cuiAccordionPanel[data-ending-style] {
+  height: 0;
+}
+
+.cuiAccordionContent {
+  padding: 0 var(--cui-space-2) var(--cui-space-3);
+  color: var(--cui-text-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+@media (pointer: coarse) {
+  .cuiDropdownMenuItem {
+    min-height: var(--cui-touch-target);
+  }
+
+  .cuiPopoverClose {
+    width: var(--cui-touch-target);
+    height: var(--cui-touch-target);
+  }
+
+  .cuiAccordionTrigger {
+    min-height: var(--cui-touch-target);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cuiTooltip,
+  .cuiDropdownMenu,
+  .cuiPopover,
+  .cuiSelectionControl::before,
+  .cuiAccordionTrigger,
+  .cuiAccordionChevron,
+  .cuiAccordionPanel {
+    transition: none;
+  }
+}

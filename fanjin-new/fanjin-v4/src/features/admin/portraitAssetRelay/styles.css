@@ -1,0 +1,119 @@
+.portraitRelayWorkbench {
+  display: grid;
+  gap: var(--cui-space-4);
+}
+
+.portraitRelayWorkspaceField {
+  display: grid;
+  gap: var(--cui-space-1);
+  min-width: min(420px, 70vw);
+}
+
+.portraitRelayIdentity {
+  display: grid;
+  gap: 3px;
+}
+
+.portraitRelayIdentity strong {
+  color: var(--cui-text);
+  font-weight: 620;
+}
+
+.portraitRelayIdentity code {
+  overflow: hidden;
+  max-width: 260px;
+  color: var(--cui-text-tertiary);
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.portraitRelayRowActions,
+.portraitRelayDrawerActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cui-space-2);
+}
+
+.portraitRelayFormLock {
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.portraitRelayStateCell {
+  display: grid;
+  justify-items: start;
+  gap: var(--cui-space-1);
+}
+
+.portraitRelayStateCell small {
+  overflow: hidden;
+  max-width: 240px;
+  color: var(--cui-text-muted);
+  font-size: 12px;
+  line-height: 1.45;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.portraitRelayInlineCode {
+  display: block;
+  overflow: hidden;
+  max-width: 220px;
+  color: var(--cui-text-muted);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.portraitRelayExternalLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  gap: var(--cui-space-2);
+  color: var(--cui-accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.portraitRelayExternalLink:focus-visible {
+  border-radius: var(--cui-radius-sm);
+  outline: 2px solid var(--cui-focus);
+  outline-offset: 2px;
+}
+
+.portraitRelayExternalLink + span {
+  display: block;
+  color: var(--cui-text-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.portraitRelayResponse {
+  overflow: auto;
+  max-height: 320px;
+  margin: var(--cui-space-2) 0 0;
+  padding: var(--cui-space-3);
+  border: 1px solid var(--cui-border-subtle);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-surface-subtle);
+  color: var(--cui-text);
+  font: 12px/1.6 var(--cui-font-mono);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+@media (max-width: 720px) {
+  .portraitRelayWorkspaceField {
+    min-width: 100%;
+  }
+
+  .portraitRelayRowActions,
+  .portraitRelayDrawerActions {
+    width: 100%;
+  }
+}

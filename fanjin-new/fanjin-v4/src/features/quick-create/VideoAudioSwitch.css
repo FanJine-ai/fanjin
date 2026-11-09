@@ -1,0 +1,64 @@
+.videoAudioSwitch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  min-height: 50px;
+  margin-top: 14px;
+  padding: 10px 14px;
+  border: 1px solid var(--line, #e6e7e6);
+  border-radius: 12px;
+  background: var(--control-bg, #fff);
+  color: var(--text, #272a2c);
+  font: inherit;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 180ms ease, background-color 180ms ease;
+}
+
+.videoAudioSwitchLabel, .videoAudioSwitchState {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.videoAudioSwitchLabel svg { flex-shrink: 0; color: var(--faint, var(--muted, #68737a)); }
+.videoAudioSwitchState { flex-shrink: 0; gap: 10px; color: var(--faint, var(--muted, #68737a)); font-size: 11px; }
+.videoAudioSwitch[aria-checked=true] { border-color: var(--active-line, var(--line-strong, #c7dce5)); }
+.videoAudioSwitch[aria-checked=true] .videoAudioSwitchLabel svg { color: var(--accent-strong, #00668c); }
+.videoAudioSwitch:not(:disabled):hover { background: var(--surface-soft, #f6f6f4); }
+.videoAudioSwitch:focus-visible { outline: 2px solid var(--accent-strong, #00668c); outline-offset: 3px; }
+.videoAudioSwitch:disabled { cursor: not-allowed; opacity: 0.5; }
+
+.videoAudioSwitchTrack {
+  display: block;
+  position: relative;
+  width: 42px;
+  height: 24px;
+  flex-shrink: 0;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--faint, #68737a) 35%, var(--control-bg, #fff));
+  box-shadow: inset 0 0 0 1px var(--line, #0000000d);
+  transition: background-color 180ms ease;
+}
+
+.videoAudioSwitchThumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px #00000026;
+  transition: transform 180ms ease;
+}
+
+.videoAudioSwitch[aria-checked=true] .videoAudioSwitchTrack { background: var(--accent-strong, #00668c); }
+.videoAudioSwitch[aria-checked=true] .videoAudioSwitchThumb { transform: translateX(18px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .videoAudioSwitch, .videoAudioSwitchTrack, .videoAudioSwitchThumb { transition: none; }
+}

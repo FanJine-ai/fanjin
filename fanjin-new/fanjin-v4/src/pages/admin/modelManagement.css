@@ -1,0 +1,69 @@
+.modelManagementHub .cuiSection__content {
+  display: grid;
+  gap: var(--cui-space-3);
+}
+
+.modelManagementHub__loading {
+  display: grid;
+  min-height: min(420px, 55vh);
+  place-items: center;
+  padding: var(--cui-space-6);
+  background: var(--cui-surface);
+  color: var(--cui-text-muted);
+  font-size: 13px;
+}
+
+.modelManagementHub__context {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--cui-space-4);
+}
+
+.modelManagementHub__context > p {
+  max-width: 760px;
+  margin: 0;
+  color: var(--cui-text-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.modelManagementHub__context nav {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: var(--cui-space-2);
+  color: var(--cui-text-faint);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.modelManagementHub__context nav a,
+.modelManagementHub__context nav strong {
+  color: var(--cui-text);
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.modelManagementHub__context nav a:hover {
+  color: var(--cui-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.modelManagementHub__context nav a:focus-visible {
+  border-radius: var(--cui-radius-sm);
+  outline: 3px solid var(--cui-focus);
+  outline-offset: 2px;
+}
+
+@media (max-width: 1040px) {
+  .modelManagementHub__context {
+    display: grid;
+  }
+
+  .modelManagementHub__context nav {
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+}

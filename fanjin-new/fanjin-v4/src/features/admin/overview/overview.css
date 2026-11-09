@@ -1,0 +1,552 @@
+.overviewPage {
+  display: grid;
+  width: 100%;
+  max-width: 1560px;
+  min-width: 0;
+  margin-inline: auto;
+  gap: var(--cui-space-5);
+  color: var(--cui-text);
+  font-family: var(--cui-font-sans);
+}
+
+.overviewMetricDeck {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  padding: 0;
+}
+
+.overviewMetric {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  min-height: 136px;
+  align-content: space-between;
+  gap: 10px;
+  padding: 20px 22px;
+  border: 1px solid var(--cui-border);
+  border-radius: 20px;
+  background: var(--cui-surface);
+  box-shadow: var(--cui-shadow-card);
+}
+
+.overviewMetric + .overviewMetric {
+  border-left: 1px solid var(--cui-border);
+}
+
+.overviewMetric::after {
+  content: none;
+}
+
+.overviewMetric[data-tone="positive"] .overviewMetricIcon { background: var(--cui-success-bg); color: var(--cui-success-text); }
+.overviewMetric[data-tone="warning"] .overviewMetricIcon { background: var(--cui-warning-bg); color: var(--cui-warning-text); }
+.overviewMetric[data-tone="danger"] .overviewMetricIcon { background: var(--cui-danger-bg); color: var(--cui-danger-text); }
+
+.overviewMetricHeader {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--cui-text-muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.overviewMetricIcon {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-surface-subtle);
+  color: var(--cui-text-faint);
+}
+
+.overviewMetric strong {
+  overflow: hidden;
+  color: var(--cui-text);
+  font-size: clamp(24px, 2vw, 30px);
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.overviewMetric small {
+  overflow: hidden;
+  color: var(--cui-text-faint);
+  font-size: 12px;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.overviewDashboardGrid {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: minmax(0, 1.6fr) minmax(320px, 1fr);
+  align-items: stretch;
+  gap: var(--cui-space-5);
+}
+
+.overviewSideStack {
+  display: contents;
+}
+
+.overviewSideStack > :last-child { grid-column: 1 / -1; }
+
+.overviewCard {
+  min-width: 0;
+  gap: 0;
+  padding-block: 0;
+}
+
+.overviewCardHeader {
+  display: flex;
+  min-height: 76px;
+  grid-template-columns: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+  border-bottom: 0;
+}
+
+.overviewCardHeader > div {
+  min-width: 0;
+}
+
+.overviewCardHeader > svg {
+  flex: 0 0 auto;
+  color: var(--cui-text-faint);
+}
+
+.overviewCardHeader [data-slot="card-title"] {
+  color: var(--cui-text);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+
+.overviewCardHeader [data-slot="card-description"] {
+  margin-top: 3px;
+  color: var(--cui-text-muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.overviewCardContent {
+  min-width: 0;
+  padding: 8px 22px 22px;
+}
+
+.overviewTrendCard {
+  min-height: 390px;
+}
+
+.overviewTrend {
+  display: grid;
+  min-width: 0;
+  gap: 16px;
+}
+
+.overviewTrendPlot {
+  display: grid;
+  min-width: 0;
+  gap: 10px;
+}
+
+.overviewTrendLegend {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  color: var(--cui-text-muted);
+  font-size: 12px;
+}
+
+.overviewTrendLegend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.overviewTrendLegend i {
+  width: 18px;
+  height: 0;
+  border-top: 2px solid var(--color-total, var(--cui-accent));
+}
+
+.overviewTrendLegend i[data-series="errors"] {
+  border-top-color: var(--color-errors, var(--cui-danger-text));
+  border-top-style: dashed;
+}
+
+.overviewTrendSummary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+  overflow: hidden;
+  border: 0;
+  background: transparent;
+}
+
+.overviewTrendSummary > div {
+  display: grid;
+  gap: 5px;
+  padding: 0 0 8px;
+  background: transparent;
+}
+
+.overviewTrendSummary dt {
+  color: var(--cui-text-faint);
+  font-size: 11.5px;
+  line-height: 1.3;
+}
+
+.overviewTrendSummary dd {
+  margin: 0;
+  color: var(--cui-text);
+  font-size: 18px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+  line-height: 1.2;
+}
+
+.overviewTrendSummary > div[data-tone="danger"] dd {
+  color: var(--cui-danger-text);
+}
+
+.overviewTrendChart {
+  width: 100%;
+  height: 230px;
+  aspect-ratio: auto;
+  color: var(--cui-text-faint);
+}
+
+.overviewChartSkeleton {
+  display: grid;
+  min-height: 390px;
+  place-items: center;
+}
+
+.overviewTodoList {
+  display: grid;
+  gap: 6px;
+  padding: 8px 16px 20px;
+}
+
+.overviewTodoList button {
+  display: grid;
+  min-height: 62px;
+  grid-template-columns: 44px minmax(0, 1fr) 18px;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 8px;
+  border: 0;
+  border-bottom: 1px solid var(--cui-border-subtle);
+  background: transparent;
+  color: var(--cui-text);
+  font: inherit;
+  font-size: 13px;
+  text-align: left;
+}
+
+.overviewTodoList button:last-child {
+  border-bottom: 0;
+}
+
+.overviewTodoList button:hover {
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-control-hover);
+}
+
+.overviewTodoList button:active,
+.overviewQuickGrid button:active {
+  transform: translateY(1px);
+}
+
+.overviewTodoList button > svg,
+.overviewQuickGrid button > svg {
+  color: var(--cui-text-faint);
+}
+
+.overviewTodoValue {
+  color: var(--cui-text-muted);
+  font-size: 18px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+  text-align: right;
+}
+
+.overviewTodoValue[data-tone="danger"] { color: var(--cui-danger-text); }
+.overviewTodoValue[data-tone="warning"] { color: var(--cui-warning-text); }
+.overviewTodoValue[data-tone="success"] { color: var(--cui-success-text); }
+.overviewTodoValue[data-tone="info"] { color: var(--cui-info-text); }
+
+.overviewQuickGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  padding: 0 14px 14px;
+}
+
+.overviewQuickGrid button {
+  display: grid;
+  min-width: 0;
+  min-height: 62px;
+  grid-template-columns: 34px minmax(0, 1fr) 16px;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: var(--cui-radius-md);
+  background: transparent;
+  color: var(--cui-text);
+  font: inherit;
+  text-align: left;
+}
+
+.overviewQuickGrid button:hover {
+  border-color: var(--cui-border);
+  background: var(--cui-surface-subtle);
+}
+
+.overviewQuickIcon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-info-bg);
+  color: var(--cui-info-text);
+}
+
+.overviewQuickCopy {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.overviewQuickCopy strong {
+  overflow: hidden;
+  color: var(--cui-text);
+  font-size: 13px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.overviewQuickCopy small {
+  overflow: hidden;
+  color: var(--cui-text-faint);
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.overviewProviderContent {
+  min-width: 0;
+  padding: 0;
+}
+
+.overviewProviderContent .consoleDataTable {
+  border: 0;
+  border-radius: 0 0 var(--cui-radius-lg) var(--cui-radius-lg);
+  box-shadow: none;
+}
+
+.overviewProviderContent .consoleDataTable th:first-child,
+.overviewProviderContent .consoleDataTable td:first-child {
+  padding-left: 22px;
+}
+
+.overviewProviderContent .consoleDataTable th:last-child,
+.overviewProviderContent .consoleDataTable td:last-child {
+  padding-right: 22px;
+}
+
+.overviewPrimaryCell {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+}
+
+.overviewPrimaryCell strong {
+  overflow: hidden;
+  color: var(--cui-text);
+  font-size: 13px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.overviewPrimaryCell span {
+  overflow: hidden;
+  color: var(--cui-text-faint);
+  font-size: 11.5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.overviewEmptyState {
+  display: grid;
+  min-height: 300px;
+  place-content: center;
+  justify-items: center;
+  gap: 7px;
+  padding: 24px;
+  color: var(--cui-text-faint);
+  text-align: center;
+}
+
+.overviewEmptyState strong {
+  color: var(--cui-text);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.overviewEmptyState span {
+  max-width: 36ch;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.overviewEmptyStateCompact {
+  min-height: 150px;
+}
+
+@media (max-width: 1180px) {
+  .overviewDashboardGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .overviewSideStack {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--cui-space-4);
+  }
+  .overviewSideStack > :last-child { grid-column: auto; }
+  .overviewQuickGrid { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .overviewMetricDeck {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .overviewMetric:nth-child(3) {
+    border-left: 1px solid var(--cui-border);
+  }
+
+  .overviewMetric:nth-child(n + 3) {
+    border-top: 1px solid var(--cui-border);
+  }
+}
+
+@media (max-width: 767px) {
+  .overviewPage {
+    gap: var(--cui-space-4);
+  }
+
+  .overviewSideStack,
+  .overviewQuickGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .overviewMetricDeck { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+
+  .overviewMetric {
+    min-height: 136px;
+    padding: 16px;
+  }
+
+  .overviewMetric + .overviewMetric {
+    border-top: 1px solid var(--cui-border);
+    border-left: 1px solid var(--cui-border);
+  }
+
+  .overviewMetricHeader { gap: 6px; font-size: 12px; }
+  .overviewMetricIcon { width: 26px; height: 26px; }
+  .overviewMetric small { white-space: normal; font-size: 11px; }
+
+  .overviewSideStack {
+    gap: var(--cui-space-4);
+  }
+
+  .overviewTrendCard {
+    min-height: 0;
+  }
+
+  .overviewCardHeader {
+    min-height: 70px;
+    padding: 16px;
+  }
+
+  .overviewCardContent {
+    padding: 16px;
+  }
+
+  .overviewTrendSummary > div {
+    padding: 10px;
+  }
+
+  .overviewTrendSummary dd {
+    font-size: 15px;
+  }
+
+  .overviewTrendChart {
+    height: 230px;
+  }
+
+  .overviewTodoList,
+  .overviewQuickGrid {
+    padding: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overviewPage button {
+    transition: none;
+  }
+
+  .overviewTodoList button:active,
+  .overviewQuickGrid button:active {
+    transform: none;
+  }
+}
+
+/* Keep the next action distinct from period-based statistics. */
+.overviewHealthFocus {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 24px;
+  border: 1px solid var(--cui-border-strong);
+  border-radius: var(--cui-radius-lg);
+  background: var(--cui-surface);
+}
+.overviewHealthIcon { display: grid; place-items: center; flex: 0 0 48px; height: 48px; border-radius: var(--cui-radius-md); color: var(--cui-info-text); background: var(--cui-info-bg); }
+.overviewHealthFocus[data-tone="warning"] .overviewHealthIcon { color: var(--cui-warning-text); background: var(--cui-warning-bg); }
+.overviewHealthFocus[data-tone="danger"] .overviewHealthIcon { color: var(--cui-danger-text); background: var(--cui-danger-bg); }
+.overviewHealthCopy { flex: 1; min-width: 0; }
+.overviewHealthCopy > span { color: var(--cui-text-muted); font-size: 12px; }
+.overviewHealthCopy h2 { margin: 6px 0 8px; color: var(--cui-text); font-size: 24px; font-weight: 600; line-height: 1.3; letter-spacing: -0.03em; }
+.overviewHealthCopy p { margin: 0; color: var(--cui-text-muted); font-size: 13px; line-height: 1.5; }
+.overviewTodoCopy { display: grid; gap: 5px; }
+.overviewTodoCopy small { color: var(--cui-text-muted); font-size: 12px; }
+@media (max-width: 767px) {
+  .overviewHealthFocus { flex-wrap: wrap; gap: 14px; padding: 18px; }
+  .overviewHealthIcon { flex-basis: 40px; height: 40px; }
+  .overviewHealthCopy h2 { font-size: 20px; }
+  .overviewHealthFocus > .cuiButton { width: 100%; }
+  .overviewSideStack { display: contents; }
+  .overviewMetricDeck { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .overviewMetricDeck > :first-child { grid-column: 1 / -1; }
+  .overviewAttentionCard { grid-row: 1; }
+}

@@ -1,0 +1,9 @@
+import { CanvasConflictGuard, CanvasProjectGate, CanvasStatusToast } from "./CanvasPageGuards";
+import { CanvasGenerationDebugPanel } from "./CanvasGenerationDebugPanel";
+import { CanvasPortraitAdmissionNotice } from "./CanvasPortraitAdmissionNotice";
+
+type Props = { showGate: boolean; activeProjectId: string | null; onCreateCanvas: () => void; onOpenProjects: () => void; onCreateProject: () => void; conflict: any; onReloadConflict: () => void; status: string; portraitAssets: any[]; portraitPolicy: any; portraitProjectId: number | null; portraitModel?: string; portraitTaskStatus?: string; portraitLayout: "hidden" | "pill" | "panel"; setPortraitLayout: (value: "hidden" | "pill" | "panel") => void; debugVisible: boolean; debug: any; onCloseDebug: () => void; };
+
+export function CanvasRuntimeOverlays({ showGate, activeProjectId, onCreateCanvas, onOpenProjects, onCreateProject, conflict, onReloadConflict, status, portraitAssets, portraitPolicy, portraitProjectId, portraitModel, portraitTaskStatus, portraitLayout, setPortraitLayout, debugVisible, debug, onCloseDebug }: Props) {
+  return <>{showGate ? <CanvasProjectGate activeProjectId={activeProjectId} onCreateCanvas={onCreateCanvas} onOpenProjects={onOpenProjects} onCreateProject={onCreateProject} /> : null}{conflict ? <CanvasConflictGuard conflict={conflict} onReload={onReloadConflict} /> : null}{status ? <CanvasStatusToast status={status} /> : null}{portraitAssets.length > 0 && portraitPolicy?.enabled ? <CanvasPortraitAdmissionNotice projectId={portraitProjectId} model={portraitModel} assets={portraitAssets} refreshKey={portraitTaskStatus} layout={portraitLayout} configured={portraitPolicy.configured} onLayoutChange={setPortraitLayout} /> : null}{debugVisible && debug ? <CanvasGenerationDebugPanel debug={debug} onClose={onCloseDebug} /> : null}</>;
+}

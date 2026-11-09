@@ -1,0 +1,22 @@
+.pricingGroupManager { display: grid; gap: 18px; padding-bottom: 24px; }
+.pricingGroupAssignment { display: grid; grid-template-columns: minmax(240px, 1fr) auto; gap: 12px; align-items: end; }
+.pricingGroupForm { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.pricingGroupForm__wide { grid-column: 1 / -1; }
+.pricingGroupFormActions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 14px; }
+.pricingGroupList { display: grid; gap: 10px; }
+.pricingGroupList > header { display: flex; align-items: end; justify-content: space-between; gap: 16px; }
+.pricingGroupList h3 { margin: 0; font-size: 15px; }
+.pricingGroupList p { margin: 4px 0 0; color: var(--cui-text-muted); font-size: 12px; }
+.pricingGroupCard { display: grid; grid-template-columns: minmax(220px, 1fr) auto auto auto; align-items: center; gap: 16px; padding: 14px 16px; border: 1px solid var(--cui-border); border-radius: 12px; background: var(--cui-surface); }
+.pricingGroupCard__identity { display: grid; gap: 3px; min-width: 0; }
+.pricingGroupCard__identity code { width: fit-content; color: var(--cui-accent); font-size: 12px; }
+.pricingGroupCard__identity span { overflow: hidden; color: var(--cui-text-muted); font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+.pricingGroupCard__stats { display: flex; gap: 14px; color: var(--cui-text-muted); font-size: 12px; }
+.pricingGroupCard__stats b { color: var(--cui-text); font-size: 14px; }
+.pricingGroupCard__actions { display: flex; gap: 8px; }
+@media (max-width: 760px) {
+  .pricingGroupAssignment, .pricingGroupForm { grid-template-columns: 1fr; }
+  .pricingGroupForm__wide { grid-column: auto; }
+  .pricingGroupCard { grid-template-columns: 1fr auto; }
+  .pricingGroupCard__stats { grid-column: 1 / -1; }
+}

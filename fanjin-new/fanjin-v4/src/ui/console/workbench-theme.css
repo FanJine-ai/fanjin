@@ -1,0 +1,183 @@
+.consoleAnalyticsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.consoleAnalyticsGrid > [data-slot="card"] { min-width: 0; margin-bottom: 0; }
+.developerBillingPage > .grid,
+.developerBillingPage > .mb-6 { margin-bottom: 0; }
+@media (max-width: 1180px) {
+  .consoleAnalyticsGrid { grid-template-columns: minmax(0, 1fr); }
+}
+
+.consoleWorkbench [data-slot="card"] {
+  border-radius: 20px;
+  border-color: var(--cui-border);
+  background: var(--cui-surface);
+  box-shadow: var(--cui-shadow-card);
+}
+
+.consoleWorkbench .consoleDataTable {
+  box-shadow: var(--cui-shadow-card);
+}
+
+.consoleWorkbench .consoleMetricStrip__item {
+  padding: 18px 20px;
+}
+.consoleWorkbench .consoleMetricStrip__value {
+  font-weight: 650;
+}
+.consoleWorkbench .consolePageHeading h1 {
+  letter-spacing: -0.035em;
+  font-weight: 650;
+}
+.consoleWorkbench .consolePageHeading__description {
+  font-size: 13px;
+}
+.consoleWorkbench .consoleBreadcrumbs {
+  margin-bottom: 8px;
+}
+.consoleWorkbench .consoleFilterBar {
+  border-color: var(--cui-border-subtle);
+}
+
+.consoleWorkbench [data-slot="chart"] {
+  min-width: 0;
+  font-family: var(--cui-font-sans);
+  font-variant-numeric: tabular-nums;
+}
+.consoleWorkbench .recharts-cartesian-axis-tick-value {
+  fill: var(--cui-text-faint);
+  font-size: 11px;
+}
+.consoleWorkbench .recharts-cartesian-grid line {
+  stroke: var(--cui-chart-grid);
+}
+.consoleThemeHost [data-slot="chart-tooltip-content"] {
+  border-radius: 12px;
+  background: var(--cui-surface);
+  border-color: var(--cui-border);
+  color: var(--cui-text);
+  box-shadow: var(--cui-shadow-popover);
+}
+
+/* Shared page rhythm. These rules apply to every registered console route,
+   including legacy feature styles loaded after the console shell. */
+.consoleWorkbench .cuiPage {
+  gap: 24px;
+  align-content: start;
+}
+.consoleWorkbench .cuiPage .consolePageHeading { margin-bottom: 0; }
+.consoleWorkbench .cuiPage .consolePageHeading__primaryAction { flex-wrap: wrap; gap: 8px; }
+.consoleWorkbench .cuiPage .consolePageHeading__description { line-height: 1.65; }
+
+.consoleWorkbench .cuiPage .consoleMetricStrip {
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.consoleWorkbench .cuiPage .consoleMetricStrip dl { gap: 14px; }
+.consoleWorkbench .cuiPage .consoleMetricStrip .consoleMetricStrip__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 6px;
+  min-height: 112px;
+  padding: 18px 20px;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-lg);
+  background: var(--cui-surface);
+  box-shadow: var(--cui-shadow-card);
+}
+.consoleWorkbench .cuiPage .consoleMetricStrip dt { font-size: 12px; font-weight: 500; }
+.consoleWorkbench .cuiPage .consoleMetricStrip dd { margin: 0; flex-wrap: wrap; }
+.consoleWorkbench .cuiPage .consoleMetricStrip__value { font-size: 25px; font-weight: 650; line-height: 1.25; overflow-wrap: anywhere; }
+.consoleWorkbench .cuiPage .consoleMetricStrip__hint { margin: 0; font-size: 12px; line-height: 1.5; }
+
+.consoleWorkbench .cuiPage .consoleFilterBar {
+  padding-inline: 0;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-lg);
+  background: var(--cui-surface);
+}
+.consoleWorkbench .cuiPage .consoleFilterBar__main { flex-wrap: wrap; gap: 12px; padding: 14px 16px; }
+.consoleWorkbench .cuiPage .consoleFilterBar__fields { gap: 10px; }
+.consoleWorkbench .cuiPage .consoleFilterBar__advanced { padding: 16px; background: var(--cui-surface-subtle); }
+.consoleWorkbench .cuiPage .consoleDataTable {
+  container-name: console-table;
+  container-type: inline-size;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-lg);
+  background: var(--cui-surface);
+  box-shadow: var(--cui-shadow-card);
+}
+.consoleWorkbench .cuiPage .consoleDataTable table { font-size: 13px; }
+.consoleWorkbench .cuiPage .consoleDataTable th { height: 44px; padding-inline: 16px; font-size: 12px; }
+.consoleWorkbench .cuiPage .consoleDataTable td { height: 58px; padding: 10px 16px; line-height: 1.5; }
+.consoleWorkbench .cuiPage .consoleDataTable td .cuiBadge { white-space: nowrap; }
+.consoleWorkbench .cuiPage .consoleDataTable__pagination { padding: 10px 16px; gap: 10px; }
+.consoleWorkbench .cuiPage .consoleDataTable__state { min-height: 180px; gap: 10px; padding: 24px; }
+.consoleWorkbench .cuiPage .cuiEmptyState { min-height: 164px; gap: 8px; padding: 24px; }
+.consoleWorkbench .cuiPage .cuiEmptyState p { font-size: 13px; line-height: 1.6; }
+.consoleWorkbench .cuiPage :is(.cuiSection--outlined, .cuiSection--subtle) { box-shadow: var(--cui-shadow-card); }
+.consoleWorkbench .cuiPage .cuiSection__copy h2 { font-size: 16px; font-weight: 600; }
+.consoleWorkbench .cuiPage .cuiSection__copy p { line-height: 1.6; }
+.consoleWorkbench .cuiPage .cuiCodeBlock { padding: 16px; border-radius: var(--cui-radius-md); }
+
+/* Respond to available table width, including narrow split panels and drawers. */
+@container console-table (max-width: 1120px) {
+  .consoleDataTableColumn--detail { display: none; }
+}
+@container console-table (max-width: 680px) {
+  .consoleDataTableColumn--secondary { display: none; }
+}
+
+/* Portal content inherits the same theme from the console's body host. */
+.consoleThemeHost .consoleOverlayPanel { border-radius: var(--cui-radius-xl); }
+.consoleThemeHost .consoleOverlayRoot-drawer { padding: 12px; }
+.consoleThemeHost .consoleDrawerPanel { height: calc(100dvh - 24px); }
+.consoleThemeHost :is(.consoleOverlayHeader, .consoleOverlayFooter) { padding: 20px 24px; }
+.consoleThemeHost .consoleOverlayBody { padding: 24px; }
+.consoleThemeHost .consoleOverlayHeading h2 { font-size: 18px; line-height: 1.4; }
+.consoleThemeHost .consoleOverlayHeading p { font-size: 13px; line-height: 1.6; }
+.consoleThemeHost .consoleFieldLabel { font-size: 13px; }
+.consoleThemeHost .consoleFormField > :is(input, textarea, select) { font-size: 13px; padding: 10px 12px; }
+.consoleThemeHost .consoleFieldGroup:not(.consoleFieldGroup--section) { padding: 16px; }
+.consoleThemeHost .cuiDropdownMenu { padding: 6px; border-radius: 14px; }
+.consoleThemeHost .cuiDropdownMenuItem { padding: 8px 10px; font-size: 13px; }
+.consoleThemeHost .cuiPopover { border-radius: 16px; }
+
+@media (max-width: 767px) {
+  .consoleWorkbench .cuiPage { gap: 18px; }
+  .consoleWorkbench .cuiPage .consolePageHeading h1 { font-size: 24px; }
+  .consoleWorkbench .cuiPage .consolePageHeading__primaryAction > * { flex: 1 1 auto; }
+  .consoleWorkbench .cuiPage .consoleMetricStrip dl { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .consoleWorkbench .cuiPage .consoleMetricStrip .consoleMetricStrip__item { min-height: 108px; padding: 14px; }
+  .consoleWorkbench .cuiPage .consoleMetricStrip__value { font-size: 23px; }
+  .consoleWorkbench .cuiPage .consoleFilterBar__main { padding: 12px; gap: 10px; }
+  .consoleWorkbench .cuiPage .consoleFilterBar__fields { gap: 8px; }
+  .consoleWorkbench .cuiPage .consoleFilterBar__actions { flex-wrap: wrap; }
+  .consoleWorkbench .cuiPage .consoleFilterBar__actions > * { flex: 1 1 auto; }
+  .consoleWorkbench .cuiPage .consoleDataTable :is(th, td) { padding-inline: 12px; }
+  .consoleThemeHost .consoleOverlayRoot-drawer { padding: 6px; }
+  .consoleThemeHost .consoleDrawerPanel { height: calc(100dvh - 12px); max-width: 100%; }
+  .consoleThemeHost :is(.consoleOverlayHeader, .consoleOverlayBody, .consoleOverlayFooter) { padding: 16px; }
+  .consoleThemeHost .consoleOverlayFooter { flex-wrap: wrap; }
+}
+
+.consoleWorkbench .cuiTabs { padding: 4px; gap: 4px; border: 1px solid var(--cui-border); border-radius: 14px; background: var(--cui-surface); }
+.consoleWorkbench .cuiTabs__tab { margin: 0; padding: 8px 14px; border: 0; border-radius: 10px; font-size: 13px; }
+.consoleWorkbench .cuiTabs__tab[aria-selected="true"] { color: var(--cui-selected-text); background: var(--cui-selected-bg); }
+.consoleWorkbench .cuiTabs__tab:hover:not(:disabled) { background: var(--cui-control-hover); }
+.consoleWorkbench .financeContentTabs .cuiTabs { border: 0; padding: 0; }
+.consoleWorkbench .cuiPage .consoleDataTable__pagination :is(label, .consoleDataTable__pageButtons, .consoleDataTable__range) { white-space: nowrap; flex-shrink: 0; }
+@container console-table (max-width: 680px) {
+  .consoleWorkbench .cuiPage .consoleDataTable table { min-width: 100%; }
+}
+
+/* Preserve space for the column menu even in tables with local heading rules. */
+.consoleWorkbench .consoleDataTable:has(> .consoleDataTable__tools) thead th:last-child { padding-right: 52px; }
+.consoleWorkbench .cuiSection__content > .consoleFilterBar + .consoleDataTable,
+.consoleWorkbench .cuiSection__content > .cuiAlert + .consoleDataTable { margin-top: 16px; }

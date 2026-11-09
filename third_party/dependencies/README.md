@@ -1,0 +1,3 @@
+# Installed dependency license texts
+
+Generated from the locked candidate installation. index.json records package/version, metadata declarations, copied license/NOTICE text hashes and installation locations. sbom.cdx.json describes that exact installed host, including development tools and host-specific optional binaries; it does not claim coverage of other platforms or a production image. Metadata-only entries are identified; no license is invented. Native binaries and node_modules are not redistributed in this source tree. Before distributing compiled bundles or containers, include the notices and audit the dependencies installed for that target.

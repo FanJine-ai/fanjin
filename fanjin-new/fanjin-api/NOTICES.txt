@@ -1,0 +1,1 @@
+Historical dependency metadata has been replaced by THIRD_PARTY_NOTICES.md and the exact installed license texts in third_party/dependencies/index.json. Original Toonflow attribution and historical terms remain in third_party/toonflow/.

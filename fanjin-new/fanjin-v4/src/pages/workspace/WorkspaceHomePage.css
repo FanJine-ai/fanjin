@@ -1,0 +1,275 @@
+.workspaceHomePage {
+  gap: 24px;
+}
+.workspaceHomeActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.workspaceHomeActions > button {
+  min-height: var(--cui-control-height);
+  border-radius: var(--cui-radius-md);
+}
+.workspaceHomeToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.workspaceHomeToolbar > span {
+  color: var(--cui-text-muted);
+  font-size: 13px;
+}
+.workspaceTimeRange {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--cui-border-subtle);
+  border-radius: 999px;
+  background: var(--cui-surface-subtle);
+}
+.workspaceTimeRange button {
+  min-height: 32px;
+  min-width: 64px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--cui-text-muted);
+  font-size: 12px;
+}
+.workspaceTimeRange button[aria-pressed="true"] {
+  background: var(--cui-surface);
+  color: var(--cui-selected-text);
+  box-shadow: var(--cui-shadow-card);
+}
+.workspaceTimeRange button:hover {
+  color: var(--cui-accent);
+}
+.workspaceMetricGrid,
+.workspaceShortcutGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.workspaceMetricGrid [data-slot="card"] {
+  --card-spacing: 20px;
+  gap: 12px;
+}
+.workspaceMetricGrid [data-slot="card-content"] > div {
+  color: var(--cui-text);
+  font-size: clamp(24px, 2vw, 30px);
+  font-weight: 650;
+  letter-spacing: -0.035em;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.workspaceMetricGrid [data-slot="card-header"] > svg {
+  color: var(--cui-accent);
+}
+.workspaceMetricGrid [data-slot="card-title"] {
+  color: var(--cui-text-muted);
+  font-size: 13px;
+  font-weight: 500;
+}
+.workspaceOverviewCharts {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 20px;
+}
+.workspaceChartPanel {
+  min-width: 0;
+  --card-spacing: 22px;
+  gap: 18px;
+}
+.workspaceChartPanel [data-slot="card-title"] {
+  font-weight: 600;
+}
+.workspaceChartPanel [data-slot="card-description"] {
+  font-size: 12px;
+  margin-top: 3px;
+}
+.workspaceChartPanel [data-slot="card-content"] {
+  min-width: 0;
+}
+.workspaceChart {
+  width: 100%;
+  height: 230px;
+  aspect-ratio: auto;
+}
+.workspaceChartRanking {
+  height: 260px;
+}
+.workspaceChartLegend {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+  color: var(--cui-text-faint);
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+.workspaceChartLegend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.workspaceChartLegend i {
+  width: 16px;
+  border-top: 2px solid var(--cui-chart-request);
+}
+.workspaceChartLegend i[data-series="success"] {
+  border-color: var(--cui-chart-success);
+  border-top-style: dashed;
+}
+.workspaceChartLegend i[data-series="errors"] {
+  border-color: var(--cui-chart-error);
+  border-top-style: dotted;
+}
+.workspaceDistribution {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  min-height: 260px;
+}
+.workspaceDonut {
+  flex: 0 0 44%;
+  min-width: 0;
+  height: 220px;
+  aspect-ratio: auto;
+}
+.workspaceDistributionLegend {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+  gap: 18px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.workspaceDistributionLegend li {
+  display: grid;
+  grid-template-columns: 8px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--cui-text-muted);
+}
+.workspaceDistributionLegend i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+.workspaceDistributionLegend span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.workspaceDistributionLegend strong {
+  font-weight: 550;
+  color: var(--cui-text);
+  font-variant-numeric: tabular-nums;
+}
+.workspaceChartEmpty {
+  display: grid;
+  min-height: 260px;
+  place-content: center;
+  justify-items: center;
+  gap: 8px;
+  color: var(--cui-text-faint);
+  font-size: 12px;
+}
+.workspaceChartEmpty strong {
+  color: var(--cui-text-muted);
+  font-weight: 500;
+}
+.workspaceShortcutGrid button {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  align-items: center;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid var(--cui-border);
+  border-radius: 18px;
+  background: var(--cui-surface);
+  color: var(--cui-text);
+  text-align: left;
+}
+.workspaceShortcutGrid button > svg {
+  color: var(--cui-accent);
+  flex: 0 0 auto;
+}
+.workspaceShortcutGrid button > span {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+  font-size: 13px;
+}
+.workspaceShortcutGrid button small {
+  color: var(--cui-text-faint);
+  font-size: 12px;
+}
+.workspaceShortcutGrid button:hover {
+  border-color: var(--cui-border-strong);
+  background: var(--cui-surface-subtle);
+}
+.workspaceShortcutGrid button > svg:last-child {
+  margin-left: auto;
+  color: var(--cui-text-faint);
+}
+@media (max-width: 1180px) {
+  .workspaceOverviewCharts {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .workspaceMetricGrid,
+  .workspaceShortcutGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .workspaceHomePage {
+    gap: 16px;
+  }
+  .workspaceHomeActions {
+    width: 100%;
+  }
+  .workspaceHomeActions > button {
+    flex: 1;
+  }
+  .workspaceMetricGrid {
+    gap: 10px;
+  }
+  .workspaceMetricGrid [data-slot="card"] {
+    --card-spacing: 14px;
+  }
+  .workspaceMetricGrid [data-slot="card-content"] > div {
+    font-size: 23px;
+  }
+  .workspaceChartPanel {
+    --card-spacing: 16px;
+  }
+  .workspaceChart,
+  .workspaceChartRanking {
+    height: 230px;
+  }
+  .workspaceDonut {
+    height: 180px;
+  }
+  .workspaceDistribution {
+    min-height: 230px;
+    gap: 6px;
+  }
+  .workspaceDistributionLegend {
+    gap: 14px;
+  }
+  .workspaceDistributionLegend li {
+    font-size: 11px;
+    gap: 5px;
+  }
+  .workspaceShortcutGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+}

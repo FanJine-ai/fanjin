@@ -1,0 +1,176 @@
+.operationsPage {
+  display: grid;
+  min-width: 0;
+  gap: var(--cui-space-3);
+}
+
+.operationsRuntimeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-block: 1px solid var(--cui-border);
+}
+
+.operationsRuntimeCard {
+  display: grid;
+  min-width: 0;
+  align-content: start;
+  gap: var(--cui-space-3);
+  padding: 12px 14px;
+}
+
+.operationsRuntimeCard + .operationsRuntimeCard {
+  border-left: 1px solid var(--cui-border);
+}
+
+.operationsRuntimeCard header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: var(--cui-space-2);
+}
+
+.operationsRuntimeIcon {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-sm);
+  color: var(--cui-accent);
+}
+
+.operationsRuntimeCard h3,
+.operationsRuntimeCard p {
+  margin: 0;
+}
+
+.operationsRuntimeCard h3 {
+  color: var(--cui-text);
+  font-size: 13px;
+  font-weight: 680;
+}
+
+.operationsRuntimeCard header p,
+.operationsRuntimeDetail {
+  color: var(--cui-text-faint);
+  font-size: 11.5px;
+  line-height: 1.5;
+}
+
+.operationsRuntimeDetail {
+  min-height: 34px;
+}
+
+.operationsRuntimeCard > .cuiButton {
+  width: max-content;
+  justify-self: end;
+}
+
+.operationsProviderTable {
+  border-radius: 0;
+}
+
+.operationsProviderTable table {
+  min-width: 920px;
+  font-size: 12px;
+}
+
+.operationsPrimary {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.operationsPrimary strong,
+.operationsPrimary span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.operationsPrimary strong {
+  color: var(--cui-text);
+  font-size: 12.5px;
+  font-weight: 650;
+}
+
+.operationsPrimary span {
+  color: var(--cui-text-faint);
+  font-size: 11.5px;
+}
+
+.operationsQuickLinks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-block: 1px solid var(--cui-border);
+}
+
+.operationsQuickLinks button {
+  display: grid;
+  min-height: 64px;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--cui-space-2);
+  padding: 10px 14px;
+  border: 0;
+  background: transparent;
+  color: var(--cui-text-muted);
+  cursor: pointer;
+  text-align: left;
+  transition: background-color var(--cui-motion-fast), color var(--cui-motion-fast);
+}
+
+.operationsQuickLinks button + button {
+  border-left: 1px solid var(--cui-border);
+}
+
+.operationsQuickLinks button:hover {
+  background: var(--cui-control-hover);
+  color: var(--cui-text);
+}
+
+.operationsQuickLinks button:focus-visible {
+  outline: 2px solid var(--cui-focus);
+  outline-offset: -2px;
+}
+
+.operationsQuickLinks span {
+  display: grid;
+  gap: 2px;
+}
+
+.operationsQuickLinks strong {
+  color: var(--cui-text);
+  font-size: 12.5px;
+  font-weight: 650;
+}
+
+.operationsQuickLinks small {
+  color: var(--cui-text-faint);
+  font-size: 11.5px;
+}
+
+@media (max-width: 980px) {
+  .operationsRuntimeGrid,
+  .operationsQuickLinks {
+    grid-template-columns: 1fr;
+  }
+
+  .operationsRuntimeCard + .operationsRuntimeCard,
+  .operationsQuickLinks button + button {
+    border-top: 1px solid var(--cui-border);
+    border-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .operationsQuickLinks button {
+    transition: none;
+  }
+}
+
+/* 0.2.6 workbench alignment */
+
+.consoleWorkbench .operationsRuntimeGrid { gap: 16px; border: 0; }
+.consoleWorkbench .operationsRuntimeCard { padding: 20px; border: 1px solid var(--cui-border); border-radius: var(--cui-radius-lg); background: var(--cui-surface); box-shadow: var(--cui-shadow-card); }
+.consoleWorkbench .operationsRuntimeIcon { width: 36px; height: 36px; border-radius: var(--cui-radius-md); background: var(--cui-selected-bg); }

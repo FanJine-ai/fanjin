@@ -1,0 +1,129 @@
+.studioModeSwitcher {
+  --studio-switcher-text: var(--text-200, var(--ps-text-200, #536575));
+  --studio-switcher-active: var(--accent-strong, var(--ps-accent-strong, #00668c));
+  --studio-switcher-line: var(--line, var(--ps-line, rgba(23, 33, 43, 0.1)));
+  --studio-switcher-surface: var(--surface-strong, var(--ps-surface-strong, rgba(255, 255, 255, 0.94)));
+  --studio-switcher-hover: var(--hover, var(--ps-hover, rgba(212, 234, 247, 0.68)));
+  --studio-switcher-size: clamp(40px, calc(34px + 0.7vw), 44px);
+  --studio-switcher-gap: clamp(1px, 0.18vw, 2px);
+  position: relative;
+  display: inline-grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  width: calc(
+    var(--studio-switcher-size) + var(--studio-switcher-size) + var(--studio-switcher-size)
+    + var(--studio-switcher-gap) + var(--studio-switcher-gap) + 4px
+  );
+  max-width: 100%;
+  min-width: 0;
+  gap: var(--studio-switcher-gap);
+  padding: 2px;
+  border: 1px solid var(--studio-switcher-line);
+  border-radius: 13px;
+  background: color-mix(in srgb, var(--studio-switcher-surface) 92%, transparent);
+  box-shadow: 0 9px 24px rgba(21, 40, 54, 0.08);
+  backdrop-filter: blur(16px);
+}
+
+.studioModeSwitcher button {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  min-height: 0;
+  aspect-ratio: 1;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--studio-switcher-text);
+  cursor: pointer;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease,
+    box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.studioModeSwitcher button > svg {
+  width: clamp(17px, calc(15px + 0.35vw), 20px);
+  height: clamp(17px, calc(15px + 0.35vw), 20px);
+}
+
+[data-project-theme="dark"] .studioModeSwitcher,
+.themeDark .studioModeSwitcher {
+  --studio-switcher-text: #b8c8d1;
+  --studio-switcher-active: #8ed5f6;
+  --studio-switcher-line: rgba(214, 235, 246, 0.13);
+  --studio-switcher-surface: rgba(24, 34, 39, 0.96);
+  --studio-switcher-hover: rgba(113, 196, 239, 0.15);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+}
+
+.studioModeSwitcher button:hover {
+  background: var(--studio-switcher-hover);
+  color: var(--studio-switcher-active);
+}
+
+.studioModeSwitcher button:active {
+  transform: scale(0.96);
+}
+
+.studioModeSwitcher button.active {
+  border-color: color-mix(in srgb, var(--studio-switcher-active) 24%, transparent);
+  background: var(--studio-switcher-hover);
+  color: var(--studio-switcher-active);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.42);
+}
+
+.studioModeSwitcher button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--studio-switcher-active) 30%, transparent);
+  outline-offset: 2px;
+}
+
+.studioModeSwitcherLabel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.studioModeSwitcher button[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  z-index: 120;
+  padding: 5px 8px;
+  border: 1px solid var(--studio-switcher-line);
+  border-radius: 7px;
+  background: var(--studio-switcher-surface);
+  color: var(--studio-switcher-text);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -3px);
+  transition: opacity 140ms ease, transform 140ms ease;
+  white-space: nowrap;
+}
+
+.studioModeSwitcher button[data-tooltip]:hover::after,
+.studioModeSwitcher button[data-tooltip]:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .studioModeSwitcher button,
+  .studioModeSwitcher button[data-tooltip]::after {
+    transition-duration: 0.01ms !important;
+  }
+}

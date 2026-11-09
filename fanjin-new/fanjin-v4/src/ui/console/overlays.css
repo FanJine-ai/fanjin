@@ -1,0 +1,572 @@
+.consoleOverlayRoot {
+  position: fixed;
+  inset: 0;
+  z-index: var(--cui-layer-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  background: var(--cui-overlay);
+  color: var(--cui-text);
+  animation: consoleOverlayFadeIn var(--cui-duration-normal) ease-out;
+}
+
+.consoleOverlayRoot[data-backdrop="none"] {
+  background: transparent;
+  pointer-events: none;
+}
+
+.consoleOverlayRoot[data-backdrop="none"] .consoleOverlayPanel {
+  pointer-events: auto;
+}
+
+.consoleOverlayPanel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  max-height: min(88dvh, 920px);
+  overflow: hidden;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+  outline: none;
+  background: var(--cui-surface);
+  animation: consoleOverlayPanelIn var(--cui-duration-normal) ease-out;
+}
+
+.consoleDialogPanel { box-shadow: var(--cui-shadow-dialog); }
+.consoleDialogPanel[data-size="sm"] { width: min(100%, 400px); }
+.consoleDialogPanel[data-size="md"] { width: min(100%, 560px); }
+.consoleDialogPanel[data-size="lg"] { width: min(100%, 720px); }
+.consoleDialogPanel[data-size="xl"] { width: min(100%, 960px); }
+
+.consoleOverlayRoot-drawer {
+  align-items: stretch;
+  justify-content: flex-end;
+  padding: 0;
+}
+
+.consoleDrawerPanel {
+  width: min(100%, var(--cui-overlay-size, 520px));
+  height: 100dvh;
+  max-height: none;
+  border-radius: 0;
+  box-shadow: var(--cui-shadow-drawer);
+  animation-name: consoleDrawerRightIn;
+}
+
+.consoleDrawerPanel[data-side="left"] {
+  margin-right: auto;
+  animation-name: consoleDrawerLeftIn;
+}
+
+.consoleDrawerPanel[data-side="bottom"] {
+  align-self: flex-end;
+  width: 100%;
+  height: min(82dvh, var(--cui-overlay-size, 720px));
+  margin-top: auto;
+  border-radius: var(--cui-radius-lg) var(--cui-radius-lg) 0 0;
+  animation-name: consoleDrawerBottomIn;
+}
+
+.consoleOverlayHeader,
+.consoleOverlayFooter {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  background: var(--cui-surface);
+}
+
+.consoleOverlayHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--cui-border);
+}
+
+.consoleOverlayHeading {
+  min-width: 0;
+}
+
+.consoleOverlayHeading h2,
+.consoleOverlayGuardCopy h2 {
+  margin: 0;
+  color: var(--cui-text);
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.consoleOverlayHeading p,
+.consoleOverlayGuardCopy p {
+  max-width: 68ch;
+  margin: 4px 0 0;
+  color: var(--cui-text-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.consoleOverlayClose {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin: -4px -4px -4px 0;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--cui-radius-md);
+  background: transparent;
+  color: var(--cui-text-muted);
+  cursor: pointer;
+  transition: background-color var(--cui-duration-normal) ease, color var(--cui-duration-normal) ease, border-color var(--cui-duration-normal) ease;
+}
+
+.consoleOverlayClose:hover:not(:disabled) {
+  border-color: var(--cui-border);
+  background: var(--cui-surface-subtle);
+  color: var(--cui-text);
+}
+
+.consoleOverlayClose:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+.consoleOverlayContent {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 12px 14px;
+  scrollbar-gutter: stable;
+}
+
+.consoleOverlayFooter {
+  padding: 9px 14px;
+  border-top: 1px solid var(--cui-border);
+}
+
+.consoleOverlayActionRow,
+.consoleOverlayGuardActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.consoleOverlayClose:focus-visible,
+.consoleSwitchControl:focus-visible,
+.consoleNumberInput button:focus-visible,
+.consoleNumberInput input:focus-visible,
+.consoleCodeEditor textarea:focus-visible,
+.consoleFormField :is(input, textarea, select):focus-visible {
+  outline: 3px solid var(--cui-focus);
+  outline-offset: 2px;
+}
+
+.consoleOverlayGuardBackdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: var(--cui-overlay);
+}
+
+.consoleOverlayGuardPanel {
+  width: min(100%, 420px);
+  padding: 14px;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+  outline: none;
+  background: var(--cui-surface);
+  box-shadow: var(--cui-shadow-dialog);
+}
+
+.consoleOverlayGuardActions {
+  margin-top: 12px;
+}
+
+.consoleFormField {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  color: var(--cui-text);
+}
+
+.consoleFieldLabel {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  color: var(--cui-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.consoleFieldRequired,
+.consoleFieldError {
+  color: var(--cui-danger-text);
+}
+
+.consoleFieldOptional {
+  margin-left: auto;
+  color: var(--cui-text-faint);
+  font-size: 11.5px;
+  font-weight: 500;
+}
+
+.consoleFieldHelp,
+.consoleFieldError,
+.consoleFieldGroupDescription {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.consoleFieldHelp,
+.consoleFieldGroupDescription {
+  color: var(--cui-text-muted);
+}
+
+.consoleFieldError {
+  font-weight: 620;
+}
+
+.consoleFormField > :is(input, textarea, select),
+.consoleCodeEditor textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: var(--cui-control-height);
+  padding: 6px 9px;
+  border: 1px solid var(--cui-control-border);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-control-bg);
+  color: var(--cui-text);
+  font: inherit;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.consoleFormFieldInvalid > :is(input, textarea, select) {
+  border-color: var(--cui-danger-border);
+}
+
+.consoleFormFieldDisabled,
+.consoleSwitchFieldDisabled,
+.consoleNumberInputDisabled {
+  opacity: 0.56;
+}
+
+.consoleFieldGroup {
+  min-width: 0;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+}
+
+.consoleFieldGroup legend {
+  padding: 0 6px;
+  color: var(--cui-text);
+  font-size: 12.5px;
+  font-weight: 650;
+}
+
+.consoleFieldGroup--section {
+  padding: 10px 0 0;
+  border-width: 1px 0 0;
+  border-radius: 0;
+}
+
+.consoleFieldGroup--section legend {
+  padding: 0 8px 0 0;
+}
+
+.consoleFieldGroup--plain {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+}
+
+.consoleFieldGroup--plain legend {
+  padding: 0;
+}
+
+.consoleFieldGroupDescription {
+  margin: 0 0 10px;
+}
+
+.consoleFieldGroupContent {
+  display: grid;
+  gap: 8px;
+}
+
+.consoleSwitchField {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+
+.consoleSwitchControl {
+  position: relative;
+  flex: 0 0 auto;
+  width: 44px;
+  height: var(--cui-control-height);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--cui-text);
+  cursor: pointer;
+}
+
+.consoleSwitchControl::before {
+  content: "";
+  position: absolute;
+  inset: 6px 2px;
+  border: 1px solid var(--cui-control-border);
+  border-radius: 999px;
+  background: var(--cui-surface-subtle);
+  transition: background-color var(--cui-duration-normal) ease, border-color var(--cui-duration-normal) ease;
+}
+
+.consoleSwitchControl[aria-checked="true"]::before {
+  border-color: var(--cui-accent);
+  background: var(--cui-accent);
+}
+
+.consoleSwitchThumb {
+  position: absolute;
+  top: 9px;
+  left: 5px;
+  z-index: 1;
+  display: block;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--cui-control-border);
+  border-radius: 50%;
+  background: var(--cui-surface);
+  transform: translateX(0);
+  transition: transform var(--cui-duration-normal) ease;
+}
+
+.consoleSwitchControl[aria-checked="true"] .consoleSwitchThumb {
+  transform: translateX(16px);
+}
+
+.consoleSwitchCopy {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+  padding-top: 5px;
+}
+
+.consoleSwitchCopy label {
+  color: var(--cui-text);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.consoleSwitchCopy p {
+  margin: 0;
+  color: var(--cui-text-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.consoleNumberInput {
+  display: grid;
+  grid-template-columns: var(--cui-control-height) minmax(0, 1fr) var(--cui-control-height);
+  min-width: 0;
+  min-height: var(--cui-control-height);
+  overflow: hidden;
+  border: 1px solid var(--cui-control-border);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-control-bg);
+  font-size: 12px;
+}
+
+.consoleNumberInput input,
+.consoleNumberInput button {
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: var(--cui-text);
+  font: inherit;
+}
+
+.consoleNumberInput input {
+  width: 100%;
+  padding: 8px 10px;
+  text-align: center;
+  appearance: textfield;
+}
+
+.consoleNumberInput input::-webkit-inner-spin-button,
+.consoleNumberInput input::-webkit-outer-spin-button {
+  margin: 0;
+  appearance: none;
+}
+
+.consoleNumberInput button {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.consoleNumberInput button:first-child { border-right: 1px solid var(--cui-border); }
+.consoleNumberInput button:last-child { border-left: 1px solid var(--cui-border); }
+.consoleNumberInput button:hover:not(:disabled) { background: var(--cui-surface-subtle); }
+.consoleNumberInput button:disabled { cursor: not-allowed; opacity: 0.38; }
+
+.consoleCodeEditor {
+  position: relative;
+  min-width: 0;
+}
+
+.consoleCodeEditor textarea {
+  min-height: calc(var(--cui-code-min-rows, 8) * 1.5em + 20px);
+  padding-top: 30px;
+  resize: vertical;
+  font-family: var(--cui-font-mono);
+  font-size: 12px;
+  line-height: 1.5;
+  tab-size: 2;
+}
+
+.consoleCodeLanguage {
+  position: absolute;
+  top: 7px;
+  right: 8px;
+  z-index: 1;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--cui-surface-subtle);
+  color: var(--cui-text-faint);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.4;
+  pointer-events: none;
+}
+
+@media (max-width: 767px) {
+  .consoleOverlayRoot {
+    align-items: stretch;
+    padding: 0;
+  }
+
+  .consoleDialogPanel,
+  .consoleDrawerPanel,
+  .consoleDrawerPanel[data-side="bottom"] {
+    width: 100%;
+    height: 100dvh;
+    max-height: none;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .consoleOverlayHeader {
+    padding: max(14px, env(safe-area-inset-top)) 16px 14px;
+  }
+
+  .consoleOverlayClose {
+    width: var(--cui-touch-target);
+    height: var(--cui-touch-target);
+    margin: -8px -8px -8px 0;
+  }
+
+  .consoleOverlayContent {
+    padding: 16px;
+  }
+
+  .consoleFormField > :is(input, textarea, select),
+  .consoleCodeEditor textarea {
+    min-height: var(--cui-touch-target);
+    font-size: 16px;
+  }
+
+  .consoleNumberInput {
+    grid-template-columns: var(--cui-touch-target) minmax(0, 1fr) var(--cui-touch-target);
+    min-height: var(--cui-touch-target);
+    font-size: 16px;
+  }
+
+  .consoleSwitchControl {
+    width: 52px;
+    height: var(--cui-touch-target);
+  }
+
+  .consoleSwitchControl::before {
+    inset: 8px 2px;
+  }
+
+  .consoleSwitchThumb {
+    top: 12px;
+    left: 6px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .consoleSwitchControl[aria-checked="true"] .consoleSwitchThumb {
+    transform: translateX(20px);
+  }
+
+  .consoleSwitchCopy {
+    padding-top: 8px;
+  }
+
+  .consoleOverlayFooter {
+    padding: 12px 16px max(12px, env(safe-area-inset-bottom));
+  }
+
+  .consoleOverlayActionRow > .cuiButton,
+  .consoleOverlayGuardActions > .cuiButton {
+    flex: 1 1 140px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .consoleOverlayRoot,
+  .consoleOverlayPanel {
+    animation-duration: 1ms;
+    animation-iteration-count: 1;
+  }
+
+  .consoleOverlayClose,
+  .consoleSwitchControl,
+  .consoleSwitchThumb {
+    transition-duration: 1ms;
+  }
+}
+
+@keyframes consoleOverlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes consoleOverlayPanelIn {
+  from { opacity: 0; transform: translateY(10px) scale(0.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes consoleDrawerRightIn {
+  from { transform: translateX(24px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes consoleDrawerLeftIn {
+  from { transform: translateX(-24px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes consoleDrawerBottomIn {
+  from { transform: translateY(24px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

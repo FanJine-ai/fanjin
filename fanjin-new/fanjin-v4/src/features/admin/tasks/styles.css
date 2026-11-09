@@ -1,0 +1,290 @@
+.adminTasksPage {
+  display: grid;
+  min-width: 0;
+  gap: var(--cui-space-3);
+  color: var(--cui-text);
+}
+
+.adminTasksPage > .consoleMetricStrip {
+  border-bottom: 0;
+}
+
+.adminTasksPage > .consoleMetricStrip dl {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.adminTasksPage > .consoleMetricStrip .consoleMetricStrip__item {
+  display: grid;
+  min-height: 52px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-content: center;
+  align-items: center;
+  gap: 2px var(--cui-space-2);
+  padding: 7px 12px;
+}
+
+.adminTasksPage > .consoleMetricStrip .consoleMetricStrip__item dt {
+  grid-column: 1;
+  font-size: 11.5px;
+}
+
+.adminTasksPage > .consoleMetricStrip .consoleMetricStrip__item dd {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  margin: 0;
+}
+
+.adminTasksPage > .consoleMetricStrip .consoleMetricStrip__value {
+  font-size: 16px;
+  font-weight: 720;
+}
+
+.adminTasksPage > .consoleMetricStrip .consoleMetricStrip__hint {
+  grid-column: 1;
+  margin-top: 0;
+  font-size: 11.5px;
+}
+
+.adminTasksWorkbench {
+  min-width: 0;
+  overflow: hidden;
+  border-block: 1px solid var(--cui-border);
+  border-inline: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.adminTasksWorkbench > .consoleFilterBar {
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--cui-border-subtle);
+  border-radius: 0;
+  background: transparent;
+}
+
+.adminTasksWorkbench > .consoleDataTable {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.adminTasksWorkbench .consoleDataTable table {
+  min-width: 980px;
+  font-size: 12px;
+}
+
+.adminTasksWorkbench .consoleDataTable th {
+  height: 38px;
+  font-size: 11.5px;
+}
+
+.adminTasksWorkbench .consoleDataTable th button {
+  min-height: 38px;
+}
+
+.adminTasksWorkbench .consoleDataTable td {
+  height: 36px;
+  padding-block: 4px;
+}
+
+.adminTasksField {
+  display: grid;
+  flex: 0 1 180px;
+  min-width: min(100%, 156px);
+  gap: var(--cui-space-1);
+  color: var(--cui-text-muted);
+  font-size: 11.5px;
+  font-weight: 650;
+}
+
+.adminTasksField--keyword {
+  flex: 1 1 260px;
+  min-width: min(100%, 220px);
+}
+
+.adminTasksActions,
+.adminTasksDrawerActions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--cui-space-2);
+}
+
+.adminTasksDrawerActions {
+  justify-content: flex-end;
+}
+
+.adminTasksIdentity {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.adminTasksIdentity strong,
+.adminTasksIdentity code {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.adminTasksIdentity strong {
+  color: var(--cui-text);
+  font-size: 12.5px;
+  font-weight: 650;
+}
+
+.adminTasksIdentity code,
+.adminTasksCode {
+  font-family: var(--cui-font-mono);
+}
+
+.adminTasksIdentity code,
+.adminTasksMuted {
+  color: var(--cui-text-faint);
+  font-size: 11.5px;
+}
+
+.adminTasksDetail {
+  display: grid;
+}
+
+.adminTasksDetail section {
+  display: grid;
+  gap: var(--cui-space-2);
+  padding-block: var(--cui-space-3);
+}
+
+.adminTasksDetail section:first-child {
+  padding-top: 0;
+}
+
+.adminTasksDetail section:last-child {
+  padding-bottom: 0;
+}
+
+.adminTasksDetail section + section {
+  border-top: 1px solid var(--cui-border);
+}
+
+.adminTasksDetail h3 {
+  margin: 0;
+  color: var(--cui-text);
+  font-size: 13px;
+  font-weight: 680;
+}
+
+.adminTasksDetailList {
+  display: grid;
+  margin: 0;
+}
+
+.adminTasksDetailList > div {
+  display: grid;
+  min-height: 34px;
+  grid-template-columns: minmax(120px, .38fr) minmax(0, 1fr);
+  align-items: start;
+  gap: var(--cui-space-3);
+  padding: 7px 0;
+}
+
+.adminTasksDetailList > div + div {
+  border-top: 1px solid var(--cui-border);
+}
+
+.adminTasksDetail dt {
+  color: var(--cui-text-faint);
+  font-size: 11.5px;
+  font-weight: 650;
+}
+
+.adminTasksDetail dd {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: var(--cui-text);
+  font-size: 12px;
+}
+
+.adminTasksStatusValue,
+.adminTasksFailureHeading {
+  display: flex;
+  align-items: center;
+  gap: var(--cui-space-2);
+}
+
+.adminTasksCode {
+  max-height: 280px;
+  margin: 0;
+  padding: var(--cui-space-3);
+  overflow: auto;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-sm);
+  background: var(--cui-control-bg);
+  color: var(--cui-text);
+  font-size: 12px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.adminTasksFailureSection {
+  color: var(--cui-danger-text);
+}
+
+.adminTasksFailureHeading h3 {
+  color: inherit;
+}
+
+.adminTasksFailureSection p {
+  margin: 0;
+  color: var(--cui-text);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+@media (min-width: 1024px) {
+  .adminTasksWorkbench .consoleFilterBar__fields {
+    display: grid;
+    grid-template-columns: minmax(260px, 1.5fr) minmax(140px, .8fr) repeat(2, minmax(150px, .8fr));
+  }
+
+  .adminTasksWorkbench .consoleFilterBar__fields > * {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .adminTasksPage > .consoleMetricStrip dl {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .adminTasksField,
+  .adminTasksField--keyword {
+    min-width: 100%;
+  }
+
+  .adminTasksActions,
+  .adminTasksDrawerActions {
+    width: 100%;
+  }
+
+  .adminTasksActions > *,
+  .adminTasksDrawerActions > * {
+    flex: 1 1 auto;
+  }
+
+  .adminTasksDetailList > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--cui-space-1);
+    padding-block: var(--cui-space-3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .adminTasksPage * {
+    scroll-behavior: auto;
+  }
+}
+
+.consoleWorkbench .adminTasksWorkbench { display: grid; gap: 18px; border: 0; overflow: visible; }

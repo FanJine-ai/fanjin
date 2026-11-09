@@ -1,0 +1,1383 @@
+.releasePage {
+  display: grid;
+  min-width: 0;
+  gap: var(--cui-space-3);
+}
+
+.releaseControlModule {
+  display: grid;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-lg);
+  background: var(--cui-surface);
+}
+
+.releaseControlModule__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cui-space-3);
+  padding: var(--cui-space-3) var(--cui-space-4);
+  border-bottom: 1px solid var(--cui-border-subtle);
+  background: var(--cui-info-bg);
+}
+
+.releaseControlModule__identity {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: var(--cui-space-3);
+}
+
+.releaseControlModule__identity > div {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+}
+
+.releaseControlModule__identity h2,
+.releaseControlModule__identity p {
+  margin: 0;
+}
+
+.releaseControlModule__identity h2 {
+  color: var(--cui-text);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.releaseControlModule__identity p {
+  color: var(--cui-text-muted);
+  font-size: 11.5px;
+  line-height: 1.45;
+}
+
+.releaseControlModule__icon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid var(--cui-info-border);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-surface);
+  color: var(--cui-accent);
+}
+
+.releaseControlModule__frame {
+  min-height: 720px;
+  background: var(--cui-bg);
+}
+
+.releaseControlModule__frame iframe {
+  display: block;
+  width: 100%;
+  height: min(860px, calc(100vh - 180px));
+  min-height: 720px;
+  border: 0;
+  background: var(--cui-bg);
+}
+
+@media (max-width: 760px) {
+  .releaseControlModule__heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .releaseControlModule__frame,
+  .releaseControlModule__frame iframe {
+    min-height: 680px;
+  }
+}
+
+.releaseData {
+  min-width: 0;
+  overflow: hidden;
+  border-block: 1px solid var(--cui-border);
+}
+
+.releaseData > .consoleFilterBar {
+  border-bottom: 1px solid var(--cui-border-subtle);
+  border-radius: 0;
+  background: transparent;
+}
+
+.releaseFilter {
+  display: flex;
+  min-width: 190px;
+  align-items: center;
+  gap: var(--cui-space-2);
+  color: var(--cui-text-muted);
+  font-size: 11.5px;
+  font-weight: 620;
+  white-space: nowrap;
+}
+
+.releaseFilter > :is(.cuiInputFrame, .cuiSelect) {
+  min-width: 0;
+  flex: 1;
+}
+
+.releaseFilterSearch {
+  min-width: 300px;
+  flex: 1 1 380px;
+}
+
+.releaseFilterActions,
+.releaseRowActions,
+.releaseDialogFooter > div:last-child,
+.releaseDrawerFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--cui-space-2);
+}
+
+.releaseTable {
+  border: 0;
+  border-radius: 0;
+}
+
+.releaseTable table {
+  min-width: 1120px;
+  font-size: 12px;
+}
+
+.releasePrimary {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.releasePrimary strong,
+.releasePrimary span,
+.releaseSummary {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.releasePrimary strong {
+  color: var(--cui-text);
+  font-family: var(--cui-font-mono);
+  font-size: 12.5px;
+  font-weight: 680;
+}
+
+.releasePrimary span,
+.releaseMuted {
+  color: var(--cui-text-faint);
+  font-size: 11px;
+}
+
+.releaseSummary {
+  display: block;
+  max-width: 420px;
+  color: var(--cui-text-muted);
+}
+
+.releaseForm,
+.releaseDetail,
+.releaseDialogFooter {
+  display: grid;
+  gap: var(--cui-space-4);
+}
+
+.releaseForm textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+.releaseDialogFooter > .cuiAlert {
+  width: 100%;
+}
+
+.releaseDrawerFooter {
+  flex-wrap: wrap;
+}
+
+.releaseNotes {
+  display: grid;
+  gap: var(--cui-space-2);
+  padding-top: var(--cui-space-4);
+  border-top: 1px solid var(--cui-border-subtle);
+}
+
+.releaseNotes h3 {
+  margin: 0;
+  color: var(--cui-text);
+  font-size: 13px;
+  font-weight: 680;
+}
+
+.releaseNotes pre {
+  margin: 0;
+  padding: var(--cui-space-3);
+  overflow-wrap: anywhere;
+  border: 1px solid var(--cui-border-subtle);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-surface-subtle);
+  color: var(--cui-text-muted);
+  font: inherit;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
+.releaseActivity {
+  display: grid;
+  min-width: 0;
+  gap: var(--cui-space-3);
+  padding: var(--cui-space-4);
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-lg);
+  background: var(--cui-surface);
+}
+
+.releaseActivity__heading,
+.releaseSectionHeading,
+.releaseDeploymentOverview__head,
+.releaseDeploymentTarget__head,
+.releaseArtifactSummary__head,
+.releaseExistingArtifactSummary,
+.releaseArtifactVerification,
+.releaseActivityCard,
+.releaseActivityCard__title,
+.releaseActivityCard__progress > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cui-space-3);
+}
+
+.releaseActivity__heading h2,
+.releaseSectionHeading h3,
+.releaseDeploymentOverview h3 {
+  margin: 0;
+  color: var(--cui-text);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.releaseActivity__heading p,
+.releaseSectionHeading p {
+  margin: 3px 0 0;
+  color: var(--cui-text-faint);
+  font-size: 11.5px;
+  line-height: 1.45;
+}
+
+.releaseLiveRefresh,
+.releaseBusyLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cui-space-1);
+  color: var(--cui-text-faint);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.releaseActivityCard {
+  min-width: 0;
+  padding: var(--cui-space-3);
+  border: 1px solid var(--cui-border-subtle);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-surface-subtle);
+}
+
+.releaseActivityCard.is-active {
+  border-color: var(--cui-info-border);
+  background: var(--cui-info-bg);
+}
+
+.releaseActivityCard__main {
+  display: flex;
+  min-width: 260px;
+  align-items: center;
+  gap: var(--cui-space-3);
+}
+
+.releaseActivityCard__main > div,
+.releaseExistingArtifactSummary > div,
+.releaseArtifactSummary__head > div,
+.releaseArtifactVerification > div {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.releaseActivityCard__icon,
+.releaseArtifactSummary__icon,
+.releaseDeploymentOverview__icon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-surface);
+  color: var(--cui-accent);
+}
+
+.releaseActivityCard__title {
+  justify-content: flex-start;
+  gap: var(--cui-space-2);
+}
+
+.releaseActivityCard__title strong {
+  color: var(--cui-text);
+  font-family: var(--cui-font-mono);
+  font-size: 13px;
+}
+
+.releaseActivityCard__main > div > span,
+.releaseActivityCard__main small,
+.releaseActivityEmpty span,
+.releaseExistingArtifactSummary span,
+.releaseArtifactVerification span,
+.releaseArtifactSummary__head span {
+  overflow: hidden;
+  color: var(--cui-text-faint);
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.releaseActivityCard__main small {
+  font-family: var(--cui-font-mono);
+}
+
+.releaseActivityCard__progress {
+  display: grid;
+  width: min(260px, 28vw);
+  gap: var(--cui-space-2);
+}
+
+.releaseActivityCard__progress span,
+.releaseActivityCard__progress strong {
+  color: var(--cui-text-muted);
+  font-size: 11px;
+}
+
+.releaseDeploymentProgress {
+  position: relative;
+  width: 100%;
+  height: 5px;
+  overflow: hidden;
+  border-radius: var(--cui-radius-pill);
+  background: var(--cui-border);
+}
+
+.releaseDeploymentProgress > span {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: inherit;
+  background: var(--cui-accent);
+  transition: width var(--cui-duration-normal) var(--cui-ease-out);
+}
+
+.releaseActivityEmpty {
+  display: flex;
+  align-items: center;
+  gap: var(--cui-space-3);
+  padding: var(--cui-space-3);
+  border: 1px dashed var(--cui-border);
+  border-radius: var(--cui-radius-md);
+  color: var(--cui-text-faint);
+}
+
+.releaseActivityEmpty > div {
+  display: grid;
+  gap: 2px;
+}
+
+.releaseActivityEmpty strong,
+.releaseExistingArtifactSummary strong,
+.releaseArtifactVerification strong {
+  color: var(--cui-text);
+  font-size: 12px;
+}
+
+.releaseActivity .cuiAlert__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cui-space-3);
+}
+
+.releasePlanDialogContent,
+.releaseDeploymentDrawerContent {
+  min-width: 0;
+}
+
+.releasePlanDialog,
+.releaseDeploymentDetail,
+.releaseDeploymentSkeleton {
+  display: grid;
+  gap: var(--cui-space-4);
+}
+
+.releasePlanSteps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  overflow: hidden;
+  border: 1px solid var(--cui-border-subtle);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-surface-subtle);
+}
+
+.releasePlanSteps > span {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  justify-content: center;
+  gap: var(--cui-space-1);
+  border-right: 1px solid var(--cui-border-subtle);
+  color: var(--cui-text-faint);
+  font-size: 11.5px;
+  font-weight: 650;
+}
+
+.releasePlanSteps > span:last-child {
+  border-right: 0;
+}
+
+.releasePlanSteps > span.is-current {
+  background: var(--cui-surface);
+  color: var(--cui-accent);
+}
+
+.releasePlanSteps > span.is-complete {
+  color: var(--cui-success-text);
+}
+
+.releasePlanDialog > .cuiAlert .cuiAlert__content,
+.releaseDeploymentDetail > .cuiAlert .cuiAlert__content {
+  display: grid;
+  gap: 2px;
+}
+
+.releasePlanDialogFooter {
+  display: grid;
+  width: 100%;
+  gap: var(--cui-space-2);
+}
+
+.releasePlanDialogFooter > div:last-child,
+.releaseCancelFooter,
+.releaseDeploymentDrawerFooter,
+.releaseArtifactActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--cui-space-2);
+}
+
+.releaseMultipartProgress {
+  display: grid;
+  gap: 8px;
+  padding: 12px 14px;
+  border: 1px solid var(--console-border-subtle);
+  border-radius: 12px;
+  background: var(--console-surface-muted);
+}
+
+.releaseMultipartProgress progress {
+  width: 100%;
+  height: 8px;
+  accent-color: var(--cui-accent);
+}
+
+.releaseMultipartProgress span {
+  color: var(--console-text-secondary);
+  font-size: 12px;
+}
+
+.releasePlanDialogFooter > div:first-child:empty {
+  display: none;
+}
+
+.releaseArtifactSection,
+.releasePlanSequence,
+.releaseDeploymentOverview,
+.releaseDeploymentTargets,
+.releaseDeploymentEvents {
+  display: grid;
+  min-width: 0;
+  gap: var(--cui-space-3);
+}
+
+.releaseArtifactSection > .cuiTabs {
+  justify-self: start;
+}
+
+.releaseArtifactForm,
+.releaseExistingArtifact {
+  display: grid;
+  gap: var(--cui-space-3);
+  padding: var(--cui-space-3);
+  border: 1px solid var(--cui-border-subtle);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-surface-subtle);
+}
+
+.releaseArtifactForm textarea,
+.releaseCancelFooter + textarea,
+.releaseDeploymentDrawerContent textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+.releaseArtifactForm textarea {
+  min-height: 220px;
+  font-family: var(--cui-font-mono);
+  font-size: 11.5px;
+  line-height: 1.55;
+  tab-size: 2;
+}
+
+.releaseUploadPickerGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--cui-space-3);
+}
+
+.releaseFilePicker {
+  display: grid;
+  min-height: 82px;
+  align-content: center;
+  gap: 3px;
+  padding: var(--cui-space-3);
+  border: 1px dashed var(--cui-control-border);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-surface);
+  cursor: pointer;
+}
+
+.releaseFilePicker:focus-within {
+  border-color: var(--cui-focus);
+  outline: 2px solid var(--cui-border-strong);
+  outline-offset: 2px;
+}
+
+.releaseFilePicker input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.releaseFilePicker span {
+  overflow: hidden;
+  color: var(--cui-text);
+  font-size: 12px;
+  font-weight: 650;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.releaseFilePicker small {
+  overflow: hidden;
+  color: var(--cui-text-faint);
+  font-family: var(--cui-font-mono);
+  font-size: 10.5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.releaseArtifactSummary,
+.releaseExistingArtifactSummary {
+  display: grid;
+  gap: var(--cui-space-3);
+  padding: var(--cui-space-3);
+  border: 1px solid var(--cui-success-border);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-success-bg);
+}
+
+.releaseArtifactSummary__head > div {
+  flex: 1;
+}
+
+.releaseArtifactSummary__head strong {
+  overflow: hidden;
+  color: var(--cui-text);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.releaseArtifactSummary dl,
+.releaseDeploymentOverview dl {
+  display: grid;
+  margin: 0;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid var(--cui-border-subtle);
+  border-radius: var(--cui-radius-sm);
+  background: var(--cui-border-subtle);
+}
+
+.releaseArtifactSummary dl {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.releaseArtifactSummary dl > div,
+.releaseDeploymentOverview dl > div {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+  padding: var(--cui-space-2);
+  background: var(--cui-surface);
+}
+
+.releaseArtifactSummary dt,
+.releaseDeploymentOverview dt {
+  color: var(--cui-text-faint);
+  font-size: 10.5px;
+}
+
+.releaseArtifactSummary dd,
+.releaseDeploymentOverview dd {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  color: var(--cui-text-muted);
+  font-family: var(--cui-font-mono);
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.releaseArtifactVerification {
+  padding: var(--cui-space-3);
+  border: 1px solid var(--cui-warning-border);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-warning-bg);
+}
+
+.releasePlanPreview {
+  display: grid;
+  gap: var(--cui-space-4);
+}
+
+.releasePlanFacts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-block: 1px solid var(--cui-border);
+}
+
+.releasePlanFacts > div {
+  display: grid;
+  gap: 4px;
+  padding: var(--cui-space-3);
+  border-right: 1px solid var(--cui-border-subtle);
+}
+
+.releasePlanFacts > div:last-child {
+  border-right: 0;
+}
+
+.releasePlanFacts span {
+  color: var(--cui-text-faint);
+  font-size: 10.5px;
+}
+
+.releasePlanFacts strong {
+  color: var(--cui-text);
+  font-size: 12px;
+}
+
+.releasePlanRoleGroup > ol,
+.releaseDeploymentTargetGroup > ol,
+.releaseDeploymentEvents > ol {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.releasePlanRoleGroups,
+.releaseDeploymentTargetGroups {
+  display: grid;
+  gap: var(--cui-space-3);
+}
+
+.releasePlanRoleGroup,
+.releaseDeploymentTargetGroup {
+  display: grid;
+  min-width: 0;
+  gap: var(--cui-space-3);
+}
+
+.releasePlanRoleGroup {
+  overflow: hidden;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+}
+
+.releasePlanRoleGroup > header,
+.releaseDeploymentTargetGroup > header {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cui-space-3);
+}
+
+.releasePlanRoleGroup > header {
+  padding: var(--cui-space-3);
+  border-bottom: 1px solid var(--cui-border-subtle);
+  background: var(--cui-surface-subtle);
+}
+
+.releasePlanRoleGroup > header > div,
+.releaseDeploymentTargetGroup > header > div {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  gap: var(--cui-space-2);
+  color: var(--cui-accent);
+}
+
+.releasePlanRoleGroup > header > div > span,
+.releaseDeploymentTargetGroup > header > div > span {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.releasePlanRoleGroup > header strong,
+.releaseDeploymentTargetGroup > header strong {
+  color: var(--cui-text);
+  font-size: 12px;
+}
+
+.releasePlanRoleGroup > header small,
+.releaseDeploymentTargetGroup > header small {
+  color: var(--cui-text-faint);
+  font-size: 10.5px;
+  font-weight: 450;
+  line-height: 1.4;
+}
+
+.releasePlanRoleGroup > .cuiAlert {
+  margin: 0 var(--cui-space-3) var(--cui-space-3);
+}
+
+.releasePlanRoleGroup > ol > li {
+  display: grid;
+  min-width: 0;
+  align-items: center;
+  grid-template-columns: auto minmax(120px, 0.8fr) minmax(320px, 1.5fr);
+  gap: var(--cui-space-3);
+  padding: var(--cui-space-3);
+  border-bottom: 1px solid var(--cui-border-subtle);
+}
+
+.releasePlanRoleGroup > ol > li:last-child {
+  border-bottom: 0;
+}
+
+.releasePlanTargetOrder,
+.releaseDeploymentTarget__order {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-pill);
+  background: var(--cui-surface-subtle);
+  color: var(--cui-text-muted);
+  font-family: var(--cui-font-mono);
+  font-size: 10.5px;
+}
+
+.releasePlanTargetCopy {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.releasePlanTargetRole {
+  display: inline-flex;
+  width: max-content;
+  align-items: center;
+  gap: 4px;
+  color: var(--cui-accent) !important;
+  font-family: var(--cui-font-sans) !important;
+  font-weight: 650;
+}
+
+.releasePlanTargetCopy strong,
+.releaseDeploymentTarget__head strong {
+  color: var(--cui-text);
+  font-size: 12px;
+}
+
+.releasePlanTargetCopy span,
+.releaseDeploymentTarget__head span {
+  color: var(--cui-text-faint);
+  font-family: var(--cui-font-mono);
+  font-size: 10.5px;
+}
+
+.releasePlanTargetActions {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+  color: var(--cui-text-faint);
+  font-size: 10.5px;
+  white-space: nowrap;
+}
+
+.releasePlanTargetAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.releaseSafetyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--cui-space-2);
+}
+
+.releaseSafetyGrid > div {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  gap: var(--cui-space-2);
+  padding: var(--cui-space-3);
+  border: 1px solid var(--cui-border-subtle);
+  border-radius: var(--cui-radius-md);
+  color: var(--cui-accent);
+}
+
+.releaseSafetyGrid span {
+  display: grid;
+  gap: 2px;
+  color: var(--cui-text-faint);
+  font-size: 10.5px;
+  line-height: 1.45;
+}
+
+.releaseSafetyGrid strong {
+  color: var(--cui-text);
+  font-size: 11.5px;
+}
+
+.releasePlanAcknowledgements {
+  display: grid;
+  gap: var(--cui-space-2);
+}
+
+.releasePlanAcknowledgement {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--cui-space-3);
+  padding: var(--cui-space-3);
+  border: 1px solid var(--cui-border-strong);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-info-bg);
+  cursor: pointer;
+}
+
+.releasePlanAcknowledgement input {
+  width: 16px;
+  height: 16px;
+  margin: 2px 0 0;
+  accent-color: var(--cui-accent);
+}
+
+.releasePlanAcknowledgement > span {
+  display: grid;
+  gap: 3px;
+}
+
+.releasePlanAcknowledgement strong {
+  color: var(--cui-text);
+  font-size: 12px;
+}
+
+.releasePlanAcknowledgement small {
+  color: var(--cui-text-muted);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.releaseDeploymentOverview {
+  padding: var(--cui-space-3);
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-surface);
+}
+
+.releaseDeploymentOverview__head > div:first-child,
+.releaseDeploymentTarget__head > div:first-child {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: var(--cui-space-3);
+}
+
+.releaseDeploymentOverview__head > div:first-child > div,
+.releaseDeploymentTarget__head > div:first-child > div {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.releaseDeploymentOverview__head h3 + span {
+  color: var(--cui-text-faint);
+  font-size: 11px;
+}
+
+.releaseDeploymentOverview > .releaseDeploymentProgress {
+  height: 7px;
+}
+
+.releaseDeploymentTargets,
+.releaseDeploymentEvents {
+  padding-top: var(--cui-space-4);
+  border-top: 1px solid var(--cui-border-subtle);
+}
+
+.releaseDeploymentTargetGroup > ol {
+  gap: var(--cui-space-2);
+}
+
+.releaseDeploymentTargetGroup {
+  padding: var(--cui-space-3);
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-surface);
+}
+
+.releaseEmptyTargetGroup {
+  margin: 0;
+  padding: var(--cui-space-3);
+  border: 1px dashed var(--cui-border);
+  border-radius: var(--cui-radius-sm);
+  color: var(--cui-text-faint);
+  font-size: 11px;
+  text-align: center;
+}
+
+.releaseDeploymentTarget {
+  display: grid;
+  gap: var(--cui-space-3);
+  padding: var(--cui-space-3);
+  border: 1px solid var(--cui-border-subtle);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-surface-subtle);
+}
+
+.releaseTargetStages {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.releaseTargetStages.is-worker > span {
+  min-width: 82px;
+}
+
+.releaseTargetStages.is-worker {
+  overflow-x: auto;
+  padding-block: 3px;
+}
+
+.releaseTargetStages > span {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 5px;
+  color: var(--cui-text-tertiary);
+  font-size: 10px;
+  text-align: center;
+}
+
+.releaseTargetStages > span::before,
+.releaseTargetStages > span::after {
+  position: absolute;
+  top: 5px;
+  height: 1px;
+  background: var(--cui-border);
+  content: "";
+}
+
+.releaseTargetStages > span::before {
+  right: 50%;
+  left: 0;
+}
+
+.releaseTargetStages > span::after {
+  right: 0;
+  left: 50%;
+}
+
+.releaseTargetStages > span:first-child::before,
+.releaseTargetStages > span:last-child::after {
+  display: none;
+}
+
+.releaseTargetStages i {
+  position: relative;
+  width: 11px;
+  height: 11px;
+  border: 2px solid var(--cui-border);
+  border-radius: var(--cui-radius-pill);
+  background: var(--cui-surface);
+}
+
+.releaseTargetStages > span.is-done,
+.releaseTargetStages > span.is-current {
+  color: var(--cui-text-muted);
+}
+
+.releaseTargetStages > span.is-done i {
+  border-color: var(--cui-success-text);
+  background: var(--cui-success-text);
+}
+
+.releaseTargetStages > span.is-current i {
+  border-color: var(--cui-accent);
+  background: var(--cui-surface);
+  outline: 3px solid var(--cui-info-border);
+}
+
+.releaseTargetStages > span.is-failed i {
+  border-color: var(--cui-danger-text);
+  background: var(--cui-danger-text);
+}
+
+.releaseTargetStages > span.is-rollback i,
+.releaseTargetStages > span.is-rolled-back i {
+  border-color: var(--cui-warning-text);
+  background: var(--cui-warning-text);
+}
+
+.releaseTargetStages > span.is-stopped i {
+  border-color: var(--cui-text-faint);
+}
+
+.releaseTargetError {
+  margin: 0;
+  padding: var(--cui-space-2);
+  border-radius: var(--cui-radius-sm);
+  background: var(--cui-danger-bg);
+  color: var(--cui-danger-text);
+  font-size: 11px;
+}
+
+.releaseDeploymentEvents > ol {
+  position: relative;
+  gap: 0;
+}
+
+.releaseDeploymentEvent {
+  position: relative;
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr);
+  gap: var(--cui-space-2);
+  padding-bottom: var(--cui-space-3);
+}
+
+.releaseDeploymentEvent:not(:last-child)::before {
+  position: absolute;
+  top: 10px;
+  bottom: -1px;
+  left: 5px;
+  width: 1px;
+  background: var(--cui-border);
+  content: "";
+}
+
+.releaseDeploymentEvent__marker {
+  position: relative;
+  width: 11px;
+  height: 11px;
+  margin-top: 3px;
+  border: 2px solid var(--cui-info-border);
+  border-radius: var(--cui-radius-pill);
+  background: var(--cui-info-bg);
+}
+
+.releaseDeploymentEvent.is-warning .releaseDeploymentEvent__marker {
+  border-color: var(--cui-warning-border);
+  background: var(--cui-warning-text);
+}
+
+.releaseDeploymentEvent.is-error .releaseDeploymentEvent__marker {
+  border-color: var(--cui-danger-border);
+  background: var(--cui-danger-text);
+}
+
+.releaseDeploymentEvent__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cui-space-2);
+  color: var(--cui-text-tertiary);
+  font-family: var(--cui-font-mono);
+  font-size: 10px;
+}
+
+.releaseDeploymentEvent p {
+  margin: 3px 0 0;
+  color: var(--cui-text-muted);
+  font-size: 11.5px;
+  line-height: 1.45;
+}
+
+.releaseEventSkeleton {
+  display: grid;
+  gap: var(--cui-space-2);
+}
+
+.releaseEmptyEvents {
+  margin: 0;
+  padding: var(--cui-space-4);
+  border: 1px dashed var(--cui-border);
+  border-radius: var(--cui-radius-md);
+  color: var(--cui-text-faint);
+  font-size: 11.5px;
+  text-align: center;
+}
+
+.releaseManualReconcile,
+.releaseManualReconcile > section {
+  display: grid;
+  min-width: 0;
+  gap: var(--cui-space-4);
+}
+
+.releaseManualReconcile > .cuiAlert .cuiAlert__content {
+  display: grid;
+  gap: 3px;
+}
+
+.releaseReconcileChoices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--cui-space-3);
+}
+
+.releaseReconcileChoice {
+  display: grid;
+  min-width: 0;
+  align-items: start;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  gap: var(--cui-space-2);
+  padding: var(--cui-space-3);
+  border: 1px solid var(--cui-control-border);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-surface-subtle);
+  cursor: pointer;
+}
+
+.releaseReconcileChoice:hover:not(.is-disabled) {
+  border-color: var(--cui-border-strong);
+  background: var(--cui-control-hover);
+}
+
+.releaseReconcileChoice:focus-within {
+  border-color: var(--cui-focus);
+  outline: 2px solid var(--cui-border-strong);
+  outline-offset: 2px;
+}
+
+.releaseReconcileChoice.is-selected {
+  border-color: var(--cui-danger-border);
+  background: var(--cui-danger-bg);
+}
+
+.releaseReconcileChoice.is-disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+
+.releaseReconcileChoice > input,
+.releaseReconcileAcknowledgement > input {
+  width: 16px;
+  height: 16px;
+  margin: 2px 0 0;
+  accent-color: var(--cui-accent);
+}
+
+.releaseReconcileChoice__icon {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-sm);
+  background: var(--cui-surface);
+  color: var(--cui-text-muted);
+}
+
+.releaseReconcileChoice.is-selected .releaseReconcileChoice__icon {
+  border-color: var(--cui-danger-border);
+  color: var(--cui-danger-text);
+}
+
+.releaseReconcileChoice > span:last-child,
+.releaseReconcileAcknowledgement > span {
+  display: grid;
+  min-width: 0;
+  gap: 4px;
+}
+
+.releaseReconcileChoice strong,
+.releaseReconcileAcknowledgement strong {
+  color: var(--cui-text);
+  font-size: 12px;
+}
+
+.releaseReconcileChoice small,
+.releaseReconcileAcknowledgement small {
+  color: var(--cui-text-muted);
+  font-size: 10.5px;
+  line-height: 1.5;
+}
+
+.releaseReconcileChoice code {
+  overflow: hidden;
+  color: var(--cui-text-faint);
+  font-family: var(--cui-font-mono);
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.releaseManualReconcile textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+.releaseReconcileAcknowledgement {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--cui-space-3);
+  padding: var(--cui-space-3);
+  border: 1px solid var(--cui-danger-border);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-danger-bg);
+  cursor: pointer;
+}
+
+.releaseReconcileAcknowledgement:focus-within {
+  outline: 2px solid var(--cui-focus);
+  outline-offset: 2px;
+}
+
+.releaseManualReconcileFooter {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--cui-space-2);
+}
+
+@media (max-width: 760px) {
+  .releaseFilter,
+  .releaseFilterSearch {
+    min-width: 100%;
+  }
+
+  .releaseFilterActions {
+    width: 100%;
+  }
+
+  .releaseFilterActions > .cuiButton {
+    flex: 1;
+  }
+
+  .releaseActivityCard {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .releaseActivityCard__progress {
+    width: 100%;
+  }
+
+  .releaseActivityCard > .cuiButton {
+    width: 100%;
+  }
+
+  .releaseArtifactSummary__head,
+  .releaseArtifactVerification,
+  .releaseExistingArtifactSummary,
+  .releaseDeploymentOverview__head,
+  .releaseDeploymentTarget__head,
+  .releasePlanRoleGroup > header,
+  .releaseDeploymentTargetGroup > header,
+  .releaseSectionHeading {
+    align-items: flex-start;
+  }
+
+  .releaseArtifactSummary dl,
+  .releaseDeploymentOverview dl,
+  .releasePlanFacts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .releasePlanFacts > div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .releasePlanFacts > div:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--cui-border-subtle);
+  }
+
+  .releasePlanRoleGroup > ol > li {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .releasePlanTargetActions {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-left: 36px;
+  }
+
+  .releaseSafetyGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .releaseReconcileChoices {
+    grid-template-columns: 1fr;
+  }
+
+  .releaseUploadPickerGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .releasePlanDialogFooter > div:last-child > .cuiButton,
+  .releaseDeploymentDrawerFooter > .cuiButton,
+  .releaseCancelFooter > .cuiButton,
+  .releaseManualReconcileFooter > .cuiButton {
+    flex: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .releaseDeploymentProgress > span {
+    transition: none;
+  }
+}
+
+/* 0.2.6 workbench alignment */
+
+.consoleWorkbench .releaseData { display: grid; gap: 18px; border: 0; overflow: visible; }
+.consoleWorkbench .releaseControlModule__heading { padding: 18px 20px; background: var(--cui-surface); }

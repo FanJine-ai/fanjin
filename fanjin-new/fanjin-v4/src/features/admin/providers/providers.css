@@ -1,0 +1,520 @@
+.adminFeaturePage {
+  display: grid;
+  min-width: 0;
+  gap: var(--cui-space-3);
+  color: var(--cui-text);
+  font-family: var(--cui-font-sans);
+}
+
+.providersPage > .consoleMetricStrip,
+.providersPage > .consoleFilterBar,
+.providersPage > .consoleDataTable {
+  border-inline: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.providersPage > .consoleMetricStrip {
+  border-bottom: 0;
+}
+
+.providersPage > .consoleFilterBar {
+  border-bottom: 0;
+}
+
+.providersPage > .consoleMetricStrip dl {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.providersPage > .consoleMetricStrip .consoleMetricStrip__item {
+  display: grid;
+  min-height: 52px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-content: center;
+  align-items: center;
+  gap: 2px var(--cui-space-2);
+  padding: 7px 12px;
+}
+
+.providersPage > .consoleMetricStrip .consoleMetricStrip__item dt {
+  grid-column: 1;
+  font-size: 11.5px;
+}
+
+.providersPage > .consoleMetricStrip .consoleMetricStrip__item dd {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  margin: 0;
+}
+
+.providersPage > .consoleMetricStrip .consoleMetricStrip__value {
+  font-size: 16px;
+  font-weight: 720;
+}
+
+.providersPage > .consoleMetricStrip .consoleMetricStrip__hint {
+  grid-column: 1;
+  margin-top: 0;
+  font-size: 11.5px;
+}
+
+.providersPage > .consoleFilterBar {
+  padding-inline: 12px;
+}
+
+.providersPage .consoleDataTable table {
+  min-width: 980px;
+  font-size: 12px;
+}
+
+.providersPage .consoleDataTable th {
+  height: 38px;
+  font-size: 11.5px;
+}
+
+.providersPage .consoleDataTable th button {
+  min-height: 38px;
+}
+
+.providersPage .consoleDataTable td {
+  height: 36px;
+  padding-block: 4px;
+}
+
+.adminFeaturePage code {
+  color: inherit;
+  font-family: var(--cui-font-mono);
+  overflow-wrap: anywhere;
+}
+
+.adminFeatureNumeric {
+  font-variant-numeric: tabular-nums;
+}
+
+.providerChannelCell,
+.providerHealthCell {
+  display: grid;
+  min-width: 0;
+  gap: var(--cui-space-1);
+}
+
+.providerHealthCell .cuiBadge {
+  width: max-content;
+  max-width: 100%;
+}
+
+.providerChannelCell strong {
+  color: var(--cui-text);
+  font-size: 12.5px;
+  font-weight: 650;
+}
+
+.providerChannelCell span,
+.providerFieldHelp,
+.providerModelEditor__empty,
+.providerAdvancedContent > p {
+  color: var(--cui-text-faint);
+  font-size: 11.5px;
+  line-height: 1.5;
+}
+
+.providerHealthError {
+  display: block;
+  max-width: 190px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background: transparent;
+  color: var(--cui-text-faint);
+  cursor: help;
+  font: inherit;
+  font-size: 11.5px;
+  line-height: 1.5;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.adminFeatureRowActions,
+.providerDrawerActions,
+.providerModelEditor__inputRow {
+  display: flex;
+  align-items: center;
+  gap: var(--cui-space-2);
+}
+
+.adminFeatureRowActions > .adminFeatureMoreMenu {
+  display: inline-flex;
+  align-items: center;
+}
+
+.providersPage .adminFeatureRowActions {
+  flex-wrap: nowrap;
+  min-width: max-content;
+}
+
+.providersPage .adminFeatureRowActions .cuiButton {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.providerForm {
+  display: grid;
+  gap: var(--cui-space-4);
+}
+
+.providerFormLock {
+  display: grid;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  gap: var(--cui-space-4);
+}
+
+.providerFormStep {
+  display: grid;
+  gap: var(--cui-space-4);
+}
+
+.providerFormSteps {
+  display: grid;
+  gap: var(--cui-space-2);
+}
+
+.providerFormSteps ol {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--cui-border);
+  list-style: none;
+}
+
+.providerFormSteps button {
+  display: flex;
+  width: 100%;
+  min-height: 36px;
+  align-items: center;
+  justify-content: center;
+  gap: var(--cui-space-2);
+  padding: 6px var(--cui-space-2);
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--cui-text-muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.providerFormSteps button > span {
+  display: inline-grid;
+  width: 20px;
+  height: 20px;
+  place-items: center;
+  border: 1px solid var(--cui-border-strong);
+  border-radius: 50%;
+  color: var(--cui-text-faint);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.providerFormSteps li[data-state="active"] button {
+  border-bottom-color: var(--cui-accent);
+  color: var(--cui-text);
+}
+
+.providerFormSteps li[data-state="active"] button > span {
+  border-color: var(--cui-accent);
+  color: var(--cui-accent);
+}
+
+.providerFormSteps button:disabled {
+  cursor: not-allowed;
+  opacity: .48;
+}
+
+.providerFormSteps button:focus-visible {
+  outline: 3px solid var(--cui-focus);
+  outline-offset: 2px;
+}
+
+.providerFormSteps > p {
+  display: flex;
+  gap: var(--cui-space-2);
+  margin: 0;
+  color: var(--cui-text-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.providerFormSteps > p strong {
+  flex: 0 0 auto;
+  color: var(--cui-text);
+  font-weight: 650;
+}
+
+.adminFeatureDetails,
+.adminFeatureDetails section {
+  display: grid;
+  gap: var(--cui-space-4);
+}
+
+.providerForm > .providerAdvanced {
+  padding-top: 14px;
+  border-top: 1px solid var(--cui-border);
+}
+
+.adminFeatureFormGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--cui-space-3) var(--cui-space-4);
+}
+
+.adminFeatureFormField--wide,
+.adminFeatureFormField--short {
+  grid-column: 1 / -1;
+}
+
+.adminFeatureFormField--short {
+  width: calc((100% - var(--cui-space-4)) / 2);
+}
+
+.providerDrawerActions {
+  justify-content: flex-end;
+}
+
+.providerFieldLabel {
+  color: var(--cui-text-muted);
+  font-size: 12.5px;
+  font-weight: 680;
+}
+
+.providerFieldHelp {
+  margin: 0;
+}
+
+.providerPortraitCredential {
+  display: grid;
+  gap: var(--cui-space-3);
+  padding: var(--cui-space-3);
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-lg);
+  background: var(--cui-surface-subtle);
+}
+
+.providerImageXCredential {
+  box-shadow: var(--cui-shadow-card);
+}
+
+.providerModelEditor {
+  display: grid;
+  gap: var(--cui-space-2);
+}
+
+.providerModelEditor__heading,
+.providerModelDiscovery__summary {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--cui-space-3);
+}
+
+.providerModelEditor__heading > div,
+.providerModelDiscovery__summary > div {
+  display: grid;
+  min-width: 0;
+  gap: var(--cui-space-1);
+}
+
+.providerModelDiscovery {
+  display: grid;
+  gap: var(--cui-space-2);
+  padding: var(--cui-space-3);
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-surface-subtle);
+}
+
+.providerModelDiscovery__summary strong {
+  color: var(--cui-text);
+  font-size: 12.5px;
+}
+
+.providerModelDiscovery__summary span,
+.providerModelDiscovery > p,
+.providerModelDiscovery__preview > span {
+  margin: 0;
+  color: var(--cui-text-faint);
+  font-size: 11.5px;
+  line-height: 1.5;
+}
+
+.providerModelDiscovery__preview {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--cui-space-1);
+}
+
+.providerModelDiscovery__preview code {
+  max-width: 100%;
+  padding: 3px 6px;
+  overflow: hidden;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-pill);
+  background: var(--cui-surface);
+  color: var(--cui-text-muted);
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.providerModelEditor__inputRow > :first-child {
+  flex: 1 1 auto;
+}
+
+.providerModelEditor__tags,
+.providerDetailModels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cui-space-2);
+}
+
+.providerModelTag,
+.providerDetailModels code {
+  display: inline-flex;
+  min-height: var(--cui-control-height-compact);
+  align-items: center;
+  gap: var(--cui-space-1);
+  padding-left: var(--cui-space-2);
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-pill);
+  background: var(--cui-surface-subtle);
+  color: var(--cui-text-muted);
+  font-size: 11.5px;
+}
+
+.providerDetailModels code {
+  padding: var(--cui-space-2);
+}
+
+.providerAdvancedContent {
+  display: grid;
+  gap: var(--cui-space-3);
+}
+
+.providerAdvanced {
+  margin-top: 0;
+}
+
+.providerAdvancedContent > p {
+  margin: 0;
+}
+
+.adminFeatureDetails section {
+  gap: var(--cui-space-2);
+}
+
+.adminFeatureDetails h3 {
+  margin: 0;
+  color: var(--cui-text);
+  font-size: 13px;
+}
+
+.adminFeatureDetails dl {
+  display: grid;
+  margin: 0;
+  border-top: 1px solid var(--cui-border);
+}
+
+.adminFeatureDetails dl > div {
+  display: grid;
+  grid-template-columns: minmax(110px, 0.34fr) minmax(0, 1fr);
+  gap: var(--cui-space-3);
+  padding: 9px 0;
+  border-bottom: 1px solid var(--cui-border);
+}
+
+.adminFeatureDetails dt {
+  color: var(--cui-text-faint);
+  font-size: 11.5px;
+}
+
+.adminFeatureDetails dd {
+  min-width: 0;
+  margin: 0;
+  color: var(--cui-text);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 1024px) {
+  .providersPage .consoleFilterBar__fields {
+    display: grid;
+    grid-template-columns: minmax(240px, 1.4fr) minmax(150px, .8fr) minmax(150px, .8fr);
+  }
+
+  .providersPage .consoleFilterBar__fields > * {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .adminFeatureRowActions .cuiButton,
+  .providerModelTag .cuiIconButton {
+    min-height: var(--cui-touch-target);
+  }
+
+  .adminFeatureFormGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .adminFeatureFormField--short {
+    width: 100%;
+  }
+
+  .providerDrawerActions > * {
+    flex: 1 1 0;
+  }
+
+  .providerFormSteps button {
+    min-height: var(--cui-touch-target);
+    gap: var(--cui-space-1);
+    padding-inline: var(--cui-space-1);
+    font-size: 12px;
+  }
+
+  .providerFormSteps button > span {
+    display: none;
+  }
+
+  .providerModelEditor__inputRow {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .providerModelEditor__heading,
+  .providerModelDiscovery__summary {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .providerModelEditor__heading > .cuiButton,
+  .providerModelDiscovery__summary > .cuiButton {
+    width: 100%;
+  }
+
+  .adminFeatureDetails dl > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--cui-space-1);
+  }
+
+  .providersPage > .consoleMetricStrip dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

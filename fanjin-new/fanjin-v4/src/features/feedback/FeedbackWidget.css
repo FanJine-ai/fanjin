@@ -1,0 +1,125 @@
+/* Matches StudioModeSwitcher chrome so the floating feedback entry sits in the
+   same visual system as the canvas mode control. */
+.feedbackFab {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: var(--cui-layer-floating, 30);
+  --feedback-fab-text: var(--text-200, var(--ps-text-200, #536575));
+  --feedback-fab-accent: var(--accent-strong, var(--ps-accent-strong, #00668c));
+  --feedback-fab-line: var(--line, var(--ps-line, rgba(23, 33, 43, 0.1)));
+  --feedback-fab-surface: var(--surface-strong, var(--ps-surface-strong, rgba(255, 255, 255, 0.94)));
+  --feedback-fab-hover: var(--hover, var(--ps-hover, rgba(212, 234, 247, 0.68)));
+  --feedback-fab-shadow: 0 9px 24px rgba(21, 40, 54, 0.08);
+
+  display: flex;
+  height: 48px;
+  width: 48px;
+  align-items: center;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid var(--feedback-fab-line);
+  border-radius: 13px;
+  background: color-mix(in srgb, var(--feedback-fab-surface) 92%, transparent);
+  color: var(--feedback-fab-text);
+  box-shadow: var(--feedback-fab-shadow);
+  backdrop-filter: blur(16px);
+  cursor: pointer;
+  transition:
+    width 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease,
+    box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.feedbackFab:hover,
+.feedbackFab:focus-visible {
+  width: 152px;
+  border-color: color-mix(in srgb, var(--feedback-fab-accent) 24%, transparent);
+  background: var(--feedback-fab-hover);
+  color: var(--feedback-fab-accent);
+  box-shadow: 0 12px 28px rgba(21, 40, 54, 0.12);
+  transform: translateY(-1px);
+}
+
+.feedbackFab:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--feedback-fab-accent) 30%, transparent);
+  outline-offset: 2px;
+}
+
+.feedbackFab:active {
+  transform: translateY(0) scale(0.96);
+}
+
+.feedbackFabIcon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+  place-items: center;
+  color: var(--feedback-fab-accent);
+}
+
+.feedbackFabIcon svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.feedbackFab:hover .feedbackFabIcon svg,
+.feedbackFab:focus-visible .feedbackFabIcon svg {
+  transform: scale(1.05);
+}
+
+.feedbackFabLabel {
+  overflow: hidden;
+  padding-right: 16px;
+  color: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.feedbackFab:hover .feedbackFabLabel,
+.feedbackFab:focus-visible .feedbackFabLabel {
+  opacity: 1;
+}
+
+[data-theme="dark"] .feedbackFab,
+.themeDark .feedbackFab {
+  --feedback-fab-text: #b8c8d1;
+  --feedback-fab-accent: #8ed5f6;
+  --feedback-fab-line: rgba(214, 235, 246, 0.13);
+  --feedback-fab-surface: rgba(24, 34, 39, 0.96);
+  --feedback-fab-hover: rgba(113, 196, 239, 0.15);
+  --feedback-fab-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+}
+
+@media (max-width: 640px) {
+  .feedbackFab {
+    right: 16px;
+    bottom: 16px;
+  }
+}
+
+/* The console reserves header space so feedback cannot cover table actions. */
+.feedbackFab.feedbackFab--docked,
+.feedbackFab.feedbackFab--docked:hover,
+.feedbackFab.feedbackFab--docked:focus-visible {
+  position: static;
+  width: 36px;
+  height: 36px;
+  transform: none;
+  box-shadow: none;
+}
+.feedbackFab--docked .feedbackFabIcon { width: 36px; height: 36px; }
+.feedbackFab--docked .feedbackFabLabel { display: none; }
+@media (max-width: 640px) {
+  .feedbackFab.feedbackFab--docked { width: 44px; height: 44px; }
+  .feedbackFab--docked .feedbackFabIcon { width: 44px; height: 44px; }
+}

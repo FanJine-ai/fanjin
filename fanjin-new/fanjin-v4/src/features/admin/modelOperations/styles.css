@@ -1,0 +1,309 @@
+.modelOpsFlow {
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--cui-space-2);
+  padding: var(--cui-space-2) var(--cui-space-3);
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-surface);
+  color: var(--cui-text-muted);
+  font-size: 12px;
+}
+
+.modelOpsFlow > span:first-child {
+  margin-right: var(--cui-space-1);
+  color: var(--cui-text-faint);
+  font-weight: 650;
+}
+
+.modelOpsFlow__step {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cui-space-2);
+}
+
+.modelOpsFlow a,
+.modelOpsFlow strong {
+  padding: 4px 7px;
+  border-radius: var(--cui-radius-sm);
+  color: var(--cui-text-muted);
+  text-decoration: none;
+}
+
+.modelOpsFlow strong {
+  background: var(--cui-accent-soft);
+  color: var(--cui-accent);
+}
+
+.modelOpsFlow a:hover { color: var(--cui-text); }
+
+.modelOpsIdentity {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.modelOpsIdentity strong,
+.modelOpsIdentity code,
+.modelOpsIdentity span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.modelOpsIdentity strong { color: var(--cui-text); font-size: 12.5px; font-weight: 650; }
+.modelOpsIdentity code { color: var(--cui-text-muted); font-family: var(--cui-font-mono); font-size: 11px; }
+.modelOpsIdentity span { color: var(--cui-text-faint); font-size: 11.5px; }
+
+.modelOpsFilter--wide { min-width: min(100%, 280px); }
+
+.modelOpsEmpty {
+  display: grid;
+  justify-items: center;
+  gap: var(--cui-space-2);
+  padding: var(--cui-space-5);
+  color: var(--cui-text-muted);
+  text-align: center;
+}
+
+.modelOpsEmpty strong { color: var(--cui-text); font-size: 13px; }
+.modelOpsEmpty span { font-size: 12px; }
+
+.modelOpsRowActions,
+.modelOpsWizard__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: var(--cui-space-2);
+}
+
+.modelOpsWizard {
+  display: grid;
+  gap: var(--cui-space-4);
+}
+
+.modelOpsWizard__steps {
+  display: grid;
+  gap: var(--cui-space-2);
+}
+
+.modelOpsWizard__steps ol {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--cui-border);
+  list-style: none;
+}
+
+.modelOpsWizard__steps button {
+  display: flex;
+  width: 100%;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 4px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--cui-text-muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.modelOpsWizard__steps button > span {
+  display: inline-grid;
+  width: 20px;
+  height: 20px;
+  place-items: center;
+  border: 1px solid var(--cui-border-strong);
+  border-radius: 50%;
+  font-size: 10px;
+}
+
+.modelOpsWizard__steps li[data-state="active"] button { border-bottom-color: var(--cui-accent); color: var(--cui-text); }
+.modelOpsWizard__steps li[data-state="active"] button > span,
+.modelOpsWizard__steps li[data-state="complete"] button > span { border-color: var(--cui-accent); color: var(--cui-accent); }
+.modelOpsWizard__steps button:disabled { cursor: not-allowed; opacity: .45; }
+.modelOpsWizard__steps button:focus-visible { outline: 3px solid var(--cui-focus); outline-offset: 2px; }
+.modelOpsWizard__steps > p { display: flex; gap: var(--cui-space-2); margin: 0; color: var(--cui-text-muted); font-size: 11.5px; }
+.modelOpsWizard__steps > p strong { color: var(--cui-text); }
+
+.modelOpsWizard__panel {
+  display: grid;
+  gap: var(--cui-space-4);
+  min-height: 310px;
+}
+
+.modelOpsPoolPicker {
+  display: grid;
+  max-height: 390px;
+  overflow: auto;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+}
+
+.modelOpsPoolPicker > button {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--cui-space-3);
+  min-height: 58px;
+  padding: 9px var(--cui-space-3);
+  border: 0;
+  border-bottom: 1px solid var(--cui-border);
+  background: transparent;
+  color: var(--cui-text);
+  cursor: pointer;
+  text-align: left;
+}
+
+.modelOpsPoolPicker > button:last-of-type { border-bottom: 0; }
+.modelOpsPoolPicker > button:hover { background: var(--cui-surface-subtle); }
+.modelOpsPoolPicker > button.is-selected { background: var(--cui-accent-soft); }
+.modelOpsPoolPicker > button:focus-visible { outline: 3px solid var(--cui-focus); outline-offset: -3px; }
+.modelOpsPoolPicker > button > span:nth-child(2) { display: grid; gap: 2px; min-width: 0; }
+.modelOpsPoolPicker strong,
+.modelOpsPoolPicker small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.modelOpsPoolPicker strong { font-size: 12.5px; }
+.modelOpsPoolPicker small { color: var(--cui-text-muted); font-size: 11.5px; }
+
+.modelOpsPoolPicker__check {
+  display: grid;
+  width: 20px;
+  height: 20px;
+  place-items: center;
+  border: 1px solid var(--cui-border-strong);
+  border-radius: 5px;
+  color: var(--cui-accent);
+}
+
+.is-selected > .modelOpsPoolPicker__check { border-color: var(--cui-accent); }
+.modelOpsHint { margin: 0; color: var(--cui-text-muted); font-size: 11.5px; }
+
+.modelOpsFormGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--cui-space-3) var(--cui-space-4);
+}
+
+.modelOpsFormGrid__wide { grid-column: 1 / -1; }
+
+.modelOpsTargetTable {
+  display: grid;
+  overflow: hidden;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+}
+
+.modelOpsTargetTable__head,
+.modelOpsTargetTable__row {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) 140px 140px 90px;
+  align-items: center;
+  gap: var(--cui-space-3);
+  padding: 9px var(--cui-space-3);
+}
+
+.modelOpsTargetTable__head {
+  background: var(--cui-surface-subtle);
+  color: var(--cui-text-faint);
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.modelOpsTargetTable__row + .modelOpsTargetTable__row { border-top: 1px solid var(--cui-border); }
+.modelOpsTargetTable__row > span:first-child { display: grid; gap: 2px; min-width: 0; }
+.modelOpsTargetTable__row strong { font-size: 12.5px; }
+.modelOpsTargetTable__row small { overflow: hidden; color: var(--cui-text-muted); font-size: 11.5px; text-overflow: ellipsis; white-space: nowrap; }
+.modelOpsTargetTable__row > strong:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+
+.modelOpsSwitchRow { display: flex; align-items: center; flex-wrap: wrap; gap: var(--cui-space-3); }
+.modelOpsSwitchRow > span { color: var(--cui-text-muted); font-size: 11.5px; }
+
+.modelOpsPricePreview {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 2px var(--cui-space-4);
+  padding: var(--cui-space-4);
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-surface-subtle);
+}
+
+.modelOpsPricePreview span { color: var(--cui-text-muted); font-size: 11.5px; }
+.modelOpsPricePreview strong { grid-column: 2; grid-row: 1 / 3; color: var(--cui-text); font-size: 24px; font-variant-numeric: tabular-nums; }
+.modelOpsPricePreview small { color: var(--cui-text-faint); font-size: 11px; }
+
+.modelOpsAudienceDefault { padding: var(--cui-space-3); border: 1px solid var(--cui-border); border-radius: var(--cui-radius-md); background: var(--cui-surface-subtle); }
+.modelOpsAudienceRules { display: grid; gap: var(--cui-space-3); }
+.modelOpsAudienceRule { display: grid; grid-template-columns: minmax(150px, 1fr) minmax(150px, .9fr) minmax(100px, .55fr) auto auto; align-items: end; gap: var(--cui-space-3); padding: var(--cui-space-3); border: 1px solid var(--cui-border); border-radius: var(--cui-radius-md); }
+.modelOpsAudienceRule__unit { align-self: center; margin-top: 20px; color: var(--cui-text-muted); font-size: 12px; }
+.modelOpsAudiencePreview { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--cui-space-3); }
+.modelOpsAudiencePreview > div { display: grid; gap: 4px; padding: var(--cui-space-3); border: 1px solid var(--cui-border); border-radius: var(--cui-radius-md); background: var(--cui-surface-subtle); }
+.modelOpsAudiencePreview span,
+.modelOpsAudiencePreview small { color: var(--cui-text-muted); font-size: 11px; }
+.modelOpsAudiencePreview strong { color: var(--cui-text); font-size: 16px; font-variant-numeric: tabular-nums; }
+
+.modelOpsPriceFootnote {
+  display: flex;
+  align-items: center;
+  gap: var(--cui-space-2);
+  color: var(--cui-text-muted);
+  font-size: 11.5px;
+}
+
+.modelOpsReviewGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--cui-space-3);
+}
+
+.modelOpsReviewGrid section {
+  display: grid;
+  gap: 4px;
+  min-height: 100px;
+  align-content: center;
+  padding: var(--cui-space-4);
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-surface-subtle);
+}
+
+.modelOpsReviewGrid span,
+.modelOpsReviewGrid small { color: var(--cui-text-muted); font-size: 11.5px; }
+.modelOpsReviewGrid strong { color: var(--cui-text); font-size: 16px; }
+.modelOpsReviewGrid code { color: var(--cui-text-faint); font-family: var(--cui-font-mono); font-size: 11px; }
+
+.modelOpsSimulation { display: grid; gap: var(--cui-space-3); }
+.modelOpsSimulation > div:not([role="alert"]) { display: flex; align-items: center; justify-content: space-between; gap: var(--cui-space-3); padding: var(--cui-space-3) 0; border-bottom: 1px solid var(--cui-border); }
+.modelOpsSimulation > div > span { display: grid; gap: 2px; }
+.modelOpsSimulation small { color: var(--cui-text-muted); }
+
+@media (max-width: 1023px) {
+  .modelOpsWizard__steps ol { grid-template-columns: repeat(5, minmax(96px, 1fr)); overflow-x: auto; }
+  .modelOpsFormGrid,
+  .modelOpsReviewGrid { grid-template-columns: 1fr; }
+  .modelOpsAudienceRule { grid-template-columns: 1fr; align-items: stretch; }
+  .modelOpsAudienceRule__unit { display: none; }
+  .modelOpsFormGrid__wide { grid-column: auto; }
+  .modelOpsTargetTable { overflow-x: auto; }
+  .modelOpsTargetTable__head,
+  .modelOpsTargetTable__row { min-width: 690px; }
+}
+
+@media (max-width: 640px) {
+  .modelOpsFlow { align-items: flex-start; flex-direction: column; }
+  .modelOpsFlow__step > span[aria-hidden="true"] { display: none; }
+  .modelOpsPricePreview { grid-template-columns: 1fr; }
+  .modelOpsPricePreview strong { grid-column: auto; grid-row: auto; }
+  .modelOpsWizard__actions { width: 100%; }
+  .modelOpsWizard__actions > button { flex: 1 1 auto; }
+}

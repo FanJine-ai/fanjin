@@ -1,0 +1,382 @@
+/* Developer Console - 基于 DESIGN-SYSTEM.md v1.0 */
+
+.developerClipboardFallback {
+  position: fixed;
+  inset: 0 auto auto 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Developer Overview (Tab Layout)                                    */
+/* ------------------------------------------------------------------ */
+
+.developerOverview {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.developerTabBar {
+  display: flex;
+  flex: 0 0 auto;
+  min-width: 0;
+  gap: var(--cui-space-1);
+  padding: var(--cui-space-3) var(--cui-space-5);
+  border-bottom: 1px solid var(--cui-border);
+  background: var(--cui-surface);
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.developerTab {
+  display: flex;
+  align-items: center;
+  gap: var(--cui-space-2);
+  padding: var(--cui-space-2) var(--cui-space-3);
+  border: none;
+  border-radius: var(--cui-radius-md);
+  background: transparent;
+  color: var(--cui-text-muted);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 150ms ease;
+  white-space: nowrap;
+}
+
+.developerTab:hover {
+  background: var(--cui-surface-subtle);
+  color: var(--cui-text);
+}
+
+.developerTab.active {
+  background: var(--cui-surface-subtle);
+  color: var(--cui-text);
+  font-weight: 600;
+}
+
+.developerTabContent {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
+  contain: inline-size;
+  scrollbar-gutter: stable;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: var(--cui-bg);
+}
+
+.developerTabContent > * {
+  width: 100%;
+  min-width: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Request Form                                                       */
+/* ------------------------------------------------------------------ */
+
+.developerRequestForm {
+  display: grid;
+  gap: var(--cui-space-3);
+}
+
+.developerRequestPrompt {
+  min-height: 96px;
+  resize: vertical;
+  font-size: 13px;
+  line-height: 1.5;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-surface);
+  color: var(--cui-text);
+  padding: var(--cui-space-2) var(--cui-space-3);
+}
+
+.developerRequestPrompt:focus {
+  outline: 3px solid var(--cui-focus);
+  outline-offset: 1px;
+  border-color: var(--cui-accent);
+}
+
+/* ------------------------------------------------------------------ */
+/*  Log Metadata                                                       */
+/* ------------------------------------------------------------------ */
+
+.developerLogFilters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--cui-space-2);
+  margin-bottom: var(--cui-space-3);
+}
+
+.developerLogFilters label {
+  color: var(--cui-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.developerLogFilters .cuiSelect {
+  width: min(220px, 100%);
+}
+
+.developerLogMetadata {
+  display: block;
+  max-width: 240px;
+  overflow: hidden;
+  color: var(--cui-text-muted);
+  font-family: var(--cui-font-mono);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.developerLogMetadataCell {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cui-space-2);
+}
+
+.developerLogDrawer {
+  display: grid;
+  gap: var(--cui-space-4);
+}
+
+.developerLogDetailList {
+  display: grid;
+  margin: 0;
+  border-block: 1px solid var(--cui-border);
+}
+
+.developerLogDetailList > div {
+  display: grid;
+  min-height: 36px;
+  grid-template-columns: 88px minmax(0, 1fr);
+  align-items: center;
+  gap: var(--cui-space-2);
+  padding: 6px 0;
+}
+
+.developerLogDetailList > div + div {
+  border-top: 1px solid var(--cui-border);
+}
+
+.developerLogDetailList dt {
+  color: var(--cui-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.developerLogDetailList dd {
+  min-width: 0;
+  margin: 0;
+  color: var(--cui-text);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.developerLogDrawer h3 {
+  margin: 0 0 var(--cui-space-2);
+  color: var(--cui-text);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@media (max-width: 767px) {
+  .developerLogMetadata {
+    max-width: min(240px, 60vw);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/*  API Docs Page                                                      */
+/* ------------------------------------------------------------------ */
+
+.developerDocCategories {
+  display: flex;
+  gap: var(--cui-space-1);
+  margin-bottom: var(--cui-space-4);
+  padding: var(--cui-space-1);
+  background: var(--cui-surface-subtle);
+  border-radius: var(--cui-radius-lg);
+  overflow-x: auto;
+}
+
+.developerDocCategoryTab {
+  display: flex;
+  align-items: center;
+  gap: var(--cui-space-1);
+  padding: var(--cui-space-2) var(--cui-space-3);
+  border: none;
+  border-radius: var(--cui-radius-md);
+  background: transparent;
+  color: var(--cui-text-muted);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 150ms ease;
+  white-space: nowrap;
+}
+
+.developerDocCategoryTab:hover {
+  background: var(--cui-surface);
+  color: var(--cui-text);
+}
+
+.developerDocCategoryTab.active {
+  border-color: var(--cui-border-strong);
+  background: var(--cui-surface);
+  color: var(--cui-text);
+}
+
+.developerDocStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--cui-space-3);
+  margin-bottom: var(--cui-space-5);
+}
+
+.developerDocStat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cui-space-1);
+  padding: var(--cui-space-3);
+  background: var(--cui-surface);
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+}
+
+.developerDocStatLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--cui-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.developerDocStatValue {
+  font-size: 13px;
+  color: var(--cui-text);
+  font-weight: 500;
+}
+
+.developerDocStatMono {
+  font-family: var(--cui-font-mono);
+  font-size: 12px;
+}
+
+.developerDocSectionList {
+  display: grid;
+  gap: var(--cui-space-2);
+}
+
+.developerDocSection {
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+  overflow: hidden;
+  background: var(--cui-surface);
+}
+
+.developerDocSectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--cui-space-3) var(--cui-space-4);
+  border: none;
+  background: var(--cui-surface);
+  color: var(--cui-text);
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+.developerDocSectionHeader:hover {
+  background: var(--cui-surface-subtle);
+}
+
+.developerDocSectionHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--cui-space-2);
+  min-width: 0;
+}
+
+.developerDocSectionTitle {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.developerDocEndpoint {
+  font-family: var(--cui-font-mono);
+  font-size: 11px;
+}
+
+.developerDocPermission {
+  font-size: 11px;
+}
+
+.developerDocSectionBody {
+  padding: var(--cui-space-4);
+  border-top: 1px solid var(--cui-border);
+  background: var(--cui-surface-subtle);
+}
+
+.developerDocSectionDesc {
+  margin: 0 0 var(--cui-space-3);
+  font-size: 13px;
+  color: var(--cui-text-muted);
+}
+
+.developerDocExample {
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+  overflow: hidden;
+  background: var(--cui-surface);
+}
+
+.developerDocExampleHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--cui-space-2) var(--cui-space-3);
+  background: var(--cui-surface-subtle);
+  border-bottom: 1px solid var(--cui-border);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--cui-text-muted);
+}
+
+/* 0.2.6 workbench alignment */
+
+/* Child pages own the heading; keep developer navigation light and stable. */
+.consoleWorkbench .developerOverview { gap: 20px; }
+.consoleWorkbench .developerTabBar { padding: 6px; border: 1px solid var(--cui-border); border-radius: var(--cui-radius-lg); background: var(--cui-surface); }
+.consoleWorkbench .developerTabBar [data-slot="tabs-list"] { min-height: 40px; height: auto; gap: 4px; }
+.consoleWorkbench .developerTabBar [data-slot="tabs-trigger"] { min-height: 38px; flex: 0 0 auto; padding: 8px 14px; border-radius: var(--cui-radius-md); font-size: 13px; }
+.consoleWorkbench .developerTabBar [data-slot="tabs-trigger"][data-active] { background: var(--cui-selected-bg); color: var(--cui-selected-text); box-shadow: none; }
+.consoleWorkbench .developerTabContent { background: transparent; padding: 0 4px 24px 0; }
+@media (max-width: 767px) { .consoleWorkbench .developerTabBar [data-slot="tabs-trigger"] { min-height: 44px; } }
+
+.developerModelFilters { margin-bottom: 16px; }
+
+.consoleWorkbench .developerTaskFilters, .consoleWorkbench .developerLogFilters { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 18px; padding: 14px 16px; border: 1px solid var(--cui-border); border-radius: 18px; background: var(--cui-surface); }
+.consoleWorkbench .developerTaskFilters .cuiInputFrame { flex: 1 1 260px; max-width: 560px; }
+.developerDocMarkdown { min-width: 0; color: var(--cui-text-muted); font-size: 13px; line-height: 1.8; }
+.developerDocMarkdown h2, .developerDocMarkdown h3 { margin: 20px 0 12px; color: var(--cui-text); font-size: 16px; font-weight: 600; }
+.developerDocMarkdown > :first-child { margin-top: 0; }
+.developerDocMarkdown p { margin: 12px 0; }
+.developerDocMarkdown ul, .developerDocMarkdown ol { padding-left: 24px; }
+.developerDocMarkdown li { list-style: revert; }
+.developerDocMarkdown pre { margin: 16px 0; overflow: auto; padding: 20px; border: 1px solid var(--cui-border); border-radius: 14px; background: var(--cui-surface); color: var(--cui-text); }
+.developerDocMarkdown code { font-family: var(--cui-font-mono); font-size: 12px; overflow-wrap: anywhere; }
+.developerDocMarkdown table { display: block; max-width: 100%; overflow: auto; margin: 16px 0; border-collapse: collapse; }
+.developerDocMarkdown th, .developerDocMarkdown td { padding: 10px 14px; border: 1px solid var(--cui-border); text-align: left; }
+.developerDocMarkdown th { background: var(--cui-surface-subtle); color: var(--cui-text); }

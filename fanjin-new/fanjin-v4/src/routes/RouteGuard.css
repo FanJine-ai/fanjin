@@ -1,0 +1,143 @@
+@import "../ui/console/tokens.css";
+
+.routeGuardBootstrap {
+  display: grid;
+  min-height: 100dvh;
+  place-items: center;
+  padding: var(--cui-space-5);
+  background: var(--cui-bg);
+  color: var(--cui-text-muted);
+}
+
+.routeGuardBootstrapStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cui-space-3);
+  font-size: 13px;
+  font-weight: 550;
+  line-height: 1.5;
+}
+
+.routeGuardBootstrapIcon {
+  flex: 0 0 auto;
+  color: var(--cui-accent);
+  animation: routeGuardBootstrapSpin 800ms linear infinite;
+}
+
+.routeGuardRecovery {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  width: min(460px, 100%);
+  gap: var(--cui-space-3);
+  padding: var(--cui-space-5);
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-lg);
+  background: var(--cui-surface);
+  box-shadow: var(--cui-shadow-popover);
+}
+
+.routeGuardRecoveryIcon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-danger-bg);
+  color: var(--cui-danger-text);
+}
+
+.routeGuardRecoveryCopy {
+  min-width: 0;
+}
+
+.routeGuardRecoveryCopy h1,
+.routeGuardRecoveryCopy p {
+  margin: 0;
+}
+
+.routeGuardRecoveryCopy h1 {
+  color: var(--cui-text);
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.routeGuardRecoveryCopy p {
+  margin-top: var(--cui-space-2);
+  color: var(--cui-text-muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.routeGuardRecoveryCopy .routeGuardRecoveryHint {
+  color: var(--cui-text-subtle);
+  font-size: 12px;
+}
+
+.routeGuardRecoveryActions {
+  display: flex;
+  grid-column: 2;
+  flex-wrap: wrap;
+  gap: var(--cui-space-2);
+  margin-top: var(--cui-space-1);
+}
+
+.routeGuardRecoveryButton {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  justify-content: center;
+  gap: var(--cui-space-2);
+  padding: 0 var(--cui-space-3);
+  border: 1px solid var(--cui-border-strong);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-surface);
+  color: var(--cui-text);
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.routeGuardRecoveryButton:hover {
+  background: var(--cui-control-hover);
+}
+
+.routeGuardRecoveryButton:focus-visible {
+  outline: 2px solid var(--cui-focus);
+  outline-offset: 2px;
+}
+
+.routeGuardRecoveryButton--primary {
+  border-color: var(--cui-accent);
+  background: var(--cui-accent);
+  color: var(--cui-on-accent);
+}
+
+.routeGuardRecoveryButton--primary:hover {
+  border-color: var(--cui-accent-hover);
+  background: var(--cui-accent-hover);
+}
+
+@media (max-width: 480px) {
+  .routeGuardRecovery {
+    grid-template-columns: 30px minmax(0, 1fr);
+    padding: var(--cui-space-4);
+  }
+
+  .routeGuardRecoveryIcon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .routeGuardBootstrapIcon {
+    animation: none;
+  }
+}
+
+@keyframes routeGuardBootstrapSpin {
+  to { transform: rotate(360deg); }
+}

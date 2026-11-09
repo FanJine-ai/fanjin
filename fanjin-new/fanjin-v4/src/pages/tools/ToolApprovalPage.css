@@ -1,0 +1,15 @@
+.toolApprovalPage { max-width: 760px; margin: 48px auto; padding: 28px; color: var(--cui-text); background: var(--cui-surface); border: 1px solid var(--cui-border); border-radius: 12px; font-size: 15px; line-height: 1.75; overflow-wrap: anywhere; }
+.toolApprovalPage h1 { margin: 0 0 12px; font-size: 28px; font-weight: 650; }
+.toolApprovalPage > p { margin: 0 0 24px; color: var(--cui-text-muted); }
+.toolApprovalPage dl { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 16px 24px; margin: 28px 0; padding-block: 24px; border-block: 1px solid var(--cui-border); }
+.toolApprovalPage dt { color: var(--cui-text-muted); }
+.toolApprovalPage dd { margin: 0; min-width: 0; }
+.toolApprovalPage dd strong { font-size: 23px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.toolApprovalActions { display: flex; align-items: stretch; flex-wrap: wrap; gap: 12px; }
+.toolApprovalActions button { min-height: 44px; padding: 10px 18px; border: 1px solid var(--cui-border-strong); border-radius: 8px; cursor: pointer; color: var(--cui-text); background: var(--cui-control-bg); font-weight: 600; }
+.toolApprovalActions .toolApprovalPrimary { background: var(--cui-accent); color: white; border-color: var(--cui-accent); }
+.toolApprovalActions button:hover { filter: brightness(.95); }
+.toolApprovalActions button:focus-visible { outline: 3px solid var(--cui-accent); outline-offset: 3px; }
+.toolApprovalActions button:disabled { opacity: .55; cursor: wait; }
+.toolApprovalPage [role="alert"] { color: var(--cui-danger, #b42318); }
+@media (max-width: 600px) { .toolApprovalPage { margin: 16px; padding: 20px; } .toolApprovalPage h1 { font-size: 24px; } .toolApprovalPage dl { grid-template-columns: minmax(0, 1fr); gap: 4px; } .toolApprovalPage dd { margin-bottom: 14px; } .toolApprovalActions { flex-direction: column; } }

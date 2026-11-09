@@ -1,0 +1,5 @@
+import type { ComponentType } from "react";
+
+export function CanvasCreationMenuItem({ label, Icon, disabled, connection, badge, onClick }: { label: string; Icon: ComponentType<{ className?: string }>; disabled: boolean; connection: boolean; badge?: string; onClick: () => void }) {
+  return <button aria-label={label} disabled={disabled} className={`flex w-full items-center text-left transition ${connection ? "h-11 gap-3 rounded-[12px] px-0" : "h-11 gap-3 rounded-[14px] px-3"} ${disabled ? "cursor-not-allowed text-[#5c5f66]" : "text-white hover:bg-[#333335]"}`} onClick={onClick}><span className={`flex items-center justify-center ${connection ? "h-7 w-7" : "h-8 w-8 rounded-[10px]"} ${disabled ? "text-[#62656c]" : connection ? "text-[#f0f1f4]" : "bg-[#3a3a3d] text-[#f0f1f4]"}`}><Icon className="h-5 w-5" /></span><span className="text-[14px] font-medium leading-none">{label}</span>{badge ? <span className={`${disabled ? "bg-[#3a3a3d] text-[#666a70]" : "bg-[#2f6a77] text-white"} rounded-full px-2 py-0.5 text-[12px] font-semibold`}>{badge}</span> : null}</button>;
+}

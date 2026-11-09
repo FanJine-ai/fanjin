@@ -1,0 +1,773 @@
+.consoleSrOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.consolePageHeading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--cui-space-5);
+  padding: 0;
+}
+
+.consolePageHeading__copy {
+  min-width: 0;
+}
+
+.consolePageHeading h1 {
+  margin: 0;
+  color: var(--cui-text);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.6px;
+  line-height: 1.2;
+}
+
+.consolePageHeading__description {
+  max-width: 76ch;
+  margin-top: var(--cui-space-2);
+  color: var(--cui-text-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.consolePageHeading__primaryAction {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  min-height: var(--cui-control-height);
+}
+
+.consolePageHeading__primaryAction > :is(button, a) {
+  min-height: var(--cui-control-height);
+}
+
+.consoleBreadcrumbs {
+  margin-bottom: 4px;
+}
+
+.consoleBreadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.consoleBreadcrumbs li {
+  display: inline-flex;
+  align-items: center;
+  color: var(--cui-text-faint);
+  font-size: 11.5px;
+  line-height: 1.4;
+}
+
+.consoleBreadcrumbs li:not(:last-child)::after {
+  margin-left: 4px;
+  color: var(--cui-border-strong);
+  content: "/";
+}
+
+.consoleBreadcrumbs :is(a, button) {
+  min-height: 24px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--cui-text-muted);
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.consoleBreadcrumbs :is(a, button):hover {
+  color: var(--cui-accent);
+  text-decoration: underline;
+}
+
+.consoleMetricStrip {
+  overflow: hidden;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-lg);
+  background: var(--cui-surface);
+}
+
+.consoleMetricStrip dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  margin: 0;
+}
+
+.consoleMetricStrip__item {
+  min-width: 0;
+  min-height: 72px;
+  padding: 12px 16px;
+}
+
+.consoleMetricStrip__item + .consoleMetricStrip__item {
+  border-left: 1px solid var(--cui-border-subtle);
+}
+
+.consoleMetricStrip dt {
+  color: var(--cui-text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.consoleMetricStrip dd {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin: 3px 0 0;
+}
+
+.consoleMetricStrip__value {
+  color: var(--cui-text);
+  font-size: 22px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 780;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.consoleMetricStrip__trend,
+.consoleMetricStrip__hint {
+  color: var(--cui-text-faint);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.consoleMetricStrip__item[data-tone="positive"] .consoleMetricStrip__trend {
+  color: var(--cui-success-text);
+}
+
+.consoleMetricStrip__item[data-tone="warning"] .consoleMetricStrip__trend {
+  color: var(--cui-warning-text);
+}
+
+.consoleMetricStrip__item[data-tone="danger"] .consoleMetricStrip__trend {
+  color: var(--cui-danger-text);
+}
+
+.consoleMetricStrip__item[data-tone="info"] .consoleMetricStrip__trend {
+  color: var(--cui-accent);
+}
+
+.consoleMetricStrip__hint {
+  margin-top: 3px;
+}
+
+.consoleFilterBar {
+  overflow: hidden;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-lg);
+  background: var(--cui-surface);
+}
+
+.consoleFilterBar__main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px;
+}
+
+.consoleFilterBar__fields,
+.consoleFilterBar__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.consoleFilterBar__fields {
+  flex: 1 1 480px;
+  min-width: 0;
+}
+
+.consoleFilterBar__actions {
+  flex: 0 0 auto;
+  justify-content: flex-end;
+}
+
+@media (min-width: 768px) {
+  .consoleFilterBar__fields > .cuiInputFrame {
+    flex: 1 1 240px;
+    min-width: 180px;
+    max-width: min(360px, 100%);
+  }
+
+  .consoleFilterBar__fields > .cuiSelect {
+    flex: 0 1 190px;
+    width: auto;
+    min-width: 160px;
+    max-width: 260px;
+  }
+}
+
+.consoleFilterBar :is(button, input, select, textarea) {
+  min-height: var(--cui-control-height);
+}
+
+.consoleFilterBar .cuiInputFrame {
+  min-height: var(--cui-control-height);
+}
+
+.consoleFilterBar__advancedToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: var(--cui-control-height);
+  padding: 5px 9px;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-control-bg);
+  color: var(--cui-text-muted);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.consoleFilterBar__advancedToggle:hover,
+.consoleFilterBar__advancedToggle[aria-expanded="true"] {
+  border-color: var(--cui-border-strong);
+  color: var(--cui-accent);
+}
+
+.consoleFilterBar__count {
+  display: inline-grid;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--cui-info-bg);
+  color: var(--cui-accent);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.consoleFilterBar__chevron {
+  transition: transform 180ms ease;
+}
+
+.consoleFilterBar__advancedToggle[aria-expanded="true"] .consoleFilterBar__chevron {
+  transform: rotate(180deg);
+}
+
+.consoleFilterBar__advanced {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px;
+  padding: 16px;
+  border: 0;
+  border-top: 1px solid var(--cui-border);
+  border-radius: 0;
+  background: var(--cui-surface-subtle);
+}
+
+.consoleDataTable {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-lg);
+  background: var(--cui-surface);
+}
+
+.consoleDataTable__tools {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: calc(var(--cui-layer-sticky) + 1);
+  display: flex;
+  min-height: var(--cui-touch-target);
+  align-items: center;
+  justify-content: flex-end;
+  padding: 4px 8px;
+  border: 0;
+  background: transparent;
+}
+
+.consoleDataTable:has(> .consoleDataTable__tools) thead th:last-child {
+  padding-right: 48px;
+}
+
+.consoleDataTable__columnPickerTrigger {
+  display: inline-flex;
+  min-height: var(--cui-touch-target);
+  align-items: center;
+  width: var(--cui-data-toolbar-height);
+  gap: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--cui-text-muted);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.consoleDataTable__columnPickerTrigger > span,
+.consoleDataTable__columnPickerChevron {
+  display: none;
+}
+
+.consoleDataTable__columnPickerTrigger:hover,
+.consoleDataTable__columnPickerTrigger[data-popup-open] {
+  background: var(--cui-surface-subtle);
+  color: var(--cui-accent);
+}
+
+.consoleDataTable__columnPickerTrigger:focus-visible {
+  outline: 3px solid var(--cui-focus);
+  outline-offset: 2px;
+}
+
+.consoleDataTable__columnPickerChevron { transition: transform var(--cui-duration-fast) var(--cui-ease-out); }
+.consoleDataTable__columnPickerTrigger[data-popup-open] .consoleDataTable__columnPickerChevron { transform: rotate(180deg); }
+
+.consoleDataTable__columnPickerContent {
+  width: min(280px, calc(100vw - 32px));
+  max-height: min(420px, 70vh);
+  padding: 8px;
+}
+
+.consoleDataTable__columnPickerContent fieldset { display: grid; min-width: 0; margin: 0; padding: 0; border: 0; }
+
+.consoleDataTable__columnPickerContent legend {
+  padding: 6px 8px;
+  color: var(--cui-text);
+  font-size: 13px;
+  font-weight: 720;
+}
+
+.consoleDataTable__columnPickerContent label {
+  display: flex;
+  min-height: 34px;
+  align-items: center;
+  gap: 9px;
+  padding: 5px 8px;
+  border-radius: 7px;
+  color: var(--cui-text-muted);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.consoleDataTable__columnPickerContent label:hover {
+  background: var(--cui-surface-subtle);
+}
+
+.consoleDataTable__viewport {
+  max-width: 100%;
+  overflow: auto;
+  overscroll-behavior-x: contain;
+}
+
+.consoleDataTable__viewport:focus-visible {
+  outline: 3px solid var(--cui-focus);
+  outline-offset: -3px;
+}
+
+.consoleDataTable table {
+  width: 100%;
+  min-width: 720px;
+  border-spacing: 0;
+  border-collapse: separate;
+  color: var(--cui-text);
+  font-size: 14px;
+}
+
+.consoleDataTable caption:not(.consoleSrOnly) {
+  padding: 9px 12px;
+  color: var(--cui-text);
+  font-size: 13px;
+  font-weight: 720;
+  text-align: left;
+}
+
+.consoleDataTable thead {
+  position: static;
+}
+
+.consoleDataTable th {
+  height: var(--cui-touch-target);
+  padding: 0 12px;
+  border-bottom: 1px solid var(--cui-border);
+  background: color-mix(in srgb, var(--cui-surface-subtle) 58%, transparent);
+  color: var(--cui-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.consoleDataTable th button {
+  display: inline-flex;
+  min-width: var(--cui-touch-target);
+  min-height: var(--cui-touch-target);
+  margin: 0 -6px;
+  padding: 0 6px;
+  align-items: center;
+  justify-content: inherit;
+  gap: 5px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.consoleDataTable th[aria-sort="ascending"] button,
+.consoleDataTable th[aria-sort="descending"] button,
+.consoleDataTable th button:hover {
+  color: var(--cui-accent);
+}
+
+.consoleDataTable td {
+  height: var(--cui-data-row-height);
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--cui-border-subtle);
+  color: var(--cui-text-muted);
+  vertical-align: middle;
+}
+
+.consoleDataTable tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.consoleDataTable tbody tr:not(.consoleDataTable__skeletonRow):hover td {
+  background: color-mix(in srgb, var(--cui-control-hover) 72%, transparent);
+}
+
+.consoleDataTable__clickableRow {
+  cursor: pointer;
+}
+
+.consoleDataTable__clickableRow:focus-visible {
+  outline: 3px solid var(--cui-focus);
+  outline-offset: -3px;
+}
+
+.consoleDataTable__clickableRow:focus-visible td {
+  background: var(--cui-surface-subtle);
+}
+
+.consoleDataTableCell--center {
+  text-align: center;
+}
+
+.consoleDataTableCell--end {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.consoleDataTableCell--end button {
+  margin-left: auto;
+}
+
+.consoleDataTable__stateCell {
+  padding: 0 !important;
+}
+
+.consoleDataTable__state {
+  display: grid;
+  min-height: 88px;
+  padding: 12px;
+  place-items: center;
+  align-content: center;
+  gap: 8px;
+  color: var(--cui-text-muted);
+  line-height: 1.5;
+  text-align: center;
+}
+
+.consoleDataTable__state > button {
+  display: inline-flex;
+  min-height: var(--cui-control-height);
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 6px 10px;
+  border: 1px solid var(--cui-border);
+  border-radius: 8px;
+  background: var(--cui-control-bg);
+  color: var(--cui-text);
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+@media (max-width: 767px), (pointer: coarse) {
+  .consoleFilterBar :is(button, input, select, textarea),
+  .consoleFilterBar .cuiInputFrame,
+  .consoleFilterBar__advancedToggle,
+  .consoleDataTable__columnPickerContent label,
+  .consoleDataTable__state > button {
+    min-height: var(--cui-touch-target);
+  }
+}
+
+.consoleDataTable__skeleton {
+  display: block;
+  width: min(100%, 160px);
+  height: 14px;
+  border-radius: 999px;
+  background: var(--cui-skeleton-base);
+  animation: consoleSkeletonPulse 1.4s ease-in-out infinite;
+}
+
+.consoleDataTable__pagination {
+  display: flex;
+  min-height: var(--cui-touch-target);
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 6px 12px;
+  border-top: 1px solid var(--cui-border-subtle);
+  background: var(--cui-surface);
+  color: var(--cui-text-muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.consoleDataTable__pagination label,
+.consoleDataTable__pageButtons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.consoleDataTable__pagination select,
+.consoleDataTable__pagination button {
+  min-width: var(--cui-touch-target);
+  min-height: var(--cui-touch-target);
+  border: 1px solid transparent;
+  border-radius: var(--cui-radius-sm);
+  background: transparent;
+  color: var(--cui-text);
+  font: inherit;
+}
+
+.consoleDataTable__pagination select {
+  border-color: var(--cui-control-border);
+  background: var(--cui-control-bg);
+  padding: 0 30px 0 10px;
+}
+
+.consoleDataTable__pagination button {
+  display: inline-grid;
+  padding: 0;
+  place-items: center;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.consoleDataTable__pagination button:hover:not(:disabled) {
+  border-color: transparent;
+  background: var(--cui-control-hover);
+  color: var(--cui-accent);
+}
+
+.consoleDataTable__pagination button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.consoleDataTable :is(button, summary, select, input):focus-visible,
+.consoleFilterBar :is(button, input, select, textarea):focus-visible,
+.consoleBreadcrumbs :is(a, button):focus-visible {
+  outline: 3px solid var(--cui-focus);
+  outline-offset: 2px;
+}
+
+@keyframes consoleSkeletonPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1279px) {
+  .consoleDataTableColumn--detail {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (pointer: fine) {
+  .consoleFilterBar :is(button, input, select, textarea) {
+    min-height: var(--cui-data-toolbar-height);
+  }
+
+  .consoleFilterBar .cuiInputFrame {
+    min-height: var(--cui-data-toolbar-height);
+  }
+
+  .consoleFilterBar .cuiInputFrame .cuiInput {
+    min-height: calc(var(--cui-data-toolbar-height) - 2px);
+  }
+
+  .consoleFilterBar__advancedToggle,
+  .consoleDataTable__columnPickerTrigger,
+  .consoleDataTable__columnPickerContent label,
+  .consoleDataTable__state > button,
+  .consoleDataTable__pagination select,
+  .consoleDataTable__pagination button {
+    min-height: var(--cui-data-toolbar-height);
+  }
+
+  .consoleDataTable__tools {
+    min-height: var(--cui-data-header-height);
+    padding-block: 0;
+  }
+
+  .consoleDataTable th {
+    height: var(--cui-data-header-height);
+  }
+
+  .consoleDataTable th button {
+    min-width: var(--cui-data-toolbar-height);
+    min-height: var(--cui-data-header-height);
+  }
+
+  .consoleDataTable__pagination {
+    min-height: var(--cui-data-pagination-height);
+    padding-block: 3px;
+  }
+
+  .consoleDataTable__pagination select,
+  .consoleDataTable__pagination button {
+    min-width: var(--cui-data-toolbar-height);
+  }
+}
+
+@media (min-width: 1024px) {
+  .consoleDataTable__viewport[data-scrollable="true"] {
+    max-height: min(62vh, 640px);
+    overflow: auto;
+    scrollbar-gutter: stable;
+  }
+
+  .consoleDataTable__viewport[data-scrollable="true"] thead {
+    position: sticky;
+    top: 0;
+    z-index: var(--cui-layer-sticky);
+  }
+}
+
+@media (max-width: 767px) {
+  .consolePageHeading {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .consolePageHeading__primaryAction,
+  .consolePageHeading__primaryAction > :is(button, a) {
+    width: 100%;
+    min-height: var(--cui-touch-target);
+  }
+
+  .consoleMetricStrip dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .consoleMetricStrip__item:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .consoleMetricStrip__item:nth-child(n + 3) {
+    border-top: 1px solid var(--cui-border);
+  }
+
+  .consoleFilterBar__main {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .consoleFilterBar__fields,
+  .consoleFilterBar__actions {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  .consoleFilterBar__fields > *,
+  .consoleFilterBar__actions > * {
+    flex: 1 1 100%;
+  }
+
+  .consoleFilterBar__advanced {
+    grid-template-columns: 1fr;
+  }
+
+  .consoleDataTableColumn--secondary {
+    display: none;
+  }
+
+  .consoleDataTable table {
+    min-width: 100%;
+  }
+
+  .consoleDataTable__pagination {
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px 12px;
+  }
+
+  .consoleDataTable__range {
+    order: -1;
+    width: 100%;
+  }
+}
+
+@media (max-width: 359px) {
+  .consoleMetricStrip dl {
+    grid-template-columns: 1fr;
+  }
+
+  .consoleMetricStrip__item + .consoleMetricStrip__item {
+    border-top: 1px solid var(--cui-border);
+    border-left: 0;
+  }
+
+  .consoleDataTable__pagination label > span,
+  .consoleDataTable__pageButtons > span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .consoleFilterBar__chevron,
+  .consoleDataTable__skeleton {
+    animation: none;
+    transition: none;
+  }
+}

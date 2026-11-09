@@ -1,0 +1,227 @@
+.auditLogsPage {
+  display: grid;
+  gap: var(--cui-space-3);
+  color: var(--cui-text);
+}
+
+.auditLogsWorkbench {
+  min-width: 0;
+  overflow: hidden;
+  border-block: 1px solid var(--cui-border);
+  border-inline: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.auditLogsWorkbench > .consoleFilterBar {
+  padding: 6px 0;
+  border-bottom: 1px solid var(--cui-border-subtle);
+  border-radius: 0;
+  background: transparent;
+}
+
+.auditLogsWorkbench > .consoleDataTable {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.auditLogsWorkbench .consoleDataTable table {
+  font-size: 12px;
+}
+
+.auditLogsWorkbench .consoleDataTable th {
+  height: 38px;
+  font-size: 11.5px;
+}
+
+.auditLogsWorkbench .consoleDataTable td {
+  height: 36px;
+  padding-block: 4px;
+}
+
+.auditLogsField {
+  display: grid;
+  flex: 0 1 174px;
+  min-width: min(100%, 150px);
+  gap: 4px;
+  color: var(--cui-text-muted);
+  font-size: 11.5px;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+.auditLogsField--keyword {
+  flex: 1 1 260px;
+  min-width: min(100%, 220px);
+}
+
+.auditLogsActions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--cui-space-2);
+}
+
+.auditLogsIdentity {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.auditLogsIdentity strong,
+.auditLogsIdentity code {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.auditLogsIdentity strong {
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+.auditLogsIdentity code,
+.auditLogsCode {
+  font-family: var(--cui-font-mono);
+}
+
+.auditLogsMuted {
+  color: var(--cui-text-faint);
+  font-size: 11.5px;
+}
+
+.auditLogsDetail {
+  display: grid;
+}
+
+.auditLogsDetail section {
+  display: grid;
+  gap: var(--cui-space-2);
+  padding-block: var(--cui-space-3);
+}
+
+.auditLogsDetail section:first-child {
+  padding-top: 0;
+}
+
+.auditLogsDetail section:last-child {
+  padding-bottom: 0;
+}
+
+.auditLogsDetail section + section {
+  border-top: 1px solid var(--cui-border);
+}
+
+.auditLogsDetail h3,
+.auditLogsDetail h4 {
+  margin: 0;
+}
+
+.auditLogsDetail h3 {
+  color: var(--cui-text);
+  font-size: 13px;
+  font-weight: 680;
+  line-height: 1.35;
+}
+
+.auditLogsDetail h4 {
+  color: var(--cui-text-muted);
+  font-size: 11.5px;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.auditLogsDetailList {
+  display: grid;
+  margin: 0;
+  border-block: 1px solid var(--cui-border);
+}
+
+.auditLogsDetailList > div {
+  display: grid;
+  min-height: 34px;
+  grid-template-columns: 112px minmax(0, 1fr);
+  align-items: center;
+  gap: var(--cui-space-2);
+  padding: 6px 0;
+}
+
+.auditLogsDetailList > div + div {
+  border-top: 1px solid var(--cui-border-subtle);
+}
+
+.auditLogsDetail dt {
+  color: var(--cui-text-faint);
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.auditLogsDetail dd {
+  min-width: 0;
+  margin: 0;
+  color: var(--cui-text);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.auditLogsDiff {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--cui-space-2);
+}
+
+.auditLogsDiff--single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.auditLogsCode {
+  max-height: 280px;
+  margin: 0;
+  padding: 8px 10px;
+  overflow: auto;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-sm);
+  background: var(--cui-control-bg);
+  color: var(--cui-text);
+  font-size: 11.5px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 767px) {
+  .auditLogsField,
+  .auditLogsField--keyword {
+    min-width: 100%;
+  }
+
+  .auditLogsActions {
+    width: 100%;
+  }
+
+  .auditLogsActions > * {
+    flex: 1 1 auto;
+  }
+
+  .auditLogsDetailList > div,
+  .auditLogsDiff {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .auditLogsDetailList > div {
+    align-items: start;
+    gap: var(--cui-space-1);
+    padding-block: var(--cui-space-3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auditLogsPage * {
+    scroll-behavior: auto;
+  }
+}
+
+/* 0.2.6 shared console surfaces */
+.consoleWorkbench .auditLogsWorkbench { display: grid; gap: 18px; border: 0; background: transparent; overflow: visible; }

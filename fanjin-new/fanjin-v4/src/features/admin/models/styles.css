@@ -1,0 +1,587 @@
+.adminModelsPage {
+  display: grid;
+  min-width: 0;
+  gap: var(--cui-space-3);
+  color: var(--cui-text);
+}
+
+.adminModelsPage > .consoleMetricStrip,
+.adminModelsPage > .consoleFilterBar,
+.adminModelsPage > .consoleDataTable {
+  border-inline: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.adminModelsPage > .consoleMetricStrip,
+.adminModelsPage > .consoleFilterBar {
+  border-bottom: 0;
+}
+
+.adminModelsPage > .consoleMetricStrip dl {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.adminModelsPage > .consoleMetricStrip .consoleMetricStrip__item {
+  display: grid;
+  min-height: 52px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-content: center;
+  align-items: center;
+  gap: 2px var(--cui-space-2);
+  padding: 7px 12px;
+}
+
+.adminModelsPage > .consoleMetricStrip .consoleMetricStrip__item dt {
+  grid-column: 1;
+  font-size: 11.5px;
+}
+
+.adminModelsPage > .consoleMetricStrip .consoleMetricStrip__item dd {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  margin: 0;
+}
+
+.adminModelsPage > .consoleMetricStrip .consoleMetricStrip__value {
+  font-size: 16px;
+  font-weight: 720;
+}
+
+.adminModelsPage > .consoleMetricStrip .consoleMetricStrip__hint {
+  grid-column: 1;
+  margin-top: 0;
+  font-size: 11.5px;
+}
+
+.adminModelsPage > .consoleFilterBar {
+  padding-inline: 12px;
+}
+
+.adminModelsPage .consoleDataTable table {
+  min-width: 1120px;
+  font-size: 12px;
+}
+
+.adminModelsPage .consoleDataTable th {
+  height: 38px;
+  font-size: 11.5px;
+}
+
+.adminModelsPage .consoleDataTable th button {
+  min-height: 38px;
+}
+
+.adminModelsPage .consoleDataTable td {
+  height: 36px;
+  padding-block: 4px;
+}
+
+.adminModelsField {
+  display: grid;
+  min-width: min(100%, 180px);
+  gap: var(--cui-space-1);
+  color: var(--cui-text-muted);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.adminModelsField--keyword {
+  min-width: min(100%, 260px);
+}
+
+.adminModelsActions,
+.adminModelsDrawerActions,
+.adminModelsDialogActions,
+.adminModelsRowActions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--cui-space-2);
+}
+
+.adminModelsRowActions {
+  flex-wrap: nowrap;
+}
+
+.adminModelsDrawerActions,
+.adminModelsDialogActions {
+  justify-content: flex-end;
+}
+
+.adminModelsIdentity {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.adminModelsIdentity strong,
+.adminModelsIdentity code {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.adminModelsIdentity strong {
+  font-size: 12.5px;
+  font-weight: 650;
+}
+
+.adminModelsIdentity code,
+.adminModelsCode {
+  font-family: var(--cui-font-mono);
+}
+
+.adminModelsMuted {
+  color: var(--cui-text-faint);
+  font-size: 11.5px;
+}
+
+.adminModelsPriority {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--cui-space-1);
+  font-variant-numeric: tabular-nums;
+}
+
+.adminModelsForm,
+.adminModelsFormStep,
+.adminModelsFormSteps,
+.adminModelsAdvancedContent {
+  display: grid;
+}
+
+.adminModelsForm,
+.adminModelsFormStep {
+  gap: var(--cui-space-4);
+}
+
+.adminModelsFormSteps {
+  gap: var(--cui-space-2);
+}
+
+.adminModelsFormSteps ol {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--cui-border);
+  list-style: none;
+}
+
+.adminModelsFormSteps button {
+  display: flex;
+  width: 100%;
+  min-height: 36px;
+  align-items: center;
+  justify-content: center;
+  gap: var(--cui-space-2);
+  padding: 5px var(--cui-space-2);
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--cui-text-muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.adminModelsFormSteps button > span {
+  display: inline-grid;
+  width: 19px;
+  height: 19px;
+  place-items: center;
+  border: 1px solid var(--cui-border-strong);
+  border-radius: 50%;
+  color: var(--cui-text-faint);
+  font-size: 10.5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.adminModelsFormSteps li[data-state="active"] button {
+  border-bottom-color: var(--cui-accent);
+  color: var(--cui-text);
+}
+
+.adminModelsFormSteps li[data-state="active"] button > span {
+  border-color: var(--cui-accent);
+  color: var(--cui-accent);
+}
+
+.adminModelsFormSteps button:disabled {
+  cursor: not-allowed;
+  opacity: .48;
+}
+
+.adminModelsFormSteps button:focus-visible {
+  outline: 3px solid var(--cui-focus);
+  outline-offset: 2px;
+}
+
+.adminModelsFormSteps > p {
+  display: flex;
+  gap: var(--cui-space-2);
+  margin: 0;
+  color: var(--cui-text-muted);
+  font-size: 11.5px;
+  line-height: 1.5;
+}
+
+.adminModelsFormSteps > p strong {
+  flex: 0 0 auto;
+  color: var(--cui-text);
+  font-weight: 650;
+}
+
+.adminModelsForm > .adminModelsAdvanced {
+  margin-top: 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--cui-border);
+}
+
+.adminModelsFormGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--cui-space-3) var(--cui-space-4);
+}
+
+.adminModelsFormField--wide,
+.adminModelsFormField--short {
+  grid-column: 1 / -1;
+}
+
+.adminModelsFormField--short {
+  width: calc((100% - var(--cui-space-4)) / 2);
+}
+
+.adminModelsDetail {
+  display: grid;
+  gap: var(--cui-space-4);
+}
+
+.adminModelsDetail section {
+  display: grid;
+  gap: var(--cui-space-2);
+}
+
+.adminModelsDetail section + section {
+  padding-top: var(--cui-space-4);
+  border-top: 1px solid var(--cui-border);
+}
+
+.adminModelsDetail h3 {
+  margin: 0;
+  color: var(--cui-text);
+  font-size: 13px;
+}
+
+.adminModelsDetail dl {
+  display: grid;
+  margin: 0;
+  border-top: 1px solid var(--cui-border);
+}
+
+.adminModelsDetail dl > div {
+  display: grid;
+  grid-template-columns: minmax(120px, .34fr) minmax(0, 1fr);
+  gap: var(--cui-space-3);
+  padding: 9px 0;
+  border-bottom: 1px solid var(--cui-border);
+}
+
+.adminModelsDetail dt {
+  color: var(--cui-text-faint);
+  font-size: 11.5px;
+}
+
+.adminModelsDetail dd {
+  min-width: 0;
+  margin: 0;
+  color: var(--cui-text);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.adminModelsCode {
+  max-height: 300px;
+  margin: 0;
+  padding: var(--cui-space-3);
+  overflow: auto;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-control-bg);
+  color: var(--cui-text);
+  font-size: 12px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.adminModelsTextarea {
+  width: 100%;
+  min-height: 96px;
+  resize: vertical;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-control-bg);
+  color: var(--cui-text);
+  font: inherit;
+  line-height: 1.5;
+  padding: var(--cui-space-3);
+}
+
+.adminModelsTextarea:focus-visible {
+  outline: 3px solid var(--cui-focus);
+  outline-offset: 2px;
+}
+
+.adminModelsSummary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--cui-space-3);
+  margin: 0;
+  padding-bottom: var(--cui-space-3);
+  border-bottom: 1px solid var(--cui-border);
+}
+
+.adminModelsSummary dt {
+  color: var(--cui-text-muted);
+  font-size: 11.5px;
+}
+
+.adminModelsSummary dd {
+  margin: var(--cui-space-1) 0 0;
+  color: var(--cui-text);
+  font-size: 12.5px;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.adminModelsAdvanced {
+  margin-top: var(--cui-space-1);
+}
+
+.adminModelsAdvancedContent {
+  gap: var(--cui-space-3);
+}
+
+.adminModelsReadiness {
+  display: grid;
+  gap: var(--cui-space-3);
+}
+
+.adminModelsReadiness .cuiAlert p,
+.adminModelsReadiness .cuiAlert ul {
+  margin: 0;
+}
+
+.adminModelsReadiness .cuiAlert p + p,
+.adminModelsReadiness .cuiAlert p + ul {
+  margin-top: var(--cui-space-1);
+}
+
+.adminModelsReadiness .cuiAlert ul {
+  padding-left: 18px;
+}
+
+.adminModelsReadinessChecks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+  overflow: hidden;
+}
+
+.adminModelsReadinessChecks > div {
+  display: grid;
+  gap: var(--cui-space-1);
+  min-width: 0;
+  padding: var(--cui-space-2) var(--cui-space-3);
+  border-bottom: 1px solid var(--cui-border);
+}
+
+.adminModelsReadinessChecks > div:nth-child(odd) {
+  border-right: 1px solid var(--cui-border);
+}
+
+.adminModelsReadinessChecks > div:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+.adminModelsReadinessChecks dt {
+  color: var(--cui-text-faint);
+  font-size: 11.5px;
+}
+
+.adminModelsReadinessChecks dd {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--cui-space-1);
+  margin: 0;
+  color: var(--cui-text-muted);
+  font-size: 11.5px;
+  overflow-wrap: anywhere;
+}
+
+.adminModelsDeliveryProofs {
+  display: grid;
+  gap: var(--cui-space-2);
+  padding: var(--cui-space-3);
+  border: 1px solid var(--cui-success-border);
+  border-radius: var(--cui-radius-md);
+  background: color-mix(in srgb, var(--cui-success-bg) 34%, var(--cui-surface));
+}
+
+.adminModelsDeliveryProofsHeader,
+.adminModelsDeliveryProofCard header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--cui-space-2);
+}
+
+.adminModelsDeliveryProofsHeader h4,
+.adminModelsDeliveryProofsHeader p,
+.adminModelsDeliveryProofCard p,
+.adminModelsDeliveryProofCard ul {
+  margin: 0;
+}
+
+.adminModelsDeliveryProofsHeader h4 {
+  color: var(--cui-text);
+  font-size: 13px;
+}
+
+.adminModelsDeliveryProofsHeader p,
+.adminModelsDeliveryProofCard p,
+.adminModelsDeliveryProofCard li {
+  color: var(--cui-text-muted);
+  font-size: 11.5px;
+  line-height: 1.55;
+}
+
+.adminModelsDeliveryProofGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--cui-space-2);
+}
+
+.adminModelsDeliveryProofCard {
+  min-width: 0;
+  padding: var(--cui-space-2);
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-sm);
+  background: var(--cui-surface);
+}
+
+.adminModelsDeliveryProofCard header strong {
+  color: var(--cui-text);
+  font-size: 14px;
+}
+
+.adminModelsDeliveryProofCard p {
+  margin-top: var(--cui-space-1);
+}
+
+.adminModelsDeliveryProofCard ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px var(--cui-space-2);
+  margin-top: var(--cui-space-2);
+  padding-left: 16px;
+}
+
+@media (min-width: 1024px) {
+  .adminModelsPage .consoleFilterBar__fields {
+    display: grid;
+    grid-template-columns: minmax(240px, 1.5fr) repeat(3, minmax(130px, .8fr));
+  }
+
+  .adminModelsPage .consoleFilterBar__fields > * {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .adminModelsPage .consoleFilterBar__main {
+    justify-content: flex-start;
+  }
+
+  .adminModelsPage .consoleFilterBar__fields {
+    flex: 1 1 auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .adminModelsField,
+  .adminModelsField--keyword {
+    min-width: 100%;
+  }
+
+  .adminModelsActions,
+  .adminModelsDrawerActions,
+  .adminModelsDialogActions {
+    width: 100%;
+  }
+
+  .adminModelsActions > *,
+  .adminModelsDrawerActions > *,
+  .adminModelsDialogActions > * {
+    flex: 1 1 auto;
+  }
+
+  .adminModelsPage > .consoleMetricStrip dl,
+  .adminModelsSummary,
+  .adminModelsFormGrid,
+  .adminModelsReadinessChecks {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .adminModelsDeliveryProofGrid,
+  .adminModelsDeliveryProofCard ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .adminModelsReadinessChecks > div,
+  .adminModelsReadinessChecks > div:nth-child(odd),
+  .adminModelsReadinessChecks > div:nth-last-child(-n + 2) {
+    border-right: 0;
+    border-bottom: 1px solid var(--cui-border);
+  }
+
+  .adminModelsReadinessChecks > div:last-child {
+    border-bottom: 0;
+  }
+
+  .adminModelsFormField--short {
+    width: 100%;
+  }
+
+  .adminModelsFormSteps button {
+    min-height: var(--cui-touch-target);
+    gap: var(--cui-space-1);
+    padding-inline: var(--cui-space-1);
+    font-size: 12px;
+  }
+
+  .adminModelsFormSteps button > span {
+    display: none;
+  }
+
+  .adminModelsDetail dl > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--cui-space-1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .adminModelsPage * {
+    scroll-behavior: auto;
+  }
+}

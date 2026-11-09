@@ -1,0 +1,21 @@
+{
+  "version": "fanjin-public-video-response/v0.0.7",
+  "object": "content.generation.task",
+  "statuses": [
+    "queued",
+    "running",
+    "pending_reconcile",
+    "succeeded",
+    "failed",
+    "cancelled"
+  ],
+  "timestampFields": [
+    "created_at",
+    "updated_at",
+    "completed_at"
+  ],
+  "outputDurationField": "duration_ms",
+  "outputDurationUnit": "milliseconds",
+  "requestProjectField": "projectId",
+  "stableVideoUrl": "https://media.fanjin.example.com/videos/fvgen_01J00000000000000000000000.mp4"
+}

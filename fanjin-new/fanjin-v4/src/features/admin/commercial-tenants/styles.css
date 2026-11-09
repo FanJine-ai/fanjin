@@ -1,0 +1,170 @@
+.commercialTenantsPage {
+  display: grid;
+  min-width: 0;
+  gap: var(--cui-space-3);
+}
+
+.commercialTenantsData {
+  min-width: 0;
+  overflow: hidden;
+  border-block: 1px solid var(--cui-border);
+}
+
+.commercialTenantsTable {
+  border: 0;
+  border-radius: 0;
+}
+
+.commercialTenantsTable table {
+  min-width: 1160px;
+  font-size: 12px;
+}
+
+.commercialTenantPrimary {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.commercialTenantPrimary :is(strong, span, small) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.commercialTenantPrimary strong {
+  color: var(--cui-text);
+  font-size: 13px;
+  font-weight: 680;
+}
+
+.commercialTenantPrimary span {
+  color: var(--cui-text-muted);
+  font-size: 11.5px;
+}
+
+.commercialTenantPrimary small,
+.commercialTenantMuted {
+  color: var(--cui-text-faint);
+  font-family: var(--cui-font-mono);
+  font-size: 10.5px;
+}
+
+.commercialTenantForm,
+.commercialTenantDialogFooter,
+.commercialTenantDetail {
+  display: grid;
+  gap: var(--cui-space-4);
+}
+
+.commercialTenantDialogFooter > div:last-child,
+.commercialTenantDrawerFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--cui-space-2);
+}
+
+.commercialTenantLedger {
+  overflow: hidden;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-lg);
+  background: var(--cui-surface);
+}
+
+.commercialTenantSectionHeading {
+  display: flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cui-space-3);
+  padding: 0 var(--cui-space-4);
+  border-bottom: 1px solid var(--cui-border-subtle);
+}
+
+.commercialTenantSectionHeading > div {
+  display: flex;
+  align-items: center;
+  gap: var(--cui-space-2);
+}
+
+.commercialTenantSectionHeading h3 {
+  margin: 0;
+  color: var(--cui-text);
+  font-size: 13px;
+}
+
+.commercialTenantSectionHeading small {
+  color: var(--cui-text-faint);
+  font-size: 11px;
+}
+
+.commercialTenantLedgerList {
+  display: grid;
+}
+
+.commercialTenantLedgerList article {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--cui-space-3);
+  align-items: center;
+  padding: var(--cui-space-3) var(--cui-space-4);
+  border-bottom: 1px solid var(--cui-border-subtle);
+}
+
+.commercialTenantLedgerList article:last-child {
+  border-bottom: 0;
+}
+
+.commercialTenantLedgerList article > div {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: var(--cui-space-2);
+}
+
+.commercialTenantLedgerList article > div:first-child {
+  display: grid;
+  gap: 2px;
+}
+
+.commercialTenantLedgerList article > div:last-child {
+  justify-content: flex-end;
+}
+
+.commercialTenantLedgerList strong {
+  color: var(--cui-text);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.commercialTenantLedgerList span {
+  overflow: hidden;
+  color: var(--cui-text-muted);
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .commercialTenantLedgerList article {
+    grid-template-columns: 1fr;
+  }
+
+  .commercialTenantLedgerList article > div:last-child {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .commercialTenantsPage *,
+  .commercialTenantsPage *::before,
+  .commercialTenantsPage *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* 0.2.6 workbench alignment */
+
+.consoleWorkbench .commercialTenantsData { display: grid; gap: 18px; border: 0; overflow: visible; }

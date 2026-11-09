@@ -1,0 +1,126 @@
+/* Runtime counterpart of the approved membership / recharge design.
+   Scope every rule to the real dialog so preview and console styles cannot
+   move the account row into the amount/payment grid again. */
+.rechargeCenter.workspaceRechargeDialog { padding: 0; }
+.rechargeCenter.workspaceRechargeDialog .consoleDialogPanel {
+  width: 100vw;
+  max-width: none;
+  height: 100dvh;
+  max-height: 100dvh;
+  border: 0;
+  border-radius: 0;
+  background: var(--cui-surface-subtle);
+}
+.rechargeCenter .consoleOverlayHeader {
+  min-height: 80px;
+  padding: 16px 40px;
+  background: var(--cui-surface);
+}
+.rechargeCenterBrand { display: flex; align-items: center; gap: 10px; }
+.rechargeCenterBrand img { width: 36px; height: 36px; }
+.rechargeCenterBrand > span { display: grid; gap: 3px; font-size: 17px; }
+.rechargeCenterBrand small { font-size: 9px; letter-spacing: .2em; color: var(--cui-text-muted); }
+[data-theme="dark"] .rechargeCenterBrand img { filter: invert(1); }
+.rechargeCenter .workspaceRechargeDialogContent { padding: 0 40px 36px; }
+.rechargeCenter .workspaceRechargeScreen { max-width: 1280px; margin: 0 auto; }
+.rechargeCenter .workspaceRechargeTabs { justify-content: center; align-items: center; gap: 36px; margin-bottom: 28px; position: relative; }
+.rechargeCenter .workspaceRechargeTabs button { min-height: 60px; font-size: 15px; }
+.rechargeCenter .workspaceRechargeTabs .rechargeCenterTheme { position: absolute; right: 0; display: grid; place-items: center; width: 44px; }
+.rechargeCenter .workspaceRechargeIdentity { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.rechargeCenter .workspaceRechargeIdentityIcon { display: grid; place-items: center; flex: 0 0 42px; height: 42px; color: var(--cui-on-accent); background: var(--cui-accent); border-radius: 50%; }
+.rechargeCenter .workspaceRechargeIdentity > div { display: grid; gap: 5px; min-width: 0; }
+.rechargeCenter .workspaceRechargeIdentity strong { font-size: 14px; font-weight: 600; overflow-wrap: anywhere; }
+.rechargeCenter .workspaceRechargeIdentity small { font-size: 12px; color: var(--cui-text-muted); }
+.rechargeCenter .workspaceRechargeBalance { margin-left: auto; text-align: right; }
+.rechargeCenter .workspaceRechargeBalance strong { font-variant-numeric: tabular-nums; }
+.rechargeCenterIntro { text-align: center; margin: 44px 0 38px; }
+.rechargeCenterIntro h3 { margin: 0; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.45; font-weight: 600; color: var(--cui-text); }
+.rechargeCenterIntro p { margin: 12px 0 0; font-size: 14px; line-height: 1.7; color: var(--cui-text-muted); }
+.rechargeCenterIntro > span { display: inline-flex; align-items: center; gap: 7px; margin-top: 18px; color: var(--cui-text-muted); font-size: 12px; }
+.rechargeCenter .workspaceRechargeBody { grid-template-columns: minmax(0, 1fr) minmax(280px, 320px); gap: 40px; max-width: 1100px; margin: 0 auto; }
+.rechargeCenter .workspaceRechargeMain { min-width: 0; gap: 18px; }
+.rechargeCenter .workspaceRechargeSection { gap: 18px; }
+.rechargeCenter .workspaceRechargeSectionHeading { justify-content: space-between; }
+.rechargeCenter .workspaceRechargeSectionHeading h3 { font-size: 17px; font-weight: 600; }
+.rechargeCenter .workspaceRechargeAmounts { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.rechargeCenter .workspaceRechargeAmounts button { min-width: 0; min-height: 170px; padding: 22px 18px; gap: 11px; border-radius: 14px; }
+.rechargeCenter .workspaceRechargeAmounts button strong { max-width: 100%; font-size: clamp(22px, 2.1vw, 30px); font-weight: 600; line-height: 1.3; overflow-wrap: anywhere; }
+.rechargeCenter .workspaceRechargeAmounts button small { position: static; padding: 0; background: none; color: inherit; font-size: 11px; font-weight: 400; }
+.rechargeCenter .workspaceRechargeAmounts button .rechargeCardTitle { font-size: 12px; }
+.rechargeCenter .workspaceRechargeAmounts button .rechargeCardCredits { color: var(--cui-text); font-size: 15px; font-variant-numeric: tabular-nums; }
+.rechargeCenter .workspaceRechargeAmounts button .rechargeCardValidity { color: var(--cui-text-muted); font-size: 12px; line-height: 1.6; }
+.rechargeCenter .workspaceRechargeAmounts button:disabled { opacity: .55; cursor: not-allowed; }
+.rechargeCenter .workspaceRechargeDisclosure { padding: 16px 18px; border: 1px solid var(--cui-border); border-radius: 12px; background: var(--cui-surface); font-size: 13px; color: var(--cui-text-muted); }
+.rechargeCenter .workspaceRechargeDisclosure summary { cursor: pointer; color: var(--cui-text); }
+.rechargeCenter .workspaceRechargeDisclosure[open] summary { margin-bottom: 16px; }
+.rechargeCenter .workspaceRechargeOperator { margin: 0; font-size: 12px; line-height: 1.7; color: var(--cui-text-muted); }
+.rechargeCenter .workspaceRechargeSummary { margin: 0; min-width: 0; padding: 26px; border: 1px solid var(--cui-border); border-radius: 14px; background: var(--cui-surface); }
+.rechargeCenter .workspaceRechargeCreditPreview { display: grid; gap: 14px; padding-bottom: 24px; margin-bottom: 24px; border-bottom: 1px solid var(--cui-border); }
+.rechargeCenter .workspaceRechargeCreditPreview > span { font-size: 17px; font-weight: 600; color: var(--cui-text); }
+.rechargeCenter .workspaceRechargeCreditPreview strong { font-size: 30px; font-weight: 600; line-height: 1.3; overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
+.rechargeCenter .workspaceRechargeCreditPreview small { font-size: 13px; font-weight: 400; }
+.rechargeCenter .workspaceRechargeCreditPreview p { margin: 0; font-size: 12px; line-height: 1.6; color: var(--cui-text-muted); }
+.rechargeCenter .workspaceRechargeMethodGrid > button { padding: 12px; grid-template-columns: 32px minmax(0, 1fr); gap: 8px; }
+.rechargeCenter .workspaceRechargeMethodGrid > button > .cuiBadge { grid-column: 2; justify-self: start; }
+.rechargeCenter .workspaceRechargeContactGrid { grid-template-columns: minmax(0, 1fr); }
+.rechargeCenterRules { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; max-width: 1100px; margin: 36px auto 0; padding-top: 28px; border-top: 1px solid var(--cui-border); }
+.rechargeCenterRules > div { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 8px 10px; color: var(--cui-text-muted); }
+.rechargeCenterRules h3 { margin: 0; font-size: 14px; font-weight: 600; color: var(--cui-text); }
+.rechargeCenterRules p { grid-column: 2; margin: 0; font-size: 12px; line-height: 1.8; }
+.rechargeCenter .consoleOverlayFooter { padding: 16px max(40px, calc((100vw - 1100px) / 2)); background: var(--cui-surface); }
+.rechargeCenter .workspaceRechargeFooter { max-width: 1100px; margin: auto; }
+.rechargeCenter .workspaceRechargeOrderHistory { padding-top: 12px; }
+.rechargeCenter .rechargeMembershipPlans { max-width: 1100px; margin: 0 auto; }
+.rechargeCenter.workspaceRechargeDialog--checkout .workspaceRechargeDialogContent { display: grid; place-items: start center; }
+.rechargeCenter.workspaceRechargeDialog--checkout .workspaceRechargeScreen { width: min(100%, 520px); }
+.rechargeCenter.workspaceRechargeDialog--checkout .workspaceRechargeSuccess { max-width: 520px; margin: 20px auto 0; }
+@media (max-width: 1050px) {
+  .rechargeCenter .workspaceRechargeBody { gap: 24px; grid-template-columns: minmax(0, 1fr) 280px; }
+  .rechargeCenter .workspaceRechargeAmounts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 767px) {
+  .rechargeCenter .consoleOverlayHeader { min-height: 64px; padding: 12px 20px; }
+  .rechargeCenter .workspaceRechargeDialogContent { padding: 0 20px 24px; }
+  .rechargeCenter .workspaceRechargeTabs { gap: 24px; padding-right: 36px; margin-bottom: 20px; }
+  .rechargeCenter .workspaceRechargeTabs button { min-height: 52px; font-size: 14px; white-space: nowrap; }
+  .rechargeCenter .workspaceRechargeTabs .rechargeCenterTheme { width: 32px; }
+  .rechargeCenter .workspaceRechargeIdentity { flex-wrap: wrap; gap: 10px; }
+  .rechargeCenter .workspaceRechargeIdentity > div:not(.workspaceRechargeBalance) { flex: 1; }
+  .rechargeCenter .workspaceRechargeBalance { flex-basis: 100%; display: flex; gap: 8px; text-align: left; align-items: baseline; padding-top: 8px; }
+  .rechargeCenterIntro { margin: 30px 0 28px; }
+  .rechargeCenterIntro p { font-size: 13px; }
+  .rechargeCenter .workspaceRechargeBody { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .rechargeCenter .workspaceRechargeAmounts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .rechargeCenter .workspaceRechargeAmounts button { min-height: 152px; padding: 20px 16px; }
+  .rechargeCenter .workspaceRechargeAmounts button strong { font-size: 26px; }
+  .rechargeCenter .workspaceRechargeSummary { padding: 22px; }
+  .rechargeCenter .workspaceRechargeMethodGrid > button { grid-template-columns: 32px minmax(0, 1fr) auto; }
+  .rechargeCenter .workspaceRechargeMethodGrid > button > .cuiBadge { grid-column: auto; }
+  .rechargeCenterRules { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .rechargeCenter .consoleOverlayFooter { padding: 12px 20px max(12px, env(safe-area-inset-bottom)); }
+  .rechargeCenter .workspaceRechargeFooterAmount strong { font-size: 22px; }
+}
+@media (max-height: 540px) {
+  .rechargeCenter .consoleOverlayHeader { min-height: 56px; padding-block: 8px; }
+  .rechargeCenter .consoleOverlayFooter { padding-block: 10px; }
+}
+
+/* Membership shares the real checkout and uses the current console theme. */
+.membershipBalances { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.membershipBalances div { padding: 16px; border: 1px solid var(--cui-border); border-radius: 12px; }
+.membershipBalances dt { color: var(--cui-text-muted); font-size: 12px; }
+.membershipBalances dd { margin: 8px 0 0; font-weight: 600; }
+.membershipPlanGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 24px 0; }
+.membershipPlanGrid button { display: grid; gap: 12px; text-align: left; padding: 20px; border: 1px solid var(--cui-border); border-radius: 12px; background: var(--cui-bg); color: var(--cui-text); }
+.membershipPlanGrid button[aria-pressed="true"], .membershipPeriods button[aria-pressed="true"] { outline: 2px solid var(--cui-accent); outline-offset: -2px; }
+.membershipPlanGrid small { color: var(--cui-text-muted); line-height: 1.7; }
+.membershipSelection { display: grid; gap: 18px; border: 1px solid var(--cui-border); border-radius: 12px; padding: 20px; }
+.membershipPeriods { display: flex; gap: 12px; }
+.membershipPeriods button { padding: 10px 24px; border: 1px solid var(--cui-border); border-radius: 8px; color: var(--cui-text); background: var(--cui-bg); }
+.membershipSelection input { width: 100%; accent-color: var(--cui-accent); }
+.membershipQuote { line-height: 1.8; padding: 24px 0; }
+.membershipQuote p { margin: 10px 0; }
+.membershipPurchase { padding: 12px 24px; background: var(--cui-accent); color: var(--cui-on-accent); border: 0; border-radius: 10px; }
+.rechargeMembership button:disabled { opacity: .55; cursor: not-allowed; }
+@media (max-width: 760px) { .membershipPlanGrid, .membershipBalances { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 440px) { .membershipPlanGrid { grid-template-columns: minmax(0, 1fr); } }

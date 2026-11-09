@@ -1,0 +1,36 @@
+name: Public platform
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  local-selfhost:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24.22.0
+      - run: sudo apt-get update && sudo apt-get install --yes --no-install-recommends ffmpeg
+      - name: Install isolated dependencies
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          corepack yarn --cwd fanjin-new/fanjin-api install --frozen-lockfile --ignore-scripts
+          npm --prefix fanjin-new/fanjin-api rebuild better-sqlite3
+          npm --prefix fanjin-new/fanjin-v4 ci --ignore-scripts --no-audit --no-fund
+      - name: Build and verify local self-hosting
+        run: |
+          npm --prefix fanjin-new/fanjin-api run check
+          node scripts/public-platform-build.mjs
+          npm --prefix fanjin-new/fanjin-v4 run build
+          node scripts/public-platform-smoke.mjs
+          (cd fanjin-new/fanjin-api && node node_modules/vitest/vitest.mjs run tests/unit/fanjinToolsCreation.test.ts tests/unit/fanjinToolsTransport.test.ts tests/unit/mcpProtocol.test.ts tests/api/referenceMultipartUpload.test.ts)
+          node --test fanjin-new/fanjin-cli/test/*.test.mjs
+          node --test scripts/community-dependencies.test.mjs
+          node --test fanjin-new/fanjin-community-updater/tests/*.test.mjs

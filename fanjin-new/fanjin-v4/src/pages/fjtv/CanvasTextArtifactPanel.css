@@ -1,0 +1,382 @@
+.canvasArtifactSurface {
+  --artifact-surface: #252d38;
+  --artifact-border: #445c72;
+  --artifact-text: #edf4fc;
+  --artifact-muted: #b7c8d9;
+  --artifact-action-bg: #344b63;
+  --artifact-action-hover: #405d7c;
+  --artifact-action-text: #f0f7ff;
+  --artifact-input-bg: #19222d;
+  --artifact-focus: #7dc4f5;
+  --artifact-disabled-bg: #303943;
+  --artifact-disabled-text: #9faebc;
+  --artifact-primary: #256b9f;
+  --artifact-primary-hover: #3081bb;
+}
+
+[data-project-theme="light"] .canvasArtifactSurface {
+  --artifact-surface: #f0f7fc;
+  --artifact-border: #b9d3e6;
+  --artifact-text: #16344f;
+  --artifact-muted: #52677b;
+  --artifact-action-bg: #ffffff;
+  --artifact-action-hover: #e0f0fb;
+  --artifact-action-text: #155b88;
+  --artifact-input-bg: #ffffff;
+  --artifact-focus: #2579af;
+  --artifact-disabled-bg: #edf1f5;
+  --artifact-disabled-text: #6a7a8a;
+  --artifact-primary: #176895;
+  --artifact-primary-hover: #105579;
+}
+
+.canvasArtifactToolbar {
+  margin-bottom: 12px;
+  padding: 14px;
+  border: 1px solid var(--artifact-border);
+  border-radius: 12px;
+  background: var(--artifact-surface);
+  color: var(--artifact-text);
+}
+
+.canvasArtifactToolbarHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.canvasArtifactToolbarTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.canvasArtifactToolbarBadge {
+  padding: 2px 7px;
+  border: 1px solid var(--artifact-border);
+  border-radius: 6px;
+  color: var(--artifact-muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.canvasArtifactToolbarActions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 8px;
+}
+
+[data-project-theme] .canvasArtifactSurface button.canvasArtifactAction {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 8px 10px;
+  border: 1px solid var(--artifact-border) !important;
+  border-radius: 8px;
+  background: var(--artifact-action-bg) !important;
+  color: var(--artifact-action-text) !important;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 20px;
+  cursor: pointer;
+  transition: background-color 150ms, border-color 150ms;
+}
+
+.canvasArtifactAction svg {
+  flex-shrink: 0;
+}
+
+[data-project-theme] .canvasArtifactSurface button.canvasArtifactAction:hover:not(:disabled) {
+  border-color: var(--artifact-focus) !important;
+  background: var(--artifact-action-hover) !important;
+  color: var(--artifact-action-text) !important;
+}
+
+[data-project-theme] .canvasArtifactSurface button.canvasArtifactAction:focus-visible {
+  outline: 2px solid var(--artifact-focus);
+  outline-offset: 2px;
+}
+
+[data-project-theme] .canvasArtifactSurface button.canvasArtifactAction:disabled {
+  background: var(--artifact-disabled-bg) !important;
+  color: var(--artifact-disabled-text) !important;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+[data-project-theme] .canvasArtifactSurface button.canvasArtifactCreate,
+[data-project-theme] .canvasArtifactSurface button.canvasArtifactRetry {
+  background: var(--artifact-primary) !important;
+  color: #ffffff !important;
+}
+
+[data-project-theme] .canvasArtifactSurface button.canvasArtifactCreate:hover:not(:disabled),
+[data-project-theme] .canvasArtifactSurface button.canvasArtifactRetry:hover:not(:disabled) {
+  background: var(--artifact-primary-hover) !important;
+  color: #ffffff !important;
+}
+
+[data-project-theme] .canvasArtifactSurface button.canvasArtifactCreate:disabled,
+[data-project-theme] .canvasArtifactSurface button.canvasArtifactRetry:disabled {
+  background: var(--artifact-disabled-bg) !important;
+  color: var(--artifact-disabled-text) !important;
+}
+
+.canvasArtifactRetry {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.canvasArtifactInstructionLabel {
+  display: block;
+  margin-top: 12px;
+  color: var(--artifact-text);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.canvasArtifactInstructionLabel > span {
+  margin-left: 6px;
+  color: var(--artifact-muted);
+  font-size: 11px;
+  font-weight: 400;
+}
+
+[data-project-theme] .canvasArtifactToolbar input.canvasArtifactInstruction {
+  width: 100%;
+  min-height: 38px;
+  margin-top: 6px;
+  padding: 8px 10px;
+  border: 1px solid var(--artifact-border);
+  border-radius: 8px;
+  background: var(--artifact-input-bg);
+  color: var(--artifact-text);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+[data-project-theme] .canvasArtifactToolbar input.canvasArtifactInstruction::placeholder {
+  color: var(--artifact-muted) !important;
+  opacity: 1;
+}
+
+[data-project-theme] .canvasArtifactToolbar input.canvasArtifactInstruction:focus {
+  border-color: var(--artifact-focus);
+  outline: 2px solid var(--artifact-focus);
+  outline-offset: 1px;
+  box-shadow: none;
+}
+
+.canvasArtifactInstruction:disabled {
+  opacity: 0.7;
+}
+
+.canvasArtifactShotDependencies {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid var(--artifact-border);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--artifact-input-bg) 72%, var(--artifact-surface));
+  color: var(--artifact-text);
+}
+
+.canvasArtifactShotDependencyHeader,
+.canvasArtifactShotDependencyGroup,
+.canvasArtifactShotDependencyTags,
+.canvasArtifactShotDependencyOptions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.canvasArtifactShotDependencyHeader {
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.canvasArtifactShotDependencyHeader > span:last-child,
+.canvasArtifactShotDependencyHint,
+.canvasArtifactShotDependencySettings,
+.canvasArtifactShotDependencyOptions > span {
+  color: var(--artifact-muted);
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.canvasArtifactShotDependencyGroups {
+  display: grid;
+  gap: 7px;
+  margin-top: 9px;
+}
+
+.canvasArtifactShotDependencyGroup { align-items: flex-start; }
+.canvasArtifactShotDependencyLabel { width: 34px; padding-top: 3px; color: var(--artifact-muted); font-size: 11px; }
+.canvasArtifactShotDependencyTags { flex: 1; flex-wrap: wrap; }
+.canvasArtifactShotDependencyTag,
+.canvasArtifactShotDependencyMissing {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 6px;
+  border: 1px solid var(--artifact-border);
+  border-radius: 5px;
+  background: var(--artifact-surface);
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.canvasArtifactShotDependencyTag em { font-size: 10px; font-style: normal; }
+.canvasArtifactShotDependencyReady { color: #82c99a; }
+.canvasArtifactShotDependencyTextOnly { color: var(--artifact-muted); }
+.canvasArtifactShotDependencyMissing { color: #d79b73; }
+.canvasArtifactShotDependencyHint { margin: 8px 0 0; line-height: 18px; }
+.canvasArtifactShotDependencySettings { margin-top: 9px; }
+.canvasArtifactShotDependencySettings summary { width: fit-content; cursor: pointer; }
+.canvasArtifactShotDependencyEditor { display: grid; gap: 8px; margin-top: 8px; }
+.canvasArtifactShotDependencyEditor fieldset { min-width: 0; }
+.canvasArtifactShotDependencyEditor legend { margin-bottom: 4px; color: var(--artifact-muted); font-size: 11px; }
+.canvasArtifactShotDependencyOptions { flex-wrap: wrap; }
+.canvasArtifactShotDependencyOptions label { display: inline-flex; align-items: center; gap: 4px; padding: 3px 6px; border: 1px solid var(--artifact-border); border-radius: 5px; background: var(--artifact-surface); font-size: 11px; }
+.canvasArtifactShotDependencyOptions button { color: #d79b73; font-size: 11px; }
+
+.canvasArtifactToolbarHint {
+  margin-top: 10px;
+  color: var(--artifact-muted);
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.canvasArtifactSources {
+  max-height: 230px;
+  overflow: auto;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--artifact-border);
+  border-radius: 10px;
+  background: var(--artifact-surface);
+  color: var(--artifact-text);
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.canvasArtifactSource + .canvasArtifactSource {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--artifact-border);
+}
+
+.canvasArtifactSourceCard + .canvasArtifactSourceCard {
+  margin-top: 8px;
+}
+
+.canvasArtifactSourceSummary {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.canvasArtifactSourceSummary svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--artifact-action-text);
+}
+
+.canvasArtifactSourceDescription,
+.canvasArtifactSourceSettings {
+  margin-top: 4px;
+  color: var(--artifact-muted);
+  font-size: 11px;
+}
+
+.canvasArtifactSourceDescription summary,
+.canvasArtifactSourceSettings summary {
+  width: fit-content;
+  cursor: pointer;
+}
+
+.canvasArtifactSourceDescription summary:focus-visible,
+.canvasArtifactSourceSettings summary:focus-visible {
+  outline: 2px solid var(--artifact-focus);
+  outline-offset: 2px;
+}
+
+.canvasArtifactSourceDescription p {
+  margin: 6px 0 0;
+  color: var(--artifact-text);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.canvasArtifactSourceLabel {
+  display: block;
+  color: var(--artifact-muted);
+}
+
+.canvasArtifactSourceEditorLabel {
+  display: block;
+  margin-top: 8px;
+  color: var(--artifact-muted);
+}
+
+.canvasArtifactSourceEditorLabel input,
+.canvasArtifactSourceEditorLabel textarea {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: 7px 8px;
+  border: 1px solid var(--artifact-border);
+  border-radius: 7px;
+  background: var(--artifact-input-bg);
+  color: var(--artifact-text);
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.canvasArtifactSourceEditorLabel textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.canvasArtifactSourceEditorLabel input:focus-visible,
+.canvasArtifactSourceEditorLabel textarea:focus-visible {
+  outline: 2px solid var(--artifact-focus);
+  outline-offset: 1px;
+}
+
+.canvasArtifactSourceEditorLabel :disabled {
+  opacity: 0.5;
+}
+
+[data-project-theme] .canvasArtifactSources select.canvasArtifactSourceSelect {
+  display: block;
+  width: 100%;
+  min-height: 32px;
+  margin-top: 6px;
+  padding: 5px 8px;
+  border: 1px solid var(--artifact-border);
+  border-radius: 7px;
+  background: var(--artifact-input-bg);
+  color: var(--artifact-text);
+  font-size: 12px;
+}
+
+[data-project-theme] .canvasArtifactSources select.canvasArtifactSourceSelect:focus-visible {
+  outline: 2px solid var(--artifact-focus);
+  outline-offset: 1px;
+}
+
+[data-project-theme] .canvasArtifactSources button.canvasArtifactSourceClear {
+  min-height: 28px;
+  margin-bottom: 6px;
+  padding: 3px 8px;
+  font-size: 11px;
+}

@@ -1,0 +1,169 @@
+.inspirationShowcase {
+  flex: 0 0 auto;
+  width: min(100% - clamp(44px, 5vw, 96px), 1120px);
+  margin: 8px auto 44px;
+  color: var(--text);
+}
+.inspirationShowcaseHeader { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.inspirationShowcaseHeader h2 { margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -.02em; }
+.inspirationShowcaseHeader p { margin: 8px 0 0; color: var(--faint); font-size: 13px; }
+.inspirationShowcaseSource { font-size: 12px; color: var(--faint); white-space: nowrap; }
+.inspirationShowcaseFilters { display: flex; gap: 6px; margin: 24px 0 22px; overflow-x: auto; scrollbar-width: thin; padding-bottom: 2px; }
+.inspirationShowcaseFilters button { flex: 0 0 auto; padding: 9px 15px; border: 1px solid transparent; border-radius: 10px; background: transparent; color: var(--faint); font-size: 13px; transition: color .16s, background .16s; }
+.inspirationShowcaseFilters button:hover { background: var(--surface-soft); color: var(--text); }
+.inspirationShowcaseFilters button[aria-pressed="true"] { background: var(--surface-soft); border-color: var(--line); color: var(--text); font-weight: 600; }
+.inspirationShowcaseGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 26px 18px; }
+.inspirationShowcaseCard { min-width: 0; padding: 0; border: 0; background: transparent; color: inherit; text-align: left; }
+.inspirationShowcaseCover { display: block; position: relative; overflow: hidden; aspect-ratio: 8 / 5; border-radius: 14px; background: var(--surface-soft); isolation: isolate; }
+.inspirationShowcaseCover::after { content: ""; position: absolute; inset: 0; border: 1px solid rgba(128,128,128,.15); border-radius: inherit; pointer-events: none; }
+.inspirationShowcaseCover img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
+.inspirationShowcaseCard:hover img { transform: scale(1.035); }
+.inspirationShowcasePlay { position: absolute; left: 12px; bottom: 12px; display: grid; place-items: center; width: 32px; height: 32px; border: 1px solid #ffffff35; border-radius: 50%; color: white; background: #11111160; backdrop-filter: blur(8px); transition: background .2s, transform .2s; }
+.inspirationShowcasePlay svg { width: 13px; margin-left: 2px; }
+.inspirationShowcaseCard:hover .inspirationShowcasePlay { background: #111111b3; transform: scale(1.08); }
+.inspirationShowcaseDuration { position: absolute; right: 10px; bottom: 13px; padding: 3px 6px; border-radius: 5px; background: #11111180; color: white; font-size: 11px; font-variant-numeric: tabular-nums; }
+.inspirationShowcaseTitle { display: block; margin-top: 11px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; font-weight: 600; line-height: 1.5; }
+.inspirationShowcaseMeta { display: flex; justify-content: space-between; gap: 12px; margin-top: 4px; color: var(--faint); font-size: 11px; line-height: 1.6; }
+.inspirationShowcaseMeta > span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.inspirationShowcaseMeta > span:last-child { flex-shrink: 0; }
+.inspirationShowcaseBottom { display: flex; justify-content: center; margin-top: 30px; color: var(--faint); font-size: 12px; }
+.inspirationShowcaseMore { display: inline-flex; align-items: center; gap: 10px; padding: 10px 20px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--muted); font-size: 13px; }
+.inspirationShowcaseMore:hover { background: var(--surface-soft); }
+.inspirationShowcase button:focus-visible { outline: 2px solid var(--accent-strong); outline-offset: 4px; border-radius: 10px; }
+
+/* The portal theme is defined centrally in ui/console/tokens.css. */
+.inspirationShowcasePlayer .consoleOverlayHeader { padding: 24px 28px 22px; border-bottom: 0; }
+.inspirationShowcasePlayer .consoleOverlayHeading h2 { font-size: 19px; font-weight: 600; letter-spacing: -.025em; }
+.inspirationCaseHeadingMeta { display: flex; align-items: center; gap: 9px; margin-top: 9px; font-size: 11px; }
+.inspirationCaseHeadingMeta > span + span { border-left: 1px solid var(--cui-border); padding-left: 9px; }
+.inspirationShowcasePlayer .consoleOverlayClose { width: 36px; height: 36px; border-radius: 50%; }
+.inspirationShowcasePlayer .consoleOverlayFooter { padding: 16px 28px; }
+.inspirationShowcasePlayerBody { padding: 0 28px 26px; scrollbar-gutter: auto; }
+.inspirationShowcaseVideoStage { display: grid; place-items: center; min-height: 220px; overflow: hidden; border-radius: 13px; background: #080b0d; }
+.inspirationShowcaseVideoStage video { display: block; width: 100%; max-height: 60dvh; object-fit: contain; }
+.inspirationShowcaseVideoError { padding: 50px 20px; color: #eef7fb; text-align: center; }
+.inspirationShowcaseVideoError button { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; background: #fff; border: 0; border-radius: 8px; color: #1d1c1c; cursor: pointer; }
+.inspirationShowcaseClips { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 0 0; }
+.inspirationShowcaseClips button { padding: 8px 12px; border: 1px solid var(--cui-border); border-radius: 8px; background: transparent; color: var(--cui-text-muted); font: inherit; font-size: 12px; cursor: pointer; }
+.inspirationShowcaseClips button[aria-pressed="true"] { color: var(--cui-text); background: #88888820; }
+@media (max-width: 1200px) { .inspirationShowcaseGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 760px) {
+  .inspirationShowcase { margin-top: 0; }
+  .inspirationShowcaseGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 12px; }
+  .inspirationShowcaseHeader { align-items: flex-start; flex-direction: column; gap: 10px; }
+  .inspirationShowcaseHeader h2 { font-size: 20px; }
+  .inspirationShowcaseFilters { margin-top: 18px; }
+  .inspirationShowcaseFilters button { padding: 9px 12px; }
+  .inspirationShowcaseTitle { font-size: 13px; }
+  .inspirationShowcaseMeta > span:last-child { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .inspirationShowcase *, .inspirationShowcasePlayer * { animation: none !important; transition: none !important; }
+}
+
+.inspirationShowcaseCollections { display: flex; gap: 24px; margin-top: 24px; border-bottom: 1px solid var(--line); overflow-x: auto; }
+.inspirationShowcaseCollections button { border: 0; border-bottom: 2px solid transparent; padding: 0 0 13px; white-space: nowrap; background: none; color: var(--faint); font: inherit; font-size: 14px; }
+.inspirationShowcaseCollections button[aria-pressed="true"] { color: var(--text); border-bottom-color: var(--accent-strong); font-weight: 600; }
+.inspirationShowcaseCollections button > span { margin-left: 5px; font-size: 11px; color: var(--faint); font-variant-numeric: tabular-nums; }
+.inspirationShowcaseToolbar { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin: 18px 0; }
+.inspirationShowcaseToolbar .inspirationShowcaseFilters { margin: 0; min-width: 0; }
+.inspirationShowcaseSearch { display: flex; flex: 0 0 190px; align-items: center; gap: 8px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 9px; color: var(--faint); }
+.inspirationShowcaseSearch input { width: 100%; min-width: 0; outline: none; color: var(--text); background: none; border: 0; font: inherit; font-size: 12px; }
+.inspirationShowcaseSearch:focus-within { outline: 2px solid var(--accent-strong); outline-offset: 2px; }
+.inspirationShowcaseCollectionNote { margin: 0 0 20px; font-size: 12px; color: var(--faint); line-height: 1.7; }
+.inspirationShowcaseBadge { position: absolute; top: 10px; right: 10px; padding: 4px 7px; background: #141a1ecc; color: #fff; border-radius: 5px; font-size: 10px; }
+.inspirationShotCover { padding: 18px; display: flex; flex-direction: column; justify-content: space-between; color: var(--text); background: var(--surface-soft); }
+.inspirationShotCover .inspirationShowcaseBadge { color: var(--faint); background: transparent; }
+.inspirationShotWork { display: flex; align-items: center; gap: 7px; font-size: 11px; }
+.inspirationShotNumber { font-size: 44px; font-weight: 300; letter-spacing: -.06em; line-height: 1.05; color: var(--faint); }
+.inspirationShotParams { font-size: 10px; color: var(--faint); }
+.inspirationCaseDetail { color: var(--cui-text); }
+.inspirationCaseDetail.hasGuide { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+.inspirationCaseOverview, .inspirationCaseGuide { min-width: 0; }
+.hasGuide .inspirationShowcaseVideoStage { min-height: 0; aspect-ratio: 16 / 9; }
+.hasGuide .inspirationShowcaseVideoStage video { height: 100%; max-height: none; }
+.inspirationCaseDescription { padding: 16px 0 0; font-size: 13px; line-height: 1.85; }
+.inspirationCaseAttribution { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 12px; color: var(--cui-text-muted); font-size: 11px; }
+.inspirationCaseDescription .inspirationCaseSynopsis { margin: 0; color: var(--cui-text-muted); }
+.inspirationCaseSynopsis.isCollapsed { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+.inspirationCaseReadMore { display: inline-flex; align-items: center; gap: 4px; min-height: 32px; margin: 3px 0 0; padding: 0; border: 0; background: transparent; color: var(--cui-text); font: inherit; font-size: 11px; cursor: pointer; }
+.inspirationCaseReadMore svg { transition: transform .18s ease; }
+.inspirationCaseReadMore[aria-expanded="true"] svg { transform: rotate(180deg); }
+.inspirationCaseReadMore:hover { text-decoration: underline; text-underline-offset: 4px; }
+.inspirationCaseDescription .inspirationCaseBoundary { margin: 16px 0 0; padding-top: 12px; border-top: 1px solid var(--cui-border); color: var(--cui-text-muted); font-size: 11px; line-height: 1.7; }
+.inspirationCaseGuide { padding-top: 24px; }
+.hasGuide .inspirationCaseGuide { display: flex; flex-direction: column; align-self: stretch; padding: 0; }
+.inspirationGuideSection + .inspirationGuideSection { margin-top: 26px; }
+.inspirationCaseGuide h3 { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; font-size: 13px; font-weight: 600; margin: 0 0 13px; }
+.inspirationCaseGuide h3 small { color: var(--cui-text-muted); font-size: 10px; font-weight: 400; }
+.inspirationCaseGuide ul, .inspirationCaseGuide ol { margin: 0; padding: 0; font-size: 13px; line-height: 1.8; }
+.inspirationCaseGuide .inspirationGuideInputs { display: flex; flex-wrap: wrap; gap: 7px; padding: 0; list-style: none; }
+.inspirationGuideInputs li { padding: 4px 9px; border: 1px solid var(--cui-border); border-radius: 6px; color: var(--cui-text-muted); font-size: 11px; }
+.inspirationCaseGuide .inspirationGuideSteps { list-style: none; display: grid; gap: 12px; }
+.inspirationGuideSteps li { display: flex; align-items: baseline; gap: 12px; }
+.inspirationGuideSteps li > span { flex: 0 0 20px; color: var(--cui-text-muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+.inspirationGuideSteps li > p { margin: 0; color: var(--cui-text); }
+.inspirationGuideParameters { display: flex; gap: 8px; flex-wrap: wrap; padding-bottom: 18px; margin-bottom: 20px; border-bottom: 1px solid var(--cui-border); }
+.inspirationGuideParameters span { font-size: 12px; padding-right: 8px; border-right: 1px solid var(--cui-border); }
+.inspirationGuideParameters span:last-child { border: 0; }
+.inspirationShotIntro { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 8px 0 0; }
+.inspirationShotIntro small { margin-left: auto; color: var(--cui-text-muted); }
+.inspirationGuideNote { padding: 10px 12px; border-left: 2px solid var(--cui-text-muted); background: var(--cui-surface-subtle); font-size: 12px; color: var(--cui-text-muted); line-height: 1.7; }
+.inspirationGuideIdea { display: grid; gap: 10px; margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--cui-border); font-size: 13px; }
+.inspirationGuideIdea > span { display: flex; justify-content: space-between; align-items: baseline; font-weight: 600; }
+.inspirationGuideIdea small { color: var(--cui-text-muted); font-size: 11px; font-weight: 400; }
+.hasGuide .inspirationGuideIdea { flex: 1; grid-template-rows: auto minmax(94px, 1fr); }
+.inspirationGuideIdea textarea { width: 100%; resize: vertical; min-height: 94px; padding: 12px 14px; border: 1px solid var(--cui-border); border-radius: 11px; background: var(--cui-surface-subtle); color: var(--cui-text); font: inherit; line-height: 1.7; transition: border-color .18s ease, background .18s ease; }
+.inspirationGuideIdea textarea::placeholder { color: var(--cui-text-muted); opacity: .85; }
+.inspirationGuideIdea textarea:focus { background: var(--cui-surface); }
+.inspirationGuideIdea textarea:focus-visible { outline: 2px solid var(--cui-text-muted); outline-offset: 2px; }
+.inspirationGuideFooter { display: flex; align-items: center; justify-content: space-between; gap: 18px; width: 100%; }
+.inspirationGuideFooter p { margin: 0; font-size: 11px; color: var(--cui-text-muted); }
+.inspirationGuideFooter button { display: inline-flex; align-items: center; justify-content: center; gap: 18px; flex-shrink: 0; min-height: 44px; padding: 11px 18px; border: 0; border-radius: 10px; background: var(--cui-text); color: var(--cui-surface); font: inherit; font-size: 13px; font-weight: 500; cursor: pointer; transition: opacity .18s ease, transform .18s ease; }
+.inspirationGuideFooter button:hover:not(:disabled) { opacity: .88; }
+.inspirationGuideFooter button:active:not(:disabled) { transform: translateY(1px); }
+.inspirationShowcasePlayer :is(.inspirationCaseReadMore, .inspirationGuideFooter button):focus-visible { outline: 2px solid var(--cui-text-muted); outline-offset: 3px; }
+.inspirationGuideFooter button:disabled { opacity: .5; cursor: wait; }
+.inspirationCaseGuide > .inspirationGuideFooter { flex-direction: column; align-items: stretch; gap: 10px; margin-top: 18px; }
+.inspirationCaseGuide > .inspirationGuideFooter p { font-size: 10px; }
+.inspirationCaseGuide > .inspirationGuideFooter button { width: 100%; }
+@media (max-width: 760px) {
+  .inspirationShowcaseCollections { gap: 20px; }
+  .inspirationShowcaseToolbar { align-items: stretch; flex-direction: column-reverse; gap: 12px; }
+  .inspirationShowcaseSearch { flex: auto; }
+  .inspirationShotCover { padding: 12px; }
+  .inspirationShotCover .inspirationShowcaseBadge { display: none; }
+  .inspirationShotNumber { font-size: 32px; }
+  .inspirationShotParams { font-size: 9px; }
+  .inspirationCaseDetail.hasGuide { display: block; }
+  .inspirationShowcasePlayer .consoleOverlayHeader { padding: 20px 18px; }
+  .inspirationShowcasePlayer .consoleOverlayHeading h2 { font-size: 18px; }
+  .inspirationShowcasePlayer .consoleOverlayClose { width: 44px; height: 44px; }
+  .inspirationShowcasePlayerBody { padding: 0 18px 22px; }
+  .inspirationShowcasePlayer .consoleOverlayFooter { padding: 14px 18px; }
+  .hasGuide .inspirationCaseGuide { margin-top: 26px; padding-top: 24px; border-top: 1px solid var(--cui-border); }
+  .inspirationCaseReadMore { min-height: 40px; }
+  .inspirationGuideFooter { flex-wrap: wrap; gap: 12px; }
+  .inspirationGuideFooter button { width: 100%; }
+  .inspirationShotIntro small { margin-left: 0; }
+}
+/* Source media stays with its shot; details use the same balanced preview/editor layout. */
+.inspirationShotCover:has(img) { padding: 0; }
+.inspirationShotCover:has(img) .inspirationShowcaseBadge { color: #fff; background: #141a1ecc; }
+.inspirationSourceAssets { margin-top: 20px; }
+.inspirationSourceAssets h3, .inspirationOriginalPrompt h3 { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin: 0 0 12px; font-size: 13px; font-weight: 600; }
+.inspirationSourceAssets h3 small, .inspirationOriginalPrompt h3 small { font-size: 10px; color: var(--cui-text-muted); font-weight: 400; }
+.inspirationSourceAssetGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.inspirationSourceAssetGrid button { overflow: hidden; padding: 0; border: 1px solid var(--cui-border); border-radius: 9px; background: var(--cui-surface-subtle); color: var(--cui-text); font: inherit; cursor: pointer; transition: border-color .18s ease, transform .18s ease; }
+.inspirationSourceAssetGrid button:hover { border-color: var(--cui-text-muted); transform: translateY(-2px); }
+.inspirationSourceAssetGrid img, .inspirationSourceMediaIcon { display: flex; align-items: center; justify-content: center; width: 100%; aspect-ratio: 4 / 3; object-fit: contain; font-size: 25px; }
+.inspirationSourceAssetGrid button > span:last-child { display: block; padding: 7px; font-size: 11px; }
+.inspirationOriginalPrompt textarea { display: block; width: 100%; height: 275px; resize: vertical; border: 1px solid var(--cui-border); border-radius: 10px; background: var(--cui-surface-subtle); color: var(--cui-text); padding: 14px; font: inherit; font-size: 12px; line-height: 1.9; }
+.inspirationOriginalPrompt p, .inspirationSourceDownloadHint { display: block; color: var(--cui-text-muted); font-size: 10px; line-height: 1.7; margin: 10px 0; }
+.inspirationOriginalPrompt a, .inspirationSourcePreview a { font-size: 12px; color: var(--cui-text); text-underline-offset: 4px; }
+.inspirationShowcaseClips > span { align-self: center; color: var(--cui-text-muted); font-size: 10px; }
+.inspirationSourceError { padding: 12px; border: 1px solid var(--cui-border); border-radius: 8px; color: var(--cui-text); background: var(--cui-surface-subtle); font-size: 12px; line-height: 1.7; }
+.inspirationSourcePreviewMedia { display: grid; place-items: center; margin-bottom: 16px; }
+.inspirationSourcePreviewMedia :is(img, video) { max-width: 100%; max-height: 65vh; object-fit: contain; border-radius: 10px; }
+.inspirationSourcePreviewMedia audio { width: 100%; }
+@media (prefers-reduced-motion: reduce) { .inspirationSourceAssetGrid button { transition: none; } }

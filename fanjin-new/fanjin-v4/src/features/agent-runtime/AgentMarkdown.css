@@ -1,0 +1,134 @@
+/* AgentMarkdownContent 作用域样式(REVAMP-PLAN 4.6)。
+   只影响 .agentMarkdown 内部,CSS 变量沿用 .generatePage 作用域并带兜底值。 */
+
+.agentMarkdown {
+  overflow-wrap: anywhere;
+}
+
+.agentMarkdown > :first-child {
+  margin-top: 0;
+}
+
+.agentMarkdown > :last-child {
+  margin-bottom: 0;
+}
+
+.agentMarkdown p {
+  margin: 0 0 10px;
+}
+
+.agentMarkdown p:last-child {
+  margin-bottom: 0;
+}
+
+.agentMarkdown h1,
+.agentMarkdown h2,
+.agentMarkdown h3,
+.agentMarkdown h4,
+.agentMarkdown h5,
+.agentMarkdown h6 {
+  margin: 14px 0 8px;
+  color: var(--text-100, #1d1c1c);
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.agentMarkdown h1 { font-size: 17px; }
+.agentMarkdown h2 { font-size: 16px; }
+.agentMarkdown h3 { font-size: 15px; }
+.agentMarkdown h4,
+.agentMarkdown h5,
+.agentMarkdown h6 { font-size: 14px; }
+
+.agentMarkdown ul,
+.agentMarkdown ol {
+  margin: 0 0 10px;
+  padding-left: 22px;
+}
+
+.agentMarkdown li {
+  margin: 2px 0;
+}
+
+.agentMarkdown li > ul,
+.agentMarkdown li > ol {
+  margin-bottom: 0;
+}
+
+.agentMarkdown blockquote {
+  margin: 0 0 10px;
+  padding: 2px 0 2px 12px;
+  border-left: 3px solid var(--line, rgba(59, 60, 61, 0.1));
+  color: var(--faint, #80909c);
+}
+
+.agentMarkdown code {
+  padding: 1px 5px;
+  border: 1px solid var(--line, rgba(59, 60, 61, 0.1));
+  border-radius: 5px;
+  background: var(--surface-muted, rgba(245, 244, 241, 0.58));
+  font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 12.5px;
+}
+
+.agentMarkdown pre {
+  overflow-x: auto;
+  margin: 0 0 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--line, rgba(59, 60, 61, 0.1));
+  border-radius: 8px;
+  background: var(--surface-muted, rgba(245, 244, 241, 0.58));
+}
+
+.agentMarkdown pre code {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+.agentMarkdown table {
+  display: block;
+  overflow-x: auto;
+  max-width: 100%;
+  margin: 4px 0 12px;
+  border-collapse: collapse;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.agentMarkdown th,
+.agentMarkdown td {
+  padding: 6px 12px;
+  border: 1px solid var(--line, rgba(59, 60, 61, 0.1));
+  text-align: left;
+  vertical-align: top;
+}
+
+.agentMarkdown th {
+  background: var(--surface-soft, rgba(245, 244, 241, 0.78));
+  color: var(--text-100, #1d1c1c);
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.agentMarkdown a {
+  color: var(--accent-strong, #00668c);
+  text-decoration: none;
+}
+
+.agentMarkdown a:hover {
+  text-decoration: underline;
+}
+
+.agentMarkdown hr {
+  margin: 12px 0;
+  border: 0;
+  border-top: 1px solid var(--line, rgba(59, 60, 61, 0.1));
+}
+
+.agentMarkdown img {
+  max-width: 100%;
+  border-radius: 8px;
+}

@@ -1,0 +1,107 @@
+.serviceRequestsPage {
+  display: grid;
+  min-width: 0;
+  gap: var(--cui-space-3);
+}
+
+.serviceRequestsData {
+  min-width: 0;
+  overflow: hidden;
+  border-block: 1px solid var(--cui-border);
+}
+
+.serviceRequestsData > .consoleFilterBar {
+  border-bottom: 1px solid var(--cui-border-subtle);
+  border-radius: 0;
+  background: transparent;
+}
+
+.serviceRequestFilter {
+  display: flex;
+  min-width: 180px;
+  align-items: center;
+  gap: var(--cui-space-2);
+  color: var(--cui-text-muted);
+  font-size: 11.5px;
+  font-weight: 620;
+  white-space: nowrap;
+}
+
+.serviceRequestFilter > :is(.cuiInputFrame, .cuiSelect) {
+  min-width: 0;
+  flex: 1;
+}
+
+.serviceRequestFilterSearch {
+  min-width: 280px;
+  flex: 1 1 360px;
+}
+
+.serviceRequestsTable {
+  border: 0;
+  border-radius: 0;
+}
+
+.serviceRequestsTable table {
+  min-width: 1080px;
+  font-size: 12px;
+}
+
+.serviceRequestPrimary {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.serviceRequestPrimary strong,
+.serviceRequestPrimary span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.serviceRequestPrimary strong {
+  color: var(--cui-text);
+  font-size: 12.5px;
+  font-weight: 650;
+}
+
+.serviceRequestPrimary span {
+  color: var(--cui-text-faint);
+  font-family: var(--cui-font-mono);
+  font-size: 11px;
+}
+
+.serviceRequestForm,
+.serviceRequestDetail,
+.serviceRequestDialogFooter {
+  display: grid;
+  gap: var(--cui-space-4);
+}
+
+.serviceRequestForm textarea {
+  width: 100%;
+  min-height: 96px;
+  resize: vertical;
+}
+
+.serviceRequestDialogFooter > div:last-child,
+.serviceRequestDrawerFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--cui-space-2);
+}
+
+@media (max-width: 760px) {
+  .serviceRequestFilter,
+  .serviceRequestFilterSearch {
+    min-width: 100%;
+  }
+}
+
+.consoleWorkbench .serviceRequestsData {
+  display: grid;
+  gap: 18px;
+  overflow: visible;
+  border: 0;
+}

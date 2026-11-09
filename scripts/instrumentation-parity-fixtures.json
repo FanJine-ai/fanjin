@@ -1,0 +1,960 @@
+{
+  "upstream": "@opentelemetry/auto-instrumentations-node@0.81.0",
+  "cases": [
+    {
+      "name": "defaults",
+      "env": {},
+      "config": {},
+      "expected": [
+        {
+          "name": "@opentelemetry/instrumentation-amqplib",
+          "version": "0.70.0",
+          "config": {
+            "enabled": true,
+            "consumeTimeoutMs": 60000,
+            "useLinksForConsume": false
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-aws-lambda",
+          "version": "0.75.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-aws-sdk",
+          "version": "0.78.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-bunyan",
+          "version": "0.68.0",
+          "config": {
+            "enabled": true,
+            "disableLogSending": false,
+            "disableLogCorrelation": false
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-cassandra-driver",
+          "version": "0.68.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-connect",
+          "version": "0.66.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-cucumber",
+          "version": "0.39.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-dataloader",
+          "version": "0.40.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-dns",
+          "version": "0.66.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-express",
+          "version": "0.71.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-generic-pool",
+          "version": "0.66.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-graphql",
+          "version": "0.71.0",
+          "config": {
+            "enabled": true,
+            "mergeItems": false,
+            "depth": -1,
+            "allowValues": false,
+            "ignoreResolveSpans": false
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-grpc",
+          "version": "0.223.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-hapi",
+          "version": "0.69.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-http",
+          "version": "0.223.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-ioredis",
+          "version": "0.71.0",
+          "config": {
+            "enabled": true,
+            "requireParentSpan": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-kafkajs",
+          "version": "0.32.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-knex",
+          "version": "0.67.0",
+          "config": {
+            "enabled": true,
+            "maxQueryLength": 1022,
+            "requireParentSpan": false
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-koa",
+          "version": "0.71.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-lru-memoizer",
+          "version": "0.67.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-memcached",
+          "version": "0.66.0",
+          "config": {
+            "enabled": true,
+            "enhancedDatabaseReporting": false
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-mongodb",
+          "version": "0.76.0",
+          "config": {
+            "enabled": true,
+            "requireParentSpan": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-mongoose",
+          "version": "0.69.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-mysql2",
+          "version": "0.69.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-mysql",
+          "version": "0.69.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-nestjs-core",
+          "version": "0.69.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-net",
+          "version": "0.67.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-openai",
+          "version": "0.21.0",
+          "config": {
+            "enabled": true,
+            "captureMessageContent": false
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-oracledb",
+          "version": "0.48.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-pg",
+          "version": "0.75.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-pino",
+          "version": "0.69.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-redis",
+          "version": "0.71.0",
+          "config": {
+            "enabled": true,
+            "requireParentSpan": false
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-restify",
+          "version": "0.68.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-router",
+          "version": "0.67.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-runtime-node",
+          "version": "0.36.0",
+          "config": {
+            "enabled": true,
+            "monitoringPrecision": 10,
+            "captureUncaughtException": false
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-socket.io",
+          "version": "0.70.0",
+          "config": {
+            "enabled": true,
+            "emitIgnoreEventList": [],
+            "onIgnoreEventList": []
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-tedious",
+          "version": "0.42.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-undici",
+          "version": "0.33.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-winston",
+          "version": "0.67.0",
+          "config": {
+            "enabled": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "allowlist",
+      "env": {
+        "OTEL_NODE_ENABLED_INSTRUMENTATIONS": "http,express,fs"
+      },
+      "config": {},
+      "expected": [
+        {
+          "name": "@opentelemetry/instrumentation-express",
+          "version": "0.71.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-fs",
+          "version": "0.42.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-http",
+          "version": "0.223.0",
+          "config": {
+            "enabled": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "denylist",
+      "env": {
+        "OTEL_NODE_DISABLED_INSTRUMENTATIONS": "http,express"
+      },
+      "config": {},
+      "expected": [
+        {
+          "name": "@opentelemetry/instrumentation-amqplib",
+          "version": "0.70.0",
+          "config": {
+            "enabled": true,
+            "consumeTimeoutMs": 60000,
+            "useLinksForConsume": false
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-aws-lambda",
+          "version": "0.75.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-aws-sdk",
+          "version": "0.78.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-bunyan",
+          "version": "0.68.0",
+          "config": {
+            "enabled": true,
+            "disableLogSending": false,
+            "disableLogCorrelation": false
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-cassandra-driver",
+          "version": "0.68.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-connect",
+          "version": "0.66.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-cucumber",
+          "version": "0.39.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-dataloader",
+          "version": "0.40.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-dns",
+          "version": "0.66.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-generic-pool",
+          "version": "0.66.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-graphql",
+          "version": "0.71.0",
+          "config": {
+            "enabled": true,
+            "mergeItems": false,
+            "depth": -1,
+            "allowValues": false,
+            "ignoreResolveSpans": false
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-grpc",
+          "version": "0.223.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-hapi",
+          "version": "0.69.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-ioredis",
+          "version": "0.71.0",
+          "config": {
+            "enabled": true,
+            "requireParentSpan": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-kafkajs",
+          "version": "0.32.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-knex",
+          "version": "0.67.0",
+          "config": {
+            "enabled": true,
+            "maxQueryLength": 1022,
+            "requireParentSpan": false
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-koa",
+          "version": "0.71.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-lru-memoizer",
+          "version": "0.67.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-memcached",
+          "version": "0.66.0",
+          "config": {
+            "enabled": true,
+            "enhancedDatabaseReporting": false
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-mongodb",
+          "version": "0.76.0",
+          "config": {
+            "enabled": true,
+            "requireParentSpan": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-mongoose",
+          "version": "0.69.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-mysql2",
+          "version": "0.69.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-mysql",
+          "version": "0.69.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-nestjs-core",
+          "version": "0.69.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-net",
+          "version": "0.67.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-openai",
+          "version": "0.21.0",
+          "config": {
+            "enabled": true,
+            "captureMessageContent": false
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-oracledb",
+          "version": "0.48.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-pg",
+          "version": "0.75.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-pino",
+          "version": "0.69.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-redis",
+          "version": "0.71.0",
+          "config": {
+            "enabled": true,
+            "requireParentSpan": false
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-restify",
+          "version": "0.68.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-router",
+          "version": "0.67.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-runtime-node",
+          "version": "0.36.0",
+          "config": {
+            "enabled": true,
+            "monitoringPrecision": 10,
+            "captureUncaughtException": false
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-socket.io",
+          "version": "0.70.0",
+          "config": {
+            "enabled": true,
+            "emitIgnoreEventList": [],
+            "onIgnoreEventList": []
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-tedious",
+          "version": "0.42.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-undici",
+          "version": "0.33.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-winston",
+          "version": "0.67.0",
+          "config": {
+            "enabled": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "explicit precedence",
+      "env": {
+        "OTEL_NODE_ENABLED_INSTRUMENTATIONS": "http",
+        "OTEL_NODE_DISABLED_INSTRUMENTATIONS": "http,express"
+      },
+      "config": {
+        "@opentelemetry/instrumentation-http": {
+          "enabled": true
+        },
+        "@opentelemetry/instrumentation-express": {
+          "enabled": true
+        },
+        "@opentelemetry/instrumentation-fs": {
+          "enabled": false
+        }
+      },
+      "expected": [
+        {
+          "name": "@opentelemetry/instrumentation-express",
+          "version": "0.71.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-http",
+          "version": "0.223.0",
+          "config": {
+            "enabled": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "product config",
+      "env": {},
+      "config": {
+        "@opentelemetry/instrumentation-fs": {
+          "enabled": false
+        },
+        "@opentelemetry/instrumentation-http": {
+          "enabled": true
+        },
+        "@opentelemetry/instrumentation-express": {
+          "enabled": true
+        },
+        "@opentelemetry/instrumentation-pg": {
+          "enabled": false
+        }
+      },
+      "expected": [
+        {
+          "name": "@opentelemetry/instrumentation-amqplib",
+          "version": "0.70.0",
+          "config": {
+            "enabled": true,
+            "consumeTimeoutMs": 60000,
+            "useLinksForConsume": false
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-aws-lambda",
+          "version": "0.75.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-aws-sdk",
+          "version": "0.78.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-bunyan",
+          "version": "0.68.0",
+          "config": {
+            "enabled": true,
+            "disableLogSending": false,
+            "disableLogCorrelation": false
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-cassandra-driver",
+          "version": "0.68.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-connect",
+          "version": "0.66.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-cucumber",
+          "version": "0.39.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-dataloader",
+          "version": "0.40.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-dns",
+          "version": "0.66.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-express",
+          "version": "0.71.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-generic-pool",
+          "version": "0.66.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-graphql",
+          "version": "0.71.0",
+          "config": {
+            "enabled": true,
+            "mergeItems": false,
+            "depth": -1,
+            "allowValues": false,
+            "ignoreResolveSpans": false
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-grpc",
+          "version": "0.223.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-hapi",
+          "version": "0.69.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-http",
+          "version": "0.223.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-ioredis",
+          "version": "0.71.0",
+          "config": {
+            "enabled": true,
+            "requireParentSpan": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-kafkajs",
+          "version": "0.32.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-knex",
+          "version": "0.67.0",
+          "config": {
+            "enabled": true,
+            "maxQueryLength": 1022,
+            "requireParentSpan": false
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-koa",
+          "version": "0.71.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-lru-memoizer",
+          "version": "0.67.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-memcached",
+          "version": "0.66.0",
+          "config": {
+            "enabled": true,
+            "enhancedDatabaseReporting": false
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-mongodb",
+          "version": "0.76.0",
+          "config": {
+            "enabled": true,
+            "requireParentSpan": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-mongoose",
+          "version": "0.69.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-mysql2",
+          "version": "0.69.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-mysql",
+          "version": "0.69.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-nestjs-core",
+          "version": "0.69.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-net",
+          "version": "0.67.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-openai",
+          "version": "0.21.0",
+          "config": {
+            "enabled": true,
+            "captureMessageContent": false
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-oracledb",
+          "version": "0.48.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-pino",
+          "version": "0.69.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-redis",
+          "version": "0.71.0",
+          "config": {
+            "enabled": true,
+            "requireParentSpan": false
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-restify",
+          "version": "0.68.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-router",
+          "version": "0.67.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-runtime-node",
+          "version": "0.36.0",
+          "config": {
+            "enabled": true,
+            "monitoringPrecision": 10,
+            "captureUncaughtException": false
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-socket.io",
+          "version": "0.70.0",
+          "config": {
+            "enabled": true,
+            "emitIgnoreEventList": [],
+            "onIgnoreEventList": []
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-tedious",
+          "version": "0.42.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-undici",
+          "version": "0.33.0",
+          "config": {
+            "enabled": true
+          }
+        },
+        {
+          "name": "@opentelemetry/instrumentation-winston",
+          "version": "0.67.0",
+          "config": {
+            "enabled": true
+          }
+        }
+      ]
+    }
+  ]
+}

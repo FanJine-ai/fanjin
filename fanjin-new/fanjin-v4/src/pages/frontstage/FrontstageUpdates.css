@@ -1,0 +1,920 @@
+.frontstageUpdatesScrim {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: flex;
+  justify-content: flex-end;
+  background: rgba(8, 15, 20, 0.56);
+  animation: frontstageUpdatesFadeIn 180ms ease-out;
+}
+
+.frontstageUpdatesDrawer {
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
+  width: min(100vw, 520px);
+  height: 100dvh;
+  overflow: hidden;
+  border-left: 1px solid var(--line, rgba(23, 33, 43, 0.12));
+  background: var(--surface-strong, #fff);
+  color: var(--text, #17212b);
+  box-shadow: -28px 0 72px rgba(8, 15, 20, 0.24);
+  animation: frontstageUpdatesSlideIn 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.frontstageUpdatesHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: calc(20px + env(safe-area-inset-top)) 22px 20px;
+  border-bottom: 1px solid var(--line, rgba(23, 33, 43, 0.1));
+}
+
+.frontstageUpdatesHeading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.frontstageUpdatesHeading > span {
+  display: grid;
+  flex: 0 0 42px;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--hover, rgba(217, 237, 255, 0.72));
+  color: var(--accent-strong, #00668c);
+}
+
+.frontstageUpdatesHeading h2,
+.frontstageUpdatesHeading p {
+  margin: 0;
+}
+
+.frontstageUpdatesHeading h2 {
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.frontstageUpdatesHeading p {
+  margin-top: 4px;
+  color: var(--muted, #536575);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.frontstageUpdatesClose {
+  display: grid;
+  flex: 0 0 44px;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--line, rgba(23, 33, 43, 0.1));
+  border-radius: 12px;
+  background: var(--control-bg, rgba(255, 255, 255, 0.78));
+  color: var(--muted, #536575);
+}
+
+.frontstageUpdatesClose:hover,
+.frontstageUpdatesClose:focus-visible {
+  border-color: var(--active-line, rgba(36, 111, 152, 0.28));
+  background: var(--hover, rgba(217, 237, 255, 0.72));
+  color: var(--accent-strong, #00668c);
+}
+
+.frontstageUpdatesToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--line, rgba(23, 33, 43, 0.1));
+  background: var(--surface-raised, rgba(255, 255, 255, 0.82));
+}
+
+.frontstageUpdatesToolbar > div {
+  display: flex;
+  gap: 4px;
+  padding: 3px;
+  border-radius: 10px;
+  background: var(--surface-soft, rgba(245, 244, 241, 0.78));
+}
+
+.frontstageUpdatesToolbar button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 11px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted, #536575);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.frontstageUpdatesToolbar button.active {
+  background: var(--surface-strong, #fff);
+  color: var(--accent-strong, #00668c);
+  box-shadow: 0 4px 12px rgba(8, 15, 20, 0.08);
+}
+
+.frontstageUpdatesToolbar > button:last-child {
+  color: var(--accent-strong, #00668c);
+}
+
+.frontstageUpdatesToolbar button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.frontstageNotificationList,
+.frontstageReleaseList {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 14px 16px calc(24px + env(safe-area-inset-bottom));
+}
+
+.frontstageNotificationList {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+
+.frontstageNotificationItem {
+  overflow: hidden;
+  border: 1px solid var(--line, rgba(23, 33, 43, 0.1));
+  border-radius: 14px;
+  background: var(--surface-raised, rgba(255, 255, 255, 0.82));
+  transition: border-color 180ms ease, background-color 180ms ease;
+}
+
+.frontstageNotificationItem.unread {
+  border-color: var(--active-line, rgba(36, 111, 152, 0.28));
+  background: color-mix(in srgb, var(--hover, #d9edff) 46%, var(--surface-strong, #fff));
+}
+
+.frontstageNotificationSummary {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) 18px;
+  align-items: start;
+  gap: 11px;
+  width: 100%;
+  min-height: 92px;
+  padding: 14px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+}
+
+.frontstageNotificationIcon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+}
+
+.frontstageNotificationIcon.announcement {
+  background: color-mix(in srgb, #f59e0b 15%, transparent);
+  color: #a16207;
+}
+
+.frontstageNotificationIcon.release {
+  background: var(--hover, rgba(217, 237, 255, 0.72));
+  color: var(--accent-strong, #00668c);
+}
+
+.frontstageNotificationCopy {
+  display: grid;
+  min-width: 0;
+  gap: 5px;
+}
+
+.frontstageNotificationCopy > span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.frontstageNotificationCopy strong {
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.frontstageNotificationCopy i {
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: var(--accent-strong, #00668c);
+  color: white;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.frontstageNotificationCopy small,
+.frontstageNotificationCopy time {
+  color: var(--muted, #536575);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.frontstageNotificationCopy time {
+  color: var(--faint, #80909c);
+  font-variant-numeric: tabular-nums;
+}
+
+.frontstageUnreadDot {
+  width: 9px;
+  height: 9px;
+  margin-top: 6px;
+  border: 2px solid var(--surface-strong, #fff);
+  border-radius: 50%;
+  background: var(--accent-strong, #00668c);
+  box-shadow: 0 0 0 1px var(--active-line, rgba(36, 111, 152, 0.28));
+}
+
+.frontstageNotificationDetail {
+  display: grid;
+  gap: 12px;
+  padding: 0 14px 14px 65px;
+}
+
+.frontstageNotificationDetail p {
+  margin: 0;
+  color: var(--muted, #536575);
+  font-size: 13px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
+.frontstageNotificationDetail button {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  gap: 5px;
+  min-height: 36px;
+  padding: 0 10px;
+  border: 1px solid var(--active-line, rgba(36, 111, 152, 0.28));
+  border-radius: 9px;
+  background: var(--hover, rgba(217, 237, 255, 0.72));
+  color: var(--accent-strong, #00668c);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.frontstageUpdatesEmpty {
+  display: grid;
+  place-items: center;
+  gap: 7px;
+  min-height: 260px;
+  padding: 32px;
+  color: var(--faint, #80909c);
+  text-align: center;
+}
+
+.frontstageUpdatesEmpty strong {
+  color: var(--text, #17212b);
+  font-size: 15px;
+}
+
+.frontstageUpdatesEmpty span {
+  max-width: 260px;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.frontstageReleaseList {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+}
+
+.frontstageReleaseItem {
+  padding: 18px;
+  border: 1px solid var(--line, rgba(23, 33, 43, 0.1));
+  border-radius: 14px;
+  background: var(--surface-raised, rgba(255, 255, 255, 0.82));
+}
+
+.frontstageReleaseItem > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.frontstageReleaseItem > header > div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.frontstageReleaseItem > header span,
+.frontstageReleaseItem > header time {
+  color: var(--faint, #80909c);
+  font-size: 12px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.frontstageReleaseItem > header em {
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--hover, rgba(217, 237, 255, 0.72));
+  color: var(--accent-strong, #00668c);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.frontstageReleaseItem h3 {
+  margin: 14px 0 5px;
+  font-size: 17px;
+}
+
+.frontstageReleaseItem > p {
+  margin: 0 0 16px;
+  color: var(--muted, #536575);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.frontstageReleaseItem section {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line, rgba(23, 33, 43, 0.1));
+}
+
+.frontstageReleaseItem section + section {
+  margin-top: 12px;
+}
+
+.frontstageReleaseItem section > strong {
+  color: var(--accent-strong, #00668c);
+  font-size: 12px;
+}
+
+.frontstageReleaseItem ul {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted, #536575);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.frontstageNotificationBadge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  display: grid;
+  min-width: 18px;
+  height: 18px;
+  place-items: center;
+  padding: 0 5px;
+  border: 2px solid var(--fs-sidebar, var(--surface-strong, #fff));
+  border-radius: 999px;
+  background: #d92d20;
+  color: white;
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+@keyframes frontstageUpdatesFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes frontstageUpdatesSlideIn {
+  from { transform: translateX(24px); opacity: 0.72; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@media (max-width: 560px) {
+  .frontstageUpdatesDrawer {
+    width: 100vw;
+    border-left: 0;
+  }
+
+  .frontstageUpdatesHeader {
+    padding-inline: 16px;
+  }
+
+  .frontstageUpdatesToolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .frontstageUpdatesToolbar > button:last-child {
+    align-self: flex-end;
+    min-height: 44px;
+  }
+
+  .frontstageUpdatesToolbar > div button {
+    min-height: 40px;
+  }
+
+  .frontstageNotificationList,
+  .frontstageReleaseList {
+    padding-inline: 12px;
+  }
+
+  .frontstageNotificationDetail {
+    padding-left: 14px;
+  }
+
+  .frontstageReleaseItem section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .frontstageUpdatesScrim,
+  .frontstageUpdatesDrawer {
+    animation-duration: 0.01ms !important;
+  }
+
+  .frontstageNotificationItem {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Notifications intentionally use the canvas visual language while the
+   changelog keeps the compact utility drawer. */
+.frontstageUpdatesScrim--notifications {
+  --notice-canvas: var(--cui-bg, rgb(var(--background)));
+  --notice-surface: var(--cui-surface, rgb(var(--card)));
+  --notice-surface-subtle: var(--cui-surface-subtle, rgb(var(--secondary)));
+  --notice-accent-surface: var(--cui-surface-3, rgb(var(--accent)));
+  --notice-hover: color-mix(in srgb, var(--notice-accent-surface) 88%, var(--notice-surface));
+  --notice-text: var(--cui-text, rgb(var(--foreground)));
+  --notice-muted: var(--cui-text-muted, rgb(var(--muted-foreground)));
+  --notice-faint: var(--cui-text-faint, color-mix(in srgb, var(--notice-text) 48%, transparent));
+  --notice-line: var(--cui-border, rgb(var(--border)));
+  --notice-line-strong: var(--cui-border-strong, color-mix(in srgb, var(--notice-text) 18%, transparent));
+  --notice-danger: var(--cui-danger-text, rgb(var(--destructive)));
+  --notice-danger-ink: var(--cui-on-accent, rgb(var(--destructive-foreground)));
+  --notice-focus: var(--cui-focus, rgb(var(--ring)));
+  --notice-shadow: var(--cui-shadow-dialog, 0 24px 72px rgb(8 15 20 / 0.24));
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.58);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.frontstageUpdatesDrawer--notifications {
+  grid-template-rows: 58px minmax(0, 1fr);
+  width: min(660px, calc(100vw - 48px));
+  height: min(680px, calc(100dvh - 48px));
+  overflow: hidden;
+  border: 1px solid var(--notice-line);
+  border-radius: 12px;
+  background: var(--notice-surface);
+  color: var(--notice-text);
+  box-shadow: var(--notice-shadow);
+  color-scheme: inherit;
+  animation: frontstageNoticeEnter 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.frontstageUpdatesDrawer--notifications .frontstageUpdatesHeader {
+  align-items: center;
+  padding: 0 16px 0 18px;
+  border-bottom: 1px solid var(--notice-line);
+  background: var(--notice-surface);
+}
+
+.frontstageNoticeTitle h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 720;
+  letter-spacing: 0;
+}
+
+.frontstageUpdatesDrawer--notifications .frontstageUpdatesClose {
+  width: 34px;
+  height: 34px;
+  flex-basis: 34px;
+  border-color: transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--notice-muted);
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.frontstageUpdatesDrawer--notifications .frontstageUpdatesClose:hover,
+.frontstageUpdatesDrawer--notifications .frontstageUpdatesClose:focus-visible {
+  border-color: var(--notice-line-strong);
+  background: var(--notice-accent-surface);
+  color: var(--notice-text);
+}
+
+.frontstageNoticeLayout {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  min-height: 0;
+}
+
+.frontstageNoticeRail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 10px 14px;
+  border-right: 0;
+  border-bottom: 1px solid var(--notice-line);
+  background: var(--notice-surface-subtle);
+}
+
+.frontstageNoticeRailNav {
+  display: flex;
+  min-width: 0;
+  gap: 6px;
+}
+
+.frontstageNoticeRailNav button,
+.frontstageNoticeMarkAll {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 34px;
+  padding: 0 10px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--notice-muted);
+  font-size: 12px;
+  font-weight: 680;
+  text-align: left;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.frontstageNoticeRailNav button svg,
+.frontstageNoticeMarkAll svg {
+  width: 15px;
+  height: 15px;
+  stroke-width: 1.8;
+}
+
+.frontstageNoticeRailNav button:hover,
+.frontstageNoticeRailNav button:focus-visible,
+.frontstageNoticeMarkAll:hover:not(:disabled),
+.frontstageNoticeMarkAll:focus-visible:not(:disabled) {
+  border-color: var(--notice-line);
+  background: var(--notice-hover);
+  color: var(--notice-text);
+}
+
+.frontstageNoticeRailNav button.active {
+  border-color: var(--notice-line-strong);
+  background: var(--notice-accent-surface);
+  color: var(--notice-text);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--notice-text) 6%, transparent);
+}
+
+.frontstageNoticeRailNav button b {
+  display: grid;
+  min-width: 18px;
+  height: 18px;
+  margin-left: auto;
+  padding: 0 6px;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--notice-danger);
+  color: var(--notice-danger-ink);
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.frontstageNoticeMarkAll {
+  margin-top: 0;
+  margin-left: auto;
+  color: var(--notice-muted);
+}
+
+.frontstageNoticeMarkAll:disabled {
+  cursor: not-allowed;
+  opacity: 0.38;
+}
+
+.frontstageNoticeMain {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  min-width: 0;
+  min-height: 0;
+  padding: 16px 18px 18px;
+  background: var(--notice-canvas);
+}
+
+.frontstageNoticeMainHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 2px 12px;
+}
+
+.frontstageNoticeMainHeader h3,
+.frontstageNoticeMainHeader p {
+  margin: 0;
+}
+
+.frontstageNoticeMainHeader h3 {
+  font-size: 15px;
+  font-weight: 740;
+  letter-spacing: 0;
+}
+
+.frontstageNoticeMainHeader p {
+  margin-top: 4px;
+  color: var(--notice-muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.frontstageNoticeMainHeader > span {
+  flex: 0 0 auto;
+  padding: 5px 9px;
+  border: 1px solid var(--notice-line);
+  border-radius: 999px;
+  background: var(--notice-surface-subtle);
+  color: var(--notice-muted);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.frontstageUpdatesDrawer--notifications .frontstageNotificationList {
+  align-content: start;
+  gap: 8px;
+  padding: 0 3px 3px 1px;
+  scrollbar-color: var(--notice-faint) transparent;
+  scrollbar-width: thin;
+}
+
+.frontstageUpdatesDrawer--notifications .frontstageNotificationItem {
+  overflow: hidden;
+  border-color: var(--notice-line);
+  border-radius: 9px;
+  background: var(--notice-surface);
+  color: var(--notice-text);
+  transition: border-color 180ms ease, background-color 180ms ease;
+}
+
+.frontstageUpdatesDrawer--notifications .frontstageNotificationItem.unread {
+  border-color: var(--notice-line-strong);
+  background: var(--notice-accent-surface);
+}
+
+.frontstageUpdatesDrawer--notifications .frontstageNotificationItem:hover {
+  border-color: var(--notice-line-strong);
+  background: var(--notice-hover);
+}
+
+.frontstageUpdatesDrawer--notifications .frontstageNotificationSummary {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 12px;
+  min-height: 84px;
+  padding: 13px 14px;
+  color: inherit;
+}
+
+.frontstageUpdatesDrawer--notifications .frontstageNotificationCopy {
+  gap: 5px;
+}
+
+.frontstageUpdatesDrawer--notifications .frontstageNotificationMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--notice-muted);
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.frontstageUpdatesDrawer--notifications .frontstageNotificationMeta > span {
+  color: var(--notice-muted);
+  font-weight: 700;
+}
+
+.frontstageUpdatesDrawer--notifications .frontstageNotificationTitleLine {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.frontstageUpdatesDrawer--notifications .frontstageNotificationTitleLine strong {
+  overflow: hidden;
+  color: var(--notice-text);
+  font-size: 13px;
+  font-weight: 720;
+  line-height: 1.4;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.frontstageUpdatesDrawer--notifications .frontstageNotificationTitleLine i {
+  flex: 0 0 auto;
+  padding: 1px 5px;
+  border-radius: 999px;
+  background: var(--notice-danger);
+  color: var(--notice-danger-ink);
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.frontstageUpdatesDrawer--notifications .frontstageNotificationCopy small {
+  display: -webkit-box;
+  overflow: hidden;
+  max-width: 500px;
+  color: var(--notice-muted);
+  font-size: 12px;
+  line-height: 1.55;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.frontstageNotificationExpand {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding-top: 21px;
+  color: var(--notice-muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.frontstageNotificationExpand svg {
+  transform: rotate(90deg);
+  transition: transform 180ms ease;
+}
+
+.frontstageNotificationExpand svg.expanded {
+  transform: rotate(-90deg);
+}
+
+.frontstageUpdatesDrawer--notifications .frontstageUnreadDot {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  width: 6px;
+  height: 6px;
+  margin: 0;
+  border: 0;
+  background: var(--notice-danger);
+  box-shadow: none;
+}
+
+.frontstageUpdatesDrawer--notifications .frontstageNotificationDetail {
+  gap: 10px;
+  margin: 0 14px;
+  padding: 12px 0 14px;
+  border-top: 1px solid var(--notice-line);
+}
+
+.frontstageUpdatesDrawer--notifications .frontstageNotificationDetail p {
+  max-width: 560px;
+  color: var(--notice-muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.frontstageUpdatesDrawer--notifications .frontstageNotificationDetail button {
+  min-height: 32px;
+  padding: 0 10px;
+  border-color: var(--notice-line);
+  border-radius: 9px;
+  background: var(--notice-surface-subtle);
+  color: var(--notice-text);
+}
+
+.frontstageUpdatesDrawer--notifications .frontstageNotificationDetail button:hover,
+.frontstageUpdatesDrawer--notifications .frontstageNotificationDetail button:focus-visible {
+  border-color: var(--notice-line-strong);
+  background: var(--notice-hover);
+}
+
+.frontstageUpdatesDrawer--notifications .frontstageUpdatesEmpty {
+  min-height: 260px;
+  border: 1px dashed var(--notice-line);
+  border-radius: 12px;
+  color: var(--notice-faint);
+}
+
+.frontstageUpdatesDrawer--notifications .frontstageUpdatesEmpty strong {
+  color: var(--notice-text);
+}
+
+.frontstageUpdatesDrawer--notifications .frontstageUpdatesEmpty span {
+  color: var(--notice-muted);
+}
+
+.frontstageUpdatesDrawer--notifications button:focus-visible {
+  outline: 2px solid var(--notice-focus);
+  outline-offset: 2px;
+}
+
+@keyframes frontstageNoticeEnter {
+  from { transform: translateY(10px) scale(0.985); opacity: 0.72; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+@media (max-width: 980px) {
+  .frontstageUpdatesScrim--notifications {
+    padding: 16px;
+  }
+
+  .frontstageUpdatesDrawer--notifications {
+    width: calc(100vw - 32px);
+    height: calc(100dvh - 32px);
+  }
+}
+
+@media (max-width: 720px) {
+  .frontstageUpdatesScrim--notifications {
+    padding: 0;
+  }
+
+  .frontstageUpdatesDrawer--notifications {
+    grid-template-rows: 70px minmax(0, 1fr);
+    width: 100vw;
+    height: 100dvh;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .frontstageUpdatesDrawer--notifications .frontstageUpdatesHeader {
+    padding: 0 16px;
+  }
+
+  .frontstageNoticeRail {
+    padding: 10px 12px;
+  }
+
+  .frontstageNoticeRailNav button {
+    min-height: 42px;
+    padding-inline: 11px;
+  }
+
+  .frontstageNoticeRailNav button b {
+    display: none;
+  }
+
+  .frontstageNoticeMarkAll {
+    min-height: 42px;
+    margin-top: 0;
+    margin-left: auto;
+    padding-inline: 10px;
+  }
+
+  .frontstageNoticeMain {
+    padding: 18px 14px 20px;
+  }
+
+  .frontstageUpdatesDrawer--notifications .frontstageNotificationSummary {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    min-height: 0;
+    padding: 18px;
+  }
+
+  .frontstageNotificationExpand {
+    padding-top: 0;
+  }
+
+  .frontstageUpdatesDrawer--notifications .frontstageNotificationTitleLine strong {
+    white-space: normal;
+  }
+
+  .frontstageUpdatesDrawer--notifications .frontstageUnreadDot {
+    right: 18px;
+    bottom: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .frontstageUpdatesDrawer--notifications,
+  .frontstageNotificationExpand svg {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

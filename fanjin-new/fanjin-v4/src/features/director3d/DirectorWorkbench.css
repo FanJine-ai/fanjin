@@ -1,0 +1,554 @@
+.directorWorkbench {
+  min-height: 720px;
+  height: calc(100vh - 170px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(116, 132, 157, 0.28);
+  border-radius: 18px;
+  background: #0d1015;
+  color: #e8ecf2;
+  box-shadow: 0 22px 70px rgba(12, 18, 28, 0.2);
+}
+
+.directorHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(116, 132, 157, 0.22);
+  background: linear-gradient(135deg, rgba(27, 35, 48, 0.98), rgba(13, 16, 21, 0.98));
+}
+
+.directorHeader h2 {
+  margin: 2px 0 4px;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+}
+
+.directorHeader p {
+  margin: 0;
+  max-width: 720px;
+  color: #9ba7b8;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.directorEyebrow {
+  color: #65d4bf;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.directorHeaderActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 7px;
+}
+
+.directorHeaderActions button,
+.directorViewportToolbar button,
+.directorPathEditor button,
+.directorBindButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 34px;
+  border: 1px solid rgba(138, 154, 178, 0.25);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #dbe2eb;
+  padding: 0 11px;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.directorHeaderActions button:hover,
+.directorViewportToolbar button:hover,
+.directorPathEditor button:hover,
+.directorBindButton:hover {
+  border-color: rgba(101, 212, 191, 0.56);
+  background: rgba(101, 212, 191, 0.1);
+}
+
+.directorHeaderActions button:disabled,
+.directorViewportToolbar button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.directorHeaderActions .directorSaveButton,
+.directorBindButton {
+  border-color: rgba(101, 212, 191, 0.5);
+  background: #4dbda7;
+  color: #07110f;
+  font-weight: 700;
+}
+
+.directorHeaderActions .directorNextButton {
+  border-color: rgba(93, 148, 189, 0.6);
+  background: #5d94bd;
+  color: white;
+  font-weight: 700;
+}
+
+.directorStatusBar {
+  display: flex;
+  gap: 18px;
+  padding: 8px 18px;
+  border-bottom: 1px solid rgba(116, 132, 157, 0.16);
+  background: #141921;
+  color: #8592a5;
+  font-size: 11px;
+}
+
+.directorStatusBar .isDirty {
+  color: #f5b453;
+}
+
+.directorError {
+  padding: 9px 18px;
+  border-bottom: 1px solid rgba(245, 87, 87, 0.36);
+  background: rgba(126, 28, 28, 0.25);
+  color: #ffaaaa;
+  font-size: 12px;
+}
+
+.directorLayout {
+  min-height: 0;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 220px minmax(420px, 1fr) 310px;
+}
+
+.directorSidebar {
+  min-height: 0;
+  overflow: auto;
+  padding: 13px;
+  background: #151a22;
+  scrollbar-color: #465269 transparent;
+}
+
+.directorSceneSidebar {
+  border-right: 1px solid rgba(116, 132, 157, 0.2);
+}
+
+.directorInspector {
+  border-left: 1px solid rgba(116, 132, 157, 0.2);
+}
+
+.directorSidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.directorSidebarHeader h3,
+.directorLightingEditor h4,
+.directorBindingEditor h4,
+.directorPathEditor h4 {
+  margin: 0;
+  color: #e5eaf1;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.directorSidebarHeader > div {
+  display: flex;
+  gap: 4px;
+}
+
+.directorSidebarHeader button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 29px;
+  height: 29px;
+  padding: 0;
+  border: 1px solid rgba(138, 154, 178, 0.2);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #aeb8c6;
+  cursor: pointer;
+}
+
+.directorField {
+  display: grid;
+  gap: 5px;
+  margin-bottom: 10px;
+  color: #909cad;
+  font-size: 10px;
+}
+
+.directorField input,
+.directorField select,
+.directorField textarea,
+.directorLightRow input[type="number"] {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid rgba(138, 154, 178, 0.24);
+  border-radius: 7px;
+  outline: none;
+  background: #0e1218;
+  color: #e5eaf1;
+  padding: 7px 8px;
+  font: inherit;
+  font-size: 11px;
+}
+
+.directorField textarea {
+  min-height: 70px;
+  resize: vertical;
+  line-height: 1.45;
+}
+
+.directorField input:focus,
+.directorField select:focus,
+.directorField textarea:focus {
+  border-color: rgba(101, 212, 191, 0.65);
+}
+
+.directorVecInputs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.directorEntityList section {
+  margin-top: 15px;
+}
+
+.directorEntityList h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 5px;
+  color: #778397;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.directorEntityList h3 small {
+  font-size: 9px;
+}
+
+.directorEntityList button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin: 2px 0;
+  padding: 8px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  background: transparent;
+  color: #b6c0ce;
+  text-align: left;
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.directorEntityList button:hover,
+.directorEntityList button.isActive {
+  border-color: rgba(101, 212, 191, 0.28);
+  background: rgba(101, 212, 191, 0.1);
+  color: #dffaf4;
+}
+
+.directorViewportPanel {
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  background: #101318;
+}
+
+.directorViewportToolbar {
+  display: flex;
+  gap: 5px;
+  padding: 8px 10px;
+  border-bottom: 1px solid rgba(116, 132, 157, 0.18);
+  background: #171c24;
+}
+
+.directorViewportToolbar button {
+  min-height: 30px;
+  padding: 0 9px;
+}
+
+.directorViewportToolbar button.isActive {
+  border-color: rgba(101, 212, 191, 0.55);
+  background: rgba(101, 212, 191, 0.15);
+  color: #8ff0dd;
+}
+
+.directorViewport {
+  position: relative;
+  min-height: 0;
+  flex: 1;
+}
+
+.directorViewport > div,
+.directorViewport canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.directorViewportFallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 100%;
+  color: #8f9bad;
+  text-align: center;
+  font-size: 12px;
+}
+
+.directorViewportFallback strong {
+  color: #dbe2eb;
+  font-size: 15px;
+}
+
+.directorEmpty,
+.directorBindingEditor p {
+  color: #7f8b9d;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.directorLightingEditor,
+.directorBindingEditor,
+.directorPathEditor {
+  margin-top: 17px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(116, 132, 157, 0.18);
+}
+
+.directorLightRow {
+  display: grid;
+  grid-template-columns: 1fr 30px 66px;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  color: #aab4c2;
+  font-size: 10px;
+}
+
+.directorLightRow input[type="color"] {
+  width: 30px;
+  height: 26px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  padding: 0;
+}
+
+.directorPathEditor button,
+.directorBindButton {
+  width: 100%;
+}
+
+.directorPathPoint,
+.directorBindings > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 6px;
+  padding: 7px 8px;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #aeb8c6;
+  font-size: 10px;
+}
+
+.directorPathPoint button,
+.directorBindings button {
+  display: inline-flex;
+  border: 0;
+  background: transparent;
+  color: #e58282;
+  cursor: pointer;
+}
+
+.directorBindings small {
+  display: block;
+  margin-top: 2px;
+  color: #718096;
+}
+
+.directorSpin {
+  animation: directorSpin 0.8s linear infinite;
+}
+
+@keyframes directorSpin {
+  to { transform: rotate(360deg); }
+}
+
+.directorWorkbench.directorIntegratedWorkbench {
+  height: auto;
+  min-height: 0;
+  overflow: visible;
+}
+
+.directorPlatformHeader {
+  border-radius: 18px 18px 0 0;
+}
+
+.directorSceneMeta {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) 190px auto;
+  align-items: end;
+  gap: 12px;
+  padding: 12px 18px;
+  border-bottom: 1px solid rgba(116, 132, 157, 0.18);
+  background: #10151c;
+}
+
+.directorSceneMeta > span {
+  align-self: center;
+  color: #8491a4;
+  font-size: 11px;
+  text-align: right;
+}
+
+.directorDeliveredStudio {
+  height: min(760px, calc(100vh - 120px));
+  min-height: 640px;
+  overflow: hidden;
+  background: #202020;
+}
+
+.directorDeliveredStudio .directorViewportFallback {
+  height: 100%;
+}
+
+.directorIntegrationPanel {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border-top: 1px solid rgba(116, 132, 157, 0.22);
+  background: #11161e;
+}
+
+.directorIntegrationTitle {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.directorIntegrationTitle h3,
+.directorIntegrationTitle p {
+  margin: 0;
+}
+
+.directorIntegrationTitle h3 {
+  color: #edf1f6;
+  font-size: 14px;
+}
+
+.directorIntegrationTitle p {
+  margin-top: 4px;
+  color: #8c98aa;
+  font-size: 11px;
+}
+
+.directorIntegrationTitle > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #e6b86a;
+  font-size: 11px;
+}
+
+.directorBindingGrid {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(160px, 0.7fr) minmax(280px, 1.4fr) 160px;
+  align-items: end;
+  gap: 10px;
+}
+
+.directorBindingGrid .directorBindButton {
+  min-height: 53px;
+}
+
+.directorBindingNotes textarea {
+  min-height: 36px;
+  resize: vertical;
+}
+
+.directorIntegrationPanel .directorBindings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 8px;
+}
+
+.directorIntegrationPanel .directorBindings > div {
+  margin-top: 0;
+}
+
+@media (max-width: 1200px) {
+  .directorWorkbench {
+    height: auto;
+    min-height: 900px;
+  }
+  .directorLayout {
+    grid-template-columns: 190px minmax(360px, 1fr) 270px;
+  }
+}
+
+@media (max-width: 900px) {
+  .directorHeader {
+    flex-direction: column;
+  }
+  .directorHeaderActions {
+    justify-content: flex-start;
+  }
+  .directorStatusBar {
+    flex-wrap: wrap;
+  }
+  .directorLayout {
+    display: flex;
+    flex-direction: column;
+  }
+  .directorSidebar {
+    overflow: visible;
+  }
+  .directorViewportPanel {
+    min-height: 520px;
+    order: -1;
+  }
+  .directorInspector,
+  .directorSceneSidebar {
+    border: 0;
+    border-top: 1px solid rgba(116, 132, 157, 0.2);
+  }
+  .directorSceneMeta,
+  .directorBindingGrid {
+    grid-template-columns: 1fr;
+  }
+  .directorSceneMeta > span {
+    text-align: left;
+  }
+  .directorDeliveredStudio {
+    height: 760px;
+    min-width: 840px;
+  }
+  .directorIntegrationTitle {
+    flex-direction: column;
+  }
+}

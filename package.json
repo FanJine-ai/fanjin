@@ -1,0 +1,48 @@
+{
+  "private": true,
+  "name": "fanjin-workspace",
+  "scripts": {
+    "build:api": "node scripts/public-platform-build.mjs",
+    "build:web": "npm --prefix fanjin-new/fanjin-v4 run build",
+    "smoke": "node scripts/public-platform-smoke.mjs",
+    "start": "node scripts/public-platform-server.mjs",
+    "update:setup": "node fanjin-new/fanjin-community-updater/src/cli.mjs init",
+    "start:managed": "node fanjin-new/fanjin-community-updater/src/cli.mjs serve",
+    "update:url": "node fanjin-new/fanjin-community-updater/src/cli.mjs url",
+    "update:check": "node fanjin-new/fanjin-community-updater/src/cli.mjs check",
+    "test:updater": "node --test fanjin-new/fanjin-community-updater/tests/*.test.mjs",
+    "test:cli": "node --test fanjin-new/fanjin-cli/test/*.test.mjs",
+    "test:dependencies": "node --test scripts/community-dependencies.test.mjs"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "fanjin-new"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FanJine-ai/fanjin-community.git"
+  },
+  "keywords": [
+    "ai",
+    "video-generation",
+    "workflow",
+    "typescript",
+    "react",
+    "release-automation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FanJine-ai/fanjin-community/issues"
+  },
+  "homepage": "https://github.com/FanJine-ai/fanjin-community#readme",
+  "description": "Fanjin (\u7e41\u5883) is a full-stack AI-assisted video creation workspace with a deterministic release control plane.",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "ajv": "^8.20.0"
+  },
+  "overrides": {
+    "fast-uri": "3.1.9"
+  }
+}

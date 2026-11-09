@@ -1,0 +1,253 @@
+.consoleCommandPaletteDialogContent {
+  display: flex;
+  min-height: 0;
+}
+
+.consoleCommandPalette {
+  display: grid;
+  flex: 1 1 auto;
+  grid-template-rows: auto minmax(0, 1fr);
+  width: 100%;
+  min-height: 0;
+  gap: var(--cui-space-3);
+}
+
+.consoleCommandSearch {
+  display: grid;
+  gap: var(--cui-space-2);
+}
+
+.consoleCommandSearchHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cui-space-3);
+}
+
+.consoleCommandSearchLabel {
+  color: var(--cui-text);
+  font-size: 12.5px;
+  font-weight: 650;
+}
+
+.consoleCommandSearchHint {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cui-space-1);
+  color: var(--cui-text-muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.consoleCommandSearchHint kbd {
+  display: inline-grid;
+  min-width: 20px;
+  min-height: 20px;
+  padding: 2px var(--cui-space-1);
+  place-items: center;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-sm);
+  background: var(--cui-surface-subtle);
+  color: var(--cui-text);
+  font: inherit;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.consoleCommandInstructions {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.consoleCommandResultsFrame {
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-surface);
+}
+
+.consoleCommandResults {
+  display: grid;
+  max-height: min(52vh, 480px);
+  gap: var(--cui-space-1);
+  padding: var(--cui-space-1);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+
+.consoleCommandResults > button {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) auto;
+  align-items: center;
+  min-height: 42px;
+  gap: var(--cui-space-2);
+  width: 100%;
+  padding: 5px var(--cui-space-2) 5px 5px;
+  border: 1px solid transparent;
+  border-radius: var(--cui-radius-sm);
+  background: transparent;
+  color: var(--cui-text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition:
+    border-color var(--cui-duration-fast) ease,
+    background-color var(--cui-duration-fast) ease,
+    color var(--cui-duration-fast) ease;
+}
+
+.consoleCommandResults > button:hover,
+.consoleCommandResults > button:focus-visible {
+  border-color: var(--cui-border-strong);
+  background: var(--cui-control-hover);
+}
+
+.consoleCommandResults > button.is-active {
+  border-color: var(--cui-accent);
+  background: var(--cui-info-bg);
+}
+
+.consoleCommandResults > button:focus-visible {
+  outline: 3px solid var(--cui-focus);
+  outline-offset: 1px;
+}
+
+.consoleCommandResults > button:active {
+  background: var(--cui-control-pressed);
+}
+
+.consoleCommandResultIcon {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--cui-radius-sm);
+  background: var(--cui-info-bg);
+  color: var(--cui-info-text);
+}
+
+.consoleCommandResultCopy {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+}
+
+.consoleCommandResultCopy strong,
+.consoleCommandResultCopy small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.consoleCommandResultCopy strong {
+  font-size: 12.5px;
+  line-height: 1.35;
+}
+
+.consoleCommandResultCopy small {
+  color: var(--cui-text-muted);
+  font-size: 11.5px;
+  line-height: 1.35;
+}
+
+.consoleCommandResultArrow {
+  color: var(--cui-text-muted);
+  transition: transform var(--cui-duration-fast) ease;
+}
+
+.consoleCommandResults > button:hover .consoleCommandResultArrow,
+.consoleCommandResults > button.is-active .consoleCommandResultArrow {
+  transform: translateX(2px);
+}
+
+.consoleCommandEmpty {
+  display: grid;
+  min-height: 96px;
+  padding: var(--cui-space-3);
+  place-content: center;
+  justify-items: center;
+  gap: var(--cui-space-2);
+  color: var(--cui-text-muted);
+  text-align: center;
+}
+
+.consoleCommandEmptyIcon {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  margin-bottom: var(--cui-space-1);
+  place-items: center;
+  border: 1px solid var(--cui-info-border);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-info-bg);
+  color: var(--cui-info-text);
+}
+
+.consoleCommandEmpty strong {
+  color: var(--cui-text);
+  font-size: 13px;
+}
+
+.consoleCommandEmpty span {
+  max-width: 36ch;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+@media (max-width: 767px) {
+  .consoleCommandPaletteDialogContent {
+    padding-bottom: max(var(--cui-space-4), env(safe-area-inset-bottom));
+  }
+
+  .consoleCommandSearchHint {
+    display: none;
+  }
+
+  .consoleCommandResultsFrame {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+  }
+
+  .consoleCommandResults {
+    flex: 1 1 auto;
+    max-height: none;
+  }
+
+  .consoleCommandResults > button {
+    grid-template-columns: var(--cui-touch-target) minmax(0, 1fr) 20px;
+    min-height: 64px;
+    padding-right: var(--cui-space-3);
+  }
+
+  .consoleCommandResultCopy strong {
+    font-size: 16px;
+  }
+
+  .consoleCommandEmpty {
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .consoleCommandResults > button,
+  .consoleCommandResultArrow {
+    transition-duration: 0.01ms;
+  }
+
+  .consoleCommandResults > button:hover .consoleCommandResultArrow,
+  .consoleCommandResults > button.is-active .consoleCommandResultArrow {
+    transform: none;
+  }
+}

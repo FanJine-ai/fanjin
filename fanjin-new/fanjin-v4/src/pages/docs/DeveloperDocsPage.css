@@ -1,0 +1,48 @@
+.developerDocHero .guideEyebrow { display: flex; align-items: center; gap: 10px; color: var(--docs-muted); }
+.developerDocHero .guideEyebrow a { color: inherit; text-decoration: none; }
+.developerDocHero .guideEyebrow a:hover { color: var(--docs-accent); }
+.developerDocMeta { margin-top: 12px; color: var(--docs-muted); font-size: 12px; line-height: 20px; }
+.developerDocHero .guideActionRow { margin-top: 24px; }
+.developerDocHero .guideActionRow a { gap: 8px; }
+.developerDocArticle { min-width: 0; }
+.developerDocSection { padding: 36px 0; border-bottom: 1px solid var(--docs-line); }
+.developerDocSection h2 { margin: 0 0 20px; font-size: 22px; font-weight: 600; line-height: 1.4; letter-spacing: -.025em; }
+.developerDocSection h3 { margin: 28px 0 12px; font-size: 16px; font-weight: 600; }
+.developerDocSection p, .developerDocSection li { color: var(--docs-muted); font-size: 15px; line-height: 1.85; overflow-wrap: anywhere; }
+.developerDocSection p { margin: 14px 0; }
+.developerDocSection ul, .developerDocSection ol { padding-left: 22px; }
+.developerDocSection ul { list-style: disc; }
+.developerDocSection ol { list-style: decimal; }
+.developerDocSection li + li { margin-top: 8px; }
+.developerDocSection strong { color: var(--docs-text); font-weight: 600; }
+.developerDocSection a { color: var(--docs-accent); text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.developerDocSection :not(pre) > code { padding: 2px 5px; border: 1px solid var(--docs-line); border-radius: 4px; color: var(--docs-text); background: var(--docs-surface-muted); font-family: "Geist Mono Variable", ui-monospace, monospace; font-size: .85em; overflow-wrap: anywhere; box-decoration-break: clone; }
+.developerDocSection blockquote { margin: 20px 0; padding: 2px 20px; border-left: 2px solid var(--docs-accent); background: color-mix(in srgb, var(--docs-accent) 5%, var(--docs-page)); }
+.developerDocCode { overflow: hidden; min-width: 0; margin: 20px 0; border: 1px solid var(--docs-line); border-radius: 8px; background: var(--docs-surface); }
+.developerDocCodeToolbar { display: flex; min-height: 44px; padding: 0 16px; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--docs-line); background: var(--docs-surface-muted); color: var(--docs-muted); font-size: 12px; }
+.developerDocCodeLanguage { display: inline-flex; align-items: center; gap: 8px; font-weight: 500; }
+.developerDocCodeToolbar button { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; padding: 0 4px; border: 0; background: none; color: var(--docs-muted); font-size: 12px; cursor: pointer; }
+.developerDocCodeToolbar button:hover { color: var(--docs-accent); }
+.developerDocCode pre { margin: 0; padding: 20px; overflow: auto; color: var(--docs-text); font-size: 13px; line-height: 1.8; tab-size: 2; }
+.developerDocCode code { font-family: "Geist Mono Variable", ui-monospace, monospace; }
+.developerDocTable { max-width: 100%; overflow: auto; margin: 20px 0; border: 1px solid var(--docs-line); border-radius: 8px; background: var(--docs-surface); }
+.developerDocTable table { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 1.75; text-align: left; }
+.developerDocTable th, .developerDocTable td { min-width: 100px; padding: 12px 16px; border-bottom: 1px solid var(--docs-line); vertical-align: top; }
+.developerDocTable th { color: var(--docs-text); background: var(--docs-surface-muted); font-weight: 550; }
+.developerDocTable td { color: var(--docs-muted); }
+.developerDocTable tr:last-child td { border-bottom: 0; }
+.developerDocTable td:first-child code { white-space: nowrap; }
+.developerDocFooter { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; padding: 28px 0; font-size: 13px; }
+.developerDocFooter span { margin-right: auto; color: var(--docs-muted); }
+.developerDocFooter a { padding-block: 10px; color: var(--docs-accent); text-decoration: none; }
+.developerDocFooter a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.developerDocHero a:focus-visible, .developerDocSection a:focus-visible, .developerDocFooter a:focus-visible, .developerDocCode button:focus-visible, .developerDocCode pre:focus-visible, .developerDocTable:focus-visible { outline: 2px solid var(--docs-accent); outline-offset: 3px; }
+@media (max-width: 760px) {
+  .developerDocSection { padding: 28px 0; }
+  .developerDocSection p, .developerDocSection li { font-size: 16px; }
+  .developerDocCode pre { padding: 16px; }
+  .developerDocHero .guideActionRow a { width: auto; min-height: 44px; padding-inline: 12px; }
+  .developerDocHero .guideActionRow { gap: 8px; }
+  .developerDocFooter { gap: 8px 20px; }
+  .developerDocFooter span { width: 100%; }
+}

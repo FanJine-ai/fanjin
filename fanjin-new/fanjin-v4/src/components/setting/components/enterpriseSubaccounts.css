@@ -1,0 +1,421 @@
+.enterpriseMembers {
+  display: grid;
+  min-width: 0;
+  gap: var(--cui-space-3);
+  color: var(--cui-text);
+}
+
+.enterpriseMembersHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--cui-space-3);
+}
+
+.enterpriseMembersHeader > div {
+  min-width: 0;
+}
+
+.enterpriseMembersHeader h2 {
+  margin: 0;
+  color: var(--cui-text);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.enterpriseMembersHeader p {
+  max-width: 68ch;
+  margin: var(--cui-space-1) 0 0;
+  color: var(--cui-text-muted);
+  font-size: 11.5px;
+  line-height: 1.5;
+}
+
+.enterpriseMembers .cuiButton,
+.enterpriseMembersOverlayActions .cuiButton {
+  min-height: var(--cui-control-height);
+}
+
+.enterpriseMembersRoleGuide {
+  min-width: 0;
+  background: transparent;
+}
+
+.enterpriseMembersRoleGuide .cuiAccordionTrigger {
+  border-radius: 0;
+}
+
+.enterpriseMembersRoleGuide .cuiAccordionTriggerLabel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--cui-space-2);
+  width: 100%;
+}
+
+.enterpriseMembersRoleGuide .cuiAccordionTriggerLabel > span:first-child {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+  gap: var(--cui-space-2);
+  font-size: 12px;
+  font-weight: 680;
+}
+
+.enterpriseMembersRoleGuideHint {
+  color: var(--cui-text-faint);
+  font-size: 12px;
+}
+
+.enterpriseMembersRoleGuideContent { display: grid; gap: var(--cui-space-2); }
+
+.enterpriseMembersRoleGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+}
+
+.enterpriseMembersRoleGrid article {
+  min-width: 0;
+  padding: var(--cui-space-2) var(--cui-space-3);
+  border: 0;
+  background: transparent;
+}
+
+.enterpriseMembersRoleGrid article:nth-child(3n + 2),
+.enterpriseMembersRoleGrid article:nth-child(3n + 3) {
+  border-left: 1px solid var(--cui-border);
+}
+
+.enterpriseMembersRoleGrid header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--cui-space-2);
+}
+
+.enterpriseMembersRoleGrid header > span:last-child,
+.enterpriseMembersRoleGrid p {
+  color: var(--cui-text-muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.enterpriseMembersRoleGrid p {
+  margin: var(--cui-space-2) 0 0;
+}
+
+.enterpriseMembersTable {
+  min-width: 0;
+}
+
+.enterpriseMembersTable .consoleDataTable__viewport {
+  max-width: 100%;
+}
+
+.enterpriseMembersIdentity {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: var(--cui-space-2);
+}
+
+.enterpriseMembersAvatar,
+.enterpriseMembersIdentityAvatar {
+  display: inline-grid;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-accent);
+  color: var(--cui-on-accent);
+  font-weight: 760;
+}
+
+.enterpriseMembersAvatar {
+  width: 28px;
+  height: 28px;
+  font-size: 11.5px;
+}
+
+.enterpriseMembersIdentityAvatar {
+  width: 34px;
+  height: 34px;
+  font-size: 12.5px;
+}
+
+.enterpriseMembersIdentityCopy,
+.enterpriseMembersStackedValue,
+.enterpriseMembersPermissionSummary {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.enterpriseMembersIdentityCopy strong,
+.enterpriseMembersStackedValue strong {
+  overflow: hidden;
+  color: var(--cui-text);
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.enterpriseMembersIdentityCopy > span,
+.enterpriseMembersStackedValue > span,
+.enterpriseMembersPermissionSummary small,
+.enterpriseMembersMuted {
+  overflow: hidden;
+  color: var(--cui-text-faint);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.enterpriseMembersEmail {
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--cui-text-faint);
+  cursor: help;
+  font: inherit;
+  font-size: 12px;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.enterpriseMembersEmail:focus-visible { outline: 3px solid var(--cui-focus); outline-offset: 2px; }
+
+.enterpriseMembersPermissionSummary > span {
+  color: var(--cui-text-muted);
+  line-height: 1.45;
+}
+
+.enterpriseMembersRowActions {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: var(--cui-space-1);
+}
+
+.enterpriseMembersRowActions .cuiButton {
+  white-space: nowrap;
+}
+
+.enterpriseMembersFormStack {
+  display: grid;
+  min-width: 0;
+  gap: var(--cui-space-3);
+}
+
+.enterpriseMembersFormGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--cui-space-3);
+}
+
+.enterpriseMembersIdentityCard {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--cui-space-2);
+  padding: var(--cui-space-2) var(--cui-space-3);
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-surface-subtle);
+}
+
+.enterpriseMembersIdentityCard > span:nth-child(2) {
+  display: grid;
+  min-width: 0;
+  gap: var(--cui-space-1);
+}
+
+.enterpriseMembersIdentityCard strong {
+  overflow: hidden;
+  color: var(--cui-text);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.enterpriseMembersIdentityCard small {
+  overflow-wrap: anywhere;
+  color: var(--cui-text-muted);
+}
+
+.enterpriseMembersPermissionGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--cui-space-2);
+}
+
+.enterpriseMembersPermissionOption {
+  display: flex;
+  min-height: 34px;
+  align-items: center;
+  gap: var(--cui-space-2);
+  padding: 6px 9px;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-sm);
+  background: var(--cui-control-bg);
+  color: var(--cui-text);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.enterpriseMembersPermissionOption:hover {
+  background: var(--cui-control-hover);
+}
+
+.enterpriseMembersTextarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.enterpriseMembersMetadata,
+.enterpriseMembersDetailList {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  margin: 0;
+  border-block: 1px solid var(--cui-border);
+}
+
+.enterpriseMembersMetadata > div,
+.enterpriseMembersDetailList > div {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: var(--cui-space-2);
+  padding: 7px 0;
+  border-bottom: 1px solid var(--cui-border-subtle);
+  background: transparent;
+}
+
+.enterpriseMembersMetadata > div:last-child,
+.enterpriseMembersDetailList > div:last-child {
+  border-bottom: 0;
+}
+
+.enterpriseMembersMetadata dt,
+.enterpriseMembersDetailList dt {
+  color: var(--cui-text-faint);
+  font-size: 11.5px;
+}
+
+.enterpriseMembersMetadata dd,
+.enterpriseMembersDetailList dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: var(--cui-text);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (pointer: coarse) {
+  .enterpriseMembers .cuiButton,
+  .enterpriseMembersOverlayActions .cuiButton,
+  .enterpriseMembersPermissionOption {
+    min-height: var(--cui-touch-target);
+  }
+
+  .enterpriseMembersAvatar {
+    width: 34px;
+    height: 34px;
+  }
+
+  .enterpriseMembersIdentityAvatar {
+    width: 44px;
+    height: 44px;
+    font-size: 15px;
+  }
+}
+
+.enterpriseMembersOverlayActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--cui-space-2);
+}
+
+@media (max-width: 960px) {
+  .enterpriseMembersRoleGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .enterpriseMembersRoleGrid article:nth-child(n) {
+    border-top: 0;
+    border-left: 0;
+  }
+
+  .enterpriseMembersRoleGrid article:nth-child(even) {
+    border-left: 1px solid var(--cui-border);
+  }
+
+  .enterpriseMembersRoleGrid article:nth-child(n + 3) {
+    border-top: 1px solid var(--cui-border);
+  }
+}
+
+@media (max-width: 1399px) {
+  .enterpriseMembersTable .consoleDataTableColumn--detail {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .enterpriseMembersHeader {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .enterpriseMembersHeader > .cuiButton {
+    width: 100%;
+  }
+
+  .enterpriseMembersRoleGuide .cuiAccordionTriggerLabel {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .enterpriseMembersRoleGuideHint {
+    display: none;
+  }
+
+  .enterpriseMembersRoleGrid,
+  .enterpriseMembersFormGrid,
+  .enterpriseMembersPermissionGrid,
+  .enterpriseMembersMetadata,
+  .enterpriseMembersDetailList {
+    grid-template-columns: 1fr;
+  }
+
+  .enterpriseMembersRoleGrid article:nth-child(n) {
+    border-left: 0;
+  }
+
+  .enterpriseMembersRoleGrid article:not(:first-child) {
+    border-top: 1px solid var(--cui-border);
+  }
+
+  .enterpriseMembersIdentityCard {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .enterpriseMembersIdentityCard > .cuiBadge {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .enterpriseMembersOverlayActions {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+
+  .enterpriseMembersOverlayActions .cuiButton {
+    width: 100%;
+  }
+}

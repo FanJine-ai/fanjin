@@ -1,0 +1,130 @@
+.reconciliationPage {
+  display: grid;
+  min-width: 0;
+  gap: var(--cui-space-3);
+}
+
+.reconciliationData {
+  min-width: 0;
+  overflow: hidden;
+  border-block: 1px solid var(--cui-border);
+}
+
+.reconciliationData > .consoleFilterBar {
+  border-bottom: 1px solid var(--cui-border-subtle);
+  border-radius: 0;
+  background: transparent;
+}
+
+.reconciliationFilter {
+  display: flex;
+  min-width: 180px;
+  align-items: center;
+  gap: var(--cui-space-2);
+  color: var(--cui-text-muted);
+  font-size: 11.5px;
+  font-weight: 620;
+  white-space: nowrap;
+}
+
+.reconciliationFilter > :is(.cuiInputFrame, .cuiSelect) {
+  min-width: 0;
+  flex: 1;
+}
+
+.reconciliationFilterSearch {
+  min-width: 280px;
+  flex: 1 1 360px;
+}
+
+.reconciliationFilterActions,
+.reconciliationDialogFooter > div:last-child,
+.reconciliationDrawerFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--cui-space-2);
+}
+
+.reconciliationTable {
+  border: 0;
+  border-radius: 0;
+}
+
+.reconciliationTable table {
+  min-width: 1080px;
+  font-size: 12px;
+}
+
+.reconciliationPrimary {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.reconciliationPrimary strong,
+.reconciliationPrimary span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.reconciliationPrimary strong {
+  color: var(--cui-text);
+  font-size: 12.5px;
+  font-weight: 650;
+}
+
+.reconciliationPrimary span {
+  color: var(--cui-text-faint);
+  font-family: var(--cui-font-mono);
+  font-size: 11px;
+}
+
+.reconciliationForm,
+.reconciliationDetail,
+.reconciliationDialogFooter {
+  display: grid;
+  gap: var(--cui-space-4);
+}
+
+.reconciliationSettlementGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--cui-space-3);
+}
+
+.reconciliationForm textarea {
+  width: 100%;
+  min-height: 96px;
+  resize: vertical;
+}
+
+.reconciliationEvidence {
+  display: grid;
+  gap: var(--cui-space-2);
+}
+
+.reconciliationEvidence h3 {
+  margin: 0;
+  color: var(--cui-text);
+  font-size: 13px;
+  font-weight: 680;
+}
+
+.reconciliationEvidence .cuiCodeBlock {
+  max-height: 360px;
+  overflow: auto;
+}
+
+@media (max-width: 760px) {
+  .reconciliationFilter,
+  .reconciliationFilterSearch {
+    min-width: 100%;
+  }
+
+  .reconciliationSettlementGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.consoleWorkbench .reconciliationData { display: grid; gap: 18px; overflow: visible; border: 0; }

@@ -1,0 +1,29 @@
+.toolConnections { display: grid; gap: 24px; min-width: 0; color: var(--cui-text); }
+.toolConnectionIntro { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 24px; padding: 24px; border: 1px solid var(--cui-border); border-radius: 12px; background: var(--cui-surface); }
+.toolConnectionIntro h2 { font-size: 22px; line-height: 1.4; margin: 12px 0; }
+.toolConnectionIntro p, .toolSetup p { color: var(--cui-text-muted); line-height: 1.65; margin: 8px 0; font-size: 14px; overflow-wrap: anywhere; }
+.toolConnectionIntro ol { display: grid; gap: 16px; padding-left: 24px; margin: 0; align-self: center; }
+.toolConnectionIntro li { padding-left: 4px; font-size: 14px; line-height: 1.6; }
+.toolConnectionIntro li span { display: block; color: var(--cui-text-muted); }
+.toolSetup { display: grid; gap: 12px; min-width: 0; }
+.toolSetupHeading { display: flex; gap: 8px; align-items: center; }
+.toolSetupHeading h3 { font-size: 16px; margin: 0; }
+.toolFormatButtons, .toolSetupActions { display: flex; gap: 8px; flex-wrap: wrap; }
+.toolConfigCode { max-width: 100%; margin: 0; padding: 20px; border: 1px solid var(--cui-border); border-radius: 8px; background: var(--cui-surface-subtle); color: var(--cui-text); font: 13px/1.7 var(--cui-font-mono); white-space: pre-wrap; overflow-wrap: anywhere; }
+.toolConfigCode:focus-visible, .toolPreset:has(input:focus-visible) { outline: 2px solid var(--cui-accent); outline-offset: 3px; }
+.toolPermissionPresets { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.toolPreset { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; border: 1px solid var(--cui-border); border-radius: 8px; padding: 16px; min-height: 88px; background: var(--cui-surface); }
+.toolPreset:has(input:checked) { border-color: var(--cui-accent); background: var(--cui-surface-3); }
+.toolPreset input { margin-top: 4px; accent-color: var(--cui-accent); }
+.toolPreset strong, .toolPreset small { display: block; }
+.toolPreset small { margin-top: 6px; color: var(--cui-text-muted); line-height: 1.6; }
+.toolTemplateDetails { padding: 20px; border: 1px solid var(--cui-border); border-radius: 12px; background: var(--cui-surface); }
+.toolTemplateDetails summary { cursor: pointer; min-height: 44px; line-height: 24px; font-weight: 600; }
+.toolConnectionsLink { color: var(--cui-accent); display: inline-flex; align-items: center; min-height: 44px; gap: 8px; }
+@media (max-width: 640px) {
+  .toolConnectionIntro { grid-template-columns: minmax(0, 1fr); padding: 16px; gap: 20px; }
+  .toolPermissionPresets { grid-template-columns: minmax(0, 1fr); }
+  .toolSetup p, .toolConnectionIntro p, .toolConnectionIntro li { font-size: 16px; }
+  .toolFormatButtons .cuiButton, .toolSetupActions .cuiButton { min-height: 44px; }
+  .toolConfigCode { padding: 12px; }
+}

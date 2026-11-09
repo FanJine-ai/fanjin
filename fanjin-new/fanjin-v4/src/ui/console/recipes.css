@@ -1,0 +1,98 @@
+.cuiPage {
+  display: grid;
+  min-width: 0;
+  gap: var(--cui-space-5);
+  color: var(--cui-text);
+  font-family: var(--cui-font-sans);
+}
+
+.cuiSection { min-width: 0; }
+.cuiSection--outlined,
+.cuiSection--subtle { overflow: hidden; border: 1px solid var(--cui-border); border-radius: var(--cui-radius-lg); }
+.cuiSection--outlined { background: var(--cui-surface); }
+.cuiSection--subtle { background: var(--cui-surface-subtle); }
+
+.cuiSection__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--cui-space-4);
+  padding-bottom: var(--cui-space-2);
+  border-bottom: 1px solid var(--cui-border-subtle);
+}
+
+.cuiSection--flat > .cuiSection__header { border-bottom: 0; }
+
+.cuiSection--outlined > .cuiSection__header,
+.cuiSection--subtle > .cuiSection__header { padding: var(--cui-space-4) var(--cui-space-5); }
+.cuiSection__heading { display: flex; min-width: 0; align-items: flex-start; gap: var(--cui-space-2); }
+.cuiSection__icon { flex: 0 0 auto; margin-top: 3px; color: var(--cui-text-muted); }
+.cuiSection__copy { min-width: 0; }
+.cuiSection__copy h2 { margin: 0; color: var(--cui-text); font-size: 16px; font-weight: 600; line-height: 1.35; }
+.cuiSection__copy p { max-width: 68ch; margin: var(--cui-space-1) 0 0; color: var(--cui-text-muted); font-size: 13px; line-height: 1.5; }
+.cuiSection__action { flex: 0 0 auto; }
+.cuiSection__content { min-width: 0; }
+.cuiSection__header + .cuiSection__content { padding-top: var(--cui-space-3); }
+.cuiSection--outlined > .cuiSection__content,
+.cuiSection--subtle > .cuiSection__content { padding: var(--cui-space-5); }
+.cuiSection--outlined > .cuiSection__header + .cuiSection__content,
+.cuiSection--subtle > .cuiSection__header + .cuiSection__content { padding-top: var(--cui-space-4); }
+
+.cuiToolbar { display: flex; align-items: center; justify-content: space-between; gap: var(--cui-space-3); }
+.cuiResponsiveSplit { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr); gap: var(--cui-space-5); }
+.cuiResponsiveSplit[data-ratio="aside-first"] { grid-template-columns: minmax(320px, .82fr) minmax(0, 1.18fr); }
+.cuiResponsiveSplit[data-ratio="balanced"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cuiFormGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--cui-space-4); }
+.cuiFormGrid[data-columns="1"] { grid-template-columns: minmax(0, 1fr); }
+.cuiFormGrid[data-columns="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.cuiDescriptionList { display: grid; margin: 0; }
+.cuiDescriptionList__item { display: grid; grid-template-columns: minmax(96px, 128px) minmax(0, 1fr); gap: var(--cui-space-3); padding: var(--cui-space-2) 0; }
+.cuiDescriptionList__item:not(:last-child) { border-bottom: 1px solid var(--cui-border); }
+.cuiDescriptionList dt { color: var(--cui-text-faint); font-size: 11.5px; }
+.cuiDescriptionList dd { min-width: 0; margin: 0; color: var(--cui-text); font-size: 12px; font-weight: 600; overflow-wrap: anywhere; }
+
+.cuiAlert { display: grid; gap: var(--cui-space-1); padding: 8px var(--cui-space-3); border: 1px solid var(--cui-border); border-radius: var(--cui-radius-sm); background: var(--cui-surface-subtle); color: var(--cui-text-muted); font-size: 12px; line-height: 1.45; }
+.cuiAlert--info { border-color: var(--cui-info-border); background: var(--cui-info-bg); color: var(--cui-info-text); }
+.cuiAlert--success { border-color: var(--cui-success-border); background: var(--cui-success-bg); color: var(--cui-success-text); }
+.cuiAlert--warning { border-color: var(--cui-warning-border); background: var(--cui-warning-bg); color: var(--cui-warning-text); }
+.cuiAlert--danger { border-color: var(--cui-danger-border); background: var(--cui-danger-bg); color: var(--cui-danger-text); }
+.cuiAlert strong { color: inherit; }
+.cuiAlert__content { min-width: 0; }
+
+.cuiEmptyState { display: grid; min-height: 96px; place-content: center; justify-items: center; gap: var(--cui-space-1); padding: var(--cui-space-3); color: var(--cui-text-faint); text-align: center; }
+.cuiEmptyState > svg { margin-bottom: var(--cui-space-1); color: var(--cui-text-muted); }
+.cuiEmptyState strong { color: var(--cui-text); font-size: 13px; }
+.cuiEmptyState p { max-width: 48ch; margin: 0; color: var(--cui-text-muted); font-size: 11.5px; line-height: 1.45; }
+.cuiEmptyState__action { margin-top: var(--cui-space-2); }
+
+.cuiCodeBlock { position: relative; max-width: 100%; margin: 0; overflow: auto; padding: var(--cui-space-2); border: 1px solid var(--cui-border); border-radius: var(--cui-radius-sm); background: color-mix(in srgb, var(--cui-surface-subtle) 68%, transparent); color: var(--cui-text); font-family: var(--cui-font-mono); font-size: 12px; line-height: 1.55; tab-size: 2; }
+
+.cuiProgress { display: block; width: 100%; height: 8px; overflow: hidden; border: 0; border-radius: var(--cui-radius-pill); background: var(--cui-surface-subtle); color: var(--cui-info-text); appearance: none; }
+.cuiProgress::-webkit-progress-bar { border-radius: inherit; background: var(--cui-surface-subtle); }
+.cuiProgress::-webkit-progress-value { border-radius: inherit; background: currentColor; }
+.cuiProgress::-moz-progress-bar { border-radius: inherit; background: currentColor; }
+.cuiProgress--success { color: var(--cui-success-text); }
+.cuiProgress--warning { color: var(--cui-warning-text); }
+.cuiProgress--danger { color: var(--cui-danger-text); }
+.cuiProgress--neutral { color: var(--cui-text-muted); }
+
+@media (max-width: 1023px) {
+  .cuiResponsiveSplit,
+  .cuiResponsiveSplit[data-ratio] { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 767px) {
+  .cuiSection__header { flex-wrap: wrap; }
+  .cuiSection__action { width: 100%; }
+  .cuiFormGrid,
+  .cuiFormGrid[data-columns] { grid-template-columns: minmax(0, 1fr); }
+  .cuiDescriptionList__item { grid-template-columns: minmax(0, 1fr); gap: var(--cui-space-1); }
+  .cuiToolbar { align-items: stretch; flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cuiPage *,
+  .cuiPage *::before,
+  .cuiPage *::after { scroll-behavior: auto; }
+}

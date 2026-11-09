@@ -1,0 +1,227 @@
+.portraitAssetsPage {
+  display: grid;
+  min-width: 0;
+  gap: var(--cui-space-3);
+}
+
+.portraitAssetsConfigGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--cui-space-2);
+}
+
+.portraitAssetsConfigCard {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: var(--cui-space-2);
+  padding: var(--cui-space-3);
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-surface);
+}
+
+.portraitAssetsConfigCard__icon {
+  display: inline-grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-control-bg);
+  color: var(--cui-accent);
+}
+
+.portraitAssetsConfigCard strong {
+  color: var(--cui-text);
+  font-size: 13px;
+}
+
+.portraitAssetsConfigCard p {
+  margin: 3px 0 0;
+  color: var(--cui-text-muted);
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.portraitAssetsMetrics dl {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.portraitAssetsActions {
+  display: flex;
+  align-items: center;
+  gap: var(--cui-space-2);
+}
+
+.portraitAssetsField {
+  display: grid;
+  min-width: min(100%, 170px);
+  gap: var(--cui-space-1);
+  color: var(--cui-text-muted);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.portraitAssetsField--keyword {
+  min-width: min(100%, 280px);
+}
+
+.portraitAssetsPage .consoleDataTable table {
+  min-width: 1280px;
+  font-size: 12px;
+}
+
+.portraitAssetsIdentity,
+.portraitAssetsStateCell {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+}
+
+.portraitAssetsIdentity strong,
+.portraitAssetsIdentity span,
+.portraitAssetsStateCell span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.portraitAssetsIdentity strong {
+  color: var(--cui-text);
+  font-size: 12.5px;
+  font-weight: 650;
+}
+
+.portraitAssetsIdentity span,
+.portraitAssetsStateCell > span:not(.cuiBadge) {
+  color: var(--cui-text-faint);
+  font-size: 11.5px;
+}
+
+.portraitAssetsError {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+  gap: var(--cui-space-1);
+  color: var(--cui-danger-text);
+  font-family: var(--cui-font-mono);
+  font-size: 11.5px;
+}
+
+.portraitAssetsError span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.portraitAssetsDetail {
+  display: grid;
+  gap: var(--cui-space-4);
+}
+
+.portraitAssetsDetail .cuiAlert p {
+  margin: 0;
+}
+
+.portraitAssetsReview,
+.portraitAssetsReview__workspace {
+  display: grid;
+  gap: var(--cui-space-3);
+}
+
+.portraitAssetsImageXReview {
+  display: grid;
+  gap: var(--cui-space-3);
+  padding: var(--cui-space-3);
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-surface-subtle);
+}
+
+.portraitAssetsImageXReview__heading {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--cui-space-3);
+}
+
+.portraitAssetsImageXReview__heading h3 {
+  margin: 0;
+  color: var(--cui-text);
+  font-size: 14px;
+}
+
+.portraitAssetsImageXReview__heading p,
+.portraitAssetsImageXReview__empty {
+  margin: 4px 0 0;
+  color: var(--cui-text-muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.portraitAssetsReview__video {
+  width: 100%;
+  max-height: min(54vh, 520px);
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-surface-subtle);
+}
+
+.portraitAssetsReview__confirmation {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--cui-space-2);
+  color: var(--cui-text-muted);
+  line-height: 1.55;
+}
+
+.portraitAssetsImageXConfig {
+  display: grid;
+  gap: 16px;
+}
+
+.portraitAssetsReview__confirmation input {
+  margin-top: 4px;
+}
+
+@media (max-width: 1100px) {
+  .portraitAssetsMetrics dl {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .portraitAssetsConfigGrid,
+  .portraitAssetsMetrics dl {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .portraitAssetsConfigCard {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .portraitAssetsConfigCard > .cuiBadge {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .portraitAssetsField,
+  .portraitAssetsField--keyword,
+  .portraitAssetsActions {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .portraitAssetsActions > * {
+    flex: 1 1 auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portraitAssetsPage * {
+    scroll-behavior: auto;
+  }
+}

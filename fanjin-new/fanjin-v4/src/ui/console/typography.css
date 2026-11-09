@@ -1,0 +1,124 @@
+/* The same type hierarchy for user/admin consoles and body-mounted overlays.
+   Scope these rules so creation layouts and technical code/IDs keep their roles. */
+.consoleWorkbench,
+.consoleThemeHost {
+  font-family: var(--cui-font-sans);
+  font-size: var(--cui-type-body);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: normal;
+}
+
+.consoleWorkbench .consolePageHeading h1 {
+  font-size: var(--cui-type-title);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: normal;
+}
+.consoleWorkbench .consolePageHeading__description,
+.consoleThemeHost .consoleOverlayHeading p {
+  font-size: var(--cui-type-label);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: normal;
+}
+.consoleWorkbench :is(.consoleBreadcrumbs li, .consolePrimaryNavSectionToggle) {
+  font-size: var(--cui-type-caption);
+  font-weight: 500;
+  line-height: 1.5;
+}
+.consoleWorkbench .consolePrimaryNavItem {
+  font-size: var(--cui-type-label);
+  font-weight: 500;
+  line-height: 1.5;
+}
+.consoleWorkbench .consolePrimaryNavItem.active { font-weight: 600; }
+.consoleWorkbench .consoleTopbar .consoleTopbarBrand strong { font-weight: 600; letter-spacing: normal; }
+
+.consoleWorkbench :is(.cuiSection__copy h2, [data-slot="card-title"]) {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: normal;
+}
+.consoleWorkbench .overviewHealthCopy h2 { font-weight: 600; line-height: 1.4; letter-spacing: normal; }
+.consoleWorkbench :is(.overviewMetric strong, .consoleMetricStrip__value) {
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: normal;
+  font-variant-numeric: tabular-nums;
+}
+.consoleWorkbench .cuiPage .consoleMetricStrip__value { font-size: var(--cui-type-metric); font-weight: 600; }
+.consoleWorkbench .overviewMetric strong { font-size: var(--cui-type-metric); }
+.consoleWorkbench .workspaceMetricGrid [data-slot="card-title"] {
+  font-size: var(--cui-type-label);
+  font-weight: 500;
+}
+.consoleWorkbench .workspaceMetricGrid [data-slot="card-content"] > div {
+  font-size: var(--cui-type-metric);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: normal;
+  font-variant-numeric: tabular-nums;
+}
+.consoleWorkbench .cuiPage .consoleMetricStrip dt,
+.consoleWorkbench .overviewMetricHeader { font-size: var(--cui-type-label); font-weight: 500; line-height: 1.5; }
+.consoleWorkbench :is(.overviewMetric small, .consoleMetricStrip__hint, [data-slot="card-description"]) {
+  font-size: var(--cui-type-caption);
+  font-weight: 400;
+  line-height: 1.5;
+}
+.consoleWorkbench .overviewTrendSummary dt { font-size: var(--cui-type-caption); line-height: 1.5; }
+.consoleWorkbench .overviewTrendSummary dd { font-weight: 600; line-height: 1.35; }
+.consoleWorkbench .workspaceChartLegend { font-size: var(--cui-type-caption); line-height: 1.5; }
+
+.consoleThemeHost :is(.cuiButton, [data-slot="button"], .cuiTabs__tab, [data-slot="tabs-trigger"]) {
+  font-family: var(--cui-font-sans);
+  font-size: var(--cui-type-label);
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: normal;
+}
+.consoleThemeHost :is(.cuiInput, .cuiTextarea, .cuiSelect, [data-slot="input"], [data-slot="textarea"]) {
+  font-family: var(--cui-font-sans);
+  font-size: var(--cui-type-body);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: normal;
+}
+.consoleThemeHost .consoleFormField > :is(input, textarea, select) { font-size: var(--cui-type-body); line-height: 1.5; }
+.consoleThemeHost .consoleFieldLabel { font-size: var(--cui-type-label); font-weight: 500; line-height: 1.5; }
+.consoleThemeHost :is(.consoleFieldHint, .consoleFieldError, .cuiFormField__hint) { font-size: var(--cui-type-caption); line-height: 1.5; }
+.consoleThemeHost :is(.cuiBadge, [data-slot="badge"]) { font-size: var(--cui-type-caption); font-weight: 500; letter-spacing: normal; }
+
+.consoleWorkbench .cuiPage .consoleDataTable :is(table, td) { font-size: var(--cui-type-label); line-height: 1.6; }
+.consoleWorkbench .cuiPage .consoleDataTable th { font-size: var(--cui-type-label); font-weight: 600; line-height: 1.5; letter-spacing: normal; }
+.consoleWorkbench .consoleDataTable :is(td strong, td b) { font-weight: 600; }
+.consoleWorkbench .consoleDataTable :is(.consoleDataTable__range, .consoleDataTable__pageButtons) { font-size: var(--cui-type-caption); }
+.consoleThemeHost .cuiDescriptionList dt { font-size: var(--cui-type-label); line-height: 1.6; }
+.consoleThemeHost .cuiDescriptionList dd { font-size: var(--cui-type-label); font-weight: 500; line-height: 1.6; }
+
+.consoleWorkbench .recharts-text,
+.consoleWorkbench .recharts-cartesian-axis-tick-value,
+.consoleWorkbench .recharts-legend-item-text {
+  font-family: var(--cui-font-sans);
+  font-size: var(--cui-type-caption);
+  font-weight: 400;
+  letter-spacing: normal;
+  font-variant-numeric: tabular-nums;
+}
+.consoleThemeHost [data-slot="chart-tooltip-content"],
+.consoleThemeHost [data-slot="chart-tooltip-content"] .font-mono {
+  font-family: var(--cui-font-sans);
+  font-size: var(--cui-type-caption);
+  font-variant-numeric: tabular-nums;
+}
+.consoleThemeHost .consoleOverlayHeading h2 { font-size: 20px; font-weight: 600; line-height: 1.4; letter-spacing: normal; }
+.consoleThemeHost .cuiDropdownMenuItem { font-size: var(--cui-type-label); font-weight: 500; line-height: 1.5; }
+.consoleThemeHost .cuiAlert { font-size: var(--cui-type-label); line-height: 1.6; }
+
+@media (max-width: 767px) {
+  /* Keep editable fields readable without the browser zooming on focus. */
+  .consoleThemeHost :is(.cuiInput, .cuiTextarea, .cuiSelect, [data-slot="input"], [data-slot="textarea"]),
+  .consoleThemeHost .consoleFormField > :is(input, textarea, select) { font-size: 16px; }
+}

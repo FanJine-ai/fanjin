@@ -1,0 +1,305 @@
+.agentApprovalList {
+  display: grid;
+  gap: 10px;
+  margin: 8px 0 14px;
+}
+
+.agentApprovalCard {
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, #a35f21 35%, var(--line));
+  border-radius: 13px;
+  background: color-mix(in srgb, #a35f21 5%, var(--surface-raised));
+}
+
+.agentApprovalCard.risk-r3 {
+  border-color: color-mix(in srgb, #a33a3a 40%, var(--line));
+  background: color-mix(in srgb, #a33a3a 5%, var(--surface-raised));
+}
+
+.agentApprovalCard > header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px 9px;
+}
+
+.agentApprovalTitle {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 8px;
+  min-width: 0;
+}
+
+.agentApprovalTitle > svg {
+  margin-top: 1px;
+  color: #a35f21;
+}
+
+.agentApprovalCard.risk-r3 .agentApprovalTitle > svg {
+  color: #a33a3a;
+}
+
+.agentApprovalTitle > span {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.agentApprovalTitle strong,
+.agentApprovalTitle small {
+  overflow-wrap: anywhere;
+}
+
+.agentApprovalTitle strong {
+  color: var(--text-100);
+  font-size: 12px;
+}
+
+.agentApprovalTitle small {
+  color: var(--faint);
+  font-size: 10px;
+}
+
+.agentApprovalStatus {
+  flex: 0 0 auto;
+  padding: 3px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--control-bg);
+  color: var(--text-200);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.agentApprovalEvidence {
+  display: grid;
+  gap: 8px;
+  padding: 0 14px 12px 44px;
+}
+
+.agentApprovalEvidence > p {
+  margin: 0;
+  color: var(--text-200);
+  font-size: 12px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.agentApprovalQuote {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.agentApprovalQuote span {
+  padding: 6px 9px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--control-bg);
+  color: var(--faint);
+  font-size: 11px;
+}
+
+.agentApprovalQuote strong {
+  color: var(--text-100);
+}
+
+.agentApprovalDestructive {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 8px 10px;
+  border: 1px solid color-mix(in srgb, #a33a3a 30%, transparent);
+  border-radius: 8px;
+  background: color-mix(in srgb, #a33a3a 8%, transparent);
+  color: #8d3535 !important;
+  font-weight: 750;
+}
+
+.agentApprovalDestructive svg {
+  flex: 0 0 auto;
+  margin-top: 1px;
+}
+
+.agentApprovalResources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.agentApprovalResources li {
+  max-width: 100%;
+  padding: 3px 7px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--control-bg);
+  color: var(--faint);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+
+.agentApprovalMeta {
+  color: var(--faint) !important;
+  font-size: 10px !important;
+}
+
+.agentApprovalPlain {
+  color: var(--text-100) !important;
+  font-weight: 650;
+}
+
+.agentApprovalArgs {
+  display: grid;
+  gap: 8px;
+  padding: 0 14px 12px 44px;
+}
+
+.agentApprovalArgRow {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 8px;
+  align-items: start;
+  margin: 0;
+}
+
+.agentApprovalArgLabel {
+  padding-top: 6px;
+  color: var(--faint);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.agentApprovalArgValue {
+  padding-top: 6px;
+  color: var(--text-200);
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.agentApprovalArgs textarea,
+.agentApprovalArgs select {
+  width: 100%;
+  min-height: 28px;
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--control-bg);
+  color: var(--text-100);
+  font-family: inherit;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.agentApprovalArgs textarea {
+  min-height: 54px;
+  resize: vertical;
+}
+
+.agentApprovalArgs textarea:focus-visible,
+.agentApprovalArgs select:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 1px;
+}
+
+.agentApprovalArgs textarea:disabled,
+.agentApprovalArgs select:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.agentApprovalArgHint {
+  margin: 0;
+  color: #8d5b24;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.agentApprovalActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 10px 14px;
+  border-top: 1px solid var(--line);
+  background: color-mix(in srgb, var(--control-bg) 65%, transparent);
+}
+
+.agentApprovalActions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--control-bg);
+  color: var(--text-200);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.agentApprovalActions button.approve {
+  border-color: color-mix(in srgb, #28785f 42%, var(--line));
+  color: #28785f;
+}
+
+.agentApprovalActions button.reject {
+  border-color: color-mix(in srgb, #a33a3a 34%, var(--line));
+  color: #8d3535;
+}
+
+.agentApprovalActions button:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
+.agentApprovalActions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.agentApprovalFeedback,
+.agentApprovalLoadError {
+  margin: 0 14px 12px 44px;
+  color: var(--text-200);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.agentApprovalLoadError {
+  margin: 6px 0 12px;
+  padding: 8px 10px;
+  border: 1px solid color-mix(in srgb, #a35f21 28%, transparent);
+  border-radius: 8px;
+  background: color-mix(in srgb, #a35f21 7%, transparent);
+  color: #8d5b24;
+}
+
+@media (max-width: 720px) {
+  .agentApprovalCard > header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .agentApprovalStatus {
+    align-self: flex-start;
+    margin-left: 30px;
+  }
+
+  .agentApprovalEvidence,
+  .agentApprovalArgs,
+  .agentApprovalFeedback {
+    padding-left: 14px;
+    margin-left: 0;
+  }
+
+  .agentApprovalActions button {
+    flex: 1 1 0;
+  }
+}

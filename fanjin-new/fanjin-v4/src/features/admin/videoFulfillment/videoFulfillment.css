@@ -1,0 +1,385 @@
+/* 视频能力兑现页样式 —— 只用 --cui-* 令牌 */
+
+.vfPageActions {
+  display: flex;
+  gap: var(--cui-space-2);
+}
+
+.vfGrid {
+  display: grid;
+  grid-template-areas: "models resolutions recipes";
+  grid-template-columns: minmax(320px, 360px) 180px minmax(0, 1fr);
+  gap: var(--cui-space-4);
+  align-items: start;
+}
+
+.vfGrid > :nth-child(1) {
+  grid-area: models;
+}
+
+.vfGrid > :nth-child(2) {
+  grid-area: resolutions;
+}
+
+.vfGrid > :nth-child(3) {
+  grid-area: recipes;
+}
+
+.vfGrid.vfGrid--empty {
+  grid-template-areas: "models";
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.vfGrid--empty > .consoleSection {
+  min-height: 210px;
+}
+
+@media (max-width: 1400px) {
+  .vfGrid {
+    grid-template-areas:
+      "models resolutions"
+      "recipes recipes";
+    grid-template-columns: minmax(300px, 1fr) 180px;
+  }
+}
+
+@media (max-width: 900px) {
+  .vfGrid {
+    grid-template-areas:
+      "models"
+      "resolutions"
+      "recipes";
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- 左栏:公开模型 ---- */
+
+.vfOfferList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cui-space-2);
+}
+
+.vfOfferItem {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--cui-space-2);
+  border: 1px solid var(--cui-border-subtle);
+  border-radius: var(--cui-radius-lg);
+  background: var(--cui-surface);
+  padding: var(--cui-space-2) var(--cui-space-3);
+  transition: border-color var(--cui-duration-fast) var(--cui-ease-out),
+    background var(--cui-duration-fast) var(--cui-ease-out);
+}
+
+.vfOfferItem[data-active] {
+  border-color: var(--cui-border-strong);
+  background: var(--cui-surface-3);
+}
+
+.vfOfferSelect {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--cui-space-1);
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.vfOfferNameRow {
+  display: flex;
+  align-items: center;
+  gap: var(--cui-space-1);
+}
+
+.vfOfferNameRow strong {
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--cui-text);
+  overflow-wrap: anywhere;
+}
+
+.vfOfferMeta {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: var(--cui-space-2);
+  font-size: 12px;
+  color: var(--cui-text-faint);
+}
+
+.vfOfferMetaLabel {
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.vfOfferMeta code {
+  font-family: var(--cui-font-mono);
+  font-size: 11px;
+  line-height: 1.45;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.vfOfferControls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--cui-space-2);
+  padding-top: var(--cui-space-2);
+  border-top: 1px solid var(--cui-border-subtle);
+}
+
+.vfOfferControls > :first-child:not(:last-child) {
+  margin-right: auto;
+}
+
+.vfOfferToggle {
+  flex-shrink: 0;
+}
+
+.vfOfferToggle .consoleSwitchCopy label {
+  font-size: 12px;
+}
+
+/* ---- 中栏:分辨率状态灯 ---- */
+
+.vfResList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cui-space-2);
+}
+
+.vfResButton {
+  display: flex;
+  align-items: center;
+  gap: var(--cui-space-2);
+  min-height: var(--cui-control-height);
+  padding: 0 var(--cui-space-3);
+  border-radius: var(--cui-radius-md);
+  border: 1px solid var(--cui-border-subtle);
+  background: var(--cui-surface);
+  color: var(--cui-text);
+  font: inherit;
+  cursor: pointer;
+  transition: border-color var(--cui-duration-fast) var(--cui-ease-out),
+    background var(--cui-duration-fast) var(--cui-ease-out);
+}
+
+.vfResButton[data-active] {
+  border-color: var(--cui-border-strong);
+  background: var(--cui-surface-3);
+}
+
+.vfResButton strong {
+  flex: 1;
+  text-align: left;
+  font-size: 14px;
+}
+
+.vfResCount {
+  font-family: var(--cui-font-mono);
+  font-size: 12px;
+  color: var(--cui-text-faint);
+}
+
+.vfLight {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--cui-radius-pill);
+  flex-shrink: 0;
+}
+
+.vfLight--ok {
+  border: 3px solid var(--cui-success-bg);
+  background: var(--cui-success-text);
+}
+
+.vfLight--warn {
+  border: 3px solid var(--cui-warning-bg);
+  background: var(--cui-warning-text);
+}
+
+.vfLight--off {
+  border: 3px solid var(--cui-disabled-bg);
+  background: var(--cui-disabled-text);
+}
+
+/* ---- 右栏:配方表 ---- */
+
+.vfRecipeNameCell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.vfRecipeNameCell span {
+  font-size: 12px;
+  color: var(--cui-text-faint);
+}
+
+.vfRowWarning {
+  color: var(--cui-warning-text) !important;
+}
+
+.vfChannelCell {
+  display: flex;
+  align-items: center;
+  gap: var(--cui-space-2);
+}
+
+.vfRowActions {
+  display: flex;
+  align-items: center;
+  gap: var(--cui-space-1);
+}
+
+/* ---- 配方抽屉表单 ---- */
+
+.vfForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cui-space-4);
+}
+
+.vfFormGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--cui-space-3) var(--cui-space-4);
+}
+
+.vfFormField--wide {
+  grid-column: 1 / -1;
+}
+
+.vfDrawerActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--cui-space-2);
+}
+
+.vfWarningList {
+  margin: 0;
+  padding-left: var(--cui-space-4);
+  line-height: 1.6;
+}
+
+/* ---- 创作台画质增强子区 ---- */
+
+.vfEnhance {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: var(--cui-space-5);
+  align-items: start;
+}
+
+@media (max-width: 1000px) {
+  .vfEnhance {
+    grid-template-columns: 1fr;
+  }
+}
+
+.vfEnhanceMatrix {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--cui-border-subtle);
+  border-radius: var(--cui-radius-lg);
+  overflow: hidden;
+}
+
+.vfEnhanceMatrixRow {
+  display: grid;
+  grid-template-columns: minmax(110px, 1.2fr) minmax(110px, 1fr) minmax(90px, 0.8fr) minmax(120px, 1fr);
+  gap: var(--cui-space-3);
+  align-items: center;
+  padding: var(--cui-space-2) var(--cui-space-3);
+  border-top: 1px solid var(--cui-border-subtle);
+  background: var(--cui-surface);
+}
+
+.vfEnhanceMatrixRow--head {
+  border-top: none;
+  background: var(--cui-surface-subtle);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--cui-text-faint);
+}
+
+.vfEnhancePair {
+  font-weight: 600;
+  color: var(--cui-text);
+}
+
+.vfEnhancePrice {
+  font-family: var(--cui-font-mono);
+  font-size: 13px;
+  color: var(--cui-text-muted);
+}
+
+.vfEnhanceActions {
+  display: flex;
+  gap: var(--cui-space-1);
+  justify-content: flex-end;
+}
+
+.vfEnhancePool h3 {
+  margin: 0 0 var(--cui-space-2);
+  font-size: 14px;
+  color: var(--cui-text);
+}
+
+.vfEnhancePoolCopy {
+  margin: 0 0 var(--cui-space-3);
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--cui-text-faint);
+}
+
+.vfChannelPool {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--cui-space-2);
+}
+
+.vfChannelPool li {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--cui-space-2);
+  padding: var(--cui-space-2) var(--cui-space-3);
+  border: 1px solid var(--cui-border-subtle);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-surface);
+  font-size: 13px;
+  color: var(--cui-text-muted);
+}
+
+.vfChannelPool strong {
+  color: var(--cui-text);
+}
+
+.vfChannelPoolModels {
+  font-family: var(--cui-font-mono);
+  font-size: 12px;
+  color: var(--cui-text-faint);
+}
+
+.vfBoundaryList {
+  margin: 0;
+  padding-left: var(--cui-space-4);
+  line-height: 1.7;
+  color: var(--cui-text-muted);
+}

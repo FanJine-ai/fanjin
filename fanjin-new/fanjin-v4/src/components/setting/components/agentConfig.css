@@ -1,0 +1,464 @@
+.agentConfig {
+  display: grid;
+  min-width: 0;
+  gap: var(--cui-space-3);
+  color: var(--cui-text);
+  font-family: var(--cui-font-sans);
+}
+
+.agentConfigToolbar,
+.agentConfigRoleHeader,
+.agentConfigSectionHeading,
+.agentConfigActions,
+.agentConfigSafetyNotice,
+.agentConfigAccess {
+  display: flex;
+  align-items: center;
+  gap: var(--cui-space-2);
+}
+
+.agentConfigToolbar,
+.agentConfigActions {
+  justify-content: space-between;
+}
+
+.agentConfigToolbar {
+  align-items: flex-start;
+}
+
+.agentConfigToolbar h3,
+.agentConfigToolbar p,
+.agentConfigRoleCopy p,
+.agentConfigSectionHeading h4,
+.agentConfigSectionHeading p,
+.agentConfigStatusSection h4,
+.agentConfigAccess h3,
+.agentConfigAccess p {
+  margin: 0;
+}
+
+.agentConfigToolbar h3 {
+  color: var(--cui-text);
+  font-size: 13px;
+  font-weight: 680;
+  line-height: 1.35;
+}
+
+.agentConfigToolbar p,
+.agentConfigRoleCopy p,
+.agentConfigSectionHeading p,
+.agentConfigAccess p {
+  margin-top: 5px;
+  color: var(--cui-text-muted);
+  font-size: 11.5px;
+  line-height: 1.45;
+}
+
+.agentConfigSafetyNotice {
+  align-items: flex-start;
+  padding: 8px 10px;
+  border: 1px solid var(--cui-info-border);
+  border-left-width: 2px;
+  border-radius: var(--cui-radius-sm);
+  background: color-mix(in srgb, var(--cui-info-bg) 68%, transparent);
+  color: var(--cui-info-text);
+}
+
+.agentConfigSafetyNotice svg {
+  flex: 0 0 auto;
+  margin-top: 1px;
+}
+
+.agentConfigSafetyNotice > div {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+}
+
+.agentConfigSafetyNotice strong {
+  font-size: 12px;
+}
+
+.agentConfigSafetyNotice span {
+  font-size: 11.5px;
+  line-height: 1.45;
+}
+
+.agentConfigSkeletons {
+  display: grid;
+  min-width: 0;
+  gap: var(--cui-space-3);
+}
+
+.agentConfigAccess {
+  align-items: flex-start;
+  padding: 9px 10px;
+  border: 1px solid var(--cui-warning-border);
+  border-left-width: 2px;
+  border-radius: var(--cui-radius-sm);
+  background: color-mix(in srgb, var(--cui-warning-bg) 68%, transparent);
+  color: var(--cui-warning-text);
+}
+
+.agentConfigAccessIcon,
+.agentConfigRoleIcon {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: var(--cui-radius-sm);
+}
+
+.agentConfigAccessIcon {
+  background: color-mix(in srgb, var(--cui-warning-border) 26%, transparent);
+}
+
+.agentConfigTabLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.agentConfigTabDirtyDot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--cui-warning-text);
+}
+
+.agentConfigRolePanel {
+  display: grid;
+  min-width: 0;
+  gap: var(--cui-space-3);
+}
+
+.agentConfigRoleHeader {
+  align-items: flex-start;
+  padding: 0 0 var(--cui-space-3);
+  border-bottom: 1px solid var(--cui-border);
+}
+
+.agentConfigRoleIcon {
+  background: var(--cui-surface-subtle);
+  color: var(--cui-text-muted);
+}
+
+.agentConfigRoleCopy {
+  min-width: 0;
+  flex: 1;
+}
+
+.agentConfigRoleCopy > div {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--cui-space-2);
+}
+
+.agentConfigRoleCopy > div > strong {
+  margin-right: 2px;
+  font-size: 12.5px;
+}
+
+.agentConfigResolvedModel {
+  display: grid;
+  min-width: 150px;
+  gap: 4px;
+  text-align: right;
+}
+
+.agentConfigResolvedModel span,
+.agentConfigProfileMeta span,
+.agentConfigStatusSection dt {
+  color: var(--cui-text-faint);
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.agentConfigResolvedModel code,
+.agentConfigProfileMeta code {
+  overflow-wrap: anywhere;
+  color: var(--cui-text);
+  font-family: var(--cui-font-mono);
+  font-size: 12px;
+}
+
+.agentConfigLoadAlert .cuiAlert__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cui-space-3);
+}
+
+.agentConfigSections {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--cui-space-3);
+}
+
+.agentConfigSection {
+  display: grid;
+  min-width: 0;
+  align-content: start;
+  gap: var(--cui-space-3);
+  padding: var(--cui-space-3) 0 0;
+  border-top: 1px solid var(--cui-border);
+}
+
+.agentConfigSectionHeading {
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 40px;
+}
+
+.agentConfigSectionHeading h4,
+.agentConfigStatusSection h4 {
+  color: var(--cui-text);
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+
+.agentConfigSectionHeading > svg {
+  flex: 0 0 auto;
+  color: var(--cui-text-faint);
+}
+
+.agentConfigSkillFieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.agentConfigSkillFieldset legend {
+  padding: 0;
+  color: var(--cui-text);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.agentConfigSkillFieldset > p {
+  margin: 4px 0 10px;
+  color: var(--cui-text-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.agentConfigSkillList {
+  display: grid;
+  gap: var(--cui-space-2);
+}
+
+.agentConfigSkillOption {
+  display: flex;
+  min-width: 0;
+  min-height: 34px;
+  align-items: center;
+  gap: var(--cui-space-2);
+  padding: 6px 9px;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-sm);
+  background: var(--cui-control-bg);
+  cursor: pointer;
+}
+
+.agentConfigSkillOption:has(.cuiCheckbox[data-checked]) {
+  border-color: var(--cui-info-border);
+  background: var(--cui-info-bg);
+}
+
+.agentConfigSkillOption > span {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.agentConfigSkillOption strong {
+  color: var(--cui-text);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.agentConfigSkillOption code {
+  overflow-wrap: anywhere;
+  color: var(--cui-text-muted);
+  font-family: var(--cui-font-mono);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.agentConfigParameterGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--cui-space-3);
+}
+
+.agentConfigProfileMeta {
+  display: grid;
+  gap: var(--cui-space-2);
+  padding: var(--cui-space-3) 0 0;
+  border-top: 1px solid var(--cui-border);
+}
+
+.agentConfigProfileMeta > div {
+  display: grid;
+  grid-template-columns: 82px minmax(0, 1fr);
+  align-items: start;
+  gap: var(--cui-space-2);
+}
+
+.agentConfigProfileMeta > div > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.agentConfigStatusSection {
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 1fr);
+  align-items: start;
+}
+
+.agentConfigStatusSection > div {
+  display: grid;
+  gap: var(--cui-space-3);
+}
+
+.agentConfigStatusSection dl {
+  display: grid;
+  min-width: 0;
+  margin: 0;
+  gap: var(--cui-space-2);
+}
+
+.agentConfigStatusSection dl > div {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: var(--cui-space-2);
+}
+
+.agentConfigStatusSection dd {
+  min-width: 0;
+  margin: 0;
+  color: var(--cui-text);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.agentConfigActions {
+  margin: var(--cui-space-3) calc(var(--cui-space-3) * -1) calc(var(--cui-space-3) * -1);
+  padding: 8px var(--cui-space-3);
+  border-top: 1px solid var(--cui-border);
+  background: var(--cui-surface);
+}
+
+.agentConfigActions--sticky {
+  position: sticky;
+  bottom: calc(var(--cui-space-3) * -1);
+  z-index: var(--cui-layer-sticky);
+}
+
+.agentConfigActions > span {
+  color: var(--cui-text-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.agentConfigStepUpForm {
+  display: grid;
+  gap: var(--cui-space-3);
+}
+
+.agentConfigStepUpNotice {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--cui-space-2);
+  padding: 8px 10px;
+  border: 1px solid var(--cui-info-border);
+  border-left-width: 2px;
+  border-radius: var(--cui-radius-sm);
+  background: color-mix(in srgb, var(--cui-info-bg) 68%, transparent);
+  color: var(--cui-info-text);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+@media (pointer: coarse) {
+  .agentConfigAccessIcon,
+  .agentConfigRoleIcon,
+  .agentConfigSkillOption {
+    min-height: var(--cui-touch-target);
+  }
+
+  .agentConfigAccessIcon,
+  .agentConfigRoleIcon {
+    width: var(--cui-touch-target);
+    height: var(--cui-touch-target);
+  }
+}
+
+.agentConfigStepUpNotice svg {
+  flex: 0 0 auto;
+}
+
+.agentConfigStepUpActions {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  gap: var(--cui-space-2);
+}
+
+@media (max-width: 900px) {
+  .agentConfigSections,
+  .agentConfigStatusSection {
+    grid-template-columns: 1fr;
+  }
+
+  .agentConfigStatusSection {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .agentConfigToolbar,
+  .agentConfigRoleHeader,
+  .agentConfigActions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .agentConfigToolbar .cuiButton,
+  .agentConfigActions .cuiButton,
+  .agentConfigStepUpActions .cuiButton {
+    width: 100%;
+  }
+
+  .agentConfigStepUpActions {
+    flex-direction: column-reverse;
+  }
+
+  .agentConfigResolvedModel {
+    min-width: 0;
+    text-align: left;
+  }
+
+  .agentConfigParameterGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .agentConfigProfileMeta > div,
+  .agentConfigStatusSection dl > div {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .agentConfigSkillOption {
+    transition: none;
+  }
+}

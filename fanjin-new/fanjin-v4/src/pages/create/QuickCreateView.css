@@ -1,0 +1,3761 @@
+.jimengWorkbench {
+  --primary-100: #d4eaf7;
+  --primary-200: #f5f4f1;
+  --primary-300: #313d44;
+  --accent-100: #d4eaf7;
+  --accent-200: #00668c;
+  --text-100: #1d1c1c;
+  --text-200: #313d44;
+  --bg-100: #fffefb;
+  --bg-200: #f5f4f1;
+  --bg-300: #d9edff;
+  --accent: #d9edff;
+  --accent-strong: var(--accent-200);
+  --accent-ink: #12384f;
+  --surface: rgba(255, 254, 251, 0.66);
+  --surface-strong: rgba(255, 254, 251, 0.96);
+  --surface-soft: rgba(245, 244, 241, 0.78);
+  --surface-raised: rgba(255, 254, 251, 0.82);
+  --surface-muted: rgba(245, 244, 241, 0.58);
+  --control-bg: rgba(255, 254, 251, 0.76);
+  --hover: rgba(212, 234, 247, 0.56);
+  --text: var(--text-100);
+  --muted: var(--text-200);
+  --faint: #5e6c75;
+  --line: rgba(59, 60, 61, 0.1);
+  --line-strong: rgba(0, 102, 140, 0.16);
+  --active-line: rgba(0, 102, 140, 0.22);
+  --shell-bg: var(--surface);
+  --shell-border: var(--line);
+  --sidebar-bg: rgba(255, 254, 251, 0.74);
+  --deck-bg: rgba(245, 244, 241, 0.72);
+  --inset-highlight: rgba(255, 254, 251, 0.88);
+  --shadow: 0 22px 64px rgba(59, 60, 61, 0.09);
+  --shadow-soft: 0 14px 30px rgba(59, 60, 61, 0.08);
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding: clamp(10px, 1.2vw, 24px);
+  color: var(--text);
+  background: linear-gradient(180deg, var(--bg-100) 0%, var(--bg-200) 100%);
+  font-family: var(--fanjin-font-ui);
+}
+
+.jimengWorkbench.themeDark {
+  --primary-100: #d7e9ff;
+  --primary-200: #8fb7d8;
+  --primary-300: #dce9f1;
+  --accent-100: #8ed5f6;
+  --accent-200: #8ed5f6;
+  --text-100: #eef7fb;
+  --text-200: #b8c8d1;
+  --bg-100: #172126;
+  --bg-200: #0e1519;
+  --bg-300: #223139;
+  --accent: #d7e9ff;
+  --accent-strong: #8ed5f6;
+  --accent-ink: #0c1b24;
+  --surface: rgba(19, 27, 31, 0.84);
+  --surface-strong: rgba(24, 34, 39, 0.96);
+  --surface-soft: rgba(143, 183, 216, 0.13);
+  --surface-raised: rgba(29, 41, 47, 0.82);
+  --surface-muted: rgba(255, 255, 255, 0.07);
+  --control-bg: rgba(255, 255, 255, 0.08);
+  --hover: rgba(113, 196, 239, 0.15);
+  --text: var(--text-100);
+  --muted: var(--text-200);
+  --faint: rgba(205, 225, 235, 0.58);
+  --line: rgba(214, 235, 246, 0.13);
+  --line-strong: rgba(142, 213, 246, 0.32);
+  --active-line: rgba(142, 213, 246, 0.42);
+  --shell-bg: rgba(9, 14, 17, 0.46);
+  --shell-border: rgba(214, 235, 246, 0.16);
+  --sidebar-bg: rgba(9, 14, 17, 0.58);
+  --deck-bg: rgba(7, 11, 13, 0.78);
+  --inset-highlight: rgba(255, 255, 255, 0.12);
+  --shadow: 0 26px 78px rgba(0, 0, 0, 0.34);
+  --shadow-soft: 0 18px 38px rgba(0, 0, 0, 0.24);
+  background:
+    radial-gradient(circle at 50% 10%, rgba(142, 213, 246, 0.2), transparent 30%),
+    radial-gradient(circle at 82% 24%, rgba(124, 174, 145, 0.12), transparent 28%),
+    linear-gradient(180deg, #182329 0%, #10171b 48%, #06090b 100%);
+}
+
+.jimengWorkbench *,
+.jimengWorkbench *::before,
+.jimengWorkbench *::after {
+  box-sizing: border-box;
+}
+
+.jimengWorkbench button,
+.jimengWorkbench input,
+.jimengWorkbench textarea {
+  font: inherit;
+}
+
+.jimengWorkbench button {
+  cursor: pointer;
+}
+
+.jimengWorkbench button:disabled {
+  cursor: not-allowed;
+  opacity: 0.52;
+}
+
+.jimengShell {
+  display: flex;
+  width: 100%;
+  min-height: calc(100vh - clamp(20px, 2.4vw, 48px));
+  overflow: hidden;
+  border: 1px solid var(--shell-border);
+  border-radius: 30px;
+  background: var(--shell-bg);
+  box-shadow: var(--shadow), inset 0 1px 0 var(--inset-highlight);
+  backdrop-filter: blur(24px);
+}
+
+.themeDark .jimengShell {
+  border-color: var(--shell-border);
+  background: var(--shell-bg);
+}
+
+.themeDark aside.frontstageSideNav {
+  border-color: var(--line);
+  background: var(--sidebar-bg);
+  box-shadow: none;
+}
+
+.themeDark aside.frontstageSideNav .frontstageCollapseButton {
+  background: transparent;
+  color: var(--faint);
+}
+
+.themeDark aside.frontstageSideNav .frontstageCollapseButton:hover {
+  color: var(--accent-strong);
+}
+
+.themeDark aside.frontstageSideNav .frontstageNavList button {
+  color: var(--muted);
+}
+
+.themeDark aside.frontstageSideNav .frontstageNavList button:hover,
+.themeDark aside.frontstageSideNav .frontstageNavList button.active {
+  border-color: var(--active-line);
+  background: var(--hover);
+  color: var(--accent-strong);
+}
+
+.themeDark aside.frontstageSideNav .frontstageWorkspaceButton,
+.themeDark aside.frontstageSideNav .frontstageWorkspaceMenu {
+  border-color: var(--line);
+  background: var(--surface-raised);
+}
+
+.themeDark aside.frontstageSideNav .frontstageWorkspaceButton:hover,
+.themeDark aside.frontstageSideNav .frontstageWorkspaceButton[aria-expanded="true"] {
+  border-color: var(--active-line);
+  background: var(--hover);
+}
+
+.themeDark aside.frontstageSideNav .frontstageWorkspaceAvatar {
+  border-color: var(--line-strong);
+  background: var(--surface-soft);
+  color: var(--accent-strong);
+}
+
+.themeDark aside.frontstageSideNav .frontstageWorkspaceText strong,
+.themeDark aside.frontstageSideNav .frontstageWorkspaceList strong {
+  color: var(--text);
+}
+
+.themeDark aside.frontstageSideNav .frontstageWorkspaceMenuHeader,
+.themeDark aside.frontstageSideNav .frontstageWorkspaceList small {
+  color: var(--faint);
+}
+
+.themeDark aside.frontstageSideNav .frontstageWorkspaceList button {
+  color: var(--text);
+}
+
+.themeDark aside.frontstageSideNav .frontstageWorkspaceList button:hover,
+.themeDark aside.frontstageSideNav .frontstageWorkspaceList button.selected {
+  background: var(--hover);
+  color: var(--accent-strong);
+}
+
+.themeDark aside.frontstageSideNav .frontstageAccountMenu {
+  border-color: var(--line);
+  background: var(--surface-strong);
+  box-shadow: var(--shadow);
+}
+
+.themeDark aside.frontstageSideNav .frontstageAccountMenu button,
+.themeDark aside.frontstageSideNav .frontstageUtilityButton {
+  color: var(--text);
+}
+
+.themeDark aside.frontstageSideNav .frontstageAccountSummary {
+  border-color: var(--line-strong);
+  background: var(--surface-soft);
+}
+
+.themeDark aside.frontstageSideNav .frontstageAccountSummary strong {
+  color: var(--text);
+}
+
+.themeDark aside.frontstageSideNav .frontstageAccountSummary button {
+  background: var(--control-bg);
+  color: var(--accent-strong);
+}
+
+.themeDark aside.frontstageSideNav .frontstageAccountLegal {
+  border-color: var(--line);
+  color: var(--faint);
+}
+
+.jimengSideNav {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  flex: 0 0 208px;
+  flex-direction: column;
+  width: 208px;
+  padding: 22px 12px;
+  border-right: 1px solid var(--line);
+  background: var(--sidebar-bg);
+  transition: width 0.18s ease, flex-basis 0.18s ease;
+}
+
+.themeDark .jimengSideNav {
+  background: var(--sidebar-bg);
+}
+
+.isCollapsed .jimengSideNav {
+  flex-basis: 76px;
+  width: 76px;
+}
+
+.jimengBrandRow {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) 34px;
+  align-items: center;
+  gap: 10px;
+  min-height: 38px;
+  margin-bottom: 26px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.jimengBrandMark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  background: var(--surface-strong);
+  box-shadow: var(--shadow-soft);
+}
+
+.jimengBrandMark img {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+
+.isCollapsed .jimengBrandRow {
+  grid-template-columns: 34px;
+  justify-content: center;
+  margin-bottom: 62px;
+}
+
+.isCollapsed .jimengBrandRow > span,
+.isCollapsed .jimengSideNavLabel {
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.isCollapsed .jimengBrandRow .jimengIconButton {
+  position: absolute;
+  top: 74px;
+  left: 21px;
+}
+
+.jimengSideNavList {
+  display: grid;
+  gap: 8px;
+}
+
+.jimengSideNavList button {
+  position: relative;
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid transparent;
+  border-radius: 15px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 800;
+  text-align: left;
+}
+
+.jimengSideNavList button:hover,
+.jimengSideNavList button.active {
+  border-color: var(--active-line);
+  background: var(--hover);
+  color: var(--accent-strong);
+}
+
+.themeDark .jimengSideNavList button:hover,
+.themeDark .jimengSideNavList button.active {
+  background: var(--hover);
+}
+
+.jimengSideNavIcon {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+}
+
+.jimengNavSoon {
+  margin-left: auto;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.isCollapsed .jimengNavSoon {
+  display: none;
+}
+
+.isCollapsed .jimengSideNavList button {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.jimengMainPane {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  overflow-y: auto;
+}
+
+@media (min-width: 761px) {
+.jimengCreateWorkbench {
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .jimengCreateWorkbench > .jimengShell {
+    height: calc(100dvh - clamp(20px, 2.4vw, 48px));
+    min-height: 0;
+  }
+
+  .jimengCreateWorkbench .jimengMainPane {
+    min-height: 0;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+  }
+
+  .jimengCreateWorkbench aside.frontstageSideNav {
+    align-self: stretch;
+    height: auto;
+    max-height: none;
+    min-height: 0;
+  }
+}
+
+.inspirationGenerationScreen {
+  width: min(1180px, calc(100% - 48px));
+  min-height: calc(100vh - 48px);
+  margin: 24px auto;
+  color: var(--text);
+}
+
+.inspirationGenerationHeader {
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.inspirationGenerationHeader button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  color: var(--muted);
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.inspirationGenerationHeader > span {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.inspirationWaitingPanel,
+.inspirationGenerationFailure,
+.inspirationGenerationResult {
+  min-height: calc(100vh - 150px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.inspirationWaitingOrb {
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 26px;
+  border: 1px solid rgba(69, 159, 209, 0.2);
+  border-radius: 24px;
+  color: #2f9ed6;
+  background: rgba(78, 176, 224, 0.1);
+  box-shadow: 0 18px 50px rgba(45, 132, 175, 0.14);
+}
+
+.inspirationGenerationEyebrow {
+  color: #248fc6;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.inspirationWaitingPanel h1,
+.inspirationGenerationFailure h1,
+.inspirationGenerationResultTitle h1 {
+  margin: 12px 0 0;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+.inspirationWaitingPanel > p,
+.inspirationGenerationFailure > p,
+.inspirationGenerationResultTitle > p {
+  max-width: 620px;
+  margin: 16px auto 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.inspirationGenerationProgress {
+  width: min(440px, 80vw);
+  height: 4px;
+  margin-top: 34px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--control-bg);
+}
+
+.inspirationGenerationProgress span {
+  width: 42%;
+  height: 100%;
+  display: block;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #82d7f5, #238ec6);
+  animation: inspirationProgress 1.6s ease-in-out infinite;
+}
+
+@keyframes inspirationProgress {
+  0% { transform: translateX(-110%); }
+  100% { transform: translateX(350%); }
+}
+
+.inspirationWaitingMeta {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.inspirationWaitingMeta span,
+.inspirationWaitingTasks span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 11px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--muted);
+  background: var(--surface-strong);
+  font-size: 12px;
+}
+
+.inspirationResultSkeleton {
+  width: min(760px, 86vw);
+  margin-top: 42px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.inspirationResultSkeleton span {
+  height: 150px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(110deg, var(--control-bg) 24%, var(--surface-strong) 42%, var(--control-bg) 60%);
+  background-size: 220% 100%;
+  animation: inspirationShimmer 1.8s linear infinite;
+}
+
+.inspirationResultSkeleton.video span { aspect-ratio: 16 / 9; height: auto; }
+.inspirationResultSkeleton.video span:nth-child(n + 2) { display: none; }
+
+@keyframes inspirationShimmer {
+  to { background-position-x: -220%; }
+}
+
+.inspirationWaitingTasks {
+  margin-top: 34px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.inspirationWaitingTasks i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #e5aa47;
+}
+
+.inspirationWaitingTasks i.succeeded { background: #48a978; }
+.inspirationWaitingTasks i.failed,
+.inspirationWaitingTasks i.cancelled { background: #cf5c5c; }
+
+.inspirationGenerationFailure > div,
+.inspirationGenerationActions {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.inspirationGenerationResult {
+  justify-content: flex-start;
+  padding: 70px 0 90px;
+}
+
+.inspirationGenerationResultTitle { text-align: center; }
+
+.inspirationImageGrid,
+.inspirationVideoGrid {
+  width: 100%;
+  margin-top: 42px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  text-align: left;
+}
+
+.inspirationImageGrid article,
+.inspirationVideoGrid article {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface-strong);
+  box-shadow: 0 16px 40px rgba(31, 45, 61, 0.08);
+}
+
+.inspirationImageGrid img,
+.inspirationVideoGrid video {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  display: block;
+  object-fit: cover;
+  background: #10151b;
+}
+
+.inspirationImageGrid article > span,
+.inspirationVideoGrid article > span {
+  padding: 14px 16px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.inspirationImageGrid small,
+.inspirationVideoGrid small { color: var(--muted); }
+
+@media (max-width: 760px) {
+  .inspirationGenerationScreen { width: min(100% - 28px, 1180px); margin-top: 12px; }
+  .inspirationResultSkeleton,
+  .inspirationImageGrid,
+  .inspirationVideoGrid { grid-template-columns: 1fr; }
+  .inspirationResultSkeleton span:nth-child(n + 2) { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inspirationGenerationProgress span,
+  .inspirationResultSkeleton span { animation: none; }
+}
+
+.jimengTopbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: clamp(18px, 1.8vw, 30px) clamp(24px, 2.6vw, 50px) 0;
+}
+
+.jimengTopbarBrand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 36px;
+  color: var(--text);
+}
+
+.jimengTopbarLogo {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: var(--surface-strong);
+  box-shadow: var(--shadow-soft);
+}
+
+.jimengTopbarLogo img {
+  display: block;
+  width: 21px;
+  height: 21px;
+}
+
+.jimengHero p,
+.jimengResultHeader span {
+  color: var(--accent-strong);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+}
+
+.jimengTopbar strong {
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.jimengHeaderActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.jimengIconButton,
+.jimengSoftButton,
+.jimengPrimaryButton,
+.jimengSecondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  color: inherit;
+}
+
+.jimengIconButton {
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--muted);
+}
+
+.jimengSoftButton {
+  min-height: 38px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: var(--control-bg);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.themeDark .jimengSoftButton {
+  background: var(--control-bg);
+}
+
+.themeDark .jimengTopbarLogo {
+  border-color: var(--line);
+  background: var(--surface-raised);
+}
+
+.jimengHero {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  padding: clamp(48px, 9vh, 120px) clamp(24px, 3vw, 64px) 24px;
+}
+
+.jimengHero p {
+  margin: 0 0 8px;
+  font-size: 10px;
+}
+
+.jimengHero h1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin: 0 0 22px;
+  font-size: clamp(28px, 1.75vw, 34px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.jimengTitleMode {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--accent-strong);
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.jimengTitleChevron,
+.jimengButtonChevron {
+  transform: rotate(90deg);
+}
+
+.jimengCreatorStage {
+  position: relative;
+  z-index: 8;
+  display: grid;
+  justify-items: center;
+  width: min(100% - clamp(44px, 5vw, 96px), 1120px);
+  margin: 0 auto;
+  min-inline-size: 0;
+  padding: 0;
+  border: 0;
+}
+
+.jimengComposerPanel {
+  position: relative;
+  z-index: 8;
+  width: min(100%, clamp(760px, 52vw, 1080px));
+  min-inline-size: 0;
+  min-height: clamp(154px, 10.5vw, 210px);
+  margin: 0;
+  overflow: visible;
+  padding: clamp(18px, 1.3vw, 26px) clamp(18px, 1.6vw, 32px) clamp(14px, 1.2vw, 22px);
+  border: 1px solid var(--shell-border);
+  border-radius: 22px;
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(22px);
+}
+
+.jimengCreatorStage[aria-busy="true"] .jimengComposerPanel {
+  cursor: progress;
+}
+
+.jimengComposerReset {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.jimengComposerReset:hover:not(:disabled) {
+  color: var(--text);
+  background: var(--surface-soft);
+}
+
+.jimengComposerReset:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
+.jimengComposerReset:disabled {
+  opacity: 0.45;
+  cursor: progress;
+}
+
+.jimengComposerReset ~ .jimengComposerTop textarea,
+.jimengComposerReset ~ .guestDraftRecovery {
+  padding-right: 30px;
+}
+
+.jimengSessionHydrationStatus {
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  right: 16px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.themeDark .jimengComposerPanel {
+  border-color: var(--shell-border);
+}
+
+.jimengComposerTop {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr);
+  gap: 18px;
+  min-height: clamp(82px, 6.8vw, 128px);
+}
+
+.jimengComposerTop.videoComposerTop {
+  grid-template-columns: auto minmax(260px, 1fr);
+}
+
+.jimengComposerTop.videoComposerTop.textOnly {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.jimengComposerTop textarea {
+  width: 100%;
+  min-height: clamp(82px, 6.8vw, 128px);
+  resize: none;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.jimengUploadTile {
+  display: grid;
+  grid-template-rows: 22px auto;
+  place-items: center;
+  align-content: center;
+  gap: 4px;
+  width: 54px;
+  height: 76px;
+  margin-top: 2px;
+  overflow: hidden;
+  padding: 8px 5px;
+  border: 1px dashed var(--line-strong);
+  border-radius: 14px;
+  background: var(--surface-soft);
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 900;
+  transform: rotate(-8deg);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.jimengUploadTile:hover {
+  border-color: var(--active-line);
+  background: var(--hover);
+  transform: rotate(-4deg) translateY(-2px);
+}
+
+.jimengUploadTile svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
+.jimengUploadLabel {
+  display: block;
+  max-width: 100%;
+  text-align: center;
+  line-height: 1.15;
+}
+
+.jimengHiddenInput {
+  display: none;
+}
+
+.jimengReferenceRail {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  max-width: min(420px, 42vw);
+  min-height: 82px;
+  overflow-x: auto;
+  padding: 2px 4px 8px 2px;
+  scrollbar-width: thin;
+}
+
+.jimengReferenceRail.fixedFrames,
+.jimengReferenceRail.singleReference {
+  align-items: center;
+  overflow: visible;
+}
+
+.jimengReferenceTile {
+  position: relative;
+  flex: 0 0 64px;
+  width: 64px;
+  height: 82px;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--surface-soft);
+  color: var(--muted);
+}
+
+.jimengReferenceTile.empty {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 5px;
+  border-style: dashed;
+  font-size: 10px;
+  font-weight: 800;
+  transform: rotate(-5deg);
+}
+
+.jimengReferenceTile.empty:hover {
+  border-color: var(--active-line);
+  background: var(--hover);
+  color: var(--accent-strong);
+  transform: rotate(-2deg) translateY(-2px);
+}
+
+.jimengReferenceTile.filled > img,
+.jimengReferenceTile.filled > video,
+.jimengReferenceTile.filled > .jimengReferenceMediaFallback {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  object-fit: cover;
+}
+
+.jimengReferenceTile.filled > video {
+  background: var(--surface-muted);
+}
+
+.jimengReferenceMediaFallback {
+  align-content: center;
+  gap: 4px;
+  background: var(--surface-muted);
+  color: var(--muted);
+}
+
+.jimengReferenceMediaFallback small {
+  font-size: 9px;
+}
+
+.jimengReferenceMediaFallback audio {
+  width: 54px;
+  height: 24px;
+}
+
+.jimengReferenceReplace {
+  position: absolute;
+  inset: auto 0 0;
+  display: grid;
+  gap: 1px;
+  padding: 15px 5px 5px;
+  border: 0;
+  background: linear-gradient(transparent, rgba(7, 12, 18, 0.84));
+  color: #fff;
+  font-size: 10px;
+  font-weight: 850;
+  text-align: left;
+}
+
+.jimengReferenceReplace small {
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.jimengReferenceTileActions {
+  position: absolute;
+  z-index: 2;
+  top: 3px;
+  right: 3px;
+  display: flex;
+  gap: 2px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.jimengReferenceTile:hover .jimengReferenceTileActions,
+.jimengReferenceTile:focus-within .jimengReferenceTileActions {
+  opacity: 1;
+}
+
+.jimengReferenceTileActions button {
+  display: grid;
+  place-items: center;
+  width: 19px;
+  height: 19px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(8, 12, 18, 0.76);
+  color: #fff;
+}
+
+.jimengReferenceTileActions button:disabled {
+  opacity: 0.35;
+}
+
+.jimengReferenceSwapMark {
+  flex: 0 0 auto;
+  align-self: center;
+  color: var(--faint);
+}
+
+.jimengReferenceHint {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  gap: 5px;
+  min-width: 126px;
+  color: var(--faint);
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.jimengReferenceCapacity {
+  display: grid;
+  flex: 0 0 auto;
+  align-self: center;
+  gap: 3px;
+  min-width: 118px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-soft);
+  color: var(--faint);
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.jimengReferenceCapacity strong {
+  color: var(--text);
+  font-size: 10px;
+}
+
+.jimengReferenceCapacity small {
+  font-size: 9px;
+}
+
+.jimengContextChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: -4px 0 10px 88px;
+}
+
+.jimengContextChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 232px;
+  min-height: 30px;
+  padding: 3px 7px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-soft);
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.themeDark .jimengContextChip {
+  background: var(--surface-muted);
+}
+
+.jimengContextChip.mediaChip {
+  position: relative;
+  border-color: var(--line-strong);
+  background: var(--hover);
+}
+
+.jimengAttachmentProgress {
+  position: absolute;
+  inset: auto 0 0;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 0 0 10px 10px;
+  background: var(--line-strong);
+  pointer-events: none;
+}
+
+.jimengAttachmentProgress > span {
+  display: block;
+  height: 100%;
+  background: var(--accent-strong);
+}
+
+.jimengCurrentReferenceMentions {
+  display: grid;
+  gap: 6px;
+  max-height: 180px;
+  overflow-y: auto;
+  padding: 12px;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.jimengCurrentReferenceMentions > strong { font-size: 12px; }
+.jimengCurrentReferenceMentions button {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: var(--surface-soft);
+  color: var(--text);
+  text-align: left;
+}
+.jimengCurrentReferenceMentions small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--muted);
+}
+
+.jimengContextChip.mediaChip.uploading {
+  border-color: var(--accent-strong);
+}
+
+/* Upload completion alone does not imply admission approval. */
+.jimengContextChip.mediaChip.uploaded {
+  border-color: var(--line-strong);
+}
+
+.jimengContextChip.mediaChip.failed {
+  border-color: rgba(239, 68, 68, 0.56);
+  background: rgba(239, 68, 68, 0.08);
+}
+
+.jimengContextChip img,
+.jimengContextChip video {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.jimengContextChip audio {
+  width: 30px;
+  height: 22px;
+}
+
+.jimengContextChip strong {
+  overflow: hidden;
+  color: var(--text);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.jimengContextChip small {
+  color: var(--faint);
+  white-space: nowrap;
+}
+
+.jimengContextChip button {
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  margin-left: 1px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--surface-muted);
+  color: var(--muted);
+}
+
+.jimengComposerControls {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 14px;
+  margin-top: 4px;
+}
+
+.jimengCommandGroup,
+.jimengSendGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.jimengCommandGroup {
+  flex: 1 1 620px;
+  flex-wrap: wrap;
+}
+
+.jimengSendGroup {
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+.jimengWorkbench .jimengCommandButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: var(--control-bg);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 8px 18px rgba(33, 49, 62, 0.05), inset 0 1px 0 var(--inset-highlight);
+}
+
+.jimengCommandButton.active,
+.jimengCommandButton:hover {
+  border-color: var(--active-line);
+  background: var(--hover);
+  color: var(--accent-strong);
+}
+
+.themeDark .jimengCommandButton {
+  background: var(--control-bg);
+}
+
+.jimengCommandButton.subjectButton {
+  font-size: 14px;
+}
+
+.jimengIconButton.composerIcon,
+.jimengSendButton {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+}
+
+.jimengIconButton.composerIcon {
+  border: 0;
+  background: transparent;
+}
+
+.jimengSendButton {
+  border: 0;
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: 0 14px 32px rgba(113, 196, 239, 0.25);
+}
+
+.jimengFloatingPanel {
+  position: absolute;
+  z-index: 80;
+  top: calc(100% + 12px);
+  border: 1px solid var(--shell-border);
+  border-radius: 20px;
+  background: var(--surface-strong);
+  box-shadow: var(--shadow), inset 0 1px 0 var(--inset-highlight);
+  backdrop-filter: blur(28px);
+}
+
+.themeDark .jimengFloatingPanel {
+  border-color: var(--shell-border);
+  background: var(--surface-strong);
+}
+
+.jimengFloatingPanel.modePanel {
+  left: 24px;
+  width: 270px;
+  padding: 12px 8px 10px;
+}
+
+.jimengPanelLabel {
+  margin: 0 0 10px;
+  color: var(--faint);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.modePanel button,
+.jimengSkillItem,
+.jimengSubjectList button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: 0;
+  color: inherit;
+  font: inherit;
+}
+
+.modePanel button {
+  justify-content: flex-start;
+  gap: 12px;
+  min-height: 46px;
+  padding: 0 13px;
+  border-radius: 13px;
+  background: transparent;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.modePanel button.selected,
+.modePanel button:hover {
+  background: var(--hover);
+}
+
+.modePanel button svg:last-child {
+  margin-left: auto;
+}
+
+.jimengFloatingPanel.autoPanel {
+  left: 50%;
+  width: min(760px, calc(100vw - 90px));
+  max-height: min(74dvh, 700px);
+  overflow-y: auto;
+  padding: 22px 24px 24px;
+  transform: translateX(-50%);
+}
+
+.jimengFloatingPanel.modelPanel {
+  left: 50%;
+  width: min(620px, calc(100vw - 90px));
+  max-height: min(68dvh, 620px);
+  overflow-y: auto;
+  padding: 18px 20px 20px;
+  transform: translateX(-50%);
+}
+
+.jimengFloatingPanel.videoModePanel {
+  left: 238px;
+  width: 290px;
+  max-height: min(62dvh, 520px);
+  overflow-y: auto;
+  padding: 12px 10px;
+}
+
+.videoModePanel > button {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) 18px;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  min-height: 56px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+}
+
+.videoModePanel > button:hover,
+.videoModePanel > button.selected {
+  background: var(--hover);
+}
+
+.videoModePanel > button > span:nth-child(2) {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.videoModePanel > button strong {
+  font-size: 13px;
+}
+
+.videoModePanel > button small {
+  overflow: hidden;
+  color: var(--faint);
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.jimengModeBadge {
+  margin-left: 5px;
+  padding: 1px 4px;
+  border-radius: 999px;
+  background: var(--hover);
+  color: var(--accent-strong);
+  font-size: 8px;
+  font-style: normal;
+}
+
+.jimengFloatingPanel.generationSpecsPanel {
+  left: 50%;
+  width: min(620px, calc(100vw - 90px));
+  padding: 16px 18px 18px;
+  transform: translateX(-50%);
+}
+
+.generationSpecsPanel .jimengPanelLabel:not(:first-child) {
+  margin-top: 14px;
+}
+
+.jimengRatioGrid.compact {
+  grid-template-columns: repeat(auto-fit, minmax(58px, 1fr));
+}
+
+.jimengRatioGrid.compact button {
+  min-height: 58px;
+  font-size: 11px;
+}
+
+.jimengOptionGrid.compact {
+  grid-template-columns: repeat(auto-fit, minmax(92px, 1fr));
+}
+
+.jimengOptionGrid.countGrid {
+  grid-template-columns: repeat(auto-fit, minmax(44px, 1fr));
+}
+
+.jimengFloatingPanel.videoDurationPanel {
+  right: 110px;
+  width: min(400px, calc(100vw - 90px));
+  padding: 15px 16px 17px;
+}
+
+.jimengModelPanelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.jimengModelPanelHeader > span:first-child {
+  display: grid;
+  gap: 4px;
+}
+
+.jimengModelPanelHeader strong {
+  color: var(--text);
+  font-size: 18px;
+}
+
+.jimengModelPanelHeader small {
+  color: var(--faint);
+  font-size: 12px;
+}
+
+.jimengModelCount {
+  padding: 5px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-soft);
+  color: var(--faint);
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.jimengSegmentedControl.jimengModelTabs {
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 14px;
+}
+
+.jimengModelTabs button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.jimengModelList {
+  display: grid;
+  gap: 8px;
+}
+
+.jimengModelList > button {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) 20px;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 62px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface-soft);
+  color: var(--muted);
+  text-align: left;
+}
+
+.jimengModelList > button:hover,
+.jimengModelList > button.selected {
+  border-color: var(--active-line);
+  background: var(--hover);
+}
+
+.jimengModelList > button:disabled:hover {
+  border-color: transparent;
+  background: transparent;
+}
+
+.jimengModelList > button > span:nth-child(2) {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.jimengModelList strong,
+.jimengModelList small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.jimengModelList strong {
+  color: var(--text);
+  font-size: 13px;
+}
+
+.jimengModelList small {
+  color: var(--faint);
+  font-size: 11px;
+}
+
+.jimengModelList > button > svg {
+  color: var(--accent-strong);
+}
+
+.jimengAssetLibraryRow {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 6px;
+}
+
+.jimengAssetLibraryPrimary {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  min-height: 62px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface-soft);
+  color: var(--muted);
+  text-align: left;
+}
+
+.jimengAssetLibraryPrimary:hover,
+.jimengAssetLibraryPrimary.selected {
+  border-color: var(--active-line);
+  background: var(--hover);
+}
+
+.jimengAssetLibraryPrimary > span:nth-child(2) {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.jimengAssetLibraryActions {
+  display: grid;
+  align-content: center;
+  gap: 5px;
+}
+
+.jimengAssetLibraryActions button,
+.jimengAssetLibraryManage {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  min-height: 28px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--surface-soft);
+  color: var(--muted);
+}
+
+.jimengAssetLibraryActions button:hover,
+.jimengAssetLibraryManage:hover {
+  border-color: var(--active-line);
+  background: var(--hover);
+  color: var(--accent-strong);
+}
+
+.jimengAssetLibraryManage {
+  align-self: center;
+}
+
+.jimengModelIcon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  background: var(--surface-raised);
+  color: var(--accent-strong);
+}
+
+.jimengModelError {
+  margin: 10px 0 0;
+  padding: 9px 10px;
+  border: 1px solid rgba(239, 68, 68, 0.24);
+  border-radius: 10px;
+  background: rgba(239, 68, 68, 0.06);
+  color: #a33a3a;
+  font-size: 11px;
+}
+
+.autoPanel header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.autoPanel h2 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+.jimengPreferenceTitle {
+  display: grid;
+  gap: 5px;
+}
+
+.jimengPreferenceTitle small {
+  color: var(--faint);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.jimengToggleSwitch {
+  position: relative;
+  display: inline-flex;
+}
+
+.jimengToggleSwitch input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.jimengToggleSwitch span {
+  display: block;
+  width: 42px;
+  height: 24px;
+  border-radius: 999px;
+  background: var(--bg-300);
+  transition: background 0.18s ease;
+}
+
+.jimengToggleSwitch span::after {
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin: 3px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(59, 60, 61, 0.14);
+  content: "";
+  transition: transform 0.18s ease;
+}
+
+.jimengToggleSwitch.on span {
+  background: var(--accent-100);
+}
+
+.jimengToggleSwitch.on span::after {
+  transform: translateX(18px);
+}
+
+.jimengSegmentedControl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 22px;
+  padding: 4px;
+  border-radius: 15px;
+  background: var(--surface-soft);
+}
+
+.jimengSegmentedControl button {
+  min-height: 42px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--faint);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.jimengSegmentedControl button.active {
+  background: var(--surface-strong);
+  color: var(--muted);
+  box-shadow: var(--shadow-soft);
+}
+
+.jimengRatioGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+  gap: 4px;
+  overflow: hidden;
+  margin-bottom: 4px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface-soft);
+}
+
+.jimengRatioGrid button {
+  display: grid;
+  place-items: center;
+  gap: 7px;
+  min-height: 68px;
+  border: 0;
+  border-radius: 11px;
+  background: transparent;
+  color: var(--faint);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.jimengRatioGrid button.selected {
+  background: var(--surface-strong);
+  color: var(--text);
+  box-shadow: inset 0 0 0 1px var(--active-line), var(--shadow-soft);
+}
+
+.jimengResolutionNotice {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+  margin: 8px 2px 0;
+  padding: 7px 10px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--surface-soft) 72%, transparent);
+  color: var(--faint);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.jimengPreferenceSection {
+  display: grid;
+  gap: 9px;
+  margin-top: 16px;
+}
+
+.jimengPreferenceSectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.jimengPreferenceSectionHeader.durationHeader {
+  margin-top: 8px;
+}
+
+.jimengPreferenceSectionHeader strong {
+  color: var(--text);
+  font-size: 13px;
+}
+
+.jimengPreferenceSectionHeader small {
+  overflow: hidden;
+  color: var(--faint);
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.jimengOptionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(82px, 1fr));
+  gap: 8px;
+}
+
+.jimengOptionGrid button {
+  display: grid;
+  place-items: center;
+  gap: 2px;
+  min-height: 42px;
+  padding: 5px 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface-soft);
+  color: var(--faint);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.jimengOptionGrid button:hover,
+.jimengOptionGrid button.selected {
+  border-color: var(--active-line);
+  background: var(--surface-strong);
+  color: var(--text);
+  box-shadow: var(--shadow-soft);
+}
+
+.jimengOptionGrid button > strong {
+  color: inherit;
+  font-size: 14px;
+}
+
+.jimengOptionGrid button > small {
+  color: var(--faint);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.quickWorkflowBrief {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.quickWorkflowBriefGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.quickWorkflowField {
+  display: grid;
+  align-content: start;
+  gap: 5px;
+  min-width: 0;
+  color: var(--faint);
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.quickWorkflowField.wide {
+  grid-column: 1 / -1;
+}
+
+.quickWorkflowField input,
+.quickWorkflowField textarea,
+.quickWorkflowField select {
+  width: 100%;
+  min-width: 0;
+  min-height: 36px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  outline: none;
+  background: var(--surface-soft);
+  color: var(--text);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.quickWorkflowField textarea {
+  min-height: 58px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.quickWorkflowField input:focus-visible,
+.quickWorkflowField textarea:focus-visible,
+.quickWorkflowField select:focus-visible {
+  border-color: var(--accent-strong);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-strong) 14%, transparent);
+}
+
+.quickWorkflowCommerce {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface-soft);
+}
+
+.quickWorkflowCommerce summary {
+  padding: 10px 12px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.quickWorkflowCommerce[open] summary {
+  border-bottom: 1px solid var(--line);
+}
+
+.quickWorkflowCommerce:not([open]) > :not(summary) {
+  display: none;
+}
+
+.quickWorkflowCommerce .quickWorkflowBriefGrid {
+  padding: 12px;
+}
+
+.quickWorkflowIssues {
+  display: grid;
+  gap: 4px;
+  margin: 0 12px 12px;
+  padding: 9px 10px;
+  border: 1px solid rgba(185, 28, 28, 0.24);
+  border-radius: 9px;
+  background: rgba(185, 28, 28, 0.06);
+  color: #a33a3a;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.quickWorkflowVariants {
+  display: grid;
+  gap: 9px;
+  padding: 0 12px 12px;
+}
+
+.quickWorkflowVariants > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--text);
+  font-size: 12px;
+}
+
+.quickWorkflowVariants > header > span {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.quickWorkflowVariants > header small {
+  color: var(--faint);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.quickWorkflowVariantPreview {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.quickWorkflowVariants .quickWorkflowBatchSave {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 0 11px;
+  border-color: color-mix(in srgb, var(--accent-strong) 35%, var(--line));
+  color: var(--accent-strong);
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.quickWorkflowVariants button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+.quickWorkflowBatch {
+  display: grid;
+  gap: 6px;
+  padding-top: 9px;
+  border-top: 1px solid var(--line);
+}
+
+.quickWorkflowBatchSummary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--faint);
+  font-size: 10px;
+}
+
+.quickWorkflowBatchSummary strong {
+  color: var(--text);
+  font-size: 11px;
+}
+
+.quickWorkflowBatchList {
+  display: grid;
+  gap: 5px;
+}
+
+.quickWorkflowBatchItem {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 7px 8px;
+  border-radius: 10px;
+  background: var(--surface-soft);
+}
+
+.quickWorkflowBatchStatus {
+  min-width: 46px;
+  color: var(--faint);
+  font-size: 10px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.quickWorkflowBatchStatus.is-editing {
+  color: var(--accent-strong);
+}
+
+.quickWorkflowBatchStatus.is-completed {
+  color: #2d7a52;
+}
+
+.quickWorkflowBatchStatus.is-failed {
+  color: #a33a3a;
+}
+
+.quickWorkflowBatchSpec {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+}
+
+.quickWorkflowBatchSpec strong,
+.quickWorkflowBatchSpec small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.quickWorkflowBatchSpec strong {
+  color: var(--text);
+  font-size: 11px;
+}
+
+.quickWorkflowBatchSpec small {
+  color: var(--faint);
+  font-size: 10px;
+}
+
+.quickWorkflowBatchActions {
+  display: flex;
+  gap: 5px;
+}
+
+.quickWorkflowBatchItem > small,
+.commerceBatchResults {
+  grid-column: 2 / -1;
+  color: var(--faint);
+  font-size: 10px;
+}
+
+.commerceBatchResults {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.commerceBatchResults a {
+  color: var(--accent-strong);
+  font-weight: 750;
+  text-underline-offset: 2px;
+}
+
+.quickWorkflowVariants .quickWorkflowBatchActions button {
+  min-height: 30px;
+  padding: 0 8px;
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.quickWorkflowVariants button {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-raised);
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.quickWorkflowVariants button:hover {
+  border-color: color-mix(in srgb, var(--accent-strong) 42%, var(--line));
+  background: color-mix(in srgb, var(--accent) 7%, var(--surface-raised));
+}
+
+.quickWorkflowVariants button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent-strong) 18%, transparent);
+  outline-offset: 1px;
+}
+
+.quickWorkflowVariants button strong {
+  overflow: hidden;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.quickWorkflowVariants button span {
+  overflow: hidden;
+  color: var(--faint);
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .quickWorkflowBriefGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .quickWorkflowField.wide {
+    grid-column: auto;
+  }
+
+  .quickWorkflowVariantPreview {
+    grid-template-columns: 1fr;
+  }
+
+  .quickWorkflowBatchItem {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .quickWorkflowBatchActions {
+    grid-column: 1 / -1;
+    justify-content: flex-end;
+  }
+}
+
+.jimengCatalogErrorActions {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.jimengCatalogErrorActions .jimengModelError,
+.jimengCatalogErrorActions .jimengPanelLabel {
+  margin: 0;
+}
+
+.jimengCatalogErrorActions > button,
+.jimengPanelAction,
+.jimengContextPanelActions button {
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: var(--surface-soft);
+  color: var(--muted);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.jimengCatalogErrorActions > button:hover,
+.jimengPanelAction:hover,
+.jimengContextPanelActions button:hover {
+  border-color: var(--active-line);
+  background: var(--hover);
+  color: var(--accent-strong);
+}
+
+.jimengFloatingPanel.contextPickerPanel {
+  max-height: min(68dvh, 620px);
+  overflow-y: auto;
+}
+
+.jimengContextSearch {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  margin-bottom: 12px;
+  padding: 0 11px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface-soft);
+  color: var(--faint);
+}
+
+.jimengContextSearch input {
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+}
+
+.jimengContextPanelActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.jimengContextPanelActions button {
+  flex: 1 1 120px;
+}
+
+.jimengModelIcon img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.jimengRatioIcon {
+  display: block;
+  width: 24px;
+  height: 18px;
+  border: 3px solid currentColor;
+  border-radius: 5px;
+}
+
+.jimengRatioIcon.smart {
+  width: 24px;
+  height: 24px;
+  border-style: dashed;
+}
+
+.jimengRatioIcon.wide {
+  width: 26px;
+  height: 12px;
+}
+
+.jimengRatioIcon.square {
+  width: 22px;
+  height: 22px;
+}
+
+.jimengRatioIcon.portrait {
+  width: 14px;
+  height: 25px;
+}
+
+.jimengRatioIcon.phone {
+  width: 12px;
+  height: 28px;
+}
+
+.jimengFloatingPanel.skillPanel {
+  left: 96px;
+  width: min(620px, calc(100vw - 360px));
+  padding: 20px 22px;
+}
+
+.jimengSkillSearch {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+  color: var(--faint);
+}
+
+.jimengSkillSearch input {
+  min-height: 42px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 20px;
+}
+
+.jimengSkillSearch button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: 0;
+  background: transparent;
+  color: var(--faint);
+  font-weight: 700;
+}
+
+.jimengSkillItem {
+  gap: 18px;
+  padding: 18px 10px;
+  border-radius: 16px;
+  background: transparent;
+  text-align: left;
+}
+
+.jimengSkillItem.selected,
+.jimengSkillItem:hover {
+  background: var(--hover);
+}
+
+.jimengSkillItem > span {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.jimengSkillItem strong {
+  color: var(--text);
+  font-size: 18px;
+}
+
+.jimengSkillItem em {
+  margin-left: 8px;
+  padding: 3px 7px;
+  border-radius: 7px;
+  background: var(--surface-soft);
+  color: var(--muted);
+  font-size: 12px;
+  font-style: normal;
+}
+
+.jimengSkillItem small {
+  color: var(--faint);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.jimengSkillFooter {
+  display: flex;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.jimengSkillFooter button {
+  flex: 1;
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface-soft);
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.jimengSkillFooter button:hover {
+  border-color: var(--active-line);
+  background: var(--hover);
+  color: var(--accent-strong);
+}
+
+.jimengFloatingPanel.subjectPanel {
+  right: 88px;
+  width: 360px;
+  padding: 18px;
+}
+
+.jimengSubjectList {
+  display: grid;
+  gap: 8px;
+}
+
+.jimengSubjectList button {
+  gap: 10px;
+  min-height: 60px;
+  padding: 8px;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  font-weight: 800;
+}
+
+.jimengSubjectList button:hover,
+.jimengSubjectList button.selected {
+  border-color: var(--active-line);
+  background: var(--hover);
+}
+
+.jimengSubjectList img {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  border-radius: 13px;
+  object-fit: cover;
+}
+
+.jimengSubjectList .jimengSubjectMediaPlaceholder {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  border-radius: 13px;
+  background: var(--surface-soft);
+  color: var(--faint);
+}
+
+.jimengSubjectList span {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+
+.jimengSubjectList strong {
+  font-size: 14px;
+}
+
+.jimengSubjectList small {
+  color: var(--faint);
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.jimengSubjectEmpty {
+  margin: 4px 0;
+  padding: 14px 10px;
+  border-radius: 12px;
+  background: var(--surface-soft);
+  color: var(--faint);
+  font-size: 12px;
+  font-weight: 750;
+  text-align: center;
+}
+
+.jimengSubjectList .createSubjectButton {
+  justify-content: center;
+  min-height: 40px;
+  margin-top: 6px;
+  border-color: var(--line);
+  background: var(--surface-soft);
+  text-align: center;
+}
+
+.jimengModeStrip {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(136px, 1fr));
+  gap: 10px;
+  width: min(100%, clamp(760px, 52vw, 1080px));
+  margin-top: clamp(24px, 2.6vw, 44px);
+  margin-bottom: clamp(30px, 3vw, 52px);
+}
+
+.jimengModeStrip button {
+  position: relative;
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  align-items: center;
+  gap: 11px;
+  min-height: 66px;
+  padding: 10px 13px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-soft);
+  color: var(--text);
+  text-align: left;
+  transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease;
+}
+
+.themeDark .jimengModeStrip button {
+  background: var(--surface-raised);
+}
+
+.jimengModeStrip button:hover,
+.jimengModeStrip button.active {
+  border-color: var(--active-line);
+  background: var(--hover);
+  transform: translateY(-2px);
+}
+
+.jimengModeThumb {
+  display: block;
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  background: var(--surface-soft);
+  object-fit: cover;
+  box-shadow: inset 0 0 0 1px var(--inset-highlight);
+}
+
+.jimengModeStrip strong,
+.jimengModeStrip small {
+  display: block;
+}
+
+.jimengModeStrip strong {
+  margin-bottom: 3px;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.jimengModeStrip small {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.jimengModeStrip em {
+  position: absolute;
+  top: -7px;
+  right: 16px;
+  padding: 2px 7px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.jimengResultPanel {
+  position: relative;
+  z-index: 2;
+  width: min(100%, clamp(760px, 52vw, 1080px));
+  margin: 0 0 clamp(36px, 3.4vw, 60px);
+  padding: 22px;
+  border: 1px solid var(--shell-border);
+  border-radius: 28px;
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(22px);
+}
+
+.jimengResultHeader {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.jimengResultHeader h2 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.15;
+}
+
+.jimengResultHeader p {
+  max-width: 860px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.jimengShotList,
+.jimengTaskList {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.jimengImageResultGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.jimengShotList article,
+.jimengTaskList article,
+.jimengImageResultGrid article {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface-soft);
+}
+
+.jimengImageResultGrid article {
+  overflow: hidden;
+  padding: 0 0 13px;
+  background: var(--surface-raised);
+}
+
+.jimengImageResultGrid a,
+.jimengImageResultGrid img {
+  display: block;
+  width: 100%;
+}
+
+.jimengImageResultGrid a {
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  background: var(--surface-soft);
+}
+
+.jimengImageResultGrid img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 180ms ease;
+}
+
+.jimengImageResultGrid article:hover img {
+  transform: scale(1.025);
+}
+
+.jimengImageResultGrid strong,
+.jimengImageResultGrid p {
+  display: block;
+  padding: 0 13px;
+}
+
+.jimengImageResultGrid strong {
+  margin-top: 12px;
+  color: var(--text);
+  font-size: 13px;
+}
+
+.jimengImageResultGrid p {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.jimengShotList span {
+  color: var(--accent-strong);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.jimengShotList strong,
+.jimengTaskList strong {
+  display: block;
+  margin-top: 6px;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.jimengShotList p,
+.jimengTaskList small {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.directorShotEditor {
+  display: grid;
+  gap: 10px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.directorShotEditorHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 2px 2px;
+}
+
+.directorShotEditorHeading > span {
+  display: grid;
+  gap: 3px;
+}
+
+.directorShotEditorHeading strong {
+  color: var(--text);
+  font-size: 14px;
+}
+
+.directorShotEditorHeading small {
+  color: var(--faint);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.directorResourceEditor {
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface-soft);
+}
+
+.directorResourceEditor > header,
+.directorResourceGroups > section > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.directorResourceEditor > header > span {
+  display: grid;
+  gap: 2px;
+}
+
+.directorResourceEditor strong {
+  color: var(--text);
+  font-size: 12px;
+}
+
+.directorResourceEditor small {
+  color: var(--faint);
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.directorResourceGroups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.directorResourceGroups > section {
+  display: grid;
+  align-content: start;
+  gap: 7px;
+  min-width: 0;
+  padding: 9px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-raised);
+}
+
+.directorResourceGroups button,
+.directorResourceRow button {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-raised);
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.directorResourceGroups button:hover,
+.directorResourceRow button:hover {
+  border-color: var(--active-line);
+  color: var(--accent-strong);
+}
+
+.directorResourceGroups button:focus-visible,
+.directorResourceRow input:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent-strong) 14%, transparent);
+  outline-offset: 1px;
+}
+
+.directorResourceRow {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr) 28px;
+  gap: 5px;
+}
+
+.directorResourceRow input {
+  width: 100%;
+  min-width: 0;
+  min-height: 30px;
+  padding: 6px 7px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  outline: none;
+  background: var(--surface-soft);
+  color: var(--text);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.directorResourceEmpty {
+  padding: 7px 0;
+  text-align: center;
+}
+
+.directorShotEditorList {
+  display: grid;
+}
+
+.directorShotRow {
+  border-top: 1px solid var(--line);
+}
+
+.directorShotRow:first-child {
+  border-top: 0;
+}
+
+.directorShotRow > summary {
+  display: grid;
+  grid-template-columns: 28px minmax(120px, 1fr) auto auto;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 6px 2px;
+  color: var(--text);
+  cursor: pointer;
+  list-style: none;
+}
+
+.directorShotRow > summary::-webkit-details-marker {
+  display: none;
+}
+
+.directorShotRow > summary > span:first-child {
+  color: var(--accent-strong);
+  font-size: 11px;
+  font-weight: 850;
+}
+
+.directorShotRow > summary > strong {
+  overflow: hidden;
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.directorShotRow > summary > small {
+  color: var(--faint);
+  font-size: 10px;
+}
+
+.directorShotOrderActions {
+  display: flex;
+  gap: 4px;
+}
+
+.directorShotOrderActions button {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-raised);
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.directorShotOrderActions button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.directorShotOrderActions button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent-strong) 18%, transparent);
+  outline-offset: 1px;
+}
+
+.directorShotFields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+  padding: 2px 2px 14px 38px;
+}
+
+.directorShotFields label {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  color: var(--faint);
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.directorShotFields label.wide {
+  grid-column: span 2;
+}
+
+.directorShotFields label.prompt {
+  grid-column: 1 / -1;
+}
+
+.directorShotFields input,
+.directorShotFields textarea,
+.directorShotFields select {
+  width: 100%;
+  min-width: 0;
+  min-height: 34px;
+  padding: 7px 9px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  outline: none;
+  background: var(--surface-soft);
+  color: var(--text);
+  font: inherit;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.directorShotFields textarea {
+  resize: vertical;
+  line-height: 1.45;
+}
+
+.directorShotFields select[multiple] {
+  min-height: 64px;
+  padding: 4px;
+}
+
+.directorShotFields input:focus-visible,
+.directorShotFields textarea:focus-visible,
+.directorShotFields select:focus-visible {
+  border-color: var(--accent-strong);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-strong) 14%, transparent);
+}
+
+@media (max-width: 820px) {
+  .directorResourceEditor > header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .directorResourceGroups {
+    grid-template-columns: 1fr;
+  }
+
+  .directorShotRow > summary {
+    grid-template-columns: 24px minmax(0, 1fr) auto;
+  }
+
+  .directorShotRow > summary > small {
+    display: none;
+  }
+
+  .directorShotFields {
+    grid-template-columns: 1fr;
+    padding-left: 26px;
+  }
+
+  .directorShotFields label.wide,
+  .directorShotFields label.prompt {
+    grid-column: auto;
+  }
+}
+
+.jimengStructuredTimeline {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--surface-strong) 86%, transparent);
+}
+
+.jimengStructuredTimeline > header,
+.jimengTimelineShotHeader,
+.jimengTimelineAudioHeading {
+  display: flex;
+  align-items: center;
+}
+
+.jimengStructuredTimeline > header {
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.jimengStructuredTimeline > header > span,
+.jimengTimelineAudioHeading > span {
+  display: grid;
+  gap: 3px;
+}
+
+.jimengStructuredTimeline > header strong,
+.jimengTimelineAudioHeading strong {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.jimengStructuredTimeline > header small,
+.jimengTimelineAudioHeading small,
+.jimengTimelineEmptyHint {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.jimengStructuredTimeline > header button {
+  min-height: 34px;
+  flex: 0 0 auto;
+  padding: 0 11px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-strong);
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.jimengTimelineRuler {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.jimengTimelineShots {
+  display: grid;
+  gap: 10px;
+}
+
+.jimengTimelineShots > article {
+  display: grid;
+  gap: 10px;
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface-strong);
+}
+
+.jimengTimelineShotHeader {
+  gap: 8px;
+}
+
+.jimengTimelineShotHeader > span {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 9px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.jimengTimelineShotHeader strong {
+  min-width: 0;
+  flex: 1;
+  color: var(--text);
+  font-size: 13px;
+}
+
+.jimengTimelineShotHeader time {
+  color: var(--muted);
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 750;
+}
+
+.jimengTimelineShots label,
+.jimengTimelineAudio article label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.jimengTimelineShots textarea {
+  width: 100%;
+  min-height: 64px;
+  resize: vertical;
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  outline: none;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  line-height: 1.5;
+}
+
+.jimengTimelineShots textarea:focus-visible,
+.jimengStructuredTimeline button:focus-visible,
+.jimengTimelineAudio input:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
+.jimengTimelineAssetPicker {
+  display: grid;
+  gap: 7px;
+}
+
+.jimengTimelineAssetPicker > span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.jimengTimelineAssetPicker > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.jimengTimelineAssetPicker button {
+  display: inline-flex;
+  min-height: 30px;
+  align-items: center;
+  gap: 5px;
+  padding: 0 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.jimengTimelineAssetPicker button[aria-pressed="true"] {
+  border-color: var(--active-line);
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.jimengTimelineAudio {
+  display: grid;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.jimengTimelineAudioHeading {
+  gap: 8px;
+  color: var(--accent-strong);
+}
+
+.jimengTimelineAudio > article {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.7fr) repeat(3, minmax(120px, 1fr));
+  gap: 12px;
+  align-items: center;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface-strong);
+}
+
+.jimengTimelineAudio > article > strong {
+  overflow: hidden;
+  color: var(--text);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.jimengTimelineAudio input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent-strong);
+}
+
+@media (max-width: 860px) {
+  .jimengStructuredTimeline > header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .jimengTimelineAudio > article {
+    grid-template-columns: 1fr;
+  }
+}
+
+.jimengResultActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.jimengPrimaryButton,
+.jimengSecondaryButton {
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: 14px;
+  font-weight: 900;
+}
+
+.jimengPrimaryButton {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.jimengSecondaryButton {
+  border: 1px solid var(--line);
+  background: rgba(255, 254, 251, 0.74);
+  color: var(--text);
+}
+
+.jimengMaterializedHint {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.jimengTaskList {
+  margin-top: 14px;
+}
+
+.jimengTaskStatus {
+  display: inline-flex;
+  min-height: 24px;
+  align-items: center;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.jimengTaskStatus.failed,
+.jimengTaskStatus.cancelled {
+  background: rgba(255, 226, 226, 0.95);
+  color: #9b3333;
+}
+
+.jimengTaskStatus.succeeded {
+  background: rgba(220, 245, 232, 0.95);
+  color: #216844;
+}
+
+.jimengTaskList a {
+  display: inline-flex;
+  margin-top: 9px;
+  color: var(--accent-strong);
+  font-size: 12px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.jimengTaskCancelButton {
+  display: inline-flex;
+  min-height: 30px;
+  align-items: center;
+  margin-top: 9px;
+  margin-left: 10px;
+  padding: 0 10px;
+  border: 1px solid rgba(176, 48, 48, 0.24);
+  border-radius: 10px;
+  background: rgba(255, 245, 245, 0.9);
+  color: #9b3333;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.jimengTaskCancelButton:disabled {
+  cursor: wait;
+  opacity: 0.58;
+}
+
+.jimengErrorBox {
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 12px;
+  padding: 9px 13px;
+  border: 1px solid rgba(176, 48, 48, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 235, 235, 0.86);
+  color: #8a2525;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.jimengErrorBox.draftConflict {
+  display: grid;
+  width: min(680px, 100%);
+  gap: 9px;
+  border-radius: 14px;
+}
+
+.jimengDraftConflictActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.jimengDraftConflictActions button {
+  min-height: 32px;
+  padding: 0 11px;
+  border: 1px solid currentColor;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.72);
+  color: inherit;
+  font: inherit;
+}
+
+.jimengDraftConflictActions button:disabled {
+  cursor: wait;
+  opacity: 0.58;
+}
+
+.jimengToast {
+  position: fixed;
+  right: 24px;
+  top: 88px;
+  z-index: 100;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: max-content;
+  max-width: min(420px, calc(100vw - 48px));
+  padding: 12px 16px;
+  border: 1px solid var(--active-line);
+  border-radius: 8px;
+  background: var(--surface-strong);
+  box-shadow: var(--shadow);
+  color: var(--text);
+  font-weight: 800;
+}
+
+.jimengToast > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.jimengToast > button {
+  display: grid;
+  flex: 0 0 24px;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  margin: -3px -7px -3px 0;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: currentColor;
+  opacity: 0.68;
+}
+
+.jimengToast > button:hover {
+  background: var(--hover);
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .jimengToast {
+    top: 72px;
+    right: 12px;
+    max-width: calc(100vw - 24px);
+  }
+}
+
+.jimengSpin {
+  animation: jimeng-spin 0.9s linear infinite;
+}
+
+@keyframes jimeng-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1500px) {
+  .jimengSideNav {
+    flex-basis: 196px;
+    width: 196px;
+  }
+
+  .jimengHero h1 {
+    font-size: clamp(28px, 2.4vw, 38px);
+  }
+
+  .jimengCreatorStage {
+    width: min(100% - 44px, 1020px);
+  }
+
+  .jimengComposerPanel,
+  .jimengModeStrip,
+  .jimengResultPanel {
+    width: min(100%, 980px);
+  }
+}
+
+@media (max-width: 1180px) {
+  .jimengModeStrip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .jimengResultPanel {
+    width: 100%;
+  }
+
+  .jimengShotList,
+  .jimengTaskList,
+  .jimengImageResultGrid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-height: 900px) and (min-width: 1000px) and (pointer: fine) {
+  .jimengCreateWorkbench .frontstageSideNav {
+    padding-top: 20px;
+    padding-bottom: 12px;
+  }
+
+  .jimengHero {
+    padding: clamp(28px, 5vh, 44px) 36px 12px;
+  }
+
+  .jimengHero h1 {
+    margin-bottom: 14px;
+    font-size: 30px;
+  }
+
+  .jimengCreatorStage {
+    width: min(100% - 36px, 1020px);
+  }
+
+  .jimengComposerPanel {
+    min-height: 142px;
+    padding: 16px 20px 14px;
+  }
+
+  .jimengComposerTop,
+  .jimengComposerTop textarea {
+    min-height: 78px;
+  }
+
+  .jimengUploadTile {
+    width: 48px;
+    min-height: 66px;
+  }
+
+  .jimengModeStrip {
+    margin-top: 16px;
+  }
+
+  .jimengModeStrip > button {
+    min-height: 58px;
+  }
+
+  .jimengFloatingPanel.autoPanel {
+    max-height: calc(100dvh - 300px);
+    padding: 18px 20px 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  .jimengWorkbench {
+    padding: 0;
+  }
+
+  .jimengShell {
+    min-height: 100dvh;
+    border-radius: 0;
+  }
+
+  .jimengCreateWorkbench .jimengSideNav {
+    display: none;
+  }
+
+  .jimengMainPane {
+    width: 100%;
+  }
+
+  .jimengTopbar,
+  .jimengHero {
+    padding-inline: 18px;
+  }
+
+  .jimengTopbar {
+    gap: 10px;
+  }
+
+  .jimengTopbarBrand {
+    min-width: 0;
+  }
+
+  .jimengTopbarBrand strong {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .jimengCreatorStage {
+    width: calc(100% - 36px);
+  }
+
+  .jimengHero { padding-top: 32px; padding-bottom: 16px; }
+
+  .jimengHero h1 {
+    font-size: 28px;
+    line-height: 1.12;
+  }
+
+  .jimengComposerTop,
+  .jimengModeStrip {
+    grid-template-columns: 1fr;
+  }
+
+  .jimengComposerTop.videoComposerTop {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .jimengReferenceRail {
+    max-width: 100%;
+  }
+
+  .jimengComposerPanel {
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .jimengComposerTop {
+    grid-template-columns: 66px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .jimengComposerTop textarea {
+    min-height: 112px;
+    font-size: 15px;
+  }
+
+  .jimengUploadTile {
+    width: 66px;
+    height: 72px;
+    transform: none;
+  }
+
+  .jimengUploadLabel {
+    transform: none;
+  }
+
+  .jimengUploadTile:hover {
+    transform: translateY(-2px);
+  }
+
+  .jimengContextChips {
+    margin-left: 0;
+  }
+
+  .jimengComposerControls,
+  .jimengResultActions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .jimengCommandGroup,
+  .jimengSendGroup {
+    flex-wrap: wrap;
+  }
+
+  .jimengCommandGroup {
+    flex: 0 1 auto;
+  }
+
+  .jimengCommandButton {
+    flex: 1 1 calc(50% - 6px);
+  }
+
+  .jimengCommandButton.subjectButton {
+    flex-basis: 100%;
+  }
+
+  .jimengSendGroup {
+    justify-content: flex-end;
+  }
+
+  .jimengFloatingPanel.modePanel,
+  .jimengFloatingPanel.modelPanel,
+  .jimengFloatingPanel.autoPanel,
+  .jimengFloatingPanel.videoModePanel,
+  .jimengFloatingPanel.generationSpecsPanel,
+  .jimengFloatingPanel.videoDurationPanel,
+  .jimengFloatingPanel.skillPanel,
+  .jimengFloatingPanel.subjectPanel {
+    right: auto;
+    left: 50%;
+    width: min(calc(100vw - 28px), 360px);
+    max-height: min(70dvh, 560px);
+    overflow-y: auto;
+    transform: translateX(-50%);
+  }
+
+  .jimengRatioGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .jimengSkillSearch {
+    grid-template-columns: 28px minmax(0, 1fr);
+  }
+
+  .jimengSkillSearch button {
+    grid-column: 2;
+    justify-content: flex-start;
+  }
+}
+.quickSkillCatalogItem {
+  border: 1px solid rgba(143, 146, 160, 0.18);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.quickSkillCatalogItem.selected {
+  border-color: rgba(114, 84, 255, 0.58);
+}
+
+.quickSkillCatalogItem > button {
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+}
+
+.quickSkillCatalogActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px 10px;
+  flex-wrap: wrap;
+}
+
+.quickSkillCatalogActions > span {
+  margin-right: auto;
+  color: var(--text-muted, #8d8f9b);
+  font-size: 11px;
+}
+
+.quickSkillCatalogActions > button {
+  border: 0;
+  background: transparent;
+  color: var(--accent, #7254ff);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.quickSkillCatalogDetail {
+  margin: 0;
+  padding: 0 12px 12px;
+  display: grid;
+  gap: 7px;
+  font-size: 12px;
+}
+
+.quickSkillCatalogDetail > div {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 8px;
+}
+
+.quickSkillCatalogDetail dt {
+  color: var(--text-muted, #8d8f9b);
+}
+
+.quickSkillCatalogDetail dd {
+  margin: 0;
+}
+.quickAssetRecommendationBar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+}
+
+.quickAssetRecommendationBar button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.quickAssetRecommendationBar small {
+  color: var(--text-muted, #8d8f9b);
+}
+
+.quickAssetRecommendations {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.quickAssetRecommendations article {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid rgba(143, 146, 160, 0.18);
+  border-radius: 10px;
+}
+
+.quickAssetRecommendations article > span {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+  gap: 3px;
+}
+
+.quickAssetRecommendations small,
+.quickAssetRecommendations em {
+  color: var(--text-muted, #8d8f9b);
+  font-size: 11px;
+  font-style: normal;
+}
+
+/* Preserve the desktop composer language while giving touch controls room. */
+@media (max-width: 760px) {
+  .jimengCreateWorkbench .jimengHero { padding: 24px 18px 18px; }
+  .jimengCreateWorkbench .jimengHero h1 { font-size: clamp(23px, 6.4vw, 28px); line-height: 1.35; }
+  .jimengCreateWorkbench .jimengHero > p { font-size: 8px; letter-spacing: 0.18em; }
+  .jimengCreateWorkbench .jimengComposerPanel { padding: 16px; }
+  .jimengCreateWorkbench .jimengComposerTop textarea { min-height: 104px; font-size: 16px; line-height: 1.6; }
+  .jimengCreateWorkbench .jimengCommandGroup { gap: 8px; }
+  .jimengCreateWorkbench .jimengCommandButton { min-height: 44px; padding-inline: 10px; }
+  .jimengCreateWorkbench .jimengCommandButton.subjectButton { flex-basis: calc(50% - 6px); }
+  .jimengCreateWorkbench .jimengIconButton.composerIcon,
+  .jimengCreateWorkbench .jimengSendButton { width: 44px; height: 44px; }
+  .jimengCreateWorkbench .jimengModeStrip { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 10px; margin-top: 22px; margin-bottom: 28px; }
+  .jimengCreateWorkbench .jimengModeStrip button { grid-template-columns: 32px minmax(0, 1fr); gap: 8px; min-height: 68px; padding: 10px; border-radius: 16px; }
+  .jimengCreateWorkbench .jimengModeThumb { width: 32px; height: 32px; border-radius: 10px; }
+  .jimengCreateWorkbench .jimengModeStrip strong { font-size: 12px; }
+  .jimengCreateWorkbench .jimengModeStrip small { font-size: 10px; }
+  .jimengCreateWorkbench .jimengModeStrip button:only-child { grid-column: 1 / -1; }
+  .jimengCreateWorkbench .jimengFloatingPanel button { min-height: 44px; }
+  .jimengCreateWorkbench .jimengFloatingPanel input { font-size: 16px; }
+}
+
+.jimengReferenceApproval { position: absolute; top: 7px; left: 7px; display: inline-flex; padding: 4px; border-radius: 50%; background: var(--surface-strong); pointer-events: none; }

@@ -1,0 +1,8 @@
+import type React from "react";
+
+export function renderTextNodeEditorToolbarExternal(node: any, icons: { Circle: React.ComponentType<any>; Type: React.ComponentType<any>; Rows3: React.ComponentType<any>; Columns3: React.ComponentType<any>; Minus: React.ComponentType<any>; Copy: React.ComponentType<any>; Expand: React.ComponentType<any> }) {
+  const { Circle, Type, Rows3, Columns3, Minus, Copy, Expand } = icons;
+  return <div data-node-toolbar className="absolute z-30 flex items-center gap-1 rounded-[14px] border border-[#4a4b50] bg-[#2a2a2b] px-3 py-2 text-white shadow-[0_20px_42px_rgba(0,0,0,0.38)]" style={{ left: node.x + node.width / 2, top: node.y - 74, transform: "translateX(-50%)" }} onMouseDown={(event) => event.stopPropagation()}>
+    {[<Circle key="circle" className="h-4 w-4 text-[#6a6d72]" />, <span key="h1" className="px-2 text-[15px] font-semibold">H1</span>, <span key="h2" className="px-2 text-[15px] font-semibold text-[#9ca0a8]">H2</span>, <span key="h3" className="px-2 text-[15px] font-semibold text-[#9ca0a8]">H3</span>, <Type key="type" className="h-4 w-4" />, <span key="b" className="px-2 text-[18px] font-semibold">B</span>, <span key="i" className="px-2 text-[18px] italic">I</span>, <Rows3 key="rows" className="h-4 w-4" />, <Columns3 key="columns" className="h-4 w-4" />, <Minus key="minus" className="h-4 w-4" />, <Copy key="copy" className="h-4 w-4" />, <Expand key="expand" className="h-4 w-4" />].map((item, index) => <div key={index} className="flex items-center">{index > 0 ? <div className="mr-2 h-6 w-px bg-[#3c3d42]" /> : null}<button className="flex h-9 items-center justify-center rounded-[9px] px-2 hover:bg-[#333336]">{item}</button></div>)}
+  </div>;
+}

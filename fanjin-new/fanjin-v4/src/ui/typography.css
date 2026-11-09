@@ -1,0 +1,5 @@
+/* Shared with the creation workbench: keep Latin, CJK and numerals on the
+   same system UI family instead of mixing a web font into console screens. */
+:root {
+  --fanjin-font-ui: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+}

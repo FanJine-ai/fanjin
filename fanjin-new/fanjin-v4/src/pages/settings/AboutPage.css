@@ -1,0 +1,185 @@
+.consoleContentPane > .aboutPage {
+  max-width: 1040px;
+}
+
+.aboutProductHero {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  min-height: 154px;
+  padding: 28px 30px;
+  overflow: hidden;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-xl);
+  background:
+    radial-gradient(circle at 88% 10%, color-mix(in srgb, var(--cui-accent) 11%, transparent), transparent 33%),
+    var(--cui-surface);
+}
+
+.aboutProductMark {
+  display: grid;
+  width: 64px;
+  height: 64px;
+  place-items: center;
+  border: 1px solid var(--cui-border);
+  border-radius: 18px;
+  background: var(--cui-surface-subtle);
+}
+
+.aboutProductMark img {
+  width: 30px;
+  height: 30px;
+}
+
+.themeDark .aboutProductMark img {
+  filter: invert(1);
+}
+
+.aboutProductCopy {
+  min-width: 0;
+}
+
+.aboutProductCopy > span {
+  color: var(--cui-text-faint);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.aboutProductCopy h2 {
+  margin: 6px 0 0;
+  color: var(--cui-text);
+  font-size: 26px;
+  font-weight: 650;
+  letter-spacing: -0.04em;
+}
+
+.aboutProductCopy p {
+  margin: 5px 0 0;
+  color: var(--cui-text-muted);
+  font-size: 13px;
+}
+
+.aboutVersion {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  padding: 0 12px;
+  border: 1px solid var(--cui-info-border);
+  border-radius: var(--cui-radius-pill);
+  background: var(--cui-info-bg);
+  color: var(--cui-info-text);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.aboutLegalSection {
+  margin-top: 4px;
+}
+
+.aboutLegalGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.aboutLegalLink {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) 18px;
+  align-items: center;
+  gap: 12px;
+  min-height: 104px;
+  padding: 16px;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-lg);
+  background: var(--cui-surface);
+  color: var(--cui-text);
+  text-decoration: none;
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.aboutLegalLink:hover {
+  border-color: var(--cui-info-border);
+  background: color-mix(in srgb, var(--cui-info-bg) 48%, var(--cui-surface));
+}
+
+.aboutLegalLink:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--cui-focus) 34%, transparent);
+  outline-offset: 2px;
+}
+
+.aboutLegalIcon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 11px;
+  background: var(--cui-surface-subtle);
+  color: var(--cui-text-muted);
+}
+
+.aboutLegalLink strong,
+.aboutLegalLink small {
+  display: block;
+}
+
+.aboutLegalLink strong {
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.aboutLegalLink small {
+  margin-top: 5px;
+  color: var(--cui-text-muted);
+  font-size: 11.5px;
+  line-height: 1.55;
+}
+
+.aboutLegalLink > svg {
+  color: var(--cui-text-faint);
+}
+
+.aboutFooter {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--cui-border-subtle);
+  color: var(--cui-text-faint);
+  font-size: 11.5px;
+}
+
+@media (max-width: 720px) {
+  .aboutProductHero {
+    grid-template-columns: 54px minmax(0, 1fr);
+    padding: 22px;
+  }
+
+  .aboutProductMark {
+    width: 54px;
+    height: 54px;
+    border-radius: 15px;
+  }
+
+  .aboutVersion {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .aboutLegalGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .aboutFooter {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aboutLegalLink {
+    transition: none;
+  }
+}

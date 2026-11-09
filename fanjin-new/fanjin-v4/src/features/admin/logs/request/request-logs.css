@@ -1,0 +1,268 @@
+.requestLogsPage {
+  display: grid;
+  min-width: 0;
+  gap: var(--cui-space-3);
+}
+
+.requestLogsPage > .consoleMetricStrip {
+  border-bottom: 0;
+}
+
+.requestLogsPage > .consoleMetricStrip dl {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.requestLogsPage > .consoleMetricStrip .consoleMetricStrip__item {
+  display: grid;
+  min-height: 52px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-content: center;
+  align-items: center;
+  gap: 2px var(--cui-space-2);
+  padding: 7px 12px;
+}
+
+.requestLogsPage > .consoleMetricStrip .consoleMetricStrip__item dt {
+  grid-column: 1;
+  font-size: 11.5px;
+}
+
+.requestLogsPage > .consoleMetricStrip .consoleMetricStrip__item dd {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  margin: 0;
+}
+
+.requestLogsPage > .consoleMetricStrip .consoleMetricStrip__value {
+  font-size: 16px;
+  font-weight: 720;
+}
+
+.requestLogsPage > .consoleMetricStrip .consoleMetricStrip__hint {
+  grid-column: 1;
+  margin-top: 0;
+  font-size: 11.5px;
+}
+
+.requestLogsWorkbench {
+  min-width: 0;
+  overflow: hidden;
+  border-block: 1px solid var(--cui-border);
+  border-inline: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.requestLogsWorkbench > form .consoleFilterBar {
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--cui-border-subtle);
+  border-radius: 0;
+  background: transparent;
+}
+
+.requestLogsWorkbench > [data-testid="admin-request-log-table"] .consoleDataTable {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.requestLogsWorkbench .consoleDataTable table {
+  min-width: 1040px;
+  font-size: 12px;
+}
+
+.requestLogsWorkbench .consoleDataTable th {
+  height: 38px;
+  font-size: 11.5px;
+}
+
+.requestLogsWorkbench .consoleDataTable th button {
+  min-height: 38px;
+}
+
+.requestLogsWorkbench .consoleDataTable td {
+  height: 36px;
+  padding-block: 4px;
+}
+
+.requestLogsField {
+  display: grid;
+  min-width: 0;
+  gap: var(--cui-space-1);
+  color: var(--cui-text-muted);
+  font-size: 11.5px;
+  font-weight: 650;
+}
+
+.requestLogsField--searchType { flex: 0 1 150px; }
+.requestLogsField--query { flex: 1 1 300px; }
+.requestLogsField--status { flex: 0 1 120px; }
+
+.requestLogsRequestCell {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.requestLogsRequestCell strong,
+.requestLogsRequestCell > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.requestLogsRequestCell strong {
+  color: var(--cui-text);
+  font-family: var(--cui-font-mono);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.requestLogsRequestCell strong span { color: var(--cui-accent); }
+
+.requestLogsRequestCell > span {
+  color: var(--cui-text-faint);
+  font-size: 11.5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.requestLogsStatsAlert .cuiAlert__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cui-space-3);
+}
+
+.requestLogsDrawerContent {
+  display: grid;
+  align-content: start;
+  gap: 0;
+}
+
+.requestLogsDetailSection {
+  display: grid;
+  gap: var(--cui-space-2);
+  padding-block: var(--cui-space-3);
+}
+
+.requestLogsDrawerContent > section:first-child { padding-top: 0; }
+.requestLogsDrawerContent > section:last-child { padding-bottom: 0; }
+.requestLogsDrawerContent > section + section { border-top: 1px solid var(--cui-border); }
+
+.requestLogsDetailSection h3 {
+  margin: 0;
+  color: var(--cui-text);
+  font-size: 13px;
+  font-weight: 680;
+}
+
+.requestLogsDetailList {
+  display: grid;
+  margin: 0;
+}
+
+.requestLogsDetailList > div {
+  display: grid;
+  grid-template-columns: minmax(108px, 0.32fr) minmax(0, 1fr);
+  min-height: 34px;
+  align-items: start;
+  gap: var(--cui-space-3);
+  padding: 7px 0;
+}
+
+.requestLogsDetailList > div + div { border-top: 1px solid var(--cui-border); }
+
+.requestLogsDetailList dt {
+  color: var(--cui-text-faint);
+  font-size: 11.5px;
+  font-weight: 650;
+}
+
+.requestLogsDetailList dd {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: var(--cui-space-1);
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: var(--cui-text);
+  font-family: var(--cui-font-mono);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.requestLogsMetadata {
+  max-height: 360px;
+  margin: 0;
+  padding: var(--cui-space-3);
+  overflow: auto;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-sm);
+  background: var(--cui-control-bg);
+  color: var(--cui-text);
+  font-family: var(--cui-font-mono);
+  font-size: 12px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.requestLogsFailureSection {
+  display: grid;
+  gap: var(--cui-space-2);
+  padding-block: var(--cui-space-3);
+}
+
+.requestLogsFailureHeading {
+  display: flex;
+  align-items: center;
+  gap: var(--cui-space-2);
+  color: var(--cui-danger-text);
+}
+
+.requestLogsFailureHeading h3 { margin: 0; color: inherit; font-size: 13px; font-weight: 680; }
+.requestLogsFailureSection p { margin: 0; color: var(--cui-text); font-size: 12px; line-height: 1.55; }
+
+@media (min-width: 1024px) {
+  .requestLogsWorkbench .consoleFilterBar__fields {
+    display: grid;
+    grid-template-columns: minmax(150px, .7fr) minmax(300px, 1.7fr) minmax(120px, .6fr);
+  }
+
+  .requestLogsWorkbench .consoleFilterBar__fields > * {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .requestLogsPage > .consoleMetricStrip dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .requestLogsField--searchType,
+  .requestLogsField--query,
+  .requestLogsField--status { flex-basis: 100%; }
+
+  .requestLogsStatsAlert .cuiAlert__content {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .requestLogsDetailList > div {
+    grid-template-columns: 1fr;
+    gap: var(--cui-space-1);
+    padding-block: var(--cui-space-3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .requestLogsPage *,
+  .requestLogsPage *::before,
+  .requestLogsPage *::after { scroll-behavior: auto; }
+}
+
+/* 0.2.6 shared console surfaces */
+.consoleWorkbench .requestLogsWorkbench { display: grid; gap: 18px; border: 0; background: transparent; overflow: visible; }
+.consoleWorkbench .requestLogsWorkbench > [data-testid="admin-request-log-table"] .consoleDataTable { border: 1px solid var(--cui-border); border-radius: 18px; background: var(--cui-surface); }

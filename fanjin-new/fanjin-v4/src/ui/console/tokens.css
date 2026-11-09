@@ -1,0 +1,344 @@
+:root,
+.themeLight,
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* Use the creation workbench family; reserve monospace for technical data. */
+  --cui-font-sans: var(--fanjin-font-ui);
+  --cui-font-mono: "Geist Mono Variable", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  /* Spacing - 4px base unit */
+  --cui-space-1: 4px;
+  --cui-space-2: 8px;
+  --cui-space-3: 12px;
+  --cui-space-4: 16px;
+  --cui-space-5: 24px;
+  --cui-space-6: 32px;
+  --cui-space-7: 48px;
+  --cui-space-8: 96px;
+
+  /* Border radius per design spec */
+  --cui-radius-xs: 4px;
+  --cui-radius-sm: 6px;
+  --cui-radius-md: 8px;
+  --cui-radius-lg: 12px;
+  --cui-radius-xl: 16px;
+  --cui-radius-pill: 9999px;
+
+  /* Control sizes per design spec */
+  --cui-control-height-compact: 32px;
+  --cui-control-height: 40px;
+  --cui-touch-target: 44px;
+
+  /* Data table per design spec */
+  --cui-data-header-height: 40px;
+  --cui-data-row-height: 48px;
+  --cui-data-toolbar-height: 36px;
+  --cui-data-pagination-height: 44px;
+  --cui-status-height: 22px;
+
+  /* Surface colors - Light theme per design spec */
+  --cui-bg: #f5f4f1;                    /* canvas */
+  --cui-surface: #fffefb;               /* surface-1 */
+  --cui-surface-subtle: #f0efeb;        /* surface-2 */
+  --cui-surface-3: #eaf3f7;             /* surface-3 */
+  --cui-surface-4: #deedf3;             /* surface-4 */
+  --cui-control-bg: #fffefb;
+  --cui-control-hover: #f0efeb;
+  --cui-control-pressed: #eaf3f7;
+
+  /* Text colors per design spec */
+  --cui-text: #1d1c1c;                  /* ink */
+  --cui-text-muted: #4e5b64;            /* ink-muted */
+  --cui-text-faint: #56656f;            /* ink-subtle */
+  --cui-text-tertiary: #5e6c75;         /* ink-tertiary */
+
+  /* Border colors per design spec */
+  --cui-border-subtle: rgba(59, 60, 61, 0.08);   /* hairline-tertiary */
+  --cui-border: rgba(59, 60, 61, 0.13);          /* hairline */
+  --cui-border-strong: rgba(0, 102, 140, 0.28);  /* hairline-strong */
+  --cui-control-border: #7d8c94;
+  --cui-control-border-hover: #5e6c75;
+
+  /* Brand color - 繁境青蓝 */
+  --cui-accent: #00668c;                /* primary */
+  --cui-accent-hover: #005a7b;          /* primary-hover */
+  --cui-accent-pressed: #004b68;        /* primary-focus */
+  --cui-on-accent: #ffffff;             /* on-primary */
+  --cui-focus: #004b68;                 /* primary-focus */
+
+  /* Semantic colors per design spec */
+  --cui-info-bg: #edf7fb;
+  --cui-info-border: #b7dce9;
+  --cui-info-text: #005b7d;
+  --cui-success-bg: #edf8f1;
+  --cui-success-border: #b9dfc7;
+  --cui-success-text: #16633e;
+  --cui-warning-bg: #fff8e7;
+  --cui-warning-border: #ead8aa;
+  --cui-warning-text: #6c4a04;
+  --cui-danger-bg: #fff1f0;
+  --cui-danger-border: #efc2be;
+  --cui-danger-text: #a51d15;
+
+  /* Disabled states */
+  --cui-disabled-bg: #efeeea;
+  --cui-disabled-text: #747d86;
+  --cui-disabled-border: #d9d8d4;
+  --cui-skeleton-base: #e3e2de;
+  --cui-skeleton-highlight: #fbfaf7;
+  --cui-overlay: rgba(15, 23, 30, 0.52);
+
+  /* Shadows per design spec */
+  --cui-shadow-popover: 0 8px 20px rgba(31, 39, 46, 0.10);
+  --cui-shadow-dialog: 0 18px 48px rgba(20, 28, 34, 0.16);
+  --cui-shadow-drawer: -10px 0 28px rgba(20, 28, 34, 0.10);
+  --cui-shadow-toast: 0 10px 24px rgba(31, 39, 46, 0.14);
+  --cui-shadow-card: 0 2px 8px rgba(31, 39, 46, 0.08);
+
+  /* Animation */
+  --cui-duration-fast: 140ms;
+  --cui-duration-normal: 200ms;
+  --cui-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Z-index layers */
+  --cui-layer-base: 0;
+  --cui-layer-sticky: 10;
+  --cui-layer-navigation-scrim: 800;
+  --cui-layer-navigation: 900;
+  --cui-layer-overlay: 1000;
+  --cui-layer-popover: 1100;
+  --cui-layer-tooltip: 1150;
+  --cui-layer-toast: 1200;
+
+  /* Chart colors - HSL channels matching the light design palette */
+  --chart-1: 196.285714 100% 27.45098%;          /* #00668c */
+  --chart-2: 151.168831 63.636364% 23.72549%;    /* #16633e */
+  --chart-3: 3.333333 77.419355% 36.470588%;     /* #a51d15 */
+  --chart-4: 40.384615 92.857143% 21.960784%;    /* #6c4a04 */
+  --chart-5: 196.32 100% 24.509804%;              /* #005b7d */
+}
+
+.dark,
+.themeDark,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Surface colors - Linear dark theme per design spec */
+  --cui-bg: #010102;                    /* canvas */
+  --cui-surface: #0f1011;               /* surface-1 */
+  --cui-surface-subtle: #141516;        /* surface-2 */
+  --cui-surface-3: #18191a;             /* surface-3 */
+  --cui-surface-4: #191a1b;             /* surface-4 */
+  --cui-control-bg: #0f1011;
+  --cui-control-hover: #141516;
+  --cui-control-pressed: #18191a;
+
+  /* Text colors per design spec */
+  --cui-text: #f7f8f8;                  /* ink */
+  --cui-text-muted: #d0d6e0;            /* ink-muted */
+  --cui-text-faint: #8a8f98;            /* ink-subtle */
+  --cui-text-tertiary: #62666d;         /* ink-tertiary */
+
+  /* Border colors per design spec */
+  --cui-border-subtle: #3e3e44;         /* hairline-tertiary */
+  --cui-border: #23252a;                /* hairline */
+  --cui-border-strong: #34343a;         /* hairline-strong */
+  --cui-control-border: #62666d;
+  --cui-control-border-hover: #8a8f98;
+
+  /* Brand color - 繁境青蓝 */
+  --cui-accent: #8ed5f6;                /* primary */
+  --cui-accent-hover: #a8e1fa;          /* primary-hover */
+  --cui-accent-pressed: #c1eafa;        /* primary-focus */
+  --cui-on-accent: #071116;             /* on-primary */
+  --cui-focus: #c1eafa;                 /* primary-focus */
+
+  /* Semantic colors per design spec */
+  --cui-info-bg: #152e39;
+  --cui-info-border: #2f6a82;
+  --cui-info-text: #a8e1fa;
+  --cui-success-bg: #173126;
+  --cui-success-border: #387554;
+  --cui-success-text: #27a644;
+  --cui-warning-bg: #332915;
+  --cui-warning-border: #806426;
+  --cui-warning-text: #f5d98b;
+  --cui-danger-bg: #351e1e;
+  --cui-danger-border: #864a46;
+  --cui-danger-text: #ffb4ac;
+
+  /* Disabled states */
+  --cui-disabled-bg: #141516;
+  --cui-disabled-text: #62666d;
+  --cui-disabled-border: #23252a;
+  --cui-skeleton-base: #18191a;
+  --cui-skeleton-highlight: #23252a;
+  --cui-overlay: rgba(0, 0, 0, 0.64);
+
+  /* Shadows per design spec - 深色模式使用更强阴影 */
+  --cui-shadow-popover: 0 10px 24px rgba(0, 0, 0, 0.30);
+  --cui-shadow-dialog: 0 22px 56px rgba(0, 0, 0, 0.42);
+  --cui-shadow-drawer: -12px 0 34px rgba(0, 0, 0, 0.34);
+  --cui-shadow-toast: 0 12px 28px rgba(0, 0, 0, 0.36);
+  --cui-shadow-card: 0 4px 12px rgba(0, 0, 0, 0.24);
+
+  /* Chart colors - HSL channels matching the dark design palette */
+  --chart-1: 199.038462 85.245902% 76.078431%;   /* #8ed5f6 */
+  --chart-2: 133.700787 61.95122% 40.196078%;    /* #27a644 */
+  --chart-3: 5.783133 100% 83.72549%;            /* #ffb4ac */
+  --chart-4: 44.150943 84.126984% 75.294118%;   /* #f5d98b */
+  --chart-5: 198.292683 89.130435% 81.960784%;   /* #a8e1fa */
+}
+
+/* Console-only bridge to the creation workbench. Also covers body portals.
+   Keep the root tokens unchanged so public and creation pages stay stable. */
+.consoleThemeHost[data-theme="light"],
+.consoleWorkbench[data-theme="light"] {
+  --cui-bg: #f3f4f2;
+  --cui-surface: #fffefb;
+  --cui-surface-subtle: #f5f6f4;
+  --cui-surface-3: #eaf3f8;
+  --cui-surface-4: #dfedf5;
+  --cui-control-bg: #fffefb;
+  --cui-control-hover: #f0f3f3;
+  --cui-control-pressed: #e5f0f7;
+  --cui-text: #22282b;
+  --cui-text-muted: #596770;
+  --cui-text-faint: #64747d;
+  --cui-border-subtle: rgba(52, 73, 84, 0.07);
+  --cui-border: rgba(52, 73, 84, 0.12);
+  --cui-border-strong: rgba(59, 122, 168, 0.3);
+  --cui-accent: #3b7aa8;
+  --cui-accent-hover: #326b95;
+  --cui-accent-pressed: #295b80;
+  --cui-focus: #3b7aa8;
+  --cui-control-border: #a5b0b6;
+  --cui-control-border-hover: #6d8b9c;
+  --cui-selected-bg: #e6f1f8;
+  --cui-selected-text: #306e96;
+  --cui-shadow-card: 0 1px 3px rgba(31, 48, 57, 0.025);
+  --cui-shadow-popover: 0 12px 36px rgba(31, 48, 57, 0.1);
+  --background: 243 244 242;
+  --foreground: 34 40 43;
+  --card: 255 254 251;
+  --card-foreground: 34 40 43;
+  --popover: 255 254 251;
+  --popover-foreground: 34 40 43;
+  --primary: 59 122 168;
+  --primary-foreground: 255 255 255;
+  --secondary: 245 246 244;
+  --secondary-foreground: 34 40 43;
+  --muted: 245 246 244;
+  --muted-foreground: 89 103 112;
+  --accent: 230 241 248;
+  --accent-foreground: 48 110 150;
+  --border: 52 73 84 / 0.12;
+  --input: 255 254 251;
+  --ring: 59 122 168;
+  --chart-1: 205 43% 46%;
+  --chart-2: 164 28% 42%;
+  --chart-3: 6 43% 53%;
+  --chart-4: 40 42% 43%;
+  --chart-5: 239 24% 55%;
+}
+
+.consoleThemeHost[data-theme="dark"],
+.consoleWorkbench[data-theme="dark"] {
+  --cui-bg: #080e12;
+  --cui-surface: #151e23;
+  --cui-surface-subtle: #1b272e;
+  --cui-surface-3: #23333e;
+  --cui-surface-4: #2b404f;
+  --cui-control-bg: #1b272e;
+  --cui-control-hover: #24343e;
+  --cui-control-pressed: #2b404f;
+  --cui-text: #edf3f6;
+  --cui-text-muted: #aab9c2;
+  --cui-text-faint: #92a3ae;
+  --cui-text-tertiary: #879aa5;
+  --cui-border-subtle: rgba(194, 219, 235, 0.08);
+  --cui-border: rgba(194, 219, 235, 0.13);
+  --cui-border-strong: rgba(194, 219, 235, 0.28);
+  --cui-accent: #d7e9ff;
+  --cui-accent-hover: #eaf4ff;
+  --cui-accent-pressed: #bfdaf3;
+  --cui-on-accent: #172631;
+  --cui-focus: #a7d0ef;
+  --cui-control-border: #50646f;
+  --cui-control-border-hover: #7d9bab;
+  --cui-selected-bg: #243b4a;
+  --cui-selected-text: #c2e4fb;
+  --cui-success-text: #a1d6bd;
+  --cui-success-bg: #1b342b;
+  --cui-success-border: #355c4c;
+  --cui-shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --cui-shadow-popover: 0 16px 40px rgba(0, 0, 0, 0.32);
+  --background: 8 14 18;
+  --foreground: 237 243 246;
+  --card: 21 30 35;
+  --card-foreground: 237 243 246;
+  --popover: 27 39 46;
+  --popover-foreground: 237 243 246;
+  --primary: 215 233 255;
+  --primary-foreground: 23 38 49;
+  --secondary: 27 39 46;
+  --secondary-foreground: 237 243 246;
+  --muted: 27 39 46;
+  --muted-foreground: 170 185 194;
+  --accent: 36 59 74;
+  --accent-foreground: 194 228 251;
+  --border: 194 219 235 / 0.13;
+  --input: 27 39 46;
+  --ring: 167 208 239;
+  --chart-1: 205 62% 72%;
+  --chart-2: 160 35% 65%;
+  --chart-3: 6 61% 73%;
+  --chart-4: 41 53% 65%;
+  --chart-5: 239 39% 74%;
+}
+
+.consoleThemeHost[data-theme],
+.consoleWorkbench[data-theme] {
+  --cui-radius-sm: 8px;
+  --cui-radius-md: 12px;
+  --cui-radius-lg: 18px;
+  --cui-radius-xl: 24px;
+  --cui-chart-grid: var(--cui-border-subtle);
+  --cui-chart-request: hsl(var(--chart-1));
+  --cui-chart-success: hsl(var(--chart-2));
+  --cui-chart-error: hsl(var(--chart-3));
+}
+
+/* Shared console typography and workbench-aligned navigation palette. */
+.consoleWorkbench,
+.consoleThemeHost {
+  --cui-type-caption: 12px;
+  --cui-type-label: 13px;
+  --cui-type-body: 14px;
+  --cui-type-title: 28px;
+  --cui-type-metric: 28px;
+}
+
+.consolePrimaryNav {
+  /* Match creation-workbench navigation without recoloring console content. */
+  --console-nav-text: #313d44;
+  --console-nav-hover: #1d1c1c;
+  --console-nav-active: #00668c;
+  --console-nav-caption: #5e6c75;
+}
+
+.themeDark .consolePrimaryNav {
+  --console-nav-text: #b8c8d1;
+  --console-nav-hover: #8ed5f6;
+  --console-nav-active: #8ed5f6;
+  --console-nav-caption: rgba(205, 225, 235, 0.58);
+}
+
+@media (max-width: 767px) {
+  .consoleWorkbench, .consoleThemeHost { --cui-type-title: 24px; --cui-type-metric: 24px; }
+}
+
+/* Portalled showcase dialogs retain the workbench theme and nested overlay order. */
+.inspirationShowcasePlayer, .inspirationSourcePreview { --cui-surface: #fffefb; --cui-text: #1d1c1c; --cui-text-muted: #5e6c75; --cui-surface-subtle: #f5f4f1; --cui-border: rgba(59,60,61,.12); --cui-overlay: rgba(12,18,22,.58); --cui-radius-md: 20px; --cui-duration-normal: 180ms; --cui-shadow-dialog: 0 24px 80px #00000040; font-family: var(--fanjin-font-ui); }
+.inspirationShowcasePlayer.themeDark, .inspirationSourcePreview.themeDark { --cui-surface: #182227; --cui-text: #eef7fb; --cui-text-muted: #b8c8d1; --cui-surface-subtle: #223139; --cui-border: rgba(214,235,246,.13); }

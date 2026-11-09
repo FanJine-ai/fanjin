@@ -1,0 +1,697 @@
+.writingWorkspaceMain {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--surface-muted);
+}
+
+.writingWorkspaceHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 92px;
+  padding: 17px 32px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-strong);
+}
+
+.writingWorkspaceTitle {
+  min-width: 0;
+}
+
+.writingWorkspaceTitle > span,
+.writingWorkspaceOverviewCopy > span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--accent-strong);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+}
+
+.writingWorkspaceTitle h1 {
+  margin: 0;
+  color: var(--text-100);
+  font-size: 21px;
+  font-weight: 850;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.writingWorkspaceTitle p {
+  margin: 4px 0 0;
+  overflow: hidden;
+  color: var(--text-200);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.writingWorkspaceHeaderActions,
+.writingWorkspaceToolbar,
+.writingWorkspaceActionGroup,
+.writingWorkspaceSearchGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.writingWorkspaceHeaderActions {
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.writingWorkspaceProjectSelect,
+.writingWorkspaceSearch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-raised);
+  color: var(--text-200);
+}
+
+.writingWorkspaceProjectSelect select,
+.writingWorkspaceSearch input {
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text-100);
+  font: inherit;
+  font-size: 13px;
+}
+
+.writingWorkspaceProjectSelect select {
+  width: 176px;
+  font-weight: 700;
+}
+
+.writingWorkspacePrimaryAction,
+.writingWorkspaceSecondaryAction,
+.writingWorkspaceIconAction,
+.writingWorkspaceToolbar button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: border-color 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+}
+
+.writingWorkspacePrimaryAction {
+  border: 1px solid var(--accent-strong);
+  background: var(--accent-strong);
+  color: #fff;
+}
+
+.themeDark .writingWorkspacePrimaryAction {
+  color: #071014;
+}
+
+.writingWorkspaceSecondaryAction,
+.writingWorkspaceToolbar button {
+  border: 1px solid var(--line);
+  background: var(--surface-raised);
+  color: var(--text-200);
+}
+
+.writingWorkspacePrimaryAction:hover,
+.writingWorkspaceSecondaryAction:hover,
+.writingWorkspaceToolbar button:hover:not(:disabled),
+.writingWorkspaceIconAction:hover {
+  border-color: var(--active-line);
+  background: var(--hover);
+  color: var(--accent-strong);
+}
+
+.writingWorkspaceContent {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  width: min(1180px, 100%);
+  min-height: 0;
+  margin: 0 auto;
+  padding: 28px 30px 36px;
+  overflow: auto;
+}
+
+.writingWorkspaceContent.embedded {
+  width: 100%;
+  padding: 0;
+  overflow: visible;
+}
+
+.writingWorkspaceOverview {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  min-height: 126px;
+  padding: 22px 24px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 82% 12%, rgba(113, 196, 239, 0.16), transparent 32%),
+    var(--surface-raised);
+  box-shadow: inset 0 1px 0 var(--inset-highlight);
+}
+
+.writingWorkspaceOverviewIcon {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border: 1px solid var(--active-line);
+  border-radius: 16px;
+  background: var(--hover);
+  color: var(--accent-strong);
+}
+
+.writingWorkspaceOverviewCopy {
+  min-width: 0;
+}
+
+.writingWorkspaceOverviewCopy h2 {
+  margin: 0;
+  color: var(--text-100);
+  font-size: 19px;
+  font-weight: 850;
+}
+
+.writingWorkspaceOverviewCopy p {
+  max-width: 660px;
+  margin: 7px 0 0;
+  color: var(--text-200);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.writingWorkspaceMetrics {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.writingWorkspaceMetric {
+  display: grid;
+  min-width: 86px;
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: var(--surface-strong);
+  text-align: center;
+}
+
+.writingWorkspaceMetric strong {
+  color: var(--text-100);
+  font-size: 18px;
+  font-variant-numeric: tabular-nums;
+}
+
+.writingWorkspaceMetric span {
+  margin-top: 2px;
+  color: var(--text-200);
+  font-size: 11px;
+}
+
+.writingWorkspaceToolbar {
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: var(--surface-raised);
+  box-shadow: inset 0 1px 0 var(--inset-highlight);
+}
+
+.writingWorkspaceToolbar button.danger {
+  color: #b23a32;
+}
+
+.writingWorkspaceToolbar button:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
+}
+
+.scriptBatchProgressBar {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 6px;
+  margin: 12px 0;
+  border: 0;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--line);
+}
+
+.scriptBatchProgressBar::-webkit-progress-bar {
+  border-radius: 999px;
+  background: var(--line);
+}
+
+.scriptBatchProgressBar::-webkit-progress-value {
+  border-radius: 999px;
+  background: var(--accent-strong);
+}
+
+.scriptBatchProgressBar::-moz-progress-bar {
+  border-radius: 999px;
+  background: var(--accent-strong);
+}
+
+.writingWorkspaceSearch {
+  width: 238px;
+  min-height: 40px;
+  background: var(--surface-strong);
+}
+
+.writingWorkspaceSearch input {
+  width: 100%;
+}
+
+.writingWorkspaceIconAction {
+  width: 40px;
+  padding: 0;
+  border: 1px solid var(--line);
+  background: var(--surface-strong);
+  color: var(--text-200);
+}
+
+.writingWorkspaceTableShell {
+  min-height: 330px;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface-raised);
+  box-shadow: inset 0 1px 0 var(--inset-highlight);
+}
+
+.writingWorkspaceTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13px;
+}
+
+.writingWorkspaceTable th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-strong);
+  color: var(--text-200);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-align: left;
+}
+
+.writingWorkspaceTable td {
+  padding: 13px 14px;
+  border-bottom: 1px solid var(--line);
+  color: var(--text-200);
+  line-height: 1.45;
+}
+
+.writingWorkspaceTable tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.writingWorkspaceTable tbody tr:hover,
+.writingWorkspaceTable tbody tr.selected {
+  background: var(--hover);
+}
+
+.writingWorkspaceTable .titleCell {
+  max-width: 360px;
+  overflow: hidden;
+  color: var(--text-100);
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.writingWorkspaceTable .centerCell {
+  text-align: center;
+}
+
+.writingWorkspaceTable .numericCell {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.writingWorkspaceTable input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent-strong);
+}
+
+.writingWorkspaceStatus {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0 9px;
+  border: 1px solid var(--active-line);
+  border-radius: 999px;
+  background: var(--hover);
+  color: var(--accent-strong);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.writingWorkspaceTextButton {
+  min-height: 32px !important;
+  padding: 0 10px !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: var(--accent-strong) !important;
+}
+
+.writingWorkspaceState {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  min-height: 300px;
+  padding: 40px 20px;
+  color: var(--text-200);
+  text-align: center;
+}
+
+.writingWorkspaceState svg {
+  margin-bottom: 12px;
+  color: var(--accent-strong);
+}
+
+.writingWorkspaceState strong {
+  color: var(--text-100);
+  font-size: 14px;
+}
+
+.writingWorkspaceState p {
+  max-width: 440px;
+  margin: 6px 0 0;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.writingWorkspaceState.error svg,
+.writingWorkspaceState.error strong {
+  color: #b23a32;
+}
+
+.writingModalBackdrop {
+  padding: 24px;
+  backdrop-filter: blur(10px);
+}
+
+.writingModalPanel {
+  width: min(640px, 100%) !important;
+  border: 1px solid var(--line);
+  border-radius: 18px !important;
+  background: var(--surface-strong) !important;
+  box-shadow: var(--shadow-soft);
+}
+
+.writingModalPanel h3 {
+  color: var(--text-100) !important;
+  font-size: 18px;
+  font-weight: 850;
+}
+
+.writingModalPanel label {
+  color: var(--text-200) !important;
+}
+
+.writingModalPanel input,
+.writingModalPanel select,
+.writingModalPanel textarea {
+  min-height: 42px;
+  border-color: var(--line) !important;
+  border-radius: 10px !important;
+  background: var(--surface-raised) !important;
+  color: var(--text-100) !important;
+}
+
+.writingModalPanel textarea {
+  min-height: 150px;
+}
+
+.writingModalPanel button:not([data-testid$="save-button"]) {
+  border-color: var(--line) !important;
+  background: var(--surface-raised) !important;
+  color: var(--text-200) !important;
+}
+
+.writingWorkspacePage [role="dialog"] {
+  border: 1px solid var(--line) !important;
+  border-radius: 18px !important;
+  background: var(--surface-strong) !important;
+  color: var(--text-100) !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+.writingWorkspacePage [role="dialog"] h3 {
+  color: var(--text-100) !important;
+  font-size: 19px !important;
+}
+
+.writingWorkspacePage [role="dialog"] label {
+  color: var(--text-200) !important;
+}
+
+.writingWorkspacePage [role="dialog"] input,
+.writingWorkspacePage [role="dialog"] textarea,
+.writingWorkspacePage [role="dialog"] select {
+  border-color: var(--line) !important;
+  background: var(--surface-raised) !important;
+  color: var(--text-100) !important;
+}
+
+.writingWorkspacePage [role="dialog"] input:focus,
+.writingWorkspacePage [role="dialog"] textarea:focus,
+.writingWorkspacePage [role="dialog"] select:focus {
+  border-color: var(--active-line) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-strong) 12%, transparent);
+}
+
+.writingWorkspacePage [role="dialog"] button {
+  border-color: var(--line) !important;
+  border-radius: 10px !important;
+  background: var(--surface-raised) !important;
+  color: var(--text-200) !important;
+}
+
+.writingWorkspacePage [role="dialog"] [data-testid$="save-button"] {
+  border-color: var(--accent-strong) !important;
+  background: var(--accent-strong) !important;
+  color: #fff !important;
+}
+
+.themeDark.writingWorkspacePage [role="dialog"] [data-testid$="save-button"] {
+  color: #071014 !important;
+}
+
+.writingWorkspacePage [role="dialog"] ::placeholder {
+  color: color-mix(in srgb, var(--text-200) 68%, transparent) !important;
+}
+
+.scriptAssetProposalBackdrop {
+  background: rgba(7, 14, 20, 0.56);
+  backdrop-filter: blur(4px);
+}
+
+.scriptAssetProposalDialog {
+  border: 1px solid var(--line, rgba(59, 60, 61, 0.12));
+  background: var(--surface-strong, Canvas);
+  color: var(--text-100, var(--text, CanvasText));
+  box-shadow: var(--shadow, 0 24px 80px rgba(7, 14, 20, 0.28));
+}
+
+.scriptAssetProposalHeader,
+.scriptAssetProposalFooter {
+  border-color: var(--line, rgba(59, 60, 61, 0.12));
+  background: var(--surface-strong, Canvas);
+}
+
+.scriptAssetProposalHeader {
+  border-bottom: 1px solid var(--line, rgba(59, 60, 61, 0.12));
+}
+
+.scriptAssetProposalFooter {
+  border-top: 1px solid var(--line, rgba(59, 60, 61, 0.12));
+}
+
+.scriptAssetProposalBody {
+  background: var(--surface-muted, var(--surface-soft, Canvas));
+}
+
+.scriptAssetProposalCard {
+  border: 1px solid var(--line, rgba(59, 60, 61, 0.12));
+  background: var(--surface-raised, var(--surface-strong, Canvas));
+  color: var(--text-100, var(--text, CanvasText));
+}
+
+.scriptAssetProposalCard[data-selected="true"] {
+  border-color: var(--active-line, rgba(0, 102, 140, 0.32));
+  background: color-mix(in srgb, var(--surface-raised, Canvas) 88%, var(--accent-strong, #00668c) 12%);
+}
+
+.scriptAssetProposalCard[data-selected="false"] {
+  opacity: 0.68;
+}
+
+.scriptAssetProposalMuted,
+.scriptAssetProposalField {
+  color: var(--text-200, var(--muted, GrayText));
+}
+
+.scriptAssetProposalField input,
+.scriptAssetProposalField select,
+.scriptAssetProposalField textarea {
+  border: 1px solid var(--line, rgba(59, 60, 61, 0.12));
+  border-radius: 8px;
+  background: var(--control-bg, var(--surface-raised, Canvas));
+  color: var(--text-100, var(--text, CanvasText));
+  font: inherit;
+}
+
+.scriptAssetProposalField input:focus,
+.scriptAssetProposalField select:focus,
+.scriptAssetProposalField textarea:focus {
+  border-color: var(--active-line, rgba(0, 102, 140, 0.32));
+  outline: 2px solid color-mix(in srgb, var(--accent-strong, #00668c) 18%, transparent);
+  outline-offset: 1px;
+}
+
+.scriptAssetProposalField ::placeholder {
+  color: var(--faint, GrayText);
+}
+
+.scriptAssetProposalClose,
+.scriptAssetProposalCancel {
+  border: 1px solid var(--line, rgba(59, 60, 61, 0.12));
+  border-radius: 8px;
+  background: var(--surface-raised, var(--surface-strong, Canvas));
+  color: var(--text-200, var(--muted, CanvasText));
+  cursor: pointer;
+}
+
+.scriptAssetProposalClose {
+  display: inline-grid;
+  place-items: center;
+  padding: 6px;
+}
+
+.scriptAssetProposalConfirm {
+  background: var(--accent-strong, #00668c);
+  color: var(--accent-ink, white);
+  cursor: pointer;
+}
+
+.scriptAssetProposalError {
+  color: var(--cui-danger-text, #b91c1c);
+}
+
+.scriptAssetProposalWarning {
+  color: var(--cui-warning-text, var(--accent-strong, #a15c00));
+}
+
+@media (max-width: 1100px) {
+  .writingWorkspaceHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .writingWorkspaceHeaderActions {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .writingWorkspaceOverview {
+    grid-template-columns: 54px minmax(0, 1fr);
+  }
+
+  .writingWorkspaceMetrics {
+    grid-column: 1 / -1;
+    padding-left: 72px;
+  }
+}
+
+@media (max-width: 760px) {
+  .writingWorkspacePage {
+    padding: 0;
+  }
+
+  .writingWorkspacePage .assetFrontShell {
+    min-height: 100dvh;
+    border-radius: 0;
+  }
+
+  .writingWorkspaceHeader,
+  .writingWorkspaceContent {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .writingWorkspaceHeaderActions,
+  .writingWorkspaceToolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .writingWorkspaceProjectSelect,
+  .writingWorkspaceProjectSelect select,
+  .writingWorkspaceHeaderActions > button,
+  .writingWorkspaceActionGroup,
+  .writingWorkspaceSearchGroup,
+  .writingWorkspaceSearch {
+    width: 100%;
+  }
+
+  .writingWorkspaceActionGroup,
+  .writingWorkspaceSearchGroup {
+    flex-wrap: wrap;
+  }
+
+  .writingWorkspaceOverview {
+    grid-template-columns: 46px minmax(0, 1fr);
+    padding: 18px;
+  }
+
+  .writingWorkspaceOverviewIcon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .writingWorkspaceMetrics {
+    padding-left: 0;
+  }
+
+  .writingWorkspaceMetric {
+    flex: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .writingWorkspacePrimaryAction,
+  .writingWorkspaceSecondaryAction,
+  .writingWorkspaceIconAction,
+  .writingWorkspaceToolbar button {
+    transition-duration: 0.01ms !important;
+  }
+}

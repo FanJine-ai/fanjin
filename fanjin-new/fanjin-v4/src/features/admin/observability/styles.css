@@ -1,0 +1,123 @@
+.observabilityPage {
+  --observability-card-gap: 1rem;
+}
+
+/* 健康状态网格 */
+.observabilityHealthGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: var(--observability-card-gap);
+}
+
+.observabilityHealthCard {
+  background: var(--cui-surface);
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-lg);
+  padding: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.observabilityHealthCard:hover {
+  border-color: var(--cui-border-strong);
+}
+
+.observabilityHealthCard header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.observabilityHealthIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--cui-surface-subtle);
+  border-radius: var(--cui-radius-md);
+  flex-shrink: 0;
+  color: var(--cui-text-muted);
+}
+
+.observabilityHealthCard h3 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--cui-text);
+  margin: 0;
+}
+
+.observabilityHealthDetail {
+  font-size: 0.8125rem;
+  color: var(--cui-text-tertiary);
+  margin: 0.25rem 0 0;
+}
+
+/* 性能指标网格 */
+.observabilityMetricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: var(--observability-card-gap);
+}
+
+.observabilityMetricCard {
+  background: var(--cui-surface);
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-lg);
+  padding: 1.25rem;
+}
+
+.observabilityMetricCard header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--cui-border);
+}
+
+.observabilityMetricCard header svg {
+  color: var(--cui-text-muted);
+  flex-shrink: 0;
+}
+
+.observabilityMetricCard h3 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--cui-text);
+  margin: 0;
+}
+
+.observabilityMetricCard dl {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.observabilityMetricCard dl > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.observabilityMetricCard dt {
+  font-size: 0.8125rem;
+  color: var(--cui-text-muted);
+  font-weight: 500;
+}
+
+.observabilityMetricCard dd {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--cui-text);
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .observabilityHealthGrid,
+  .observabilityMetricsGrid {
+    grid-template-columns: 1fr;
+  }
+}

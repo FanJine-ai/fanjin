@@ -1,0 +1,619 @@
+.apiKeyManagement,
+.apiKeyOverlay,
+.apiKeySecretDialog {
+  --cui-control-height: 34px;
+}
+
+.apiKeyManagement {
+  display: grid;
+  min-width: 0;
+  overflow: visible;
+  gap: 0;
+  border-block: 1px solid var(--cui-border);
+  border-radius: 0;
+  background: transparent;
+  color: var(--cui-text);
+  font-family: var(--cui-font-sans);
+}
+
+.apiKeyPanelHeader {
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cui-space-3);
+  padding: 6px var(--cui-space-3);
+  border-bottom: 1px solid var(--cui-border-subtle);
+}
+
+.apiKeyPanelHeading,
+.apiKeyPanelTitleRow {
+  min-width: 0;
+}
+
+.apiKeyPanelTitleRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--cui-space-2);
+}
+
+.apiKeyPanelTitleRow h2 {
+  margin: 0;
+  color: var(--cui-text);
+  font-size: 13px;
+  font-weight: 680;
+  line-height: 1.3;
+}
+
+.apiKeyPanelHeading p {
+  margin: var(--cui-space-1) 0 0;
+  color: var(--cui-text-muted);
+  font-size: 11.5px;
+  line-height: 1.4;
+}
+
+.apiKeyAccessKinds {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--cui-space-1);
+}
+
+.apiKeySecretAccess {
+  margin: var(--cui-space-2) 0;
+  color: var(--cui-text-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.apiKeySecretAccess a {
+  color: var(--cui-info-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.apiKeyFilterField {
+  display: grid;
+  flex: 1 1 200px;
+  min-width: min(200px, 100%);
+  gap: var(--cui-space-1);
+  color: var(--cui-text-muted);
+  font-size: 11.5px;
+  font-weight: 650;
+}
+
+.apiKeyFilterField--status {
+  flex: 0 1 150px;
+}
+
+.apiKeyPermissionAlert {
+  margin: 0;
+}
+
+.apiKeyProjectAuthority {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: var(--cui-space-3);
+  padding: 8px var(--cui-space-3);
+  border-bottom: 1px solid var(--cui-border-subtle);
+  background: var(--cui-surface-subtle);
+}
+
+.apiKeyProjectAuthority > .apiKeyFilterField {
+  max-width: 420px;
+}
+
+.apiKeyProjectAuthority > div {
+  display: flex;
+  flex: 1 1 320px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--cui-space-2);
+  color: var(--cui-text-muted);
+  font-size: 11.5px;
+  line-height: 1.45;
+}
+
+.apiKeyMaskedValue:focus-visible {
+  outline: 3px solid var(--cui-focus);
+  outline-offset: 2px;
+}
+
+.apiKeyBatchBar {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 42px;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cui-space-2);
+  padding: 6px var(--cui-space-3);
+  border-top: 1px solid var(--cui-border-subtle);
+  background: var(--cui-info-bg);
+}
+
+.apiKeyBatchBar > .apiKeyConnectionAlert {
+  flex: 1 0 100%;
+}
+
+.apiKeyDetails > .apiKeyConnectionAlert {
+  margin-top: var(--cui-space-3);
+}
+
+.apiKeyBatchBar > div:first-child {
+  display: grid;
+  gap: var(--cui-space-1);
+}
+
+.apiKeyBatchBar strong {
+  color: var(--cui-text);
+  font-size: 12px;
+}
+
+.apiKeyBatchBar span {
+  color: var(--cui-text-muted);
+  font-size: 11.5px;
+}
+
+.apiKeyBatchActions,
+.apiKeyRowActions,
+.apiKeyOverlayActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--cui-space-2);
+}
+
+.apiKeySelectionColumn {
+  width: 42px;
+  text-align: center !important;
+}
+
+.apiKeySelectionControl {
+  display: inline-grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: var(--cui-radius-sm);
+  cursor: pointer;
+}
+
+.apiKeyNameCell {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.apiKeyNameCell strong {
+  color: var(--cui-text);
+  font-size: 12px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.apiKeyNameCell code,
+.apiKeyMaskedValue,
+.apiKeyDetails code,
+.apiKeySecretValue {
+  color: var(--cui-text-muted);
+  font-family: var(--cui-font-mono);
+  font-variant-ligatures: none;
+}
+
+.apiKeyNameCell code {
+  overflow: hidden;
+  font-size: 11.5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.apiKeyMaskedValue {
+  display: block;
+  max-width: 200px;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--cui-text-muted);
+  cursor: help;
+  font: inherit;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.apiKeyActionsColumn { white-space: nowrap; }
+
+.apiKeyForm {
+  display: grid;
+  gap: var(--cui-space-3);
+}
+
+.apiKeyFormGrid {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  gap: var(--cui-space-3);
+}
+
+.apiKeyFormGrid > *,
+.apiKeyAdvancedContent,
+.apiKeyAdvancedContent > *,
+.apiKeyAdvancedContent .consoleFieldGroup,
+.apiKeyAdvancedContent .cuiFormField {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.apiKeyOptionChecklist {
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  max-height: 210px;
+  overflow-y: auto;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-md);
+  background: var(--cui-surface-subtle);
+}
+
+.apiKeyOptionChecklist[aria-invalid="true"] {
+  border-color: var(--cui-danger-border);
+}
+
+.apiKeyOptionChecklistItem {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--cui-space-2);
+  min-height: 44px;
+  padding: 7px var(--cui-space-2);
+  border-bottom: 1px solid var(--cui-border-subtle);
+  cursor: pointer;
+}
+
+.apiKeyOptionChecklistItem:last-child {
+  border-bottom: 0;
+}
+
+.apiKeyOptionChecklistItem:hover {
+  background: var(--cui-control-hover);
+}
+
+.apiKeyOptionChecklistItem--all {
+  background: var(--cui-info-bg);
+}
+
+.apiKeyOptionChecklistItem > span {
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  gap: 2px;
+}
+
+.apiKeyOptionChecklistItem strong,
+.apiKeyOptionChecklistItem small {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.apiKeyOptionChecklistItem strong {
+  color: var(--cui-text);
+  font-size: 12px;
+}
+
+.apiKeyOptionChecklistItem small {
+  color: var(--cui-text-muted);
+  font-family: var(--cui-font-mono);
+  font-size: 10.5px;
+}
+
+.apiKeyAdvanced {
+  border-block: 0;
+  background: transparent;
+}
+
+.apiKeyAdvanced .cuiAccordionTriggerLabel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cui-space-3);
+  width: 100%;
+}
+
+.apiKeyAdvanced .cuiAccordionTriggerLabel small {
+  color: var(--cui-text-muted);
+  font-size: 11.5px;
+  font-weight: 520;
+  text-align: right;
+}
+
+.apiKeyAdvancedContent { display: grid; gap: var(--cui-space-3); }
+.apiKeyAdvancedContent > .consoleFieldGroup { background: transparent; }
+
+.apiKeyDetails dl {
+  display: grid;
+  gap: 0;
+  margin: 0;
+}
+
+.apiKeyDetails dl > div {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.34fr) minmax(0, 1fr);
+  min-height: 34px;
+  gap: var(--cui-space-2);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--cui-border);
+}
+
+.apiKeyDetails dl > div:last-child {
+  border-bottom: 0;
+}
+
+.apiKeyDetails dt {
+  color: var(--cui-text-faint);
+  font-size: 11.5px;
+}
+
+.apiKeyDetails dd {
+  min-width: 0;
+  margin: 0;
+  color: var(--cui-text);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.apiKeySecretContent {
+  display: grid;
+  gap: var(--cui-space-3);
+}
+
+.apiKeySecretValue {
+  display: block;
+  min-height: 34px;
+  overflow: auto;
+  padding: 7px 9px;
+  border: 1px solid var(--cui-border);
+  border-radius: var(--cui-radius-sm);
+  background: var(--cui-surface-subtle);
+  color: var(--cui-text);
+  font-size: 12px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+  user-select: all;
+}
+
+.apiKeySecretContent p {
+  margin: 0;
+  color: var(--cui-text-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.apiKeyClipboardFallback {
+  position: fixed;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+}
+
+@media (min-width: 768px) {
+  .apiKeyManagement .consoleDataTable table {
+    min-width: 900px;
+    font-size: 12px;
+  }
+
+  .apiKeyManagement .consoleDataTable th {
+    height: 38px;
+    font-size: 11.5px;
+  }
+
+  .apiKeyManagement .consoleDataTable th button {
+    min-height: 38px;
+  }
+
+  .apiKeyManagement .consoleDataTable td {
+    height: 36px;
+    padding-block: 4px;
+  }
+
+  .apiKeyManagement .consoleDataTable__pagination label,
+  .apiKeyManagement .consoleDataTable__pagination label > span,
+  .apiKeyManagement .consoleDataTable .cuiButton {
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1440px) {
+  .apiKeyManagement .consoleDataTableColumn--detail {
+    display: none;
+  }
+}
+
+@media (min-width: 1441px) {
+  .apiKeyManagement .consoleDataTable table {
+    min-width: 1160px;
+  }
+}
+
+@media (max-width: 767px), (pointer: coarse) {
+  .apiKeyManagement,
+  .apiKeyOverlay,
+  .apiKeySecretDialog {
+    --cui-control-height: var(--cui-touch-target);
+  }
+
+  .apiKeySelectionControl {
+    width: var(--cui-touch-target);
+    height: var(--cui-touch-target);
+  }
+
+  .apiKeyPanelHeader,
+  .apiKeySecretValue {
+    min-height: var(--cui-touch-target);
+  }
+}
+
+@media (max-width: 767px) {
+  .apiKeyManagement .consoleFilterBar__main {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--cui-space-2);
+    padding: var(--cui-space-2) var(--cui-space-3);
+  }
+
+  .apiKeyManagement .consoleFilterBar__fields,
+  .apiKeyManagement .consoleFilterBar__actions {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--cui-space-2);
+    width: 100%;
+  }
+
+  .apiKeyManagement .consoleFilterBar__fields > *,
+  .apiKeyManagement .consoleFilterBar__actions > * {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+  }
+
+  .apiKeyManagement .apiKeyFilterField {
+    min-width: 0;
+  }
+
+  .apiKeyManagement .consoleFilterBar__advancedToggle {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .apiKeyManagement .consoleFilterBar__actions > .cuiButton--secondary {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .apiKeyManagement .consoleFilterBar__actions > .cuiButton--ghost {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .apiKeyPanelHeader,
+  .apiKeyBatchBar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .apiKeyPanelHeader > .cuiButton,
+  .apiKeyBatchActions > *,
+  .apiKeyOverlayActions > * {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  .apiKeyPermissionAlert {
+    margin-inline: var(--cui-space-3);
+  }
+
+  .apiKeyBatchActions,
+  .apiKeyOverlayActions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .apiKeyManagement .consoleDataTable th,
+  .apiKeyManagement .consoleDataTable td {
+    padding-right: var(--cui-space-2);
+    padding-left: var(--cui-space-2);
+  }
+
+  .apiKeyNameColumn {
+    width: 38%;
+  }
+
+  .apiKeyStatusColumn {
+    width: 24%;
+  }
+
+  .apiKeyActionsColumn {
+    width: 38%;
+  }
+
+  .apiKeyRowActions {
+    flex-wrap: nowrap;
+    gap: var(--cui-space-1);
+  }
+
+  .apiKeyRowActions .cuiButton {
+    padding-inline: var(--cui-space-2);
+  }
+
+  .apiKeyFormGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .apiKeyAdvanced .cuiAccordionTriggerLabel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .apiKeyAdvanced .cuiAccordionTriggerLabel small {
+    text-align: left;
+  }
+
+  .apiKeyDetails dl > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--cui-space-1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .apiKeyAdvanced {
+    scroll-behavior: auto;
+  }
+}
+
+.consoleWorkbench .apiKeyManagement { gap: 18px; border: 0; }
+.consoleWorkbench .apiKeyPanelHeader { padding: 0; border: 0; }
+.consoleWorkbench .apiKeyPanelTitleRow h2 { font-size: 16px; }
+.consoleWorkbench .apiKeyPanelHeading p { font-size: 13px; line-height: 1.6; }
+.consoleWorkbench .apiKeyProjectAuthority { padding: 16px; border: 1px solid var(--cui-border); border-radius: var(--cui-radius-lg); background: var(--cui-surface); }
+
+/* Keep permission pickers readable in the wide API-key drawer. */
+.apiKeyOverlay .apiKeyOptionChecklist {
+  max-height: 280px;
+}
+
+.apiKeyOverlay .apiKeyOptionChecklistItem {
+  min-height: 50px;
+  padding: 9px var(--cui-space-3);
+}
+
+.apiKeyOverlay .apiKeyOptionChecklistItem strong {
+  font-size: 12.5px;
+  line-height: 1.35;
+}
+
+.apiKeyOverlay .apiKeyOptionChecklistItem small {
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.apiKeyFormGrid--advanced {
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  align-items: start;
+  gap: var(--cui-space-4);
+}
+
+.apiKeyFormGrid--advanced .cuiFormField {
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .apiKeyFormGrid--advanced {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

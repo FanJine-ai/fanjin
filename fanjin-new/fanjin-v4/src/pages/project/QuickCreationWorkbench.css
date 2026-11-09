@@ -1,0 +1,1301 @@
+.quickCreationMain {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--surface-muted);
+}
+
+.quickCreationPortraitAdmission {
+  margin: 0 0 16px;
+}
+
+.quickCreationHeader {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 24px;
+  min-height: 82px;
+  padding: 16px 32px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-strong);
+}
+
+.quickCreationModeSwitcher {
+  justify-self: center;
+}
+
+.quickCreationTitle {
+  min-width: 0;
+}
+
+.quickCreationTitle > span,
+.quickCreationPickerHeader > div > span {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--accent-strong);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.quickCreationTitle h1,
+.quickCreationPickerHeader h2 {
+  margin: 0;
+  overflow: hidden;
+  color: var(--text-100);
+  font-size: 20px;
+  font-weight: 850;
+  letter-spacing: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.quickCreationHeaderActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  min-width: 0;
+}
+
+.quickCreationProjectSelect,
+.quickCreationSearch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-raised);
+  color: var(--text-200);
+}
+
+.quickCreationProjectSelect select,
+.quickCreationSearch input {
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--text-100);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.quickCreationProjectSelect select {
+  width: 190px;
+}
+
+.quickCreationSecondaryAction,
+.quickCreationPrimaryAction,
+.quickCreationState button,
+.quickCreationEmpty button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.quickCreationSecondaryAction {
+  border: 1px solid var(--line);
+  background: var(--surface-raised);
+  color: var(--text-200);
+}
+
+.quickCreationPrimaryAction,
+.quickCreationState button,
+.quickCreationEmpty button {
+  border: 1px solid var(--accent-strong);
+  background: var(--accent-strong);
+  color: #fff;
+}
+
+.quickCreationFlow {
+  display: flex;
+  flex: 0 0 auto;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-strong);
+}
+
+.quickCreationFlow > button {
+  position: relative;
+  display: grid;
+  flex: 1 0 132px;
+  grid-template-columns: 25px 20px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  min-height: 76px;
+  padding: 12px 14px;
+  border: 0;
+  border-right: 1px solid var(--line);
+  background: transparent;
+  color: var(--text-200);
+  text-align: left;
+  cursor: pointer;
+}
+
+.quickCreationFlow > button:last-child {
+  border-right: 0;
+}
+
+.quickCreationFlow > button:hover:not(:disabled),
+.quickCreationFlow > button.active {
+  background: var(--hover);
+  color: var(--accent-strong);
+}
+
+.quickCreationFlow > button.active::after {
+  content: "";
+  position: absolute;
+  right: 12px;
+  bottom: 0;
+  left: 12px;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: var(--accent-strong);
+}
+
+.quickCreationFlow > button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+.quickCreationStepIndex {
+  display: grid;
+  place-items: center;
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--surface-raised);
+  font-size: 11px;
+  font-weight: 850;
+}
+
+.quickCreationFlow > button.active .quickCreationStepIndex {
+  border-color: var(--accent-strong);
+  background: var(--accent-strong);
+  color: #fff;
+}
+
+.quickCreationStepCopy {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.quickCreationStepCopy strong,
+.quickCreationStepCopy small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.quickCreationStepCopy strong {
+  color: inherit;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.quickCreationStepCopy small {
+  color: var(--text-200);
+  font-size: 11px;
+  font-weight: 500;
+  opacity: 0.72;
+}
+
+.quickCreationBody {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 24px 28px 28px;
+}
+
+.quickCreationState,
+.quickCreationEmpty {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  min-height: 360px;
+  gap: 12px;
+  color: var(--text-200);
+  text-align: center;
+}
+
+.quickCreationState.error {
+  color: #b23a32;
+}
+
+.quickCreationProjectPicker {
+  width: min(1080px, 100%);
+  margin: 0 auto;
+}
+
+.quickCreationProjectRequired {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border: 1px solid color-mix(in srgb, var(--accent-strong) 35%, var(--line));
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--accent-strong) 8%, var(--surface-raised));
+  color: var(--text-200);
+  font-size: 13px;
+}
+
+.quickCreationProjectRequired > svg {
+  flex: 0 0 auto;
+  color: var(--accent-strong);
+}
+
+.quickCreationProjectRequired span {
+  display: grid;
+  gap: 2px;
+}
+
+.quickCreationProjectRequired strong {
+  color: var(--text-100);
+}
+
+.quickCreationPickerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.quickCreationSearch {
+  width: 230px;
+}
+
+.quickCreationSearch input {
+  width: 100%;
+}
+
+.quickCreationProjectGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.quickCreationProjectGrid > button {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 88px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-raised);
+  color: var(--text-100);
+  text-align: left;
+  cursor: pointer;
+}
+
+.quickCreationProjectGrid > button:hover {
+  border-color: var(--active-line);
+  background: var(--hover);
+}
+
+.quickCreationProjectInitial {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: var(--accent-strong);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 850;
+}
+
+.quickCreationProjectCopy {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+
+.quickCreationProjectCopy strong,
+.quickCreationProjectCopy small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.quickCreationProjectCopy strong {
+  font-size: 14px;
+}
+
+.quickCreationProjectCopy small {
+  color: var(--text-200);
+  font-size: 12px;
+}
+
+.quickCreationProjectGrid em {
+  padding: 3px 7px;
+  border: 1px solid var(--active-line);
+  border-radius: 6px;
+  color: var(--accent-strong);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.quickCreationStageSurface {
+  min-height: 100%;
+  padding: 16px;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-strong);
+}
+
+.quickCreationStageSurface input[type="checkbox"] {
+  flex: 0 0 16px;
+  width: 16px;
+  min-width: 16px;
+  height: 16px;
+  min-height: 16px;
+  margin: 0;
+  padding: 0;
+  border-radius: 4px;
+  accent-color: var(--accent-strong);
+}
+
+.quickModeOverview {
+  display: grid;
+  gap: 18px;
+  width: min(1320px, 100%);
+  margin: 0 auto;
+}
+
+.quickModeOverviewHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background:
+    linear-gradient(105deg, var(--surface-raised) 45%, color-mix(in srgb, var(--hover) 62%, transparent));
+}
+
+.quickModeOverviewHeader > div:first-child {
+  min-width: 0;
+}
+
+.quickModeOverviewHeader > div:first-child > span {
+  color: var(--accent-strong);
+  font-size: 11px;
+  font-weight: 850;
+}
+
+.quickModeOverviewHeader h2 {
+  margin: 5px 0 7px;
+  color: var(--text-100);
+  font-size: clamp(20px, 2vw, 28px);
+  line-height: 1.25;
+}
+
+.quickModeOverviewHeader p {
+  max-width: 700px;
+  margin: 0;
+  color: var(--text-200);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.quickModeOverviewActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quickModeOverviewActions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 0 13px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-strong);
+  color: var(--text-200);
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.quickModeOverviewActions button:hover {
+  border-color: var(--active-line);
+  background: var(--hover);
+  color: var(--accent-strong);
+}
+
+.quickModeOverviewRail {
+  display: grid;
+  grid-template-columns: 126px minmax(0, 1fr);
+  min-height: 196px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface-raised);
+}
+
+.quickModeOverviewRail > aside {
+  display: grid;
+  justify-items: start;
+  align-content: center;
+  gap: 7px;
+  padding: 20px;
+  border-right: 1px solid var(--line);
+  background: var(--surface-soft);
+}
+
+.quickModeOverviewBranchIcon,
+.quickModeOverviewStageIcon {
+  display: grid;
+  place-items: center;
+  color: var(--accent-strong);
+  background: var(--hover);
+}
+
+.quickModeOverviewBranchIcon {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--active-line);
+  border-radius: 11px;
+}
+
+.quickModeOverviewRail > aside strong {
+  color: var(--text-100);
+  font-size: 14px;
+}
+
+.quickModeOverviewRail > aside small {
+  color: var(--faint);
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.quickModeOverviewStages {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(128px, 1fr));
+  min-width: 0;
+  overflow-x: auto;
+}
+
+.quickModeOverviewStages > button {
+  position: relative;
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) 16px;
+  align-items: center;
+  gap: 9px;
+  min-width: 128px;
+  padding: 18px 13px;
+  border: 0;
+  border-right: 1px solid var(--line);
+  background: transparent;
+  color: var(--text-200);
+  text-align: left;
+}
+
+.quickModeOverviewStages > button:last-child {
+  border-right: 0;
+}
+
+.quickModeOverviewStages > button:hover,
+.quickModeOverviewStages > button:focus-visible {
+  z-index: 1;
+  background: var(--hover);
+  color: var(--accent-strong);
+}
+
+.quickModeOverviewStageIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+}
+
+.quickModeOverviewStages > button > span:nth-child(2) {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.quickModeOverviewStages small,
+.quickModeOverviewStages em {
+  color: var(--faint);
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.quickModeOverviewStages strong {
+  overflow: hidden;
+  color: var(--text-100);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.quickModeOverviewFooter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 4px;
+  color: var(--faint);
+  font-size: 11px;
+}
+
+.quickPipelineOverview {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface-raised);
+}
+
+.quickPipelineOverview > header,
+.quickPipelineEpisodes article > header,
+.quickPipelineEpisodes article > footer,
+.quickPipelineScenes summary,
+.quickPipelineShot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.quickPipelineOverview > header > span,
+.quickPipelineEpisodes article > header > span {
+  display: grid;
+  gap: 4px;
+}
+
+.quickPipelineOverview small,
+.quickPipelineOverview > footer {
+  color: var(--faint);
+  font-size: 11px;
+}
+
+.quickPipelineOverview > header button,
+.quickPipelineEpisodes article > footer button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-strong);
+  color: var(--text-200);
+}
+
+.quickPipelineEpisodes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 12px;
+}
+
+.quickPipelineEpisodes > article {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: var(--surface-soft);
+}
+
+.quickPipelineEpisodes em[data-state],
+.quickPipelineScenes em[data-state],
+.quickPipelineShot em[data-state] {
+  color: var(--faint);
+  font-size: 10px;
+  font-style: normal;
+}
+
+.quickPipelineEpisodes em[data-state="ready"],
+.quickPipelineScenes em[data-state="ready"],
+.quickPipelineShot em[data-state="ready"] { color: #33a16d; }
+.quickPipelineEpisodes em[data-state="processing"],
+.quickPipelineScenes em[data-state="processing"],
+.quickPipelineShot em[data-state="processing"] { color: #bd7b21; }
+.quickPipelineEpisodes em[data-state="failed"],
+.quickPipelineScenes em[data-state="failed"],
+.quickPipelineShot em[data-state="failed"] { color: #d75c5c; }
+
+.quickPipelineEpisodeMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  color: var(--text-200);
+  font-size: 11px;
+}
+
+.quickPipelineEpisodeMeta span {
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: var(--hover);
+}
+
+.quickPipelineScenes {
+  display: grid;
+  gap: 7px;
+}
+
+.quickPipelineScenes details {
+  padding: 8px 9px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+
+.quickPipelineScenes summary {
+  cursor: pointer;
+  color: var(--text-200);
+  font-size: 11px;
+}
+
+.quickPipelineShot {
+  margin-top: 7px;
+  padding-top: 7px;
+  border-top: 1px solid var(--line);
+  color: var(--text-200);
+  font-size: 11px;
+}
+
+.quickPipelineShot small {
+  grid-column: 1 / -1;
+  color: #d75c5c;
+}
+
+.quickPipelineFailure,
+.quickPipelineState {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  color: var(--text-200);
+  font-size: 11px;
+}
+
+.quickPipelineFailure,
+.quickPipelineState.failed { color: #d75c5c; }
+
+.quickCreationStageHeader {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.quickCreationBackToOverview {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--surface-raised);
+  color: var(--text-200);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.quickCreationBackToOverview:hover {
+  border-color: var(--active-line);
+  background: var(--hover);
+  color: var(--accent-strong);
+}
+
+.quickClipAutoPanel {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface-soft);
+}
+
+.quickClipAutoHeading,
+.quickClipVersions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.quickClipAutoHeading {
+  justify-content: space-between;
+}
+
+.quickClipAutoHeading > span {
+  display: grid;
+  gap: 2px;
+}
+
+.quickClipAutoHeading strong {
+  color: var(--text-100);
+  font-size: 13px;
+}
+
+.quickClipAutoHeading small {
+  color: var(--text-200);
+  font-size: 11px;
+}
+
+.quickClipAutoHeading button,
+.quickClipVersions button {
+  min-height: 32px;
+  padding: 0 11px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-raised);
+  color: var(--text-200);
+  font-size: 11px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.quickClipAutoHeading button {
+  border-color: var(--accent-strong);
+  background: var(--accent-strong);
+  color: #fff;
+}
+
+.quickClipAutoControls {
+  display: grid;
+  grid-template-columns: 120px 120px 140px minmax(150px, 1fr);
+  align-items: end;
+  gap: 8px;
+}
+
+.quickClipAutoControls > label:not(.quickClipSubtitleToggle) {
+  display: grid;
+  gap: 4px;
+  color: var(--text-200);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.quickClipAutoControls input[type="number"],
+.quickClipAutoControls select {
+  min-height: 32px;
+  padding: 0 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-raised);
+  color: var(--text-100);
+  font: inherit;
+  font-size: 11px;
+}
+
+.quickClipSubtitleToggle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 32px;
+  color: var(--text-200);
+  font-size: 11px;
+}
+
+.quickClipAutoHeading button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.quickClipAutoSources {
+  display: grid;
+  gap: 7px;
+  padding: 9px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-raised);
+}
+
+.quickClipAutoSources > header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.quickClipAutoSources > header strong {
+  color: var(--text-100);
+  font-size: 11px;
+}
+
+.quickClipAutoSources > header small {
+  color: var(--text-300);
+  font-size: 10px;
+}
+
+.quickClipAutoSources > div {
+  display: grid;
+  gap: 5px;
+}
+
+.quickClipAutoSourceRow {
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) 120px auto;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  padding: 6px 7px;
+  border-radius: 8px;
+  background: var(--surface-soft);
+}
+
+.quickClipAutoSourceRow > label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  color: var(--text-200);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.quickClipAutoSourceRow > label span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.quickClipAutoSourceRow > select,
+.quickClipAutoSourceOrder button {
+  min-height: 28px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-raised);
+  color: var(--text-200);
+  font-size: 10px;
+}
+
+.quickClipAutoSourceRow > select {
+  padding: 0 7px;
+}
+
+.quickClipAutoSourceOrder {
+  display: flex;
+  gap: 4px;
+}
+
+.quickClipAutoSourceOrder button {
+  padding: 0 7px;
+  cursor: pointer;
+}
+
+.quickClipAutoSourceOrder button:disabled {
+  cursor: default;
+  opacity: 0.35;
+}
+
+.quickClipVersions span {
+  padding: 4px 7px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--surface-raised);
+  color: var(--text-200);
+  font-size: 10px;
+}
+
+.quickClipAutoExplanation {
+  display: grid;
+  gap: 3px;
+  margin: 0;
+  padding: 9px 12px 9px 28px;
+  border-radius: 9px;
+  background: var(--surface-raised);
+  color: var(--text-200);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.quickClipStructuredTracks {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(220px, 1fr);
+  gap: 10px;
+}
+
+.quickClipStructuredTracks > section {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-width: 0;
+  padding: 10px;
+  border-top: 1px solid var(--line);
+  background: var(--surface-raised);
+}
+
+.quickClipStructuredTracks header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.quickClipStructuredTracks header strong {
+  color: var(--text-100);
+  font-size: 11px;
+}
+
+.quickClipStructuredTracks header small,
+.quickClipTrackEmpty {
+  color: var(--text-300);
+  font-size: 10px;
+}
+
+.quickClipSubtitleCues {
+  display: grid;
+  gap: 5px;
+  max-height: 154px;
+  overflow: auto;
+}
+
+.quickClipSubtitleCues label {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  align-items: center;
+  gap: 7px;
+  color: var(--text-300);
+  font-size: 9px;
+  font-variant-numeric: tabular-nums;
+}
+
+.quickClipSubtitleCues input {
+  width: 100%;
+  min-width: 0;
+  min-height: 30px;
+  padding: 0 8px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  outline: none;
+  background: var(--surface-soft);
+  color: var(--text-100);
+  font: inherit;
+  font-size: 10px;
+}
+
+.quickClipSubtitleCues input:focus-visible {
+  border-color: var(--accent-strong);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-strong) 14%, transparent);
+}
+
+.quickClipBeatRail {
+  position: relative;
+  height: 38px;
+  margin: 14px 4px 2px;
+  border-top: 2px solid var(--line);
+}
+
+.quickClipBeatRail span {
+  position: absolute;
+  top: -6px;
+  width: 2px;
+  height: 12px;
+  border-radius: 2px;
+  background: var(--text-300);
+  transform: translateX(-1px);
+}
+
+.quickClipBeatRail span.cut {
+  top: -9px;
+  width: 3px;
+  height: 18px;
+  background: var(--accent-strong);
+}
+
+@media (max-width: 840px) {
+  .quickClipAutoControls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .quickClipStructuredTracks {
+    grid-template-columns: 1fr;
+  }
+
+  .quickClipAutoSources > header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .quickClipAutoSourceRow {
+    grid-template-columns: minmax(0, 1fr) 110px;
+  }
+
+  .quickClipAutoSourceOrder {
+    grid-column: 1 / -1;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-height: 900px) and (min-width: 1000px) and (pointer: fine) {
+  .quickCreationHeader {
+    gap: 16px;
+    min-height: 70px;
+    padding: 10px 20px;
+  }
+
+  .quickCreationTitle h1 {
+    font-size: 18px;
+  }
+
+  .quickCreationHeader .studioModeSwitcher {
+    grid-template-columns: repeat(4, 38px);
+    min-height: 44px;
+  }
+
+  .quickCreationHeader .studioModeSwitcher button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .quickCreationHeader .studioModeSwitcher svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .quickCreationProjectSelect {
+    min-height: 36px;
+    padding-inline: 10px;
+  }
+
+  .quickCreationProjectSelect select {
+    width: 160px;
+    font-size: 12px;
+  }
+
+  .quickCreationSecondaryAction,
+  .quickCreationPrimaryAction {
+    flex: 0 0 auto;
+    min-height: 36px;
+    padding-inline: 11px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .quickCreationHeaderActions {
+    gap: 6px;
+  }
+
+  .quickCreationHeaderActions svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .quickCreationFlow > button {
+    grid-template-columns: 23px 18px minmax(0, 1fr);
+    gap: 7px;
+    min-height: 64px;
+    padding: 8px 11px;
+  }
+
+  .quickCreationFlow > button > svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .quickCreationStepIndex {
+    width: 23px;
+    height: 23px;
+    font-size: 10px;
+  }
+
+  .quickCreationStepCopy strong {
+    font-size: 12px;
+  }
+
+  .quickCreationStepCopy small {
+    font-size: 10px;
+  }
+
+  .quickCreationBody {
+    padding: 18px 20px 20px;
+  }
+
+  .quickCreationStageSurface {
+    padding: 16px;
+  }
+
+  .quickModeOverview {
+    gap: 14px;
+  }
+
+  .quickModeOverviewHeader {
+    padding: 17px 19px;
+    border-radius: 14px;
+  }
+
+  .quickModeOverviewHeader h2 {
+    font-size: 22px;
+  }
+
+  .quickModeOverviewRail {
+    min-height: 168px;
+    border-radius: 14px;
+  }
+
+  .quickModeOverviewRail > aside {
+    padding: 16px;
+  }
+
+  .quickModeOverviewStages > button {
+    padding: 14px 11px;
+  }
+
+  .quickModeOverviewStageIcon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .quickModeOverviewStageIcon svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .quickModeOverviewHeader {
+    flex-direction: column;
+  }
+
+  .quickModeOverviewRail {
+    grid-template-columns: 104px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .quickModeOverviewActions {
+    width: 100%;
+  }
+
+  .quickModeOverviewActions button {
+    flex: 1;
+  }
+
+  .quickModeOverviewRail {
+    grid-template-columns: 1fr;
+  }
+
+  .quickModeOverviewRail > aside {
+    grid-template-columns: auto auto 1fr;
+    align-items: center;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 1100px) {
+  .quickCreationHeader {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    min-height: 136px;
+  }
+
+  .quickCreationHeader .quickCreationModeSwitcher {
+    position: static;
+    align-self: center;
+    justify-self: center;
+    transform: none;
+  }
+
+  .quickCreationHeaderActions {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: 42px;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+  }
+
+  .quickCreationProjectGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 980px) {
+  .quickCreationHeader {
+    gap: 14px;
+    padding-inline: 18px;
+  }
+
+  .quickCreationProjectSelect select {
+    width: 132px;
+  }
+
+  .assetFrontPage.quickCreationPage .quickCreationSecondaryAction,
+  .assetFrontPage.quickCreationPage .quickCreationPrimaryAction {
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    min-height: 44px;
+    padding-inline: 0;
+    white-space: nowrap;
+  }
+
+  .quickCreationActionLabel {
+    display: none;
+  }
+
+  .assetFrontPage.quickCreationPage .quickCreationSecondaryAction svg,
+  .assetFrontPage.quickCreationPage .quickCreationPrimaryAction svg {
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .quickCreationHeader,
+  .quickCreationBody {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .quickCreationProjectSelect,
+  .quickCreationProjectSelect select,
+  .quickCreationSearch {
+    width: 100%;
+  }
+
+  .quickCreationHeaderActions {
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .quickCreationProjectSelect {
+    flex-basis: 100%;
+  }
+
+  .assetFrontPage.quickCreationPage .quickCreationSecondaryAction,
+  .assetFrontPage.quickCreationPage .quickCreationPrimaryAction {
+    flex: 1 1 0;
+    width: auto;
+    padding-inline: 14px;
+  }
+
+  .quickCreationActionLabel {
+    display: inline;
+  }
+
+  .quickCreationPickerHeader {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .quickCreationProjectGrid {
+    grid-template-columns: 1fr;
+  }
+}

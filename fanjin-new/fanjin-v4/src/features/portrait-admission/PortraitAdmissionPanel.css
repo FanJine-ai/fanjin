@@ -1,0 +1,529 @@
+.portraitAdmissionPanel {
+  width: 100%;
+  margin-top: 10px;
+  color: var(--text, #1d1c1c);
+}
+
+.portraitAdmissionPanel.is-collapsed {
+  width: auto;
+  margin-top: 0;
+}
+
+.portraitAdmissionStatuses {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+}
+
+.portraitAdmissionStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 4px 7px;
+  border: 0;
+  border-radius: 7px;
+  color: var(--muted, #59636a);
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 140ms ease, color 140ms ease;
+}
+
+.portraitAdmissionStatus:hover {
+  color: var(--text, #1d1c1c);
+  background: var(--hover, rgba(49, 61, 68, 0.05));
+}
+
+.portraitAdmissionStatus:focus-visible {
+  outline: 2px solid var(--accent-strong, #00668c);
+  outline-offset: 2px;
+}
+
+.portraitAdmissionStatusIcon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  color: var(--muted, #59636a);
+}
+
+.portraitAdmissionStatus.success .portraitAdmissionStatusIcon { color: var(--success, #2f9967); }
+.portraitAdmissionStatus.danger .portraitAdmissionStatusIcon { color: var(--danger, #cb655c); }
+.portraitAdmissionStatus.attention .portraitAdmissionStatusIcon { color: var(--warning, #bb883a); }
+.portraitAdmissionStatusReference { font-weight: 400; }
+
+.portraitAdmissionPillWrap {
+  position: relative;
+  display: inline-flex;
+  /* Bare oval: no card chrome around the ready pill. */
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.portraitAdmissionPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 24px;
+  padding: 0 8px 0 6px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 150ms ease, border-color 150ms ease, transform 150ms ease;
+}
+
+.portraitAdmissionPill.is-ready {
+  color: #1f7a4d;
+  background: #e8f7ee;
+  border-color: #c5e8d4;
+}
+
+.portraitAdmissionPill.is-failed {
+  color: #b42318;
+  background: #fdeceb;
+  border-color: #f3c1bd;
+}
+
+.portraitAdmissionPill:hover {
+  transform: translateY(-1px);
+}
+
+.portraitAdmissionPillIcon {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-size: 11px;
+  line-height: 1;
+}
+
+.portraitAdmissionPill.is-ready .portraitAdmissionPillIcon {
+  background: #2f9967;
+  color: #fff;
+}
+
+.portraitAdmissionPill.is-failed .portraitAdmissionPillIcon {
+  background: #d64545;
+  color: #fff;
+}
+
+.portraitAdmissionPillDetail {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 20;
+  display: none;
+  min-width: 140px;
+  max-width: 200px;
+  padding: 5px 8px;
+  border: 1px solid var(--line, rgba(15, 23, 42, 0.1));
+  border-radius: 8px;
+  background: var(--surface-strong, #fff);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.1);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.portraitAdmissionPillWrap:hover .portraitAdmissionPillDetail,
+.portraitAdmissionPillWrap:focus-within .portraitAdmissionPillDetail {
+  display: block;
+}
+
+.portraitAdmissionPillRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 0;
+  color: var(--text, #243241);
+}
+
+.portraitAdmissionPillRow .ok { color: #2f9967; width: 12px; text-align: center; }
+.portraitAdmissionPillRow .bad { color: #d64545; width: 12px; text-align: center; }
+.portraitAdmissionPillRow .wait { color: #bb883a; width: 12px; text-align: center; }
+.portraitAdmissionPillRow .name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.portraitAdmissionPillMore {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 4px 0 0;
+  border: 0;
+  border-top: 1px solid var(--line, rgba(15, 23, 42, 0.1));
+  background: transparent;
+  color: var(--accent-strong, #0f6f92);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.portraitAdmissionCollapse {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 28px;
+  padding: 4px 10px;
+  border: 0;
+  border-radius: 7px;
+  color: var(--muted, #5e6c75);
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.portraitAdmissionCollapse:hover {
+  background: var(--hover, rgba(49, 61, 68, 0.05));
+}
+
+.portraitAdmissionStatusName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 160px;
+  color: var(--text, #1d1c1c);
+}
+
+.portraitAdmissionVersionMeta {
+  margin: 2px 0 0;
+  color: var(--muted, #59636a);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+@media (pointer: coarse) {
+  .portraitAdmissionStatus { min-height: 44px; }
+}
+
+.portraitAdmissionOverlay {
+  position: fixed;
+  z-index: 1200;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(7, 12, 15, 0.46);
+  backdrop-filter: blur(10px);
+}
+
+.portraitAdmissionDialog {
+  position: relative;
+  width: min(100%, 560px);
+  max-height: min(760px, calc(100vh - 36px));
+  overflow: auto;
+  padding: 24px;
+  border: 1px solid var(--line-strong, rgba(0, 102, 140, 0.18));
+  border-radius: 22px;
+  color: var(--text, #1d1c1c);
+  background: var(--surface-strong, #fffefb);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.24);
+}
+
+.portraitAdmissionClose {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 12px;
+  color: var(--muted, #59636a);
+  background: transparent;
+}
+
+.portraitAdmissionClose:hover,
+.portraitAdmissionClose:focus-visible { background: var(--hover, #edf5fa); outline: 2px solid var(--active-line, #7fbad0); }
+
+.portraitAdmissionDialogHeading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-right: 42px;
+}
+
+.portraitAdmissionHeroIcon {
+  display: inline-flex;
+  width: 46px;
+  height: 46px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  color: var(--accent-strong, #00668c);
+  background: var(--hover, #edf5fa);
+}
+
+.portraitAdmissionDialogHeading p {
+  margin: 0 0 3px;
+  color: var(--muted, #59636a);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.portraitAdmissionDialogHeading h2 { margin: 0; font-size: 19px; line-height: 1.25; }
+
+.portraitAdmissionSummary,
+.portraitAdmissionLoading,
+.portraitAdmissionInlineError {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 13px;
+  border: 1px solid var(--line, rgba(49, 61, 68, 0.12));
+  border-radius: 14px;
+  background: var(--surface-soft, #f5f4f1);
+}
+
+.portraitAdmissionSummary > svg { flex: 0 0 auto; margin-top: 2px; color: var(--accent-strong, #00668c); }
+.portraitAdmissionSummary.success > svg { color: #2f7d52; }
+.portraitAdmissionSummary.danger > svg,
+.portraitAdmissionInlineError > svg { color: #b0443c; }
+.portraitAdmissionSummary.attention > svg { color: #9b6814; }
+
+.portraitAdmissionSummary div { display: flex; min-width: 0; flex-direction: column; gap: 3px; }
+.portraitAdmissionSummary strong { font-size: 14px; }
+.portraitAdmissionSummary span,
+.portraitAdmissionLoading,
+.portraitAdmissionInlineError { color: var(--muted, #59636a); font-size: 13px; line-height: 1.5; }
+
+.portraitAdmissionInlineError {
+  align-items: center;
+  border-color: rgba(176, 68, 60, 0.25);
+  color: #9f3b35;
+  background: rgba(176, 68, 60, 0.08);
+}
+
+.portraitAdmissionInlineError span { min-width: 0; flex: 1; }
+.portraitAdmissionInlineError button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  border: 1px solid rgba(176, 68, 60, 0.25);
+  border-radius: 11px;
+  color: inherit;
+  background: transparent;
+}
+
+.portraitAdmissionChoices {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.portraitAdmissionChoiceLead {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.portraitAdmissionOptionList {
+  display: grid;
+  gap: 8px;
+}
+
+.portraitAdmissionOption {
+  display: grid;
+  gap: 3px;
+  width: 100%;
+  min-height: 56px;
+  align-items: center;
+  padding: 10px 12px;
+  border: 1px solid var(--line, rgba(49, 61, 68, 0.14));
+  border-radius: 13px;
+  color: inherit;
+  background: var(--control-bg, #fff);
+  text-align: left;
+  cursor: pointer;
+}
+
+.portraitAdmissionOption:hover {
+  border-color: var(--active-line, rgba(0, 102, 140, 0.35));
+  background: var(--hover, #edf5fa);
+}
+
+.portraitAdmissionOption.is-recommended {
+  border-color: var(--accent-strong, #00668c);
+  background: color-mix(in srgb, var(--accent-strong, #00668c) 8%, var(--control-bg, #fff));
+}
+
+.portraitAdmissionOption:disabled {
+  opacity: 0.52;
+  cursor: not-allowed;
+}
+
+.portraitAdmissionOptionHead {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.portraitAdmissionOptionHead strong {
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.portraitAdmissionOptionHead em {
+  padding: 1px 7px;
+  border-radius: 999px;
+  color: var(--accent-ink, #fff);
+  background: var(--accent-strong, #00668c);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 650;
+}
+
+.portraitAdmissionOption small {
+  color: var(--muted, #59636a);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.portraitAdmissionDisclaimerText {
+  margin: 4px 0 0;
+  color: var(--muted, #59636a);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.portraitAdmissionDisclaimerText summary {
+  cursor: pointer;
+  user-select: none;
+}
+
+.portraitAdmissionDisclaimerText p {
+  margin: 6px 0 0;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(248, 185, 65, 0.1);
+}
+
+.portraitAdmissionPrivacy {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin: 5px 0 0;
+  color: var(--muted, #59636a);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.portraitAdmissionPrivacy svg { flex: 0 0 auto; margin-top: 1px; }
+
+.portraitAdmissionDeclarationReview {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+  padding: 13px;
+  border: 1px solid var(--active-line, rgba(0, 102, 140, 0.3));
+  border-radius: 13px;
+  background: var(--hover, #edf5fa);
+  font-size: 12px;
+}
+
+.portraitAdmissionDeclarationReview > span { color: var(--muted, #59636a); }
+.portraitAdmissionDeclarationReview .portraitAdmissionPrimary { margin-top: 8px; }
+
+.portraitAdmissionPrimary {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 12px;
+  color: var(--accent-ink, #fff);
+  background: var(--accent-strong, #00668c);
+  font-weight: 750;
+}
+
+a.portraitAdmissionPrimary {
+  text-decoration: none;
+}
+
+.portraitAdmissionPrimary:focus-visible { outline: 3px solid var(--active-line, rgba(0, 102, 140, 0.3)); outline-offset: 2px; }
+.portraitAdmissionPrimary:disabled { opacity: 0.52; cursor: not-allowed; }
+
+.portraitAdmissionAuthorization {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.portraitAdmissionAuthorization label { margin-bottom: 7px; font-size: 13px; font-weight: 750; }
+.portraitAdmissionAuthorization input {
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--line, rgba(49, 61, 68, 0.16));
+  border-radius: 11px;
+  color: inherit;
+  background: var(--control-bg, #fff);
+}
+
+.portraitAdmissionAuthorization input:focus { border-color: var(--active-line, #7fbad0); outline: 2px solid var(--active-line, #7fbad0); outline-offset: 1px; }
+.portraitAdmissionAuthorization p { margin: 8px 0 0; color: var(--muted, #59636a); font-size: 12px; }
+
+.portraitAdmissionSpin { animation: portraitAdmissionSpin 0.9s linear infinite; }
+@keyframes portraitAdmissionSpin { to { transform: rotate(360deg); } }
+
+@media (max-width: 560px) {
+  .portraitAdmissionOverlay { padding: 0; place-items: end center; }
+  .portraitAdmissionDialog { width: 100%; max-height: 88vh; padding: 20px 16px; border-radius: 22px 22px 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portraitAdmissionSpin { animation: none; }
+  .portraitAdmissionStatus { transition: none; }
+}
+
+/* Approval belongs to the existing reference chip, not a second status row. */
+.portraitAdmissionApprovedDot {
+  display: inline-block;
+  flex: 0 0 7px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #32a46d;
+}
+
+.portraitAdmissionNotice {
+  min-width: 0;
+  max-width: 100%;
+  background: var(--surface-soft, #f6f6f4);
+  padding: 5px 9px;
+}
+
+.portraitAdmissionNoticeName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 210px;
+  color: var(--text, #1d1c1c);
+}

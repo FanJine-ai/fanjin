@@ -1,0 +1,54 @@
+.v4ThemeToggle {
+  display: inline-flex;
+  flex: 0 0 36px;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  min-height: 36px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--fs-muted, #536575);
+  font: inherit;
+  box-shadow: none;
+  cursor: pointer;
+  transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
+}
+
+.v4ThemeToggle svg {
+  display: block;
+  stroke-width: 1.6;
+}
+
+.v4ThemeToggle:hover {
+  border-color: var(--fs-line-strong, rgba(83, 101, 117, 0.28));
+  background: var(--fs-accent-bg, rgba(217, 237, 255, 0.72));
+  color: var(--fs-accent, #00668c);
+}
+
+.v4ThemeToggle:focus-visible {
+  outline: 2px solid var(--fs-accent, #00668c);
+  outline-offset: 2px;
+}
+
+[data-project-theme="dark"] .v4ThemeToggle {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+[data-project-theme="dark"] .v4ThemeToggle:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+[data-project-theme="light"] .v4ThemeToggle {
+  color: #536575;
+}
+
+[data-project-theme="light"] .v4ThemeToggle:hover {
+  border-color: rgba(93, 148, 189, 0.38);
+  background: rgba(217, 237, 255, 0.72);
+  color: #3b7aa8;
+}

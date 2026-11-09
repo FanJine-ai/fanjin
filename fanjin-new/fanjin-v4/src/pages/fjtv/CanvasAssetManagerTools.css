@@ -1,0 +1,71 @@
+.canvasAssetManagerSectionHead {
+  min-height: 36px;
+  gap: 10px;
+}
+
+.canvasAssetManagerSectionTitle {
+  min-width: 0;
+  overflow: hidden;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.canvasAssetManagerControls {
+  flex: 0 0 auto;
+  font-size: 12px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.canvasAssetManagerSort {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: inherit;
+}
+
+.canvasAssetManagerSearch {
+  min-height: 36px;
+}
+
+.canvasAssetManagerSearchIcon {
+  flex: 0 0 auto;
+}
+
+.canvasAssetManagerSearch input.canvasAssetManagerSearchInput {
+  flex: 1 1 auto;
+  width: 0;
+  height: 20px;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  background: transparent;
+  box-shadow: none;
+  color: inherit;
+  font-size: 13px;
+  line-height: 20px;
+  appearance: none;
+}
+
+.canvasAssetManagerSearch input.canvasAssetManagerSearchInput:focus {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.canvasAssetManagerSearchInput::-webkit-search-cancel-button,
+.canvasAssetManagerSearchInput::-webkit-search-decoration {
+  appearance: none;
+}
+
+.canvasAssetManagerSearchInput::placeholder {
+  color: #7d8696;
+  opacity: 1;
+}
