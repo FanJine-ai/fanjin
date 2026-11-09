@@ -1,3 +1,7 @@
+// Adapted from @opentelemetry/auto-instrumentations-node 0.81.0.
+// Copyright The OpenTelemetry Authors; SPDX-License-Identifier: Apache-2.0.
+// Modified for Fanjin: removed the unused resource-detector declaration/import
+// and source-map reference; instrumentation types are unchanged.
 import { Instrumentation } from '@opentelemetry/instrumentation';
 import { AmqplibInstrumentation } from '@opentelemetry/instrumentation-amqplib';
 import { AwsLambdaInstrumentation } from '@opentelemetry/instrumentation-aws-lambda';

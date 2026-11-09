@@ -11,7 +11,7 @@
     "url": "https://github.com/FanJine-ai/fanjin-community",
     "initialCommit": "908f8d9e35f5d39f6e6d0946ecc6b20151158d6d"
   },
-  "candidateSha256": "99f2474fc1afffed31d50062354bde50c01d65d861ab7f2af9e64e95825f70e3",
+  "candidateSha256": "b18ae2eec5803075e885739a012b3bee14b04fc9a5324db4a7c9d1db8a39a2ae",
   "files": [
     {
       "path": ".github/workflows/public-platform.yml",
@@ -2506,7 +2506,8 @@
     {
       "path": "fanjin-new/fanjin-api/src/lib/nodeAutoInstrumentations.d.ts",
       "generated": "community dependency safety repair",
-      "sha256": "3bb22d01cd5b2cac20d2afb91dc4db9f16bc0aefcce3d528954ae3b45b29be8e"
+      "sha256": "8851b2d1e7151872d25b352402d04a2d7523e770cb4239f1687f8086e8c32bef",
+      "licenseNotice": "Added prominent file-level upstream attribution and modification notice; declarations unchanged."
     },
     {
       "path": "fanjin-new/fanjin-api/src/lib/nodeAutoInstrumentations.js",
