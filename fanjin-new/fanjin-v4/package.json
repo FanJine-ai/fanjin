@@ -81,11 +81,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FanJine-ai/fanjin-community.git",
+    "url": "git+https://github.com/FanJine-ai/fanjin.git",
     "directory": "fanjin-new/fanjin-v4"
   },
   "bugs": {
-    "url": "https://github.com/FanJine-ai/fanjin-community/issues"
+    "url": "https://github.com/FanJine-ai/fanjin/issues"
   },
-  "homepage": "https://github.com/FanJine-ai/fanjin-community#readme"
+  "homepage": "https://github.com/FanJine-ai/fanjin#readme"
 }

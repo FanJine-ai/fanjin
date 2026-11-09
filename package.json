@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FanJine-ai/fanjin-community.git"
+    "url": "git+https://github.com/FanJine-ai/fanjin.git"
   },
   "keywords": [
     "ai",
@@ -34,9 +34,9 @@
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FanJine-ai/fanjin-community/issues"
+    "url": "https://github.com/FanJine-ai/fanjin/issues"
   },
-  "homepage": "https://github.com/FanJine-ai/fanjin-community#readme",
+  "homepage": "https://github.com/FanJine-ai/fanjin#readme",
   "description": "Fanjin (\u7e41\u5883) is a full-stack AI-assisted video creation workspace with a deterministic release control plane.",
   "devDependencies": {
     "@playwright/test": "^1.61.1",

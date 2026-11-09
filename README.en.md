@@ -1,6 +1,6 @@
 # Fanjin
 
-Official source: [FanJine-ai/fanjin-community](https://github.com/FanJine-ai/fanjin-community), maintained by 北京繁境科技有限公司.
+Official source: [FanJine-ai/fanjin](https://github.com/FanJine-ai/fanjin), maintained by 北京繁境科技有限公司.
 
 [简体中文](README.md)
 
@@ -13,7 +13,7 @@ Original source and development documentation use [MIT](LICENSE), copyright 北�
 Use Node.js 24.22.0, npm, Corepack/Yarn 1.22.22 and FFmpeg/ffprobe on macOS or Linux. The local SQLite profile needs no production database, Redis or deployment tools. Native SQLite compilation may require local compiler tools.
 
 ```bash
-git clone https://github.com/FanJine-ai/fanjin-community.git
+git clone https://github.com/FanJine-ai/fanjin.git
 cd fanjin-community
 npm ci --ignore-scripts --no-audit --no-fund
 corepack yarn --cwd fanjin-new/fanjin-api install --frozen-lockfile --ignore-scripts

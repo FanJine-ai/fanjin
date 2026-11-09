@@ -1,0 +1,41 @@
+{
+  "schema": "fanjin-public-source-approval/v1",
+  "date": "2026-11-09",
+  "status": "owner-approved-source-publication",
+  "candidateSha256": "e1071633c6eb15173e9bf65d46bdb9eab4681efd08c86c3beb7e70b8f4f60d17",
+  "repository": "FanJine-ai/fanjin",
+  "repositoryId": 1443781979,
+  "initialCommit": "908f8d9e35f5d39f6e6d0946ecc6b20151158d6d",
+  "approval": {
+    "date": "2026-11-09",
+    "authority": "Project owner explicitly approved public source including Apache-2.0 third-party adaptation and requested repository name fanjin.",
+    "scope": "Reviewed source only; not production deployment, signed release, update-feed activation or private-history publication.",
+    "repositoryId": 1443781979
+  },
+  "validation": {
+    "node": "24.22.1",
+    "cleanLockedInstall": true,
+    "apiTypecheck": true,
+    "apiWorkerBuild": true,
+    "webBuild": true,
+    "dependencyRegressionTests": 7,
+    "updaterTests": 7,
+    "cliTests": 47,
+    "publicApiTests": 65,
+    "syntheticLocalSmoke": true,
+    "dependencyAudit": {
+      "root": 0,
+      "web": 0,
+      "api": 0
+    },
+    "dependencyLicensePackages": 1000,
+    "copiedLicenseTexts": 448
+  },
+  "limits": [
+    "Source-only local self-hosting profile. No production deployment or signed update feed is approved by this record.",
+    "No real provider generation or external object-storage integration was tested.",
+    "Installed license inventory describes darwin-arm64 development dependencies; binary distributions require target-specific audits.",
+    "Private repository production-release task evidence is excluded; its stale checks are not represented as passed.",
+    "This record is a review statement, not a cryptographic attestation."
+  ]
+}

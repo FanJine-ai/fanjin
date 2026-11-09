@@ -1,6 +1,6 @@
 # 繁境 Fanjin
 
-官方开源仓库：[FanJine-ai/fanjin-community](https://github.com/FanJine-ai/fanjin-community)，由北京繁境科技有限公司维护。
+官方开源仓库：[FanJine-ai/fanjin](https://github.com/FanJine-ai/fanjin)，由北京繁境科技有限公司维护。
 
 [English](README.en.md)
 
@@ -13,7 +13,7 @@
 需要 Node.js 24.22.0、npm、Corepack/Yarn 1.22.22、FFmpeg/ffprobe。macOS 或 Linux 本地配置使用 SQLite，不需要生产数据库、Redis 或生产发布工具。首次编译原生 SQLite 模块可能需要本机编译工具。
 
 ```bash
-git clone https://github.com/FanJine-ai/fanjin-community.git
+git clone https://github.com/FanJine-ai/fanjin.git
 cd fanjin-community
 npm ci --ignore-scripts --no-audit --no-fund
 corepack yarn --cwd fanjin-new/fanjin-api install --frozen-lockfile --ignore-scripts

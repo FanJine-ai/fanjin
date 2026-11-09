@@ -5,14 +5,14 @@
   "description": "Fanjin \u7e41\u5883\u662f\u4e00\u6b3e AI \u89c6\u9891\u521b\u4f5c\u5e73\u53f0\uff0c\u57fa\u4e8e AI \u751f\u6210\u6d41\u7a0b\u5e2e\u52a9\u521b\u4f5c\u8005\u5b8c\u6210\u89c6\u9891\u5185\u5bb9\u751f\u4ea7\u3002",
   "author": "Fanjin",
   "license": "MIT",
-  "homepage": "https://github.com/FanJine-ai/fanjin-community#readme",
+  "homepage": "https://github.com/FanJine-ai/fanjin#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FanJine-ai/fanjin-community.git",
+    "url": "git+https://github.com/FanJine-ai/fanjin.git",
     "directory": "fanjin-new/fanjin-api"
   },
   "bugs": {
-    "url": "https://github.com/FanJine-ai/fanjin-community/issues"
+    "url": "https://github.com/FanJine-ai/fanjin/issues"
   },
   "main": "build/app.js",
   "packageManager": "yarn@1.22.22",

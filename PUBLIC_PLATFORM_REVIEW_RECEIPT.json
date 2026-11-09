@@ -1,17 +1,17 @@
 {
   "schema": "fanjin-public-platform-review/v1",
-  "internalReviewOnly": true,
-  "publishable": false,
+  "internalReviewOnly": false,
+  "publishable": true,
   "sourceCommit": "28cd762f7c963bbc8c36abf6d2446266afe4f831",
   "manifestSha256": "c3bb57f76cce643760e0ef38ab35cee4116736593e3a03b1d49a947c6c24a315",
   "typeSupportSha256": "c6a967c4c443bfcc774fd24e7ae65bc2f740c7c80b67df9fc051887cecc0a53e",
   "publicationTargetSha256": "cc0cb0b83c7386f446aad8176ef62da5742aa40a2611648e28575d74e8812027",
   "publicationTarget": {
-    "repository": "FanJine-ai/fanjin-community",
-    "url": "https://github.com/FanJine-ai/fanjin-community",
+    "repository": "FanJine-ai/fanjin",
+    "url": "https://github.com/FanJine-ai/fanjin",
     "initialCommit": "908f8d9e35f5d39f6e6d0946ecc6b20151158d6d"
   },
-  "candidateSha256": "b18ae2eec5803075e885739a012b3bee14b04fc9a5324db4a7c9d1db8a39a2ae",
+  "candidateSha256": "e1071633c6eb15173e9bf65d46bdb9eab4681efd08c86c3beb7e70b8f4f60d17",
   "files": [
     {
       "path": ".github/workflows/public-platform.yml",
@@ -67,8 +67,9 @@
     },
     {
       "path": "CONTRIBUTING.md",
-      "sha256": "9b4d3e97dea0dc3c0c652dd191318577dd913ad7fbc24f0db6ac88b2a0754ce5",
-      "source": "docs/open-source/PUBLIC-CONTRIBUTING.md"
+      "sha256": "4f57c560de669551db1d67c3789f95568042683293ed6d93996977238e50b24d",
+      "source": "docs/open-source/PUBLIC-CONTRIBUTING.md",
+      "publicationAdaptation": "Owner-requested repository rename; documentation/package URL metadata only."
     },
     {
       "path": "CONTRIBUTORS.md",
@@ -96,8 +97,9 @@
     {
       "path": "docs/open-source/PUBLIC-CONTRIBUTING.md",
       "originalSha256": "d2352d09e3b41f56e48a8acb702648c09c1d6e3445d7e32020189301b09ddbd1",
-      "sha256": "d2352d09e3b41f56e48a8acb702648c09c1d6e3445d7e32020189301b09ddbd1",
-      "transformed": false
+      "sha256": "80464405eb1f7c7ed1735b3183fe05dbc4039b442afa94b7f309c72569b278b8",
+      "transformed": false,
+      "publicationAdaptation": "Owner-requested repository rename; documentation/package URL metadata only."
     },
     {
       "path": "docs/open-source/PUBLIC-NOTICES.md",
@@ -108,20 +110,23 @@
     {
       "path": "docs/open-source/PUBLIC-README.md",
       "originalSha256": "af2c337dd7ed01a06fc7e79018b55a5bec161196b01d37de3078d05c5aaadd35",
-      "sha256": "af2c337dd7ed01a06fc7e79018b55a5bec161196b01d37de3078d05c5aaadd35",
-      "transformed": false
+      "sha256": "10f8b6b27535790d04200de7f5ab1ef02829eafbea6fbcf188832d0cff4a64eb",
+      "transformed": false,
+      "publicationAdaptation": "Owner-requested repository rename; documentation/package URL metadata only."
     },
     {
       "path": "docs/open-source/PUBLIC-README.zh-CN.md",
       "originalSha256": "960e0749c42bf1a89e21e3d7d81ad17993ba98326001efa1f31de30fe6e086dc",
-      "sha256": "960e0749c42bf1a89e21e3d7d81ad17993ba98326001efa1f31de30fe6e086dc",
-      "transformed": false
+      "sha256": "5507682649b330f93612e0d5ba59be69a4391a2a2dacf55ed462fc6586fdfa40",
+      "transformed": false,
+      "publicationAdaptation": "Owner-requested repository rename; documentation/package URL metadata only."
     },
     {
       "path": "docs/open-source/PUBLIC-SECURITY.md",
       "originalSha256": "b8333b0391ad89e9c75766cd3bbbdac4a15d1620f15f8e146d4f1d87b3127791",
-      "sha256": "b8333b0391ad89e9c75766cd3bbbdac4a15d1620f15f8e146d4f1d87b3127791",
-      "transformed": false
+      "sha256": "8fa62acbfc7b43c60c96138f81e2bb704b3c854c466ecb0998478c23815f2e37",
+      "transformed": false,
+      "publicationAdaptation": "Owner-requested repository rename; documentation/package URL metadata only."
     },
     {
       "path": "docs/open-source/toonflow-replacement.zh-CN.md",
@@ -144,10 +149,11 @@
     {
       "path": "fanjin-new/fanjin-api/package.json",
       "originalSha256": "936af889e817d50ede7230adecfe6aadca530d9d280e4e9835c79aa6bec9e67c",
-      "sha256": "4634313b578585df464b0bcb19d04122a60e4282d67031dee3a884f3a0998eb3",
+      "sha256": "f9f2362fc4b9d153c5edfccae94d75aca286c3f7c4323bb457c2d2e4f2f204ec",
       "transformed": true,
       "preRepairSha256": "696f81637df7f5fabd4a05ba4886ba410bd18681acdbd0a139f9fbf6354df793",
-      "repair": "remove unused dependency paths; preserve instrumentation behavior; add regression coverage"
+      "repair": "remove unused dependency paths; preserve instrumentation behavior; add regression coverage",
+      "publicationAdaptation": "Owner-requested repository rename; documentation/package URL metadata only."
     },
     {
       "path": "fanjin-new/fanjin-api/scripts/configure-agent-channels.d.ts",
@@ -8107,8 +8113,9 @@
     {
       "path": "fanjin-new/fanjin-v4/package.json",
       "originalSha256": "78044c571a2d742477dea50edb8eb73b796a04bd38bcd79d5b4e8e4573ccee8c",
-      "sha256": "1959e70a7423507529a1b32a5244373f5cf1d59632257d35ff8fd34675565af5",
-      "transformed": true
+      "sha256": "3c541afb93a077c59e164883bab5ce6814b7038f371501df7e58898f2913f4ba",
+      "transformed": true,
+      "publicationAdaptation": "Owner-requested repository rename; documentation/package URL metadata only."
     },
     {
       "path": "fanjin-new/fanjin-v4/src/api/assets.ts",
@@ -13847,20 +13854,23 @@
     {
       "path": "package.json",
       "originalSha256": "8e50b1d5d6556a544d7cca892ebf3980f0417fa3580e4c3db2f8686ecb8bd713",
-      "sha256": "f1deefcdc2a8a62ba44bced027459fe9a55b0886c854e92308588d96ee4418ae",
+      "sha256": "04d0a294c3247a39cfa2459449251000222c0b74318bd74468d9459dc8ac1c3a",
       "transformed": true,
       "preRepairSha256": "6e1730bc02d615d5f726f57cf10f98e50592cdb40ba4ddec66188ef016130136",
-      "repair": "remove unused dependency paths; preserve instrumentation behavior; add regression coverage"
+      "repair": "remove unused dependency paths; preserve instrumentation behavior; add regression coverage",
+      "publicationAdaptation": "Owner-requested repository rename; documentation/package URL metadata only."
     },
     {
       "path": "README.en.md",
-      "sha256": "50c2e8f0202f7e471eb1fe6e9ae3dbba4b99a7ba3e7299e8685090d04c243d07",
-      "source": "docs/open-source/PUBLIC-README.md"
+      "sha256": "4191859cedec561e6ae4266c079b60f420e77e59719987dfb16d42399902ce34",
+      "source": "docs/open-source/PUBLIC-README.md",
+      "publicationAdaptation": "Owner-requested repository rename; documentation/package URL metadata only."
     },
     {
       "path": "README.md",
-      "sha256": "e8f9fdadf5c85ef8592a92cfe1463b9e02ecfd9891671526cf4e8b2ffed50bfc",
-      "source": "docs/open-source/PUBLIC-README.zh-CN.md"
+      "sha256": "e76b77381860b1b3bc2b19402a73a1ee9bc29862e24c55129dfa7c124a29df64",
+      "source": "docs/open-source/PUBLIC-README.zh-CN.md",
+      "publicationAdaptation": "Owner-requested repository rename; documentation/package URL metadata only."
     },
     {
       "path": "scripts/community-dependencies.test.mjs",
@@ -13922,8 +13932,9 @@
     },
     {
       "path": "SECURITY.md",
-      "sha256": "b8333b0391ad89e9c75766cd3bbbdac4a15d1620f15f8e146d4f1d87b3127791",
-      "source": "docs/open-source/PUBLIC-SECURITY.md"
+      "sha256": "8fa62acbfc7b43c60c96138f81e2bb704b3c854c466ecb0998478c23815f2e37",
+      "source": "docs/open-source/PUBLIC-SECURITY.md",
+      "publicationAdaptation": "Owner-requested repository rename; documentation/package URL metadata only."
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -16250,5 +16261,11 @@
     "packages": 1000,
     "platform": "darwin-arm64",
     "binariesRedistributed": false
+  },
+  "publicationApproval": {
+    "date": "2026-11-09",
+    "authority": "Project owner explicitly approved public source including Apache-2.0 third-party adaptation and requested repository name fanjin.",
+    "scope": "Reviewed source only; not production deployment, signed release, update-feed activation or private-history publication.",
+    "repositoryId": 1443781979
   }
 }
